@@ -18,7 +18,7 @@ namespace Dungeoneering.Controllers
         // GET: Drafts
         public ActionResult Index()
         {
-            return View(db.Drafts.ToList());
+            return View(db.Drafts.Where(d => d.OwnerName == User.Identity.Name).ToList());
         }
 
         // GET: Drafts/Details/5
