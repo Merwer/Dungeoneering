@@ -122,17 +122,23 @@ chronicle.dungeoneering.draft = (function ($) {
         addToHtml($('.round-counter .current'), 1);
     };
 
+    var getRound = function () {
+        return window.parseInt($('.round-counter .current').html(), 10);
+    }
+
     var constructRound = function () {
         var round = {
+            draftId: 2, //TODO: Get the draft ID (from the URL?)
+            roundId: getRound(),
             options: [],
-            picks: []
+            selected: []
         };
         $.each(selectionSlots, function (index, element) {
             var ele = $(element);
             var cardId = ele.data('cardId');
             round.options.push(cardId);
             if (ele.hasClass('selected')) {
-                round.picks.push(cardId);
+                round.selected.push(cardId);
             }
         });
         return round;
@@ -140,13 +146,11 @@ chronicle.dungeoneering.draft = (function ($) {
 
     var performSave = function () {
         var data = constructRound();
-        deck.addCard(cardList.getCard(data.picks[0]));
-        deck.addCard(cardList.getCard(data.picks[1]));
+        deck.addCard(cardList.getCard(data.selected[0]));
+        deck.addCard(cardList.getCard(data.selected[1]));
         incrementRound();
         clearChoices();
-        $.get('/', { //TODO: This should be a post
-            data: data
-        }).done(
+        $.post('/Drafts/Round', data).done(
             refreshUI
         ).fail(function () {
             window.alert('Save failed');
@@ -220,8 +224,8 @@ chronicle.dungeoneering.draft = (function ($) {
         var cardIndex;
         for (roundId = 0; roundId < state.rounds.length; roundId += 1) {
             round = state.rounds[roundId];
-            for (cardIndex = 0; cardIndex < round.picks.length; cardIndex += 1) {
-                cardId = round.picks[cardIndex];
+            for (cardIndex = 0; cardIndex < round.selected.length; cardIndex += 1) {
+                cardId = round.selected[cardIndex];
                 var card = cardList.getCard(cardId);
                 deck.addCard(card);
             }

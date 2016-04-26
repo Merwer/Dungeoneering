@@ -226,6 +226,10 @@
     <Compile Include="Migrations\201604260218228_DraftCompleteColumn.Designer.cs">
       <DependentUpon>201604260218228_DraftCompleteColumn.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201604260242397_RequiredDraftOnRound.cs" />
+    <Compile Include="Migrations\201604260242397_RequiredDraftOnRound.Designer.cs">
+      <DependentUpon>201604260242397_RequiredDraftOnRound.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Archetype.cs" />
@@ -352,6 +356,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201604260218228_DraftCompleteColumn.resx">
       <DependentUpon>201604260218228_DraftCompleteColumn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604260242397_RequiredDraftOnRound.resx">
+      <DependentUpon>201604260242397_RequiredDraftOnRound.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

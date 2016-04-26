@@ -48,13 +48,13 @@ namespace Dungeoneering.Controllers
         }
 
         [HttpPost]
-        public ActionResult Round(int? id, int? roundId, List<int> options, List<int> selected)
+        public ActionResult Round(int? draftId, int? roundId, List<int> options, List<int> selected)
         {
-            if (id == null || roundId == null || options.Count != 5 || selected.Count != 2)
+            if (draftId == null || roundId == null || options.Count != 5 || selected.Count != 2)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            var draft = db.Drafts.Find(id.Value);
+            var draft = db.Drafts.Find(draftId.Value);
             var round = new Round
             {
                 Draft = draft,
