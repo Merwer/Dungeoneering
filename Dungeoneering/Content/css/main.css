@@ -1,0 +1,38 @@
+html,
+body {
+    height: 100%;
+}
+
+.icon {
+    display: block;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: contain;
+    width: 26px;
+    height: 26px;
+    line-height: 26px;
+    font-size: 1em;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
+
+.weapon {
+    background-image: url(/Content//img/icons/weapon.png);
+}
+
+.attack {
+    background-image: url(/Content//img/icons/attack.png);
+}
+
+.gold {
+    background-image: url(/Content//img/icons/gold.png);
+}
+
+.health {
+    background-image: url(/Content//img/icons/health.png);
+}
+
+.armour {
+    background-image: url(/Content//img/icons/armour.png);
+}

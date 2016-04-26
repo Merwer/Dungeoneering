@@ -1,0 +1,117 @@
+.card-choices {
+    max-width: 60vw;
+}
+
+.card-choice .close {
+    z-index: 10;
+}
+
+.card-choice img {
+    max-width: 100%;
+    cursor: pointer;
+    z-index: 5;
+}
+
+.card-choice:not(.selected) img {
+    opacity: 0.4;
+}
+
+.card-choice .card-score {
+    text-align: center;
+    font-weight: bold;
+}
+
+.shift-down {
+    margin-top: 10vh;
+}
+
+.rotate-counterclockwise {
+    transform-origin: 50% 50%;
+    transform: rotate(-10deg);
+}
+
+.rotate-clockwise {
+    transform-origin: 50% 50%;
+    transform: rotate(10deg);
+}
+
+.top-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.rewards-container {
+    border: 3px solid black;
+    text-align: center;
+}
+
+.total-rewards {
+    background-color: darkkhaki;
+    padding-bottom: 5px;
+    margin-bottom: 0;
+}
+
+.rewards {
+    background-color: lightblue;
+}
+
+.rewards,
+.card-selections {
+    list-style-type: none;
+    padding: 0;
+}
+
+.rewards,
+.rewards li {
+    margin: 0;
+    padding: 0;
+}
+
+.rewards li {
+    display: inline-block;
+}
+
+.card-selections {
+    color: white;
+}
+
+.card-selections .count {
+    float: right;
+}
+
+.support-selections {
+    background-color: blue;
+}
+
+.fight-selections {
+    background-color: red;
+}
+
+.card-selections li {
+    background-color: darkkhaki;
+}
+
+.card-selections li .value {
+    display: inline-block;
+}
+
+.card-selections li .count {
+    background-color: darkkhaki;
+}
+
+.card-selections li .count:before {
+    content: "x";
+}
+
+.support-selections li .value {
+    background-color: gold;
+}
+
+.fight-selections li .value {
+    background-color: red;
+}
+
+.card-score {
+    display: none;
+}

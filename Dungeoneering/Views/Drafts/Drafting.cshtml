@@ -1,0 +1,112 @@
+﻿@model Merwer.Chronicle.Dungeoneering.Tracker.Api.Models.Draft
+
+@{
+    ViewBag.Title = "Details";
+}
+
+@section styles {
+    @Styles.Render("/Content/css/typeahead.css",
+    "/Content/css/main.css",
+    "/Content/css/draft.css")
+}
+
+@section scripts {
+    @Scripts.Render("/Content/js/vendor/bootstrap.min.js",
+    "/Content/js/vendor/typeahead.bundle.js",
+    "/Content/js/vendor/i18next.min.js",
+    "/Content/js/vendor/i18nextXHRBackend.min.js",
+    "/Content/js/vendor/jquery-i18next.min.js")
+
+    @Scripts.Render("/Content/js/main.js",
+    "/Content/js/chronicle-base.js",
+    "/Content/js/cardList.js",
+    "/Content/js/deck.js",
+    "/Content/js/draft.js")
+}
+
+
+<div class="row">
+    <div class="col-md-7">
+        <div class="">
+            <div class="round-counter">
+                <span data-i18n="round-with-colon">Round: </span>
+                <span class="current">1</span> /
+                <span class="max">15</span>
+            </div>
+        </div>
+        <div class="card-choices">
+            <div class="user-input">
+                <label data-i18n="card-name">
+                </label>
+                <input class="typeahead" type="text">
+            </div>
+            <div class="row">
+                <div class="col-lg-4">
+                    <div id="card-choice-1" class="card-choice shift-down rotate-counterclockwise hidden">
+                        <button type="button" class="close top-right" aria-label="close"><span aria-hidden="true">&times;</span></button>
+                        <img>
+                        <p class="card-score">78</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div id="card-choice-2" class="card-choice hidden">
+                        <button type="button" class="close top-right" aria-label="close"><span aria-hidden="true">&times;</span></button>
+                        <img>
+                        <p class="card-score">78</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div id="card-choice-3" class="card-choice shift-down rotate-clockwise hidden">
+                        <button type="button" class="close top-right" aria-label="close"><span aria-hidden="true">&times;</span></button>
+                        <img>
+                        <p class="card-score">78</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-lg-offset-2">
+                    <div id="card-choice-4" class="card-choice rotate-counterclockwise hidden">
+                        <button type="button" class="close top-right" aria-label="close"><span aria-hidden="true">&times;</span></button>
+                        <img>
+                        <p class="card-score">78</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-lg-offset-1">
+                    <div id="card-choice-5" class="card-choice rotate-clockwise hidden">
+                        <button type="button" class="close top-right" aria-label="close"><span aria-hidden="true">&times;</span></button>
+                        <img>
+                        <p class="card-score">78</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="rewards-container">
+            <p class="total-rewards" data-i18n="total-rewards">Total Rewards</p>
+            <ol class="rewards">
+                <li class="icon weapon">0</li>
+                <li class="icon attack">0</li>
+                <li class="icon gold">0</li>
+                <li class="icon health">0</li>
+                <li class="icon armour">0</li>
+            </ol>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="previous-selections">
+            <ol class="card-selections support-selections">
+                <div class="heading">
+                    <span class="name" data-i18n="support">Support</span>
+                    <span class="count">0</span>
+                </div>
+            </ol>
+            <ol class="card-selections fight-selections">
+                <div class="heading">
+                    <span class="name" data-i18n="fight">Fight</span>
+                    <span class="count">0</span>
+                </div>
+            </ol>
+        </div>
+    </div>
+</div>

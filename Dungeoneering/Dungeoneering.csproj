@@ -222,6 +222,10 @@
     <Compile Include="Migrations\201604250136097_UserOwner.Designer.cs">
       <DependentUpon>201604250136097_UserOwner.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201604260218228_DraftCompleteColumn.cs" />
+    <Compile Include="Migrations\201604260218228_DraftCompleteColumn.Designer.cs">
+      <DependentUpon>201604260218228_DraftCompleteColumn.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Archetype.cs" />
@@ -235,15 +239,48 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\apple-touch-icon.png" />
+    <Content Include="Content\css\bootstrap-theme.css" />
+    <Content Include="Content\css\bootstrap-theme.min.css" />
+    <Content Include="Content\css\bootstrap.css" />
+    <Content Include="Content\css\bootstrap.min.css" />
+    <Content Include="Content\css\draft.css" />
+    <Content Include="Content\css\main.css" />
+    <Content Include="Content\css\typeahead.css" />
+    <Content Include="Content\draft.html" />
+    <Content Include="Content\favicon.ico" />
+    <Content Include="Content\img\icons\armour.png" />
+    <Content Include="Content\img\icons\attack.png" />
+    <Content Include="Content\img\icons\gold.png" />
+    <Content Include="Content\img\icons\health.png" />
+    <Content Include="Content\img\icons\weapon.png" />
+    <Content Include="Content\index.html" />
+    <Content Include="Content\js\cardList.js" />
+    <Content Include="Content\js\chronicle-base.js" />
+    <Content Include="Content\js\deck.js" />
+    <Content Include="Content\js\draft.js" />
+    <Content Include="Content\js\main.js" />
+    <Content Include="Content\js\vendor\bootstrap.js" />
+    <Content Include="Content\js\vendor\bootstrap.min.js" />
+    <Content Include="Content\js\vendor\i18next.min.js" />
+    <Content Include="Content\js\vendor\i18nextXHRBackend.min.js" />
+    <Content Include="Content\js\vendor\jquery-1.11.2.min.js" />
+    <Content Include="Content\js\vendor\jquery-i18next.min.js" />
+    <Content Include="Content\js\vendor\modernizr-2.8.3-respond-1.4.2.min.js" />
+    <Content Include="Content\js\vendor\npm.js" />
+    <Content Include="Content\js\vendor\typeahead.bundle.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="AppSettings.config" />
+    <Content Include="Content\css\bootstrap-theme.css.map" />
+    <Content Include="Content\css\bootstrap.css.map" />
+    <Content Include="Content\data\cards.json" />
+    <Content Include="Content\data\state.json" />
+    <Content Include="Content\locales\dev.json" />
+    <Content Include="Content\locales\en.json" />
     <None Include="Properties\PublishProfiles\Dungeoneering.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -292,9 +329,7 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Drafts\Create.cshtml" />
-    <Content Include="Views\Drafts\Delete.cshtml" />
-    <Content Include="Views\Drafts\Details.cshtml" />
-    <Content Include="Views\Drafts\Edit.cshtml" />
+    <Content Include="Views\Drafts\Drafting.cshtml" />
     <Content Include="Views\Drafts\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -314,6 +349,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201604250136097_UserOwner.resx">
       <DependentUpon>201604250136097_UserOwner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604260218228_DraftCompleteColumn.resx">
+      <DependentUpon>201604260218228_DraftCompleteColumn.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

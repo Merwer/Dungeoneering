@@ -18,11 +18,22 @@ namespace Dungeoneering.Controllers
         // GET: Drafts
         public ActionResult Index()
         {
-            return View(db.Drafts.Where(d => d.OwnerName == User.Identity.Name).ToList());
+            //TODO: Paging?
+            var playerDrafts = db.Drafts.Where(d => d.OwnerName == User.Identity.Name).ToList();
+            var currentDraft = playerDrafts.SingleOrDefault(d => !d.Complete);
+            if (currentDraft == null)
+            {
+                return View(playerDrafts);
+            }
+            if(currentDraft.DraftComplete)
+            {
+                return Redirect("/Runs/" + currentDraft.Id);
+            }
+            return Redirect("Drafting/" + currentDraft.Id);
         }
 
-        // GET: Drafts/Details/5
-        public ActionResult Details(long? id)
+        // GET: Drafts/Drafting/5
+        public ActionResult Drafting(long? id)
         {
             if (id == null)
             {
@@ -36,9 +47,39 @@ namespace Dungeoneering.Controllers
             return View(draft);
         }
 
+        [HttpPost]
+        public ActionResult Round(int? id, int? roundId, List<int> options, List<int> selected)
+        {
+            if (id == null || roundId == null || options.Count != 5 || selected.Count != 2)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            var draft = db.Drafts.Find(id.Value);
+            var round = new Round
+            {
+                Draft = draft,
+                RoundId = roundId.Value,
+                Options = options,
+                Selected = selected,
+                OwnerName = User.Identity.Name
+            };
+            db.Rounds.Add(round);
+            db.SaveChanges();
+            return new JsonResult
+            {
+                Data = round
+            };
+        }
+
         // GET: Drafts/Create
         public ActionResult Create()
         {
+            var playerDrafts = db.Drafts.Where(d => d.OwnerName == User.Identity.Name).ToList();
+            var currentDraft = playerDrafts.SingleOrDefault(d => !d.Complete);
+            if(currentDraft != null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest, "Dungeon run is currently active");
+            }
             return View();
         }
 
@@ -47,8 +88,14 @@ namespace Dungeoneering.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Archetype,PublicId,CreatedOn")] Draft draft)
+        public ActionResult Create([Bind(Include = "Archetype")] Draft draft)
         {
+            var playerDrafts = db.Drafts.Where(d => d.OwnerName == User.Identity.Name).ToList();
+            var currentDraft = playerDrafts.SingleOrDefault(d => !d.Complete);
+            if (currentDraft != null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest, "Dungeon run is currently active");
+            }
             if (ModelState.IsValid)
             {
                 db.Drafts.Add(draft);
@@ -57,63 +104,6 @@ namespace Dungeoneering.Controllers
             }
 
             return View(draft);
-        }
-
-        // GET: Drafts/Edit/5
-        public ActionResult Edit(long? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Draft draft = db.Drafts.Find(id);
-            if (draft == null)
-            {
-                return HttpNotFound();
-            }
-            return View(draft);
-        }
-
-        // POST: Drafts/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Archetype,PublicId,CreatedOn")] Draft draft)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Entry(draft).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            return View(draft);
-        }
-
-        // GET: Drafts/Delete/5
-        public ActionResult Delete(long? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Draft draft = db.Drafts.Find(id);
-            if (draft == null)
-            {
-                return HttpNotFound();
-            }
-            return View(draft);
-        }
-
-        // POST: Drafts/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(long id)
-        {
-            Draft draft = db.Drafts.Find(id);
-            db.Drafts.Remove(draft);
-            db.SaveChanges();
-            return RedirectToAction("Index");
         }
 
         protected override void Dispose(bool disposing)
