@@ -30,7 +30,7 @@ namespace Dungeoneering.Models
             return new ApplicationDbContext();
         }
 
-        public System.Data.Entity.DbSet<Merwer.Chronicle.Dungeoneering.Tracker.Api.Models.Draft> Drafts { get; set; }
-        public System.Data.Entity.DbSet<Merwer.Chronicle.Dungeoneering.Tracker.Api.Models.Round> Rounds { get; set; }
+        public DbSet<Merwer.Chronicle.Dungeoneering.Tracker.Api.Models.Draft> Drafts { get; set; }
+        public DbSet<Merwer.Chronicle.Dungeoneering.Tracker.Api.Models.Round> Rounds { get; set; }
     }
 }
