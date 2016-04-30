@@ -1,4 +1,4 @@
-﻿using Dungeoneering.Migrations;
+﻿using Merwer.Chronicle.Dungeoneering.Tracker.Migrations;
 using Merwer.Chronicle.Dungeoneering.Tracker.Models;
 using System.Data.Entity;
 

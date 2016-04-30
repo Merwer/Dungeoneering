@@ -1,4 +1,4 @@
-namespace Dungeoneering.Migrations
+namespace Merwer.Chronicle.Dungeoneering.Migrations
 {
     using System;
     using System.Data.Entity.Migrations;

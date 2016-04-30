@@ -1,6 +1,6 @@
-namespace Dungeoneering.Migrations
+namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
 {
-    using Merwer.Chronicle.Dungeoneering.Tracker.Models;
+    using Models;
     using System.Collections.Generic;
     using System.Data.Entity.Migrations;
     using System.Data.Entity.Migrations.Model;
