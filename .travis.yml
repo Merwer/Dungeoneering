@@ -2,7 +2,6 @@ language: csharp
 solution: Dungeoneering.sln
 deploy:
   provider: azure_web_apps
-  verbose: true
   on:
     branch: master
 #install:
