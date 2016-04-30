@@ -1,1 +1,1 @@
-﻿<%@ Application Codebehind="Global.asax.cs" Inherits="Dungeoneering.MvcApplication" Language="C#" %>
+﻿<%@ Application Codebehind="Global.asax.cs" Inherits="Merwer.Chronicle.Dungeoneering.Tracker.MvcApplication" Language="C#" %>

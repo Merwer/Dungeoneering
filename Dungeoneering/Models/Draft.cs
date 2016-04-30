@@ -3,7 +3,7 @@ using System.Linq;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Merwer.Chronicle.Dungeoneering.Tracker.Api.Models
+namespace Merwer.Chronicle.Dungeoneering.Tracker.Models
 {
     public class Draft : OwnedEntity
     {
@@ -15,7 +15,11 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Api.Models
 
         [Required]
         public Archetype Archetype { get; set; }
+        public List<Round> Rounds { get; set; }
+
+        public List<Match> Matches { get; set; }
         public bool Complete { get; set; }
+
         [NotMapped]
         public bool DraftComplete
         {
@@ -24,6 +28,5 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Api.Models
                 return Rounds.Count(r => r.Selected.Count() == 2) == 15;
             }
         }
-        public List<Round> Rounds { get; set; }
     }
 }

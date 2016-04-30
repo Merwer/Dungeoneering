@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Merwer.Chronicle.Dungeoneering.Tracker.Api.Models
+namespace Merwer.Chronicle.Dungeoneering.Tracker.Models
 {
     public abstract class Entity
     {

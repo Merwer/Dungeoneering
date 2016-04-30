@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace Merwer.Chronicle.Dungeoneering.Tracker.Api.Models
+namespace Merwer.Chronicle.Dungeoneering.Tracker.Models
 {
     public class Round : OwnedEntity
     {

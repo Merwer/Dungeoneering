@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data;
-using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
-using Dungeoneering.Models;
-using Merwer.Chronicle.Dungeoneering.Tracker.Api.Models;
+using Merwer.Chronicle.Dungeoneering.Tracker.Models;
 
-namespace Dungeoneering.Controllers
+namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
 {
     public class DraftsController : Controller
     {

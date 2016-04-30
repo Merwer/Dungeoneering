@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 
-namespace Dungeoneering.Models
+namespace Merwer.Chronicle.Dungeoneering.Tracker.Models
 {
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit http://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser
@@ -30,7 +30,8 @@ namespace Dungeoneering.Models
             return new ApplicationDbContext();
         }
 
-        public DbSet<Merwer.Chronicle.Dungeoneering.Tracker.Api.Models.Draft> Drafts { get; set; }
-        public DbSet<Merwer.Chronicle.Dungeoneering.Tracker.Api.Models.Round> Rounds { get; set; }
+        public DbSet<Draft> Drafts { get; set; }
+        public DbSet<Round> Rounds { get; set; }
+        public DbSet<Match> Matches { get; set; }
     }
 }

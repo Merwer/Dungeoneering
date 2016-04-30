@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Merwer.Chronicle.Dungeoneering.Tracker.Api.Models
+namespace Merwer.Chronicle.Dungeoneering.Tracker.Models
 {
     public abstract class OwnedEntity : Entity
     {

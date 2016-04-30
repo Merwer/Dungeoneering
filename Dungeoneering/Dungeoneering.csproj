@@ -13,8 +13,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Dungeoneering</RootNamespace>
-    <AssemblyName>Dungeoneering</AssemblyName>
+    <RootNamespace>Merwer.Chronicle.Dungeoneering.Tracker</RootNamespace>
+    <AssemblyName>DungeoneeringTracker</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
@@ -214,6 +214,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\DatabaseConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -241,6 +242,10 @@
     <Compile Include="Migrations\201604260242397_RequiredDraftOnRound.Designer.cs">
       <DependentUpon>201604260242397_RequiredDraftOnRound.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201604301105146_AddMatches.cs" />
+    <Compile Include="Migrations\201604301105146_AddMatches.Designer.cs">
+      <DependentUpon>201604301105146_AddMatches.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Archetype.cs" />
@@ -248,6 +253,7 @@
     <Compile Include="Models\Entity.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Match.cs" />
     <Compile Include="Models\OwnedEntity.cs" />
     <Compile Include="Models\Round.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -372,6 +378,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201604260242397_RequiredDraftOnRound.resx">
       <DependentUpon>201604260242397_RequiredDraftOnRound.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604301105146_AddMatches.resx">
+      <DependentUpon>201604301105146_AddMatches.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

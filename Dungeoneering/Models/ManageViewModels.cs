@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
 
-namespace Dungeoneering.Models
+namespace Merwer.Chronicle.Dungeoneering.Tracker.Models
 {
     public class IndexViewModel
     {

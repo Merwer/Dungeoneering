@@ -5,10 +5,10 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
-using Dungeoneering.Models;
+using Merwer.Chronicle.Dungeoneering.Tracker.Models;
 using System.Configuration;
 
-namespace Dungeoneering
+namespace Merwer.Chronicle.Dungeoneering.Tracker
 {
     public partial class Startup
     {

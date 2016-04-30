@@ -1,18 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using System.Web;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
-using Dungeoneering.Models;
+using Merwer.Chronicle.Dungeoneering.Tracker.Models;
 
-namespace Dungeoneering
+namespace Merwer.Chronicle.Dungeoneering.Tracker
 {
     public class EmailService : IIdentityMessageService
     {

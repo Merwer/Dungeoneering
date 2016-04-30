@@ -1,4 +1,4 @@
-﻿namespace Merwer.Chronicle.Dungeoneering.Tracker.Api.Models
+﻿namespace Merwer.Chronicle.Dungeoneering.Tracker.Models
 {
     public enum Archetype
     {
