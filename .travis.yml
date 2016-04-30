@@ -4,6 +4,7 @@ deploy:
   provider: azure_web_apps
   on:
     branch: master
+  skip_cleanup: true
 #install:
 #  - nuget restore solution-name.sln
 #  - nuget install NUnit.Runners -Version 2.6.4 -OutputDirectory testrunner
