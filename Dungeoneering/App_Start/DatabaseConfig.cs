@@ -9,6 +9,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker
         void UpdateDatabase()
         {
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<ApplicationDbContext, Configuration>());
+            new ApplicationDbContext().Database.Initialize(false);
         }
     }
 }
