@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Web.Mvc;
 using Merwer.Chronicle.Dungeoneering.Tracker.Models;
+using System;
 
 namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
 {
@@ -16,16 +17,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
         {
             //TODO: Paging?
             var playerDrafts = db.Drafts.Where(d => d.OwnerName == User.Identity.Name).ToList();
-            var currentDraft = playerDrafts.SingleOrDefault(d => !d.Complete);
-            if (currentDraft == null)
-            {
-                return View(playerDrafts);
-            }
-            if(currentDraft.DraftComplete)
-            {
-                return Redirect("/Runs/" + currentDraft.Id);
-            }
-            return Redirect("Drafting/" + currentDraft.Id);
+            return View(playerDrafts);
         }
 
         // GET: Drafts/Drafting/5
@@ -86,6 +78,10 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Archetype")] Draft draft)
         {
+            draft.OwnerName = User.Identity.Name;
+            ModelState.Clear();
+            TryValidateModel(draft);
+
             var playerDrafts = db.Drafts.Where(d => d.OwnerName == User.Identity.Name).ToList();
             var currentDraft = playerDrafts.SingleOrDefault(d => !d.Complete);
             if (currentDraft != null)
@@ -96,9 +92,12 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
             {
                 db.Drafts.Add(draft);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Drafting", new { id = draft.Id });
             }
-
+            else
+            {
+                ViewBag.Errors = ModelState.Values.SelectMany(v => v.Errors).Select(err => err.ErrorMessage).ToList();
+            }
             return View(draft);
         }
 

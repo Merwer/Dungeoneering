@@ -10,6 +10,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Models
         public Draft()
         {
             Rounds = new List<Round>(15);
+            Matches = new List<Match>(0);
             Complete = false;
         }
 
@@ -25,7 +26,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Models
         {
             get
             {
-                return Rounds.Count(r => r.Selected.Count() == 2) == 15;
+                return Rounds.Count(r => r != null && r.Selected != null && r.Selected.Count() == 2) == 15;
             }
         }
     }
