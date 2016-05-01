@@ -1,4 +1,4 @@
-namespace Merwer.Chronicle.Dungeoneering.Migrations
+namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
 {
     using System;
     using System.Data.Entity.Migrations;
