@@ -1,4 +1,5 @@
-﻿@model Merwer.Chronicle.Dungeoneering.Tracker.Models.Draft
+﻿@using Merwer.Chronicle.Dungeoneering.Tracker.Helpers;
+@model Merwer.Chronicle.Dungeoneering.Tracker.Models.Draft
 
 @{
     ViewBag.Title = "Details";
@@ -22,6 +23,12 @@
     "/Content/js/cardList.js",
     "/Content/js/deck.js",
     "/Content/js/draft.js")
+    <script>
+        (function () {
+            var state = @Html.Raw(Html.ToJson(Model));
+            chronicle.dungeoneering.draft.setState(state);
+        }());
+    </script>
 }
 
 

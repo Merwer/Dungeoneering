@@ -235,15 +235,6 @@ chronicle.dungeoneering.draft = (function ($) {
         refreshUI();
     };
 
-    var requestDraftState = function () {
-        $.getJSON('/Content/data/state.json') //TODO: This should be a service
-            .done(
-                refreshWithState
-            ).fail(function () {
-                window.alert('State request failed');
-            });
-    };
-
     var init = function () {
         selectionSlots.find('.close').click(cardCloseClicked);
         selectionSlots.find('img').click(cardPicked);
@@ -266,9 +257,10 @@ chronicle.dungeoneering.draft = (function ($) {
         }).bind('typeahead:select', cardSelected);
 
         deck = new chronicle.Deck();
-
-        //TODO: Update page based on state of draft
-        //requestDraftState();
     };
     cardList = new chronicle.CardList(init);
+
+    return {
+        setState: refreshWithState
+    };
 }(jQuery));
