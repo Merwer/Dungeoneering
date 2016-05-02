@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Data;
+using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web.Mvc;
@@ -27,7 +28,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Draft draft = db.Drafts.Find(id);
+            Draft draft = db.Drafts.Include(d => d.Rounds).FirstOrDefault(d => d.Id == id);
             if (draft == null)
             {
                 return HttpNotFound();
@@ -55,7 +56,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
             db.SaveChanges();
             return new JsonResult
             {
-                Data = round
+                Data = round.Id
             };
         }
 

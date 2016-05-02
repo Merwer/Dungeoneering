@@ -15,6 +15,7 @@ chronicle.dungeoneering.draft = (function ($) {
     var cardList;
     var deck;
     var selectionSlots = $('.card-choices .card-choice');
+    var draftId;
 
     var addToHtml = function (element, amount) {
         element.html(window.parseInt(element.html(), 10) + amount);
@@ -128,7 +129,7 @@ chronicle.dungeoneering.draft = (function ($) {
 
     var constructRound = function () {
         var round = {
-            draftId: 2, //TODO: Get the draft ID (from the URL?)
+            draftId: draftId,
             roundId: getRound(),
             options: [],
             selected: []
@@ -150,7 +151,12 @@ chronicle.dungeoneering.draft = (function ($) {
         deck.addCard(cardList.getCard(data.selected[1]));
         incrementRound();
         clearChoices();
-        $.post('/Drafts/Round', data).done(
+        $.ajax({
+            type: 'POST',
+            url: '/Drafts/Round',
+            data: data,
+            dataType: "json"
+        }).done(
             refreshUI
         ).fail(function () {
             window.alert('Save failed');
@@ -217,8 +223,14 @@ chronicle.dungeoneering.draft = (function ($) {
     };
 
     var refreshWithState = function (state) {
+        if (!cardList.ready) {
+            //TODO: Update this to use a deferred object
+            window._tmpState = state;
+            return;
+        }
         deck = new chronicle.Deck();
         var roundId = 0;
+        draftId = state.id;
         var round;
         var cardId;
         var cardIndex;
@@ -257,6 +269,10 @@ chronicle.dungeoneering.draft = (function ($) {
         }).bind('typeahead:select', cardSelected);
 
         deck = new chronicle.Deck();
+        if (window._tmpState) {
+            refreshWithState(window._tmpState);
+            delete window._tmpState;
+        }
     };
     cardList = new chronicle.CardList(init);
 

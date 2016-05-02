@@ -15,11 +15,14 @@ chronicle.CardList = function (callback) {
         return lookup[id];
     };
 
+    this.ready = false;
+
     var init = function (cardList) {
         cards = cardList;
         jQuery.each(cardList, function (index, card) {
             lookup[card.id] = card;
         });
+        that.ready = true;
         if (callback && jQuery.isFunction(callback)) {
             callback();
         }

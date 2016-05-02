@@ -9,16 +9,14 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Models
     {
         public Draft()
         {
-            Rounds = new List<Round>(15);
-            Matches = new List<Match>(0);
             Complete = false;
         }
 
         [Required]
         public Archetype Archetype { get; set; }
-        public List<Round> Rounds { get; set; }
+        public virtual List<Round> Rounds { get; set; }
 
-        public List<Match> Matches { get; set; }
+        public virtual List<Match> Matches { get; set; }
         public bool Complete { get; set; }
 
         [NotMapped]

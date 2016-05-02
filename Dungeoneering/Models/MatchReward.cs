@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Newtonsoft.Json;
+using System.ComponentModel.DataAnnotations;
 
 namespace Merwer.Chronicle.Dungeoneering.Tracker.Models
 {
@@ -17,7 +18,8 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Models
         [Required]
         public int Quantity { get; set; }
 
+        [JsonIgnore]
         [Required]
-        public Match Match { get; set; }
+        public virtual Match Match { get; set; }
     }
 }

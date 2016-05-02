@@ -37,13 +37,13 @@
         {
             <tr>
                 <td>
-                    @Html.ActionLink(item.Id.ToString(), "Edit")
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CreatedOn)
+                    @Html.ActionLink(item.Id.ToString(), "Drafting", new { id = item.Id })
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Archetype)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreatedOn)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Matches.Count)
