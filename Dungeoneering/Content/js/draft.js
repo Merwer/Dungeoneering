@@ -14,8 +14,9 @@ chronicle.dungeoneering.draft = (function ($) {
 
     var cardList;
     var deck;
+    var draftState;
     var selectionSlots = $('.card-choices .card-choice');
-    var draftId;
+    var roundCounter = $('.round-counter');
 
     var addToHtml = function (element, amount) {
         element.html(window.parseInt(element.html(), 10) + amount);
@@ -114,22 +115,24 @@ chronicle.dungeoneering.draft = (function ($) {
         refreshDeck();
     };
 
+    var addCard = function (card) {
+        deck.addCard(card);
+        addCardRewards(card);
+        refreshDeck();
+    };
+
     var clearChoices = function () {
         selectionSlots.addClass('hidden').removeClass('selected');
         selectionSlots.data('cardId', null);
     };
 
-    var incrementRound = function () {
-        addToHtml($('.round-counter .current'), 1);
-    };
-
     var getRound = function () {
-        return window.parseInt($('.round-counter .current').html(), 10);
+        return window.parseInt(roundCounter.find('.current').val(), 10);
     }
 
     var constructRound = function () {
         var round = {
-            draftId: draftId,
+            draftId: draftState.id,
             roundId: getRound(),
             options: [],
             selected: []
@@ -145,20 +148,40 @@ chronicle.dungeoneering.draft = (function ($) {
         return round;
     };
 
+    var showRound = function (roundId) {
+        if (0 < roundId && roundId <= 15) {
+            clearChoices();
+            setRound(roundId);
+            if (draftState.rounds.length >= roundId) {
+                var round = draftState.rounds[roundId - 1];
+                var index;
+                for (index = 0; index < round.options.length; index++) {
+                    cardSelected(null, cardList.getCard(round.options[index]));
+                }
+                for (index = 0; index < round.selected.length; index++) {
+//todo
+                }
+            }
+        }
+    };
+
     var performSave = function () {
         var data = constructRound();
-        deck.addCard(cardList.getCard(data.selected[0]));
-        deck.addCard(cardList.getCard(data.selected[1]));
-        incrementRound();
-        clearChoices();
         $.ajax({
             type: 'POST',
             url: '/Drafts/Round',
             data: data,
             dataType: "json"
-        }).done(
-            refreshUI
-        ).fail(function () {
+        }).done(function (response) {
+            if (response && response.redirect) {
+                window.location.href = response.redirect;
+            } else {
+                draftState.rounds.push(data);
+                addCard(cardList.getCard(data.selected[0]));
+                addCard(cardList.getCard(data.selected[1]));
+                showRound(draftState.rounds.length + 1);
+            }
+        }).fail(function () {
             window.alert('Save failed');
         });
     };
@@ -219,7 +242,15 @@ chronicle.dungeoneering.draft = (function ($) {
     };
 
     var setRound = function (roundId) {
-        $('.round-counter .current').html(roundId);
+        roundCounter.find('.current').val(roundId);
+    };
+
+    var incrementRound = function () {
+        showRound(getRound() + 1);
+    };
+
+    var decrementRound = function () {
+        showRound(getRound() - 1);
     };
 
     var refreshWithState = function (state) {
@@ -228,9 +259,9 @@ chronicle.dungeoneering.draft = (function ($) {
             window._tmpState = state;
             return;
         }
+        draftState = state;
         deck = new chronicle.Deck();
         var roundId = 0;
-        draftId = state.id;
         var round;
         var cardId;
         var cardIndex;
@@ -250,6 +281,8 @@ chronicle.dungeoneering.draft = (function ($) {
     var init = function () {
         selectionSlots.find('.close').click(cardCloseClicked);
         selectionSlots.find('img').click(cardPicked);
+        roundCounter.find('.prev').click(decrementRound);
+        roundCounter.find('.next').click(incrementRound);
 
         var cardData = new Bloodhound({
             datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
@@ -277,6 +310,7 @@ chronicle.dungeoneering.draft = (function ($) {
     cardList = new chronicle.CardList(init);
 
     return {
-        setState: refreshWithState
+        setState: refreshWithState,
+        displayRound: showRound
     };
 }(jQuery));

@@ -9,7 +9,7 @@ using System;
 
 namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
 {
-    public class DraftsController : Controller
+    public class DraftsController : BaseController
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
@@ -41,9 +41,13 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
         {
             if (draftId == null || roundId == null || options.Count != 5 || selected.Count != 2)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest, "Missing information");
             }
-            var draft = db.Drafts.Find(draftId.Value);
+            Draft draft = db.Drafts.Include(d => d.Rounds).FirstOrDefault(d => d.Id == draftId.Value);
+            if (draft.Rounds.Any(r => r.RoundId == roundId.Value))
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest, "Already data for this round");
+            }
             var round = new Round
             {
                 Draft = draft,
@@ -54,10 +58,12 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
             };
             db.Rounds.Add(round);
             db.SaveChanges();
-            return new JsonResult
+            dynamic data = round.Id;
+            if (draft.DraftComplete)
             {
-                Data = round.Id
-            };
+                data = new { redirect = Url.Action("Index", null, null, Request.Url.Scheme) };
+            }
+            return Json(data);
         }
 
         // GET: Drafts/Create
