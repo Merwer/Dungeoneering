@@ -293,6 +293,7 @@
     <Content Include="Content\js\chronicle-base.js" />
     <Content Include="Content\js\deck.js" />
     <Content Include="Content\js\draft.js" />
+    <Content Include="Content\js\draftIndex.js" />
     <Content Include="Content\js\main.js" />
     <Content Include="Content\js\vendor\bootstrap.js" />
     <Content Include="Content\js\vendor\bootstrap.min.js" />
