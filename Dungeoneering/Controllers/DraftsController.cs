@@ -44,6 +44,10 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest, "Missing information");
             }
             Draft draft = db.Drafts.Include(d => d.Rounds).FirstOrDefault(d => d.Id == draftId.Value);
+            if(draft == null)
+            {
+                return HttpNotFound("Invalid draft ID");
+            }
             if (draft.Rounds.Any(r => r.RoundId == roundId.Value))
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest, "Already data for this round");
@@ -88,24 +92,51 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
             draft.OwnerName = User.Identity.Name;
             ModelState.Clear();
             TryValidateModel(draft);
+            if (!ModelState.IsValid)
+            {
+                ViewBag.Errors = ModelState.Values.SelectMany(v => v.Errors).Select(err => err.ErrorMessage).ToList();
+                return View(draft);
+            }
 
             var playerDrafts = db.Drafts.Where(d => d.OwnerName == User.Identity.Name).ToList();
             var currentDraft = playerDrafts.SingleOrDefault(d => !d.Complete);
             if (currentDraft != null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest, "Dungeon run is currently active");
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest, "Another dungeon run is currently active");
             }
-            if (ModelState.IsValid)
+            db.Drafts.Add(draft);
+            db.SaveChanges();
+            return RedirectToAction("Drafting", new { id = draft.Id });
+        }
+
+        [HttpPost]
+        public ActionResult Match(int? draftId, Archetype? rival, bool? win, bool? first)
+        {
+            if (draftId == null || rival == null || win == null || first == null)
             {
-                db.Drafts.Add(draft);
-                db.SaveChanges();
-                return RedirectToAction("Drafting", new { id = draft.Id });
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest, "Missing information");
             }
-            else
+            if (!ModelState.IsValid)
             {
                 ViewBag.Errors = ModelState.Values.SelectMany(v => v.Errors).Select(err => err.ErrorMessage).ToList();
             }
-            return View(draft);
+            Draft draft = db.Drafts.FirstOrDefault(d => d.Id == draftId.Value);
+            if (draft == null)
+            {
+                return HttpNotFound("Invalid draft ID");
+            }
+            Match match = new Match
+            {
+                Draft = draft,
+                OpponentArchetype = rival.Value,
+                Rewards = null,
+                Win = win.Value,
+                First = first.Value
+            };
+            db.Matches.Add(match);
+            db.SaveChanges();
+
+            return Json(match.Id);
         }
 
         protected override void Dispose(bool disposing)

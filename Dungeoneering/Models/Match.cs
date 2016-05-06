@@ -17,5 +17,6 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Models
         public virtual Draft Draft { get; set; }
 
         public List<MatchReward> Rewards { get; set; }
+        public bool First { get; set; }
     }
 }

@@ -258,6 +258,10 @@
     <Compile Include="Migrations\201605020253264_EnumerateRound.Designer.cs">
       <DependentUpon>201605020253264_EnumerateRound.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201605060257145_AddFirstFlagToMatch.cs" />
+    <Compile Include="Migrations\201605060257145_AddFirstFlagToMatch.Designer.cs">
+      <DependentUpon>201605060257145_AddFirstFlagToMatch.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Archetype.cs" />
@@ -400,6 +404,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201605020253264_EnumerateRound.resx">
       <DependentUpon>201605020253264_EnumerateRound.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605060257145_AddFirstFlagToMatch.resx">
+      <DependentUpon>201605060257145_AddFirstFlagToMatch.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

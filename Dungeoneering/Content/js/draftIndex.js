@@ -4,21 +4,28 @@ chronicle.drafting = chronicle.drafting || {};
 chronicle.drafting.index = (function ($) {
     "use strict";
 
-    var confirmDelete = function () {
-        bootbox.confirm("Are you sure you want to delete this deck?", function (response) {
-            if (response) {
-                // Trigger delete
-            }
-        });
-    };
-
     var addMatch = function () {
-        bootbox.
-    };
+        var form = $(this);
+        form.closest('.modal').modal('toggle');
+        $.post(form.attr('action'), form.serialize())
+            .success(function (result) {
+                alert("Saved");
+                //TODO: Add match & rewards to table row
+            }).fail(function (xhr) {
+                alert("Failed");
+            });
+        return false;
+    }
 
     var init = function () {
-        $('[data-modal="confirm-delete"]').click(confirmDelete);
-        $('[data-modal="add-match"]').click(addMatch);
+        $('#add-match form').submit(addMatch);
+        $('#add-match').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget)
+            var draftId = button.data('draftId')
+            if (draftId) {
+                $(this).find('input[name="draftId"]').val(draftId);
+            }
+        })
     };
 
     init();

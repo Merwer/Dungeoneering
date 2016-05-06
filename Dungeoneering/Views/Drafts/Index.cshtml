@@ -4,6 +4,10 @@
     ViewBag.Title = "Index";
 }
 
+@section scripts {
+    @Scripts.Render("/Content/js/draftIndex.js")
+}
+
 <h2>Index</h2>
 
 <p>
@@ -51,7 +55,7 @@
                 <td>
                     <a href="@Url.Action("Drafting", new { id = item.Id })" class="btn btn-default fa fa-pencil" role="button" title="Edit" alt="Edit"></a>
                     <button class="btn btn-default fa fa-trash" role="button" title="Delete Deck" alt="Delete Deck" data-toggle="modal" data-target="#confirm-delete"></button>
-                    <button class="btn btn-default fa fa-plus" role="button" title="Add Match" alt="Add Match" data-toggle="modal" data-target="#add-match"></button>
+                    <button class="btn btn-default fa fa-plus" role="button" title="Add Match" alt="Add Match" data-toggle="modal" data-target="#add-match" data-draftId="@item.Id"></button>
                 </td>
             </tr>
         }
@@ -81,44 +85,47 @@
 
 <div id="add-match" class="modal fade" role="dialog">
     <div class="modal-dialog">
+        <form method="post" action="@Url.Action("Match")">
 
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Record Match</h4>
-            </div>
-            <div class="modal-body">
-                <form>
+            <!-- Modal content-->
+            <div class="modal-content">
+                <input type="hidden" name="draftId" value="1" />
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Record Match</h4>
+                </div>
+                <div class="modal-body">
                     <div class="form-group">
                         <label for="rival">Rival</label>
                         <select name="rival">
-                            <option>The Raptor</option>
-                            <option>Vanescula</option>
-                            <option>Ozan</option>
-                            <option>Arianne</option>
-                            <option>Linza</option>
+                            <option value="1">Linza</option>
+                            <option value="2">The Raptor</option>
+                            <option value="3">Arianne</option>
+                            <option value="4">Ozan</option>
+                            <option value="5">Vanescula</option>
                         </select>
                     </div>
                     <div class="checkbox">
+                        <input type="hidden" name="first" value="false" />
                         <label>
-                            <input type="checkbox" name="result" checked />
-                            Result
+                            <input type="checkbox" name="first" value="true" checked />
+                            Go First
                         </label>
                     </div>
                     <div class="checkbox">
+                        <input type="hidden" name="win" value="false" />
                         <label>
-                            <input type="checkbox" name="win" checked />
+                            <input type="checkbox" name="win" value="true" checked />
                             Win
                         </label>
                     </div>
-                </form>
+                    <!-- TODO: Add rewards -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" role="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    <button type="submit" role="button" class="btn btn-info">Record</button>
+                </div>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-info" data-dismiss="modal">Record</button>
-            </div>
-        </div>
-
+        </form>
     </div>
 </div>
