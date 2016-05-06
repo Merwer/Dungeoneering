@@ -110,29 +110,19 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
         }
 
         [HttpPost]
-        public ActionResult Match(int? draftId, Archetype? rival, bool? win, bool? first)
+        public ActionResult Match([Bind(Exclude ="Draft")]Match match, int draftId)
         {
-            if (draftId == null || rival == null || win == null || first == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest, "Missing information");
-            }
-            if (!ModelState.IsValid)
-            {
-                ViewBag.Errors = ModelState.Values.SelectMany(v => v.Errors).Select(err => err.ErrorMessage).ToList();
-            }
-            Draft draft = db.Drafts.FirstOrDefault(d => d.Id == draftId.Value);
+            Draft draft = db.Drafts.FirstOrDefault(d => d.Id == draftId);
             if (draft == null)
             {
                 return HttpNotFound("Invalid draft ID");
             }
-            Match match = new Match
+            match.Draft = draft;
+            TryValidateModel(match);
+            if (!ModelState.IsValid)
             {
-                Draft = draft,
-                OpponentArchetype = rival.Value,
-                Rewards = null,
-                Win = win.Value,
-                First = first.Value
-            };
+                ViewBag.Errors = ModelState.Values.SelectMany(v => v.Errors).Select(err => err.ErrorMessage).ToList();
+            }
             db.Matches.Add(match);
             db.SaveChanges();
 

@@ -1,5 +1,4 @@
 ﻿using Newtonsoft.Json;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace Merwer.Chronicle.Dungeoneering.Tracker.Models
@@ -15,8 +14,10 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Models
         [JsonIgnore]
         [Required]
         public virtual Draft Draft { get; set; }
+        
+        public MatchRewardList Rewards { get; set; }
 
-        public List<MatchReward> Rewards { get; set; }
+        [Required]
         public bool First { get; set; }
     }
 }

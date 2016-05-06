@@ -96,8 +96,8 @@
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
-                        <label for="rival">Rival</label>
-                        <select name="rival">
+                        <label for="OpponentArchetype">Rival</label>
+                        <select name="OpponentArchetype">
                             <option value="1">Linza</option>
                             <option value="2">The Raptor</option>
                             <option value="3">Arianne</option>
@@ -106,19 +106,34 @@
                         </select>
                     </div>
                     <div class="checkbox">
-                        <input type="hidden" name="first" value="false" />
+                        <input type="hidden" name="First" value="false" />
                         <label>
-                            <input type="checkbox" name="first" value="true" checked />
+                            <input type="checkbox" name="First" value="true" checked />
                             Go First
                         </label>
                     </div>
                     <div class="checkbox">
-                        <input type="hidden" name="win" value="false" />
+                        <input type="hidden" name="Win" value="false" />
                         <label>
-                            <input type="checkbox" name="win" value="true" checked />
+                            <input type="checkbox" name="Win" value="true" checked />
                             Win
                         </label>
                     </div>
+                    <fieldset>
+                        <legend>Rewards</legend>
+                        <div class="form-group">
+                            <label for="Rewards.Copper">Copper</label>
+                            <input type="number" name="Rewards.Copper" />
+                        </div>
+                        <div class="form-group">
+                            <label for="Rewards.Shards">Shards</label>
+                            <input type="number" name="Rewards.Shards" />
+                        </div>
+                        <div class="form-group">
+                            <label for="Rewards.Packs">Packs</label>
+                            <input type="number" name="Rewards.Packs" />
+                        </div>
+                    </fieldset>
                     <!-- TODO: Add rewards -->
                 </div>
                 <div class="modal-footer">
