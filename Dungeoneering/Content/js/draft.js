@@ -150,16 +150,17 @@ chronicle.dungeoneering.draft = (function ($) {
 
     var showRound = function (roundId) {
         if (0 < roundId && roundId <= 15) {
+            window.history.pushState(null, null, "#" + roundId);
             clearChoices();
             setRound(roundId);
             if (draftState.rounds.length >= roundId) {
                 var round = draftState.rounds[roundId - 1];
                 var index;
                 for (index = 0; index < round.options.length; index++) {
-                    cardSelected(null, cardList.getCard(round.options[index]));
-                }
-                for (index = 0; index < round.selected.length; index++) {
-//todo
+                    var slot = cardSelected(null, cardList.getCard(round.options[index]));
+                    if($.inArray(round.options[index], round.selected)) {
+                        cardPicked.apply(slot);
+                    }
                 }
             }
         }
@@ -209,7 +210,7 @@ chronicle.dungeoneering.draft = (function ($) {
         var img;
         var nextSlot = findNextEmptySlot();
         if (!nextSlot) {
-            return;
+            return null;
         }
 
         window.console.log('Selection: ', selectedCard);
@@ -218,14 +219,14 @@ chronicle.dungeoneering.draft = (function ($) {
         nextSlot.removeClass('hidden');
         nextSlot.data('cardId', selectedCard.id);
         clearText();
-        saveCheck();
+        //saveCheck();
+        return nextSlot;
     };
 
     var cardCloseClicked = function (evt) {
         var choiceSlot = $(this).closest('.card-choice');
         choiceSlot.addClass('hidden').removeClass('selected');
         choiceSlot.data('cardId', null);
-        saveCheck();
     };
 
     var cardPicked = function () {
@@ -238,7 +239,7 @@ chronicle.dungeoneering.draft = (function ($) {
                 choice.addClass('selected');
             }
         }
-        saveCheck();
+        //saveCheck();
     };
 
     var setRound = function (roundId) {
