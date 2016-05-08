@@ -50,7 +50,11 @@
                     @Html.DisplayFor(modelItem => item.Matches.Count)
                 </td>
                 <td>
-                    <div class="alert alert-info">TODO: Rewards</div>
+                    <ul class="rewards-container">
+                        <li class="reward-copper">@item.Matches.Select(m => m.Rewards).AsQueryable().Sum(m => m.Copper)</li>
+                        <li class="reward-shards">@item.Matches.Select(m => m.Rewards).AsQueryable().Sum(m => m.Shards)</li>
+                        <li class="reward-packs">@item.Matches.Select(m => m.Rewards).AsQueryable().Sum(m => m.Packs)</li>
+                    </ul>
                 </td>
                 <td>
                     <a href="@Url.Action("Drafting", new { id = item.Id })" class="btn btn-default fa fa-pencil" role="button" title="Edit" alt="Edit"></a>
