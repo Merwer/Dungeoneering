@@ -148,11 +148,18 @@ chronicle.dungeoneering.draft = (function ($) {
         return round;
     };
 
-    var showRound = function (roundId) {
+    var setRoundHash = function (roundId) {
+        roundId = roundId || window.location.hash.substr(1);
         if (0 < roundId && roundId <= 15) {
             window.history.pushState(null, null, "#" + roundId);
+            showRound(roundId);
+        }
+    }
+
+    var showRound = function (roundId) {
+        if (0 < roundId && roundId <= 15) {
             clearChoices();
-            setRound(roundId);
+            roundCounter.find('.current').val(roundId);
             if (draftState.rounds.length >= roundId) {
                 var round = draftState.rounds[roundId - 1];
                 var index;
@@ -180,7 +187,7 @@ chronicle.dungeoneering.draft = (function ($) {
                 draftState.rounds.push(data);
                 addCard(cardList.getCard(data.selected[0]));
                 addCard(cardList.getCard(data.selected[1]));
-                showRound(draftState.rounds.length + 1);
+                setRoundHash(draftState.rounds.length + 1);
             }
         }).fail(function () {
             window.alert('Save failed');
@@ -242,16 +249,12 @@ chronicle.dungeoneering.draft = (function ($) {
         //saveCheck();
     };
 
-    var setRound = function (roundId) {
-        roundCounter.find('.current').val(roundId);
-    };
-
     var incrementRound = function () {
-        showRound(getRound() + 1);
+        setRoundHash(getRound() + 1);
     };
 
     var decrementRound = function () {
-        showRound(getRound() - 1);
+        setRoundHash(getRound() - 1);
     };
 
     var refreshWithState = function (state) {
@@ -275,7 +278,7 @@ chronicle.dungeoneering.draft = (function ($) {
             }
         }
 
-        setRound(state.rounds.length + 1);
+        setRoundHash((state.rounds.length % 15) + 1);
         refreshUI();
     };
 
@@ -283,7 +286,11 @@ chronicle.dungeoneering.draft = (function ($) {
         selectionSlots.find('.close').click(cardCloseClicked);
         selectionSlots.find('img').click(cardPicked);
         roundCounter.find('.prev').click(decrementRound);
+        roundCounter.find('.current').change(function () {
+            setRoundHash($(this).val());
+        });
         roundCounter.find('.next').click(incrementRound);
+        window.addEventListener("hashchange", setRoundHash, false);
 
         var cardData = new Bloodhound({
             datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
@@ -312,6 +319,6 @@ chronicle.dungeoneering.draft = (function ($) {
 
     return {
         setState: refreshWithState,
-        displayRound: showRound
+        displayRound: setRoundHash
     };
 }(jQuery));
