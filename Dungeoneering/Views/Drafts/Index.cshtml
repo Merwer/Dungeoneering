@@ -1,4 +1,5 @@
-﻿@model IEnumerable<Merwer.Chronicle.Dungeoneering.Tracker.Models.Draft>
+﻿@using Merwer.Chronicle.Dungeoneering.Tracker.Models;
+@model IEnumerable<Draft>
 
 @{
     ViewBag.Title = "Index";
@@ -66,85 +67,7 @@
     </tbody>
 </table>
 
-<div id="confirm-delete" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Delete confirmation</h4>
-            </div>
-            <div class="modal-body">
-                <p>Are you sure you wish to delete this deck?</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Delete</button>
-            </div>
-        </div>
-
-    </div>
-</div>
-
-<div id="add-match" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-        <form method="post" action="@Url.Action("Match")">
-
-            <!-- Modal content-->
-            <div class="modal-content">
-                <input type="hidden" name="draftId" value="1" />
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Record Match</h4>
-                </div>
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label for="OpponentArchetype">Rival</label>
-                        <select name="OpponentArchetype">
-                            <option value="1">Linza</option>
-                            <option value="2">The Raptor</option>
-                            <option value="3">Arianne</option>
-                            <option value="4">Ozan</option>
-                            <option value="5">Vanescula</option>
-                        </select>
-                    </div>
-                    <div class="checkbox">
-                        <input type="hidden" name="First" value="false" />
-                        <label>
-                            <input type="checkbox" name="First" value="true" checked />
-                            Go First
-                        </label>
-                    </div>
-                    <div class="checkbox">
-                        <input type="hidden" name="Win" value="false" />
-                        <label>
-                            <input type="checkbox" name="Win" value="true" checked />
-                            Win
-                        </label>
-                    </div>
-                    <fieldset>
-                        <legend>Rewards</legend>
-                        <div class="form-group">
-                            <label for="Rewards.Copper">Copper</label>
-                            <input type="number" name="Rewards.Copper" />
-                        </div>
-                        <div class="form-group">
-                            <label for="Rewards.Shards">Shards</label>
-                            <input type="number" name="Rewards.Shards" />
-                        </div>
-                        <div class="form-group">
-                            <label for="Rewards.Packs">Packs</label>
-                            <input type="number" name="Rewards.Packs" />
-                        </div>
-                    </fieldset>
-                    <!-- TODO: Add rewards -->
-                </div>
-                <div class="modal-footer">
-                    <button type="button" role="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                    <button type="submit" role="button" class="btn btn-info">Record</button>
-                </div>
-            </div>
-        </form>
-    </div>
-</div>
+@{
+    Html.RenderPartial("Modals/Delete");
+    Html.RenderPartial("Modals/AddMatch", new Match());
+}

@@ -693,6 +693,8 @@
     <Content Include="Views\Drafts\Create.cshtml" />
     <Content Include="Views\Drafts\Drafting.cshtml" />
     <Content Include="Views\Drafts\Index.cshtml" />
+    <Content Include="Views\Drafts\Modals\Delete.cshtml" />
+    <Content Include="Views\Drafts\Modals\AddMatch.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
