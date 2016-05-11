@@ -9,7 +9,6 @@ chronicle.drafting.index = (function ($) {
         form.closest('.modal').modal('toggle');
         $.post(form.attr('action'), form.serialize())
             .success(function (result) {
-                alert("Saved");
                 //TODO: Add match & rewards to table row
             }).fail(function (xhr) {
                 alert("Failed");
@@ -17,15 +16,35 @@ chronicle.drafting.index = (function ($) {
         return false;
     }
 
+    var deleteDeck = function () {
+        var form = $(this);
+        form.closest('.modal').modal('toggle');
+        $.ajax(form.attr('action'), {
+            method: form.attr('method')
+        }).success(function (result) {
+            //TODO: Remove deck from table row
+        }).fail(function (xhr) {
+            alert("Failed");
+        });
+        return false;
+    };
+
     var init = function () {
         $('#add-match form').submit(addMatch);
         $('#add-match').on('show.bs.modal', function (event) {
             var button = $(event.relatedTarget)
-            var draftId = button.data('draftId')
+            var draftId = button.data('draftid')
             if (draftId) {
                 $(this).find('input[name="draftId"]').val(draftId);
             }
-        })
+        });
+        $('#confirm-delete form').submit(deleteDeck);
+        $('#confirm-delete').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget)
+            var draftId = button.data('draftid')
+            var action = $(this).find('form').attr('action');
+            $(this).find('form').attr('action', action + "/" + draftId);
+        });
     };
 
     init();

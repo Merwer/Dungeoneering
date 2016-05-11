@@ -3,11 +3,10 @@
 
 <div id="add-match" class="modal fade" role="dialog">
     <div class="modal-dialog">
-        <form method="post" action="@Url.Action("Match", "Draft")">
-
-            <!-- Modal content-->
-            <div class="modal-content">
-                <input type="hidden" name="draftId" value="1" />
+        <!-- Modal content-->
+        <div class="modal-content">
+            <form method="post" action="@Url.Action("Match", "Draft")">
+                <input type="hidden" name="draftId" />
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                     <h4 class="modal-title">Record Match</h4>
@@ -49,7 +48,7 @@
                     <button type="button" role="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                     <button type="submit" role="button" class="btn btn-info">Record</button>
                 </div>
-            </div>
-        </form>
+            </form>
+        </div>
     </div>
 </div>

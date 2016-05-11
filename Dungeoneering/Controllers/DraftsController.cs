@@ -22,16 +22,16 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
         }
 
         // GET: Drafts/Drafting/5
-        public ActionResult Drafting(long? id)
+        public ActionResult Drafting(long id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
             Draft draft = db.Drafts.Include(d => d.Rounds).FirstOrDefault(d => d.Id == id);
             if (draft == null)
             {
-                return HttpNotFound();
+                return HttpNotFound("Invalid draft ID");
+            }
+            if (draft.OwnerName != User.Identity.Name)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.Unauthorized);
             }
             return View(draft);
         }
@@ -47,6 +47,10 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
             if(draft == null)
             {
                 return HttpNotFound("Invalid draft ID");
+            }
+            if (draft.OwnerName != User.Identity.Name)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.Unauthorized);
             }
             if (draft.Rounds.Any(r => r.RoundId == roundId.Value))
             {
@@ -117,6 +121,10 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
             {
                 return HttpNotFound("Invalid draft ID");
             }
+            if (draft.OwnerName != User.Identity.Name)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.Unauthorized);
+            }
             match.Draft = draft;
             TryValidateModel(match);
             if (!ModelState.IsValid)
@@ -127,6 +135,24 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
             db.SaveChanges();
 
             return Json(match.Id);
+        }
+
+        [HttpPost]
+        public ActionResult Delete(int id)
+        {
+            var draft = db.Drafts.FirstOrDefault(d => d.Id == id);
+            if(draft == null)
+            {
+                return HttpNotFound("Invalid draft ID");
+            }
+            if(draft.OwnerName != User.Identity.Name)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.Unauthorized);
+            }
+            db.Drafts.Remove(draft);
+            db.SaveChanges();
+
+            return new HttpStatusCodeResult(HttpStatusCode.OK);
         }
 
         protected override void Dispose(bool disposing)
