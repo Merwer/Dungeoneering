@@ -10,6 +10,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Models
         public Draft()
         {
             Complete = false;
+            Rounds = new List<Round>();
         }
 
         [Required]

@@ -15,6 +15,7 @@ chronicle.dungeoneering.draft = (function ($) {
     var cardList;
     var deck;
     var draftState;
+    var saveEnabled = true;
     var selectionSlots = $('.card-choices .card-choice');
     var roundCounter = $('.round-counter');
 
@@ -158,6 +159,7 @@ chronicle.dungeoneering.draft = (function ($) {
 
     var showRound = function (roundId) {
         if (0 < roundId && roundId <= 15) {
+            saveEnabled = false;
             clearChoices();
             roundCounter.find('.current').val(roundId);
             if (draftState.rounds.length >= roundId) {
@@ -170,6 +172,7 @@ chronicle.dungeoneering.draft = (function ($) {
                     }
                 }
             }
+            saveEnabled = true;
         }
     };
 
@@ -195,6 +198,9 @@ chronicle.dungeoneering.draft = (function ($) {
     };
 
     var saveCheck = function () {
+        if (!saveEnabled) {
+            return false;
+        }
         var selectedCount = selectionSlots.filter('.selected').length;
         var unfilledCount = selectionSlots.filter('.hidden').length;
         if (selectedCount === 2 && unfilledCount === 0) {
@@ -226,7 +232,7 @@ chronicle.dungeoneering.draft = (function ($) {
         nextSlot.removeClass('hidden');
         nextSlot.data('cardId', selectedCard.id);
         clearText();
-        //saveCheck();
+        saveCheck();
         return nextSlot;
     };
 
@@ -246,7 +252,7 @@ chronicle.dungeoneering.draft = (function ($) {
                 choice.addClass('selected');
             }
         }
-        //saveCheck();
+        saveCheck();
     };
 
     var incrementRound = function () {
