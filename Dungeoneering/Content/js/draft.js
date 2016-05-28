@@ -138,6 +138,7 @@ chronicle.dungeoneering.draft = (function ($) {
 
     var clearChoices = function () {
         selectionSlots.addClass('hidden').removeClass('selected');
+        selectionSlots.children('img').attr('src', '');
         selectionSlots.data('cardId', null);
     };
 
@@ -241,7 +242,7 @@ chronicle.dungeoneering.draft = (function ($) {
         }
 
         window.console.log('Selection: ', selectedCard);
-        img = $(nextSlot.children('img')[0]);
+        img = $(nextSlot.children('img').eq(0));
         img.attr('src', selectedCard.image);
         nextSlot.removeClass('hidden');
         nextSlot.data('cardId', selectedCard.id);
