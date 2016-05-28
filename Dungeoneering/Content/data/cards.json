@@ -4883,7 +4883,7 @@
     "name": "Dr. Fenkenstrain",
     "archetype": "none",
     "family": "none",
-    "image": "/Content/img/cards/Dr._Fenkenstrain.png",
+    "image": "/Content/img/cards/Dr_Fenkenstrain.png",
     "reward0": {
       "value0": 3,
       "value1": 0,
@@ -5153,7 +5153,7 @@
     "name": "Relicym's Balm",
     "archetype": "none",
     "family": "potion",
-    "image": "/Content/img/cards/Relicym_s_Balm.png",
+    "image": "/Content/img/cards/Relicyms_Balm.png",
     "reward0": null,
     "reward1": null,
     "reward2": null,
