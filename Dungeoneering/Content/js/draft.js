@@ -61,6 +61,13 @@ chronicle.dungeoneering.draft = (function ($) {
         item.append($('<span>').addClass('icon').addClass('gold').addClass('value').html(card.goldCost));
         item.append($('<span>').addClass('name').html(card.name));
         item.append($('<span>').addClass('count').html(count));
+        item.attr("data-toggle", "tooltip");
+        item.tooltip({
+            animated: 'fade',
+            placement: 'left',
+            title: "<img class='card-tooltip' src='" + card.image + "'/>",
+            html: true
+        });
         $('.support-selections').append(item);
     };
 
@@ -69,6 +76,13 @@ chronicle.dungeoneering.draft = (function ($) {
         item.append($('<span>').addClass('icon').addClass('health').addClass('value').html(card.health));
         item.append($('<span>').addClass('name').html(card.name));
         item.append($('<span>').addClass('count').html(count));
+        item.attr("data-toggle", "tooltip");
+        item.tooltip({
+            animated: 'fade',
+            placement: 'left',
+            title: "<img class='card-tooltip' src='" + card.image + "'/>",
+            html: true
+        });
         $('.fight-selections').append(item);
     };
 
