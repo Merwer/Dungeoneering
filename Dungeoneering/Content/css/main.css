@@ -18,21 +18,52 @@ body {
 }
 
 .weapon {
-    background-image: url(/Content//img/icons/weapon.png);
+    background-image: url(/Content/img/icons/weapon.png);
 }
 
 .attack {
-    background-image: url(/Content//img/icons/attack.png);
+    background-image: url(/Content/img/icons/attack.png);
 }
 
 .gold {
-    background-image: url(/Content//img/icons/gold.png);
+    background-image: url(/Content/img/icons/gold.png);
 }
 
 .health {
-    background-image: url(/Content//img/icons/health.png);
+    background-image: url(/Content/img/icons/health.png);
 }
 
 .armour {
-    background-image: url(/Content//img/icons/armour.png);
+    background-image: url(/Content/img/icons/armour.png);
+}
+
+table,
+table th {
+    text-align: center;
+}
+
+.rewards-container {
+    list-style: none;
+}
+
+.rewards-container li:before {
+    padding: 0 5px 0 0;
+    vertical-align: -50%;
+}
+
+.rewards-container li {
+    display: inline;
+    padding: 0 0 5px 5px;
+}
+
+.reward-copper:before {
+    content: url(/Content/img/icons/copper.png);
+}
+
+.reward-shards:before {
+    content: url(/Content/img/icons/shard.png)
+}
+
+.reward-packs:before {
+    content: url(/Content/img/icons/pack.png)
 }
