@@ -37,9 +37,14 @@ body {
     background-image: url(/Content/img/icons/armour.png);
 }
 
-table,
-table th {
+.table,
+.table th {
     text-align: center;
+}
+
+/* Bootstrap override */
+.table>tbody>tr>td {
+    vertical-align: middle;
 }
 
 .rewards-container {
