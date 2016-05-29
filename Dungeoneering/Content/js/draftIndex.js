@@ -9,7 +9,8 @@ chronicle.drafting.index = (function ($) {
         form.closest('.modal').modal('toggle');
         $.post(form.attr('action'), form.serialize())
             .success(function (result) {
-                //TODO: Add match & rewards to table row
+                window.location.reload();
+                //TODO: Add match & rewards to table row instead of refreshing the page
             }).fail(function (xhr) {
                 alert("Failed");
             });
@@ -44,6 +45,10 @@ chronicle.drafting.index = (function ($) {
             var draftId = button.data('draftid')
             var action = $(this).find('form').attr('action');
             $(this).find('form').attr('action', action + "/" + draftId);
+        });
+        $(".toggle-icon-eye").on("click", function () {
+            $(this).children("span").toggleClass("fa-eye fa-eye-slash");
+            $(this).closest("tr").toggleClass("info");
         });
     };
 
