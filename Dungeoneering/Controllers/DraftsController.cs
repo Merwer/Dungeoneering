@@ -17,7 +17,10 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
         public ActionResult Index()
         {
             //TODO: Paging?
-            var playerDrafts = db.Drafts.Where(d => d.OwnerName == User.Identity.Name).ToList();
+            var playerDrafts = db.Drafts
+                .Where(d => d.OwnerName == User.Identity.Name)
+                .OrderByDescending(d => d.CreatedOn)
+                .ThenByDescending(d => d.Id).ToList();
             return View(playerDrafts);
         }
 
@@ -132,6 +135,11 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
                 ViewBag.Errors = ModelState.Values.SelectMany(v => v.Errors).Select(err => err.ErrorMessage).ToList();
             }
             db.Matches.Add(match);
+            
+            if(match.Draft.Matches.Count(m => !m.Win) >= 3)
+            {
+                match.Draft.Complete = true;
+            }
             db.SaveChanges();
 
             return Json(match.Id);

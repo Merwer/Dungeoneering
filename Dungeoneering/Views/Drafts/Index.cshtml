@@ -60,7 +60,7 @@
                 <td>
                     <a href="@Url.Action("Drafting", new { id = item.Id })" class="btn btn-default fa fa-pencil" role="button" title="Edit" alt="Edit"></a>
                     <button class="btn btn-default fa fa-trash" role="button" title="Delete Deck" alt="Delete Deck" data-toggle="modal" data-target="#confirm-delete" data-draftid="@item.Id"></button>
-                    @if (item.DraftComplete)
+                    @if (item.DraftComplete && !item.Complete)
                     {
                     <button class="btn btn-default fa fa-plus" role="button" title="Add Match" alt="Add Match" data-toggle="modal" data-target="#add-match" data-draftid="@item.Id"></button>
                     }
