@@ -611,8 +611,11 @@
     <Content Include="Content\img\cards\Zemouregal.png" />
     <Content Include="Content\img\icons\armour.png" />
     <Content Include="Content\img\icons\attack.png" />
+    <Content Include="Content\img\icons\copper.png" />
     <Content Include="Content\img\icons\gold.png" />
     <Content Include="Content\img\icons\health.png" />
+    <Content Include="Content\img\icons\pack.png" />
+    <Content Include="Content\img\icons\shard.png" />
     <Content Include="Content\img\icons\weapon.png" />
     <Content Include="Content\index.html" />
     <Content Include="Content\js\cardList.js" />
