@@ -72,3 +72,7 @@ body {
 .reward-packs:before {
     content: url(/Content/img/icons/pack.png)
 }
+
+.class-transition {
+    transition: all 0.5s ease;
+}
