@@ -21,7 +21,7 @@
     <thead>
         <tr>
             <th></th>
-            <th>@Html.DisplayNameFor(model => model.Archetype)</th>
+            <th>Legend</th>
             <th>Date</th>
             <th>Record</th>
             <th>Rewards</th>
@@ -46,7 +46,7 @@
                     <ul class="rewards-container">
                         <li class="reward-copper">@item.Matches.Select(m => m.Rewards).AsQueryable().Sum(m => m.Copper)</li>
                         <li class="reward-shards">@item.Matches.Select(m => m.Rewards).AsQueryable().Sum(m => m.Shards)</li>
-                        <li class="reward-packs">@item.Matches.Select(m => m.Rewards).AsQueryable().Sum(m => m.Packs)</li>
+                        <li class="reward-packs">@(item.Matches.Select(m => m.Rewards).AsQueryable().Sum(m => m.Packs)+1)</li>
                     </ul>
                 </td>
                 <td>
@@ -87,7 +87,8 @@
                                         </ul>
                                     </td>
                                     <td>
-                                        TODO
+                                        <button class="btn btn-default fa fa-pencil" role="button" title="Edit Match" alt="Edit Match" data-toggle="modal" data-target="#add-match" data-draftid="@item.Id" data-matchid="@match.Id"></button>
+                                        <button class="btn btn-default fa fa-trash" role="button" title="Delete Match" alt="Delete Match" data-toggle="modal" data-target="#confirm-delete" data-draftid="@item.Id" data-matchid="@match.Id"></button>
                                     </td>
                                 </tr>
                                 }
