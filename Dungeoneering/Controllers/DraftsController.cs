@@ -117,7 +117,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
         }
 
         [HttpPost]
-        public ActionResult Match([Bind(Exclude ="Draft")]Match match, int draftId)
+        public ActionResult Match([Bind(Exclude = "Draft")]Match match, int draftId)
         {
             Draft draft = db.Drafts.FirstOrDefault(d => d.Id == draftId);
             if (draft == null)
@@ -136,10 +136,42 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
             }
             db.Matches.Add(match);
             
-            if(match.Draft.Matches.Count(m => !m.Win) >= 3)
+            db.SaveChanges();
+
+            return Json(match.Id);
+        }
+
+        [HttpPost]
+        public ActionResult EditMatch([Bind(Exclude = "Draft")]Match match)
+        {
+            Match dbMatch = db.Matches.Include(m => m.Draft.Matches).FirstOrDefault(m => m.Id == match.Id);
+            if (dbMatch == null)
             {
-                match.Draft.Complete = true;
+                return HttpNotFound("Invalid match ID");
             }
+            if (dbMatch.Draft.OwnerName != User.Identity.Name)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.Unauthorized);
+            }
+            if (!ModelState.IsValid)
+            {
+                ViewBag.Errors = ModelState.Values.SelectMany(v => v.Errors).Select(err => err.ErrorMessage).ToList();
+            }
+
+            dbMatch.OpponentArchetype = match.OpponentArchetype;
+            dbMatch.First = match.First;
+            dbMatch.Win = match.Win;
+            if (dbMatch.Win)
+            {
+                dbMatch.Rewards = match.Rewards;
+            }
+            else
+            {
+                dbMatch.Rewards.Copper = 0;
+                dbMatch.Rewards.Shards = 0;
+                dbMatch.Rewards.Packs = 0;
+            }
+
             db.SaveChanges();
 
             return Json(match.Id);

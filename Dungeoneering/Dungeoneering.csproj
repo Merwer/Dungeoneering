@@ -266,6 +266,10 @@
     <Compile Include="Migrations\201605060321333_MatchRewardsAsComplexType.Designer.cs">
       <DependentUpon>201605060321333_MatchRewardsAsComplexType.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201605311135076_AdandoningDraft.cs" />
+    <Compile Include="Migrations\201605311135076_AdandoningDraft.Designer.cs">
+      <DependentUpon>201605311135076_AdandoningDraft.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Archetype.cs" />
@@ -738,6 +742,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201605060321333_MatchRewardsAsComplexType.resx">
       <DependentUpon>201605060321333_MatchRewardsAsComplexType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605311135076_AdandoningDraft.resx">
+      <DependentUpon>201605311135076_AdandoningDraft.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

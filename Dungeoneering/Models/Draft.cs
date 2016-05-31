@@ -9,7 +9,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Models
     {
         public Draft()
         {
-            Complete = false;
+            Abandoned = false;
             Rounds = new List<Round>();
         }
 
@@ -18,7 +18,16 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Models
         public virtual List<Round> Rounds { get; set; }
 
         public virtual List<Match> Matches { get; set; }
-        public bool Complete { get; set; }
+        public bool Abandoned { get; set; }
+
+        [NotMapped]
+        public bool Complete
+        {
+            get
+            {
+                return Abandoned || Matches.Count(m => !m.Win) == 3 || Matches.Count(m => m.Win) == 12;
+            }
+        }
 
         [NotMapped]
         public bool DraftComplete

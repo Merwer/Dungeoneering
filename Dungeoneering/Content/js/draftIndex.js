@@ -7,33 +7,37 @@ chronicle.drafting.index = (function ($) {
     var addMatch = function () {
         var form = $(this);
         form.closest('.modal').modal('toggle');
-        $.post(form.attr('action'), form.serialize())
-            .success(function (result) {
-                window.location.reload();
-                //TODO: Add match & rewards to table row instead of refreshing the page
-            }).fail(function (xhr) {
-                alert("Failed");
-            });
+        $.ajax(form.data('action'), {
+            method: form.attr('method'),
+            data: form.serialize()
+        }).success(function (result) {
+            window.location.reload();
+            //TODO: Add match & rewards to table row instead of refreshing the page
+        }).fail(function (xhr) {
+            alert("Failed");
+        });
         return false;
     }
 
     var editMatch = function () {
         var form = $(this);
         form.closest('.modal').modal('toggle');
-        $.post(form.attr('action'), form.serialize())
-            .success(function (result) {
-                window.location.reload();
-                //TODO: Add match & rewards to table row instead of refreshing the page
-            }).fail(function (xhr) {
-                alert("Failed");
-            });
+        $.ajax(form.data('action'), {
+            method: form.attr('method'),
+            data: form.serialize()
+        }).success(function (result) {
+            window.location.reload();
+            //TODO: Add match & rewards to table row instead of refreshing the page
+        }).fail(function (xhr) {
+            alert("Failed");
+        });
         return false;
     }
 
     var deleteMatch = function () {
         var form = $(this);
         form.closest('.modal').modal('toggle');
-        $.ajax(form.attr('action'), {
+        $.ajax(form.data('action'), {
             method: form.attr('method')
         }).success(function (result) {
             window.location.reload();
@@ -47,7 +51,7 @@ chronicle.drafting.index = (function ($) {
     var deleteDeck = function () {
         var form = $(this);
         form.closest('.modal').modal('toggle');
-        $.ajax(form.attr('action'), {
+        $.ajax(form.data('action'), {
             method: form.attr('method')
         }).success(function (result) {
             window.location.reload();
@@ -74,6 +78,7 @@ chronicle.drafting.index = (function ($) {
             $(this).find('input[name="Rewards.Copper"]').val("0");
             $(this).find('input[name="Rewards.Shards"]').val("0");
             $(this).find('input[name="Rewards.Packs"]').val("0");
+            $(this).find('form').data('action', action);
         });
         $('#edit-match form input[name="Win"]').on('change', function () {
             $('#edit-match form .match-rewards').hide($(this).prop('checked'));
@@ -82,37 +87,30 @@ chronicle.drafting.index = (function ($) {
         $('#edit-match').on('show.bs.modal', function (event) {
             var button = $(event.relatedTarget);
             var row = button.closest('tr');
-            var draftId = button.data('draftid');
             var matchId = button.data('matchid');
             var action = $(this).find('form').attr('action');
-            $(this).find('input[name="draftId"]').val(draftId);
-            $(this).find('input[name="matchId"]').val(matchId);
+            $(this).find('input[name="Id"]').val(matchId);
             $(this).find('select[name="OpponentArchetype"]').val(row.find('td').eq(0).data('value'));
-
-            //var selectbox = $(this).find('select[name="OpponentArchetype"]');
-            //selectbox.find('option[text="' + row.find('td').eq(0).html() + '"]').prop('selected', 'selected');
-
             $(this).find('input[name="First"]').prop('checked', row.data('first') === "True");
             $(this).find('input[name="Win"]').prop('checked', row.find('td').eq(2).html() === "True");
             $(this).find('input[name="Rewards.Copper"]').val(parseInt(row.find('.reward-copper').eq(0).html(), 10));
             $(this).find('input[name="Rewards.Shards"]').val(parseInt(row.find('.reward-shards').eq(0).html(), 10));
             $(this).find('input[name="Rewards.Packs"]').val(parseInt(row.find('.reward-packs').eq(0).html(), 10));
-            $(this).find('form').attr('action', action + "/" + draftId + "/" + matchId);
+            $(this).find('form').data('action', action + "/" + matchId);
         });
         $('#delete-match form').submit(deleteMatch);
         $('#delete-match').on('show.bs.modal', function (event) {
-            var button = $(event.relatedTarget);
-            var draftId = button.data('draftid');
+            var button = $(event.relatedTarget);f
             var matchId = button.data('matchid');
             var action = $(this).find('form').attr('action');
-            $(this).find('form').attr('action', action + "/" + draftId + "/" + matchId);
+            $(this).find('form').data('action', action + "/" + matchId);
         });
         $('#delete-draft form').submit(deleteDeck);
         $('#delete-draft').on('show.bs.modal', function (event) {
             var button = $(event.relatedTarget);
             var draftId = button.data('draftid');
             var action = $(this).find('form').attr('action');
-            $(this).find('form').attr('action', action + "/" + draftId);
+            $(this).find('form').data('action', action + "/" + matchId);
         });
         $(".toggle-icon-eye").on("click", function () {
             $(this).children("span").toggleClass("fa-eye fa-eye-slash");

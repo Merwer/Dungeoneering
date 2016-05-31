@@ -5,9 +5,8 @@
     <div class="modal-dialog">
         <!-- Modal content-->
         <div class="modal-content">
-            <form method="post" action="@Url.Action("Match", "Drafts")">
-                <input type="hidden" name="draftId" />
-                <input type="hidden" name="matchId" />
+            <form method="post" action="@Url.Action("EditMatch", "Drafts")">
+                <input type="hidden" name="Id" />
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                     <h4 class="modal-title">Edit Match</h4>
