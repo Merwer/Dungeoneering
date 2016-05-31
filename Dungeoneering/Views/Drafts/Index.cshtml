@@ -51,7 +51,7 @@
                 </td>
                 <td>
                     <a href="@Url.Action("Drafting", new { id = item.Id })" class="btn btn-default fa fa-pencil" role="button" title="Edit" alt="Edit"></a>
-                    <button class="btn btn-default fa fa-trash" role="button" title="Delete Deck" alt="Delete Deck" data-toggle="modal" data-target="#confirm-delete" data-draftid="@item.Id"></button>
+                    <button class="btn btn-default fa fa-trash" role="button" title="Delete Deck" alt="Delete Deck" data-toggle="modal" data-target="#delete-draft" data-draftid="@item.Id"></button>
                     @if (item.DraftComplete && !item.Complete)
                     {
                     <button class="btn btn-default fa fa-plus" role="button" title="Add Match" alt="Add Match" data-toggle="modal" data-target="#add-match" data-draftid="@item.Id"></button>
@@ -75,8 +75,8 @@
                             <tbody>
                                 @foreach (var match in item.Matches)
                                 {
-                                <tr>
-                                    <td>@match.OpponentArchetype</td>
+                                <tr data-first="@match.First">
+                                    <td data-value="@((int)match.OpponentArchetype)">@match.OpponentArchetype</td>
                                     <td>@match.CreatedOn.ToString("dd/MM/yyyy")</td>
                                     <td>@match.Win</td>
                                     <td>
@@ -87,8 +87,8 @@
                                         </ul>
                                     </td>
                                     <td>
-                                        <button class="btn btn-default fa fa-pencil" role="button" title="Edit Match" alt="Edit Match" data-toggle="modal" data-target="#add-match" data-draftid="@item.Id" data-matchid="@match.Id"></button>
-                                        <button class="btn btn-default fa fa-trash" role="button" title="Delete Match" alt="Delete Match" data-toggle="modal" data-target="#confirm-delete" data-draftid="@item.Id" data-matchid="@match.Id"></button>
+                                        <button class="btn btn-default fa fa-pencil" role="button" title="Edit Match" alt="Edit Match" data-toggle="modal" data-target="#edit-match" data-draftid="@item.Id" data-matchid="@match.Id"></button>
+                                        <button class="btn btn-default fa fa-trash" role="button" title="Delete Match" alt="Delete Match" data-toggle="modal" data-target="#delete-match" data-draftid="@item.Id" data-matchid="@match.Id"></button>
                                     </td>
                                 </tr>
                                 }
@@ -102,6 +102,8 @@
 </table>
 
 @{
-    Html.RenderPartial("Modals/Delete");
+    Html.RenderPartial("Modals/DeleteDraft");
     Html.RenderPartial("Modals/AddMatch", new Match());
+    Html.RenderPartial("Modals/EditMatch", new Match());
+    Html.RenderPartial("Modals/DeleteMatch");
 }
