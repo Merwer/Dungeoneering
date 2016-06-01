@@ -107,7 +107,7 @@ chronicle.drafting.index = (function ($) {
             var button = $(event.relatedTarget);
             var draftId = button.data('draftid');
             var action = $(this).find('form').attr('action');
-            $(this).find('form').data('action', action + "/" + matchId);
+            $(this).find('form').data('action', action + "/" + draftId);
         });
         $(".toggle-icon-eye").on("click", function () {
             $(this).children("span").toggleClass("fa-eye fa-eye-slash");
