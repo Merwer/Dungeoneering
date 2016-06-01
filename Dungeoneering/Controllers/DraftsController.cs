@@ -178,14 +178,32 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
         }
 
         [HttpPost]
+        public ActionResult DeleteMatch(int id)
+        {
+            var match = db.Matches.FirstOrDefault(d => d.Id == id);
+            if (match == null)
+            {
+                return HttpNotFound("Invalid match ID");
+            }
+            if (match.Draft.OwnerName != User.Identity.Name)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.Unauthorized);
+            }
+            db.Matches.Remove(match);
+            db.SaveChanges();
+
+            return new HttpStatusCodeResult(HttpStatusCode.OK);
+        }
+
+        [HttpPost]
         public ActionResult Delete(int id)
         {
             var draft = db.Drafts.FirstOrDefault(d => d.Id == id);
-            if(draft == null)
+            if (draft == null)
             {
                 return HttpNotFound("Invalid draft ID");
             }
-            if(draft.OwnerName != User.Identity.Name)
+            if (draft.OwnerName != User.Identity.Name)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.Unauthorized);
             }
