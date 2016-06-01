@@ -25,7 +25,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Models
         {
             get
             {
-                return Abandoned || Matches.Count(m => !m.Win) == 3 || Matches.Count(m => m.Win) == 12;
+                return Abandoned || Matches.Count(m => !m.Win) >= 3 || Matches.Count(m => m.Win) >= 12;
             }
         }
 

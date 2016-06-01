@@ -23,12 +23,12 @@
                         </label>
                     </div>
                     <div class="checkbox">
-                        <label>
+                        <label data-toggle="collapse" data-target=".match-rewards">
                             @Html.EditorFor(m => m.Win)
                             @Html.DisplayNameFor(m => m.Win)
                         </label>
                     </div>
-                    <fieldset class="match-rewards">
+                    <fieldset class="match-rewards collapse in">
                         <legend>Rewards</legend>
                         <div class="form-group">
                             @Html.LabelFor(m => m.Rewards.Copper)
