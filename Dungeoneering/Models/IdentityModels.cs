@@ -33,5 +33,8 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Models
         public DbSet<Draft> Drafts { get; set; }
         public DbSet<Round> Rounds { get; set; }
         public DbSet<Match> Matches { get; set; }
+        public DbSet<CardContainer> CardContainers { get; set; }
+        public DbSet<Card> Cards { get; set; }
+        public DbSet<CardScore> CardScores { get; set; }
     }
 }

@@ -270,9 +270,18 @@
     <Compile Include="Migrations\201605311135076_AdandoningDraft.Designer.cs">
       <DependentUpon>201605311135076_AdandoningDraft.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201606182204076_Cards.cs" />
+    <Compile Include="Migrations\201606182204076_Cards.Designer.cs">
+      <DependentUpon>201606182204076_Cards.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Archetype.cs" />
+    <Compile Include="Models\Card.cs" />
+    <Compile Include="Models\CardContainer.cs" />
+    <Compile Include="Models\CardRewards.cs" />
+    <Compile Include="Models\CardScore.cs" />
+    <Compile Include="Models\CreatableEntity.cs" />
     <Compile Include="Models\Draft.cs" />
     <Compile Include="Models\Entity.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -280,7 +289,9 @@
     <Compile Include="Models\Match.cs" />
     <Compile Include="Models\MatchRewardList.cs" />
     <Compile Include="Models\OwnedEntity.cs" />
+    <Compile Include="Models\Rarity.cs" />
     <Compile Include="Models\Round.cs" />
+    <Compile Include="Models\StaticIdEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -745,6 +756,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201605311135076_AdandoningDraft.resx">
       <DependentUpon>201605311135076_AdandoningDraft.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606182204076_Cards.resx">
+      <DependentUpon>201606182204076_Cards.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -3,10 +3,10 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Merwer.Chronicle.Dungeoneering.Tracker.Models
 {
-    public abstract class Entity : CreatableEntity
+    public class StaticIdEntity : CreatableEntity
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public override long Id { get; set; }
     }
 }
