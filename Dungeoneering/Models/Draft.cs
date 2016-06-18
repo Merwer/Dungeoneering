@@ -11,6 +11,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Models
         {
             Abandoned = false;
             Rounds = new List<Round>();
+            Matches = new List<Match>();
         }
 
         [Required]
