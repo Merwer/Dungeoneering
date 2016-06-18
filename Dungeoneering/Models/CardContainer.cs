@@ -9,8 +9,10 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Models
 {
     public class CardContainer : StaticIdEntity
     {
+        public Archetype? Archetype { get; set; }
+
         [Required]
-        public Archetype Archetype { get; set; }
+        public string Name { get; set; }
 
         [Required]
         public Rarity Rarity { get; set; }
