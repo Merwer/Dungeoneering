@@ -213,6 +213,13 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
             return new HttpStatusCodeResult(HttpStatusCode.OK);
         }
 
+        public ActionResult Cardlist(Archetype archetype)
+        {
+            var list = db.CardScores.Include(cs => cs.Card.Parent).Where(cs => cs.Archetype == archetype);
+
+            return Json(list);
+        }
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)
