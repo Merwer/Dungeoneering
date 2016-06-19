@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Merwer.Chronicle.Dungeoneering.Tracker.Models
 {
@@ -17,6 +18,6 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Models
 
         public bool Active { get; set; }
 
-        public int Score { get; set; }
+        public virtual IEnumerable<CardScore> Scores { get; set; }
     }
 }

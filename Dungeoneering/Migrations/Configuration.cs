@@ -13,6 +13,12 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             SetSqlGenerator("System.Data.SqlClient", new CustomSqlServerMigrationSqlGenerator());
         }
 
+        protected override void Seed(ApplicationDbContext context)
+        {
+            base.Seed(context);
+            CardData.SeedData(context);
+        }
+
         // https://andy.mehalick.com/2014/02/06/ef6-adding-a-created-datetime-column-automatically-with-code-first-migrations/
         internal class CustomSqlServerMigrationSqlGenerator : SqlServerMigrationSqlGenerator
         {

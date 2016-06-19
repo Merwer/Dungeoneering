@@ -19,13 +19,13 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Models
 
         public virtual IEnumerable<Card> Versions { get; set; }
 
-        [NotMapped]
-        public Card CurrentVersion
-        {
-            get
-            {
-                return Versions.Single(v => v.Active);
-            }
-        }
+        //[NotMapped]
+        //public Card CurrentVersion
+        //{
+        //    get
+        //    {
+        //        return Versions.Single(v => v.Active);
+        //    }
+        //}
     }
 }
