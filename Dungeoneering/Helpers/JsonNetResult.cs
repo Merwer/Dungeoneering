@@ -21,6 +21,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Helpers
             SerializerSettings = new JsonSerializerSettings();
             SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
             Formatting = Formatting.Indented;
+            SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
         }
 
         public override void ExecuteResult(ControllerContext context)

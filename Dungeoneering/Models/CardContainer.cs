@@ -17,7 +17,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Models
         [Required]
         public Rarity Rarity { get; set; }
 
-        public virtual IEnumerable<Card> Versions { get; set; }
+        public virtual ICollection<Card> Versions { get; set; }
 
         //[NotMapped]
         //public Card CurrentVersion
