@@ -1,6 +1,6 @@
 /*global jQuery*/
 var chronicle = chronicle || {};
-chronicle.CardList = function (callback) {
+chronicle.CardList = function (archetype, callback) {
     "use strict";
 
     var cards;
@@ -28,7 +28,7 @@ chronicle.CardList = function (callback) {
         }
     };
 
-    jQuery.getJSON('/Content/data/cards.json', function (data) {
+    jQuery.getJSON('/Drafts/cardList?archetype=' + archetype, function (data) {
         init(data);
     });
 

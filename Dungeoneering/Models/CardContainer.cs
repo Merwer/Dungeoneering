@@ -12,10 +12,16 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Models
         public Archetype? Archetype { get; set; }
 
         [Required]
+        public int ChronicleId { get; set; }
+
+        [Required]
         public string Name { get; set; }
 
         [Required]
         public Rarity Rarity { get; set; }
+
+        [Required]
+        public CardType Type { get; set; }
 
         public virtual ICollection<Card> Versions { get; set; }
 

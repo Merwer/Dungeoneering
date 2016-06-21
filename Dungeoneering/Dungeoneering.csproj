@@ -282,6 +282,10 @@
     <Compile Include="Migrations\201606191240552_ScoreObject.Designer.cs">
       <DependentUpon>201606191240552_ScoreObject.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201606210202488_HealthAndCost.cs" />
+    <Compile Include="Migrations\201606210202488_HealthAndCost.Designer.cs">
+      <DependentUpon>201606210202488_HealthAndCost.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\CardData.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -290,6 +294,7 @@
     <Compile Include="Models\CardContainer.cs" />
     <Compile Include="Models\CardRewards.cs" />
     <Compile Include="Models\CardScore.cs" />
+    <Compile Include="Models\CardType.cs" />
     <Compile Include="Models\CreatableEntity.cs" />
     <Compile Include="Models\Draft.cs" />
     <Compile Include="Models\Entity.cs" />
@@ -774,6 +779,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201606191240552_ScoreObject.resx">
       <DependentUpon>201606191240552_ScoreObject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606210202488_HealthAndCost.resx">
+      <DependentUpon>201606210202488_HealthAndCost.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

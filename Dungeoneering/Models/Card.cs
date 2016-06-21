@@ -17,6 +17,12 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Models
         [Required]
         public string Image { get; set; }
 
+        [Required]
+        public int Health { get; set; }
+
+        [Required]
+        public int Cost { get; set; }
+
         public string Version { get; set; }
 
         public bool Active { get; set; }
@@ -28,12 +34,15 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Models
         public int Score { get; set; }
 
         [NotMapped]
-        public long ChronicleId { get { return Parent.Id; } }
+        public long ChronicleId { get { return Parent.ChronicleId; } }
 
         [NotMapped]
         public string Name { get { return Parent.Name; } }
 
         [NotMapped]
         public Rarity Rarity { get { return Parent.Rarity; } }
+
+        [NotMapped]
+        public CardType Type { get { return Parent.Type; } }
     }
 }

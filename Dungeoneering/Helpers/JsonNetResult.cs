@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Serialization;
 using System;
 using System.Text;
@@ -22,7 +23,8 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Helpers
             SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
             Formatting = Formatting.Indented;
             SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
-        }
+            SerializerSettings.Converters.Add(new StringEnumConverter() { CamelCaseText = true });
+    }
 
         public override void ExecuteResult(ControllerContext context)
         {

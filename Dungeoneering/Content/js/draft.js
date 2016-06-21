@@ -23,42 +23,17 @@ chronicle.dungeoneering.draft = (function ($) {
         element.html(window.parseInt(element.html(), 10) + amount);
     };
 
-    var addReward = function (reward) {
-        var selector = null;
-        switch (reward.type) {
-        case 'weapon':
-            addToHtml($('.rewards .weapon'), 1);
-            break;
-        case 'attack':
-            addToHtml($('.rewards .attack'), reward.value0);
-            break;
-        case 'gold':
-            addToHtml($('.rewards .gold'), reward.value0);
-            break;
-        case 'health':
-            addToHtml($('.rewards .health'), reward.value0);
-            break;
-        case 'armour':
-            addToHtml($('.rewards .armour'), reward.value0);
-            break;
-        }
-    };
-
     var addCardRewards = function (card) {
-        var rewardsList = $('.rewards');
-        var index;
-        var list = ['reward0', 'reward1', 'reward2'];
-        for (index = 0; index < list.length; index += 1) {
-            var reward = card[list[index]];
-            if (reward !== null) {
-                addReward(reward);
-            }
-        }
+        addToHtml($('.rewards .attack'), card.rewards.attack);
+        addToHtml($('.rewards .armour'), card.rewards.armour);
+        addToHtml($('.rewards .gold'), card.rewards.coins);
+        addToHtml($('.rewards .health'), card.rewards.health);
+        addToHtml($('.rewards .weapon'), card.rewards.weapon ? 1 : 0);
     };
 
     var addCardToSupport = function (card, count) {
         var item = $('<li>');
-        item.append($('<span>').addClass('icon').addClass('gold').addClass('value').html(card.goldCost));
+        item.append($('<span>').addClass('icon').addClass('gold').addClass('value').html(card.cost));
         item.append($('<span>').addClass('name').html(card.name));
         item.append($('<span>').addClass('count').html(count));
         item.attr("data-toggle", "tooltip");
@@ -106,7 +81,7 @@ chronicle.dungeoneering.draft = (function ($) {
     var refreshDeck = function () {
         $('.support-selections li').remove();
         $('.support-selections .heading .count').html('0');
-        var supportList = deck.supportCards().sort(sortCards('goldCost'));
+        var supportList = deck.supportCards().sort(sortCards('cost'));
         var supportListSum = 0;
         $.each(supportList, function (index, element) {
             addCardToSupport(element.card, element.count);
@@ -279,19 +254,18 @@ chronicle.dungeoneering.draft = (function ($) {
     };
 
     var refreshWithState = function (state) {
-        if (!cardList.ready) {
-            //TODO: Update this to use a deferred object
-            window._tmpState = state;
-            return;
-        }
         draftState = state;
         deck = new chronicle.Deck();
+        cardList = new chronicle.CardList(draftState.archetype, init);
+    };
+
+    var init = function () {
         var roundId = 0;
         var round;
         var cardId;
         var cardIndex;
-        for (roundId = 0; roundId < state.rounds.length; roundId += 1) {
-            round = state.rounds[roundId];
+        for (roundId = 0; roundId < draftState.rounds.length; roundId += 1) {
+            round = draftState.rounds[roundId];
             for (cardIndex = 0; cardIndex < round.selected.length; cardIndex += 1) {
                 cardId = round.selected[cardIndex];
                 var card = cardList.getCard(cardId);
@@ -299,11 +273,9 @@ chronicle.dungeoneering.draft = (function ($) {
             }
         }
 
-        setRoundHash((state.rounds.length % 15) + 1);
+        setRoundHash((draftState.rounds.length % 15) + 1);
         refreshUI();
-    };
 
-    var init = function () {
         selectionSlots.find('.close').click(cardCloseClicked);
         selectionSlots.find('img').click(cardPicked);
         roundCounter.find('.prev').click(decrementRound);
@@ -336,7 +308,6 @@ chronicle.dungeoneering.draft = (function ($) {
             delete window._tmpState;
         }
     };
-    cardList = new chronicle.CardList(init);
 
     return {
         setState: refreshWithState,
