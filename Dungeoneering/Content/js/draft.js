@@ -302,7 +302,6 @@ chronicle.dungeoneering.draft = (function ($) {
             source: cardData.ttAdapter()
         }).bind('typeahead:select', cardSelected);
 
-        deck = new chronicle.Deck();
         if (window._tmpState) {
             refreshWithState(window._tmpState);
             delete window._tmpState;
