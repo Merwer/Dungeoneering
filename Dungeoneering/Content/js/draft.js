@@ -211,6 +211,7 @@ chronicle.dungeoneering.draft = (function ($) {
 
     var cardSelected = function (ev, selectedCard) {
         var img;
+        var score;
         var nextSlot = findNextEmptySlot();
         if (!nextSlot) {
             return null;
@@ -219,6 +220,8 @@ chronicle.dungeoneering.draft = (function ($) {
         window.console.log('Selection: ', selectedCard);
         img = $(nextSlot.children('img').eq(0));
         img.attr('src', selectedCard.image);
+        score = $(nextSlot.children('.card-score').eq(0));
+        score.html(selectedCard.score);
         nextSlot.removeClass('hidden');
         nextSlot.data('cardId', selectedCard.id);
         clearText();
