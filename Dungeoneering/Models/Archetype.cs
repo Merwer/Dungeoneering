@@ -4,7 +4,7 @@
     {
         Linza = 1,
         TheRaptor = 2,
-        Arianne = 3,
+        Ariane = 3,
         Ozan = 4,
         Vanescula = 5
     }
