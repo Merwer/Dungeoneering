@@ -157,7 +157,7 @@ chronicle.dungeoneering.draft = (function ($) {
                 var index;
                 for (index = 0; index < round.options.length; index++) {
                     var slot = cardSelected(null, cardList.getCard(round.options[index]));
-                    if($.inArray(round.options[index], round.selected)) {
+                    if($.inArray(round.options[index], round.selected) > -1) {
                         cardPicked.apply(slot);
                     }
                 }
