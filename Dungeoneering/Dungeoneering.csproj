@@ -225,6 +225,7 @@
     <Compile Include="Controllers\DraftsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\StatsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -728,6 +729,8 @@
     <Content Include="Views\Drafts\Modals\EditMatch.cshtml" />
     <Content Include="Views\Drafts\Modals\DeleteMatch.cshtml" />
     <Content Include="Views\Drafts\Modals\AddMatch.cshtml" />
+    <Content Include="Views\Stats\Global.cshtml" />
+    <Content Include="Views\Stats\My.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
