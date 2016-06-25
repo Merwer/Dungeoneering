@@ -3,6 +3,21 @@ body {
     height: 100%;
 }
 
+#content {
+    padding-top: 1em;
+    min-height: 100%;
+    height: auto !important; /* ie7 fix */
+    height: 100%;
+    padding-bottom: 4em; /* same size as footer height */
+}
+
+footer {
+    position: relative;
+    margin-top: -4em;
+    height: 4em;
+    clear:both;
+}
+
 .icon {
     display: block;
     background-repeat: no-repeat;
