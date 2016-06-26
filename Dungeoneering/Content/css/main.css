@@ -91,3 +91,28 @@ footer {
 .class-transition {
     transition: all 0.5s ease;
 }
+
+.legend-icon {
+    height: 30px;
+    width: 30px;
+}
+
+.legend-icon.TheRaptor {
+
+}
+
+.legend-icon.Ariane {
+
+}
+
+.legend-icon.Ozan {
+
+}
+
+.legend-icon.Linza {
+
+}
+
+.legend-icon.Vanescula {
+
+}

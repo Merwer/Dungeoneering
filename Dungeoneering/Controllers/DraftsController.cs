@@ -94,16 +94,11 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Archetype")] Draft draft)
+        public ActionResult Create(Archetype archetype)
         {
+            Draft draft = new Draft();
             draft.OwnerName = User.Identity.Name;
-            ModelState.Clear();
-            TryValidateModel(draft);
-            if (!ModelState.IsValid)
-            {
-                ViewBag.Errors = ModelState.Values.SelectMany(v => v.Errors).Select(err => err.ErrorMessage).ToList();
-                return View(draft);
-            }
+            draft.Archetype = archetype;
 
             var playerDrafts = db.Drafts.Where(d => d.OwnerName == User.Identity.Name).ToList();
             var currentDraft = playerDrafts.SingleOrDefault(d => !d.Complete);

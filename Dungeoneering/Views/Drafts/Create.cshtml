@@ -15,17 +15,7 @@
     @Html.ValidationMessage("Error");
 }
 
-@using (Html.BeginForm()) 
-{
-    @Html.AntiForgeryToken()
-
-    <div class="row">
-        <div class="col-md-12">
-            @Html.EnumDropDownListFor(model => model.Archetype)
-            <input type="submit" />
-        </div>
-    </div>
-}
+@Html.Partial("_StartDraftForm", Model)
 
 <div>
     @Html.ActionLink("Back to List", "Index")

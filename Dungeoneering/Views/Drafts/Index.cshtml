@@ -11,12 +11,11 @@
 
 <h2>My Dungeon Runs</h2>
 
-<p>
-    @if (Model.All(draft => draft.Complete))
-    {
-        @Html.ActionLink("Start New Run", "Create")
-    }
-</p>
+@if (Model.All(draft => draft.Complete))
+{
+    @Html.Partial("_StartDraftForm", Archetype.Ariane)
+}
+
 <table class="table table-striped">
     <thead>
         <tr>

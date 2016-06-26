@@ -731,6 +731,7 @@
     <Content Include="Views\Drafts\Modals\AddMatch.cshtml" />
     <Content Include="Views\Stats\Global.cshtml" />
     <Content Include="Views\Stats\My.cshtml" />
+    <Content Include="Views\Drafts\_StartDraftForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,20 @@
+﻿@using Merwer.Chronicle.Dungeoneering.Tracker.Models;
+
+@using (Html.BeginForm("Create", "Drafts"))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="row">
+        <div class="col-md-12">
+            <h4>Start a new Run</h4>
+            <div class="btn-group" role="group">
+            @foreach (Archetype legend in Enum.GetValues(typeof(Archetype)))
+            {
+                <button type="submit" role="button" value="@((int)legend)" name="archetype" class="btn">
+                    <img class="legend-icon @legend.ToString()"/>
+                </button>
+            }
+            </div>
+        </div>
+    </div>
+}
