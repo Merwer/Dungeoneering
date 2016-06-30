@@ -303,6 +303,7 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Match.cs" />
     <Compile Include="Models\MatchRewardList.cs" />
+    <Compile Include="Models\MyStatsData.cs" />
     <Compile Include="Models\OwnedEntity.cs" />
     <Compile Include="Models\Rarity.cs" />
     <Compile Include="Models\Round.cs" />
