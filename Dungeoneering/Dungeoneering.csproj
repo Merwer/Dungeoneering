@@ -738,6 +738,8 @@
     <Content Include="Views\Stats\Global.cshtml" />
     <Content Include="Views\Stats\My.cshtml" />
     <Content Include="Views\Drafts\_StartDraftForm.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\MyStatsData.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\LegendSpecificStatsData.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
