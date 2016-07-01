@@ -7,7 +7,7 @@ using System.Collections.Generic;
 
 namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
 {
-    public class StatsController : Controller
+    public class StatsController : BaseController
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
@@ -19,7 +19,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
         // GET: Stats
         public ActionResult My()
         {
-            var drafts = db.Drafts.Include(d => d.Matches).Where(d => d.OwnerName == User.Identity.Name).ToList();
+            var drafts = db.Drafts.Include(d => d.Matches).Where(d => d.OwnerName == Username).ToList();
             var games = drafts.SelectMany(d => d.Matches);
 
             var data = CalculateStats<MyStatsData>(drafts);

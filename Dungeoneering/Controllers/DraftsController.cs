@@ -18,7 +18,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
         {
             //TODO: Paging?
             var playerDrafts = db.Drafts
-                .Where(d => d.OwnerName == User.Identity.Name)
+                .Where(d => d.OwnerName == Username)
                 .OrderByDescending(d => d.CreatedOn)
                 .ThenByDescending(d => d.Id).ToList();
             return View(playerDrafts);
@@ -32,7 +32,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
             {
                 return HttpNotFound("Invalid draft ID");
             }
-            if (draft.OwnerName != User.Identity.Name)
+            if (draft.OwnerName != Username)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.Unauthorized);
             }
@@ -51,7 +51,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
             {
                 return HttpNotFound("Invalid draft ID");
             }
-            if (draft.OwnerName != User.Identity.Name)
+            if (draft.OwnerName != Username)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.Unauthorized);
             }
@@ -65,7 +65,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
                 RoundId = roundId.Value,
                 Options = options,
                 Selected = selected,
-                OwnerName = User.Identity.Name
+                OwnerName = Username
             };
             db.Rounds.Add(round);
             db.SaveChanges();
@@ -80,7 +80,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
         // GET: Drafts/Create
         public ActionResult Create()
         {
-            var playerDrafts = db.Drafts.Where(d => d.OwnerName == User.Identity.Name).ToList();
+            var playerDrafts = db.Drafts.Where(d => d.OwnerName == Username).ToList();
             var currentDraft = playerDrafts.SingleOrDefault(d => !d.Complete);
             if(currentDraft != null)
             {
@@ -97,10 +97,10 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
         public ActionResult Create(Archetype archetype)
         {
             Draft draft = new Draft();
-            draft.OwnerName = User.Identity.Name;
+            draft.OwnerName = Username;
             draft.Archetype = archetype;
 
-            var playerDrafts = db.Drafts.Where(d => d.OwnerName == User.Identity.Name).ToList();
+            var playerDrafts = db.Drafts.Where(d => d.OwnerName == Username).ToList();
             var currentDraft = playerDrafts.SingleOrDefault(d => !d.Complete);
             if (currentDraft != null)
             {
@@ -119,7 +119,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
             {
                 return HttpNotFound("Invalid draft ID");
             }
-            if (draft.OwnerName != User.Identity.Name)
+            if (draft.OwnerName != Username)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.Unauthorized);
             }
@@ -144,7 +144,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
             {
                 return HttpNotFound("Invalid match ID");
             }
-            if (dbMatch.Draft.OwnerName != User.Identity.Name)
+            if (dbMatch.Draft.OwnerName != Username)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.Unauthorized);
             }
@@ -180,7 +180,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
             {
                 return HttpNotFound("Invalid match ID");
             }
-            if (match.Draft.OwnerName != User.Identity.Name)
+            if (match.Draft.OwnerName != Username)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.Unauthorized);
             }
@@ -198,7 +198,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
             {
                 return HttpNotFound("Invalid draft ID");
             }
-            if (draft.OwnerName != User.Identity.Name)
+            if (draft.OwnerName != Username)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.Unauthorized);
             }
