@@ -38,10 +38,15 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
                     Shards = games.Sum(g => g.Rewards.Shards) / drafts.Count()
                 };
                 data.ArianeStats = CalculateStats<LegendSpecificStatsData>(drafts.Where(d => d.Archetype == Archetype.Ariane).ToList());
+                data.ArianeStats.Legend = Archetype.Ariane;
                 data.OzanStats = CalculateStats<LegendSpecificStatsData>(drafts.Where(d => d.Archetype == Archetype.Ozan).ToList());
+                data.OzanStats.Legend = Archetype.Ozan;
                 data.LinzaStats = CalculateStats<LegendSpecificStatsData>(drafts.Where(d => d.Archetype == Archetype.Linza).ToList());
+                data.LinzaStats.Legend = Archetype.Linza;
                 data.RaptorStats = CalculateStats<LegendSpecificStatsData>(drafts.Where(d => d.Archetype == Archetype.TheRaptor).ToList());
+                data.RaptorStats.Legend = Archetype.TheRaptor;
                 data.VanesculaStats = CalculateStats<LegendSpecificStatsData>(drafts.Where(d => d.Archetype == Archetype.Vanescula).ToList());
+                data.VanesculaStats.Legend = Archetype.Vanescula;
             }
             return View(data);
         }

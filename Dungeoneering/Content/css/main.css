@@ -123,5 +123,10 @@ footer {
 
 .legend-icon.Vanescula {
     background-image: url(/Content/img/icons/Vanescula.png);
+}
 
+th .caption {
+    display: block;
+    opacity: .6;
+    font-size: .75em;
 }

@@ -1,46 +1,62 @@
-﻿@model Merwer.Chronicle.Dungeoneering.Tracker.Models.MyStatsData
+﻿@using Merwer.Chronicle.Dungeoneering.Tracker.Models;
+@model MyStatsData
 
-@Html.LabelFor(m => m.WinRate)
-@Html.DisplayFor(m => m.WinRate)
+<div class="row">
+    <div class="col-xs-3">
+        @Html.LabelFor(m => m.WinRate)
+        @Html.DisplayFor(m => m.WinRate)
 
-@Html.LabelFor(m => m.Drafts)
-@Html.DisplayFor(m => m.Drafts)
+        @Html.LabelFor(m => m.Drafts)
+        @Html.DisplayFor(m => m.Drafts)
+    </div>
 
-@Html.LabelFor(m => m.AverageWins)
-@Html.DisplayFor(m => m.AverageWins)
+    <div class="col-xs-3">
+        @Html.LabelFor(m => m.AverageWins)
+        @Html.DisplayFor(m => m.AverageWins)
 
-@Html.LabelFor(m => m.Games)
-@Html.DisplayFor(m => m.Games)
+        @Html.LabelFor(m => m.Games)
+        @Html.DisplayFor(m => m.Games)
+    </div>
 
-@Html.LabelFor(m => m.TotalWins)
-@Html.DisplayFor(m => m.TotalWins)
+    <div class="col-xs-3">
+        @Html.LabelFor(m => m.TotalWins)
+        @Html.DisplayFor(m => m.TotalWins)
 
-@Html.LabelFor(m => m.TotalLosses)
-@Html.DisplayFor(m => m.TotalLosses)
+        @Html.LabelFor(m => m.TotalLosses)
+        @Html.DisplayFor(m => m.TotalLosses)
+    </div>
 
-@Html.LabelFor(m => m.AverageRewards)
-@Html.DisplayFor(m => m.AverageRewards)
+    <div class="col-xs-3">
+        @Html.LabelFor(m => m.FirstWinRate)
+        @Html.DisplayFor(m => m.FirstWinRate)
 
-@Html.LabelFor(m => m.TotalRewards)
-@Html.DisplayFor(m => m.TotalRewards)
+        @Html.LabelFor(m => m.SecondWinRate)
+        @Html.DisplayFor(m => m.SecondWinRate)
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        @Html.LabelFor(m => m.AverageRewards)
+        @Html.DisplayFor(m => m.AverageRewards)
 
-@Html.LabelFor(m => m.FirstWinRate)
-@Html.DisplayFor(m => m.FirstWinRate)
+        @Html.LabelFor(m => m.TotalRewards)
+        @Html.DisplayFor(m => m.TotalRewards)
+    </div>
+</div>
 
-@Html.LabelFor(m => m.SecondWinRate)
-@Html.DisplayFor(m => m.SecondWinRate)
-
-@Html.LabelFor(m => m.RaptorStats)
-@Html.DisplayFor(m => m.RaptorStats)
-
-@Html.LabelFor(m => m.ArianeStats)
-@Html.DisplayFor(m => m.ArianeStats)
-
-@Html.LabelFor(m => m.LinzaStats)
-@Html.DisplayFor(m => m.LinzaStats)
-
-@Html.LabelFor(m => m.OzanStats)
-@Html.DisplayFor(m => m.OzanStats)
-
-@Html.LabelFor(m => m.VanesculaStats)
-@Html.DisplayFor(m => m.VanesculaStats)
+<div class="row">
+    <h2>Stats as:</h2>
+    <table class="table table-striped">
+        <thead>
+            @Html.Partial("DisplayTemplates/LegendSpecificStatsData", (LegendSpecificStatsData)null, new ViewDataDictionary())
+            @*@Html.DisplayFor(m => m.RaptorStats, new { head = true })*@
+        </thead>
+        <tbody>
+            @Html.DisplayFor(m => m.RaptorStats)
+            @Html.DisplayFor(m => m.ArianeStats)
+            @Html.DisplayFor(m => m.LinzaStats)
+            @Html.DisplayFor(m => m.OzanStats)
+            @Html.DisplayFor(m => m.VanesculaStats)
+        </tbody>
+    </table>
+</div>

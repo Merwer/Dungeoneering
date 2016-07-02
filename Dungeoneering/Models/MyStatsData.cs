@@ -53,6 +53,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Models
 
     public class LegendSpecificStatsData : BasicStatsData
     {
+        public Archetype Legend { get; set; }
     }
 
     public class MyStatsData : BasicStatsData
