@@ -130,3 +130,7 @@ th .caption {
     opacity: .6;
     font-size: .75em;
 }
+
+tfoot {
+    font-weight: bold;
+}

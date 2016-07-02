@@ -1,4 +1,5 @@
-﻿@model Merwer.Chronicle.Dungeoneering.Tracker.Models.LegendSpecificStatsData
+﻿@using Merwer.Chronicle.Dungeoneering.Tracker.Models;
+@model BasicStatsData
 
 @if (Model == null)
 {
@@ -20,7 +21,16 @@
 else
 {
     <tr>
-        <td>@Html.DisplayFor(m => m.Legend)</td>
+        <td>
+            @if (Model.GetType() == typeof(LegendSpecificStatsData))
+            {
+                <img class="legend-icon @Html.Raw(((LegendSpecificStatsData)Model).Legend.ToString())"/>
+            }
+            else
+            {
+                <strong>All</strong>
+            }
+        </td>
         <td>@Html.DisplayFor(m => m.TotalWins)/@Html.DisplayFor(m => m.TotalLosses)</td>
         <td>@Html.DisplayFor(m => m.WinRate)</td>
         <td>@Html.DisplayFor(m => m.FirstWinRate)</td>

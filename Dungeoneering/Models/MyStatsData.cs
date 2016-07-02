@@ -61,6 +61,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Models
         public MatchRewardList AverageRewards { get; set; }
         public MatchRewardList TotalRewards { get; set; }
 
+        public List<LegendSpecificStatsData> LegendStats { get; set; }
         public LegendSpecificStatsData RaptorStats { get; set; }
         public LegendSpecificStatsData ArianeStats { get; set; }
         public LegendSpecificStatsData OzanStats { get; set; }
