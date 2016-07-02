@@ -2,6 +2,18 @@
 @model MyStatsData
 
 <div class="row">
+    <div class="col-xs-3" col-xs-push-2>
+        <h2 class="text-center">Total Rewards</h2>
+        @Html.DisplayFor(m => m.TotalRewards)
+    </div>
+
+    <div class="col-xs-3 col-xs-push-1">
+        <h2 class="text-center">Average Rewards</h2>
+        @Html.DisplayFor(m => m.AverageRewards)
+    </div>
+</div>
+
+<div class="row">
     <table class="table table-striped">
         <thead>
             @Html.Partial("DisplayTemplates/BasicStatsData", (LegendSpecificStatsData)null, new ViewDataDictionary())
@@ -17,12 +29,4 @@
             @Html.Partial("DisplayTemplates/BasicStatsData", Model, new ViewDataDictionary())
         </tfoot>
     </table>
-</div>
-
-<div class="row">
-    <div class="col-xs-12">
-        @Html.DisplayFor(m => m.AverageRewards)
-
-        @Html.DisplayFor(m => m.TotalRewards)
-    </div>
 </div>

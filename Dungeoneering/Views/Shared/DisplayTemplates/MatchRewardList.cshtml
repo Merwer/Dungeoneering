@@ -1,10 +1,7 @@
 ﻿@model Merwer.Chronicle.Dungeoneering.Tracker.Models.MatchRewardList
 
-@Html.LabelFor(m => m.Copper)
-@Html.DisplayFor(m => m.Copper)
-
-@Html.LabelFor(m => m.Packs)
-@Html.DisplayFor(m => m.Packs)
-
-@Html.LabelFor(m => m.Shards)
-@Html.DisplayFor(m => m.Shards)
+<ul class="rewards-container">
+    <li class="reward-copper">@Model.Copper</li>
+    <li class="reward-shards">@Model.Shards</li>
+    <li class="reward-packs">@Model.Packs</li>
+</ul>

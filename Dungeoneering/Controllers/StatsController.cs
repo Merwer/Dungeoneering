@@ -20,11 +20,11 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
         public ActionResult My()
         {
             var drafts = db.Drafts.Include(d => d.Matches).Where(d => d.OwnerName == Username).ToList();
-            var games = drafts.SelectMany(d => d.Matches);
-
             var data = CalculateStats<MyStatsData>(drafts);
+
             if (drafts.Any())
             {
+                var games = drafts.SelectMany(d => d.Matches);
                 data.TotalRewards = new MatchRewardList
                 {
                     Copper = games.Sum(g => g.Rewards.Copper),
