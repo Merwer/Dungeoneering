@@ -1,7 +1,8 @@
-﻿@model Merwer.Chronicle.Dungeoneering.Tracker.Models.MatchRewardList
+﻿@using Merwer.Chronicle.Dungeoneering.Tracker.Models;
+@model MatchRewardList
 
 <ul class="rewards-container">
-    <li class="reward-copper">@Model.Copper</li>
-    <li class="reward-shards">@Model.Shards</li>
-    <li class="reward-packs">@Model.Packs</li>
+    <li class="reward-copper">@(Model == null ? 0 : Model.Copper)</li>
+    <li class="reward-shards">@(Model == null ? 0 : Model.Shards)</li>
+    <li class="reward-packs">@(Model == null ? 0 : Model.Packs)</li>
 </ul>
