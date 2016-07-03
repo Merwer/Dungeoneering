@@ -32,28 +32,30 @@
         {
             <tr class="class-transition">
                 <td>
-                    @if (item.Matches.Any()) {
-                    <button class="btn btn-default toggle-icon-eye" data-toggle="collapse" data-target="#draft-@item.Id">
-                        <span class="fa fa-eye"></span>
-                    </button>
+                    @if (item.Matches.Any())
+                    {
+                        <button class="btn btn-default toggle-icon-eye" data-toggle="collapse" data-target="#draft-@item.Id">
+                            <span class="fa fa-eye"></span>
+                        </button>
                     }
                 </td>
-                <td>@Html.DisplayFor(modelItem => item.Archetype)</td>
+                <td>@Html.Partial("_LegendIcon", item.Archetype)</td>
                 <td>@item.CreatedOn.ToString("dd/MM/yyyy")</td>
                 <td>@item.Matches.Count(m => m.Win) - @item.Matches.Count(m => !m.Win)</td>
                 <td>
-                    <ul class="rewards-container">
-                        <li class="reward-copper">@item.Matches.Select(m => m.Rewards).AsQueryable().Sum(m => m.Copper)</li>
-                        <li class="reward-shards">@item.Matches.Select(m => m.Rewards).AsQueryable().Sum(m => m.Shards)</li>
-                        <li class="reward-packs">@(item.Matches.Select(m => m.Rewards).AsQueryable().Sum(m => m.Packs)+1)</li>
-                    </ul>
+                    @Html.Partial("DisplayTemplates/MatchRewardList", new MatchRewardList
+               {
+                   Copper = item.Matches.Select(m => m.Rewards).AsQueryable().Sum(m => m.Copper),
+                   Shards = item.Matches.Select(m => m.Rewards).AsQueryable().Sum(m => m.Shards),
+                   Packs = (item.Matches.Select(m => m.Rewards).AsQueryable().Sum(m => m.Packs) + 1)
+               })
                 </td>
                 <td>
                     <a href="@Url.Action("Drafting", new { id = item.Id })" class="btn btn-default fa fa-pencil" role="button" title="Edit" alt="Edit"></a>
                     <button class="btn btn-default fa fa-trash" role="button" title="Delete Deck" alt="Delete Deck" data-toggle="modal" data-target="#delete-draft" data-draftid="@item.Id"></button>
                     @if (item.DraftComplete && !item.Complete)
-                    {
-                    <button class="btn btn-default fa fa-plus" role="button" title="Add Match" alt="Add Match" data-toggle="modal" data-target="#add-match" data-draftid="@item.Id"></button>
+                {
+                        <button class="btn btn-default fa fa-plus" role="button" title="Add Match" alt="Add Match" data-toggle="modal" data-target="#add-match" data-draftid="@item.Id"></button>
                     }
                 </td>
             </tr>
@@ -74,22 +76,16 @@
                             <tbody>
                                 @foreach (var match in item.Matches)
                                 {
-                                <tr data-first="@match.First">
-                                    <td data-value="@((int)match.OpponentArchetype)">@match.OpponentArchetype</td>
-                                    <td>@match.CreatedOn.ToString("dd/MM/yyyy")</td>
-                                    <td>@match.Win</td>
-                                    <td>
-                                        <ul class="rewards-container">
-                                            <li class="reward-copper">@match.Rewards.Copper</li>
-                                            <li class="reward-shards">@match.Rewards.Shards</li>
-                                            <li class="reward-packs">@match.Rewards.Packs</li>
-                                        </ul>
-                                    </td>
-                                    <td>
-                                        <button class="btn btn-default fa fa-pencil" role="button" title="Edit Match" alt="Edit Match" data-toggle="modal" data-target="#edit-match" data-draftid="@item.Id" data-matchid="@match.Id"></button>
-                                        <button class="btn btn-default fa fa-trash" role="button" title="Delete Match" alt="Delete Match" data-toggle="modal" data-target="#delete-match" data-draftid="@item.Id" data-matchid="@match.Id"></button>
-                                    </td>
-                                </tr>
+                                    <tr data-first="@match.First">
+                                        <td data-value="@((int)match.OpponentArchetype)">@Html.Partial("_LegendIcon", @match.OpponentArchetype)</td>
+                                        <td>@match.CreatedOn.ToString("dd/MM/yyyy")</td>
+                                        <td>@match.Win</td>
+                                        <td>@Html.DisplayFor(m => match.Rewards)</td>
+                                        <td>
+                                            <button class="btn btn-default fa fa-pencil" role="button" title="Edit Match" alt="Edit Match" data-toggle="modal" data-target="#edit-match" data-draftid="@item.Id" data-matchid="@match.Id"></button>
+                                            <button class="btn btn-default fa fa-trash" role="button" title="Delete Match" alt="Delete Match" data-toggle="modal" data-target="#delete-match" data-draftid="@item.Id" data-matchid="@match.Id"></button>
+                                        </td>
+                                    </tr>
                                 }
                             </tbody>
                         </table>

@@ -24,7 +24,7 @@ else
         <td>
             @if (Model.GetType() == typeof(LegendSpecificStatsData))
             {
-                <img class="legend-icon @Html.Raw(((LegendSpecificStatsData)Model).Legend.ToString())"/>
+                @Html.Partial("_LegendIcon", ((LegendSpecificStatsData)Model).Legend)
             }
             else
             {

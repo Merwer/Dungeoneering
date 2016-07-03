@@ -1,0 +1,8 @@
+﻿@using Merwer.Chronicle.Dungeoneering.Tracker.Models;
+@model Archetype
+
+@{ 
+    var name = Model.ToString();
+}
+<img class="legend-icon @Html.Raw(name)" />
+
