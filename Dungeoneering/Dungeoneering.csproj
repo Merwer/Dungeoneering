@@ -303,6 +303,7 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Match.cs" />
     <Compile Include="Models\MatchRewardList.cs" />
+    <Compile Include="Models\MyStatsData.cs" />
     <Compile Include="Models\OwnedEntity.cs" />
     <Compile Include="Models\Rarity.cs" />
     <Compile Include="Models\Round.cs" />
@@ -737,6 +738,10 @@
     <Content Include="Views\Stats\Global.cshtml" />
     <Content Include="Views\Stats\My.cshtml" />
     <Content Include="Views\Drafts\_StartDraftForm.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\MyStatsData.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\BasicStatsData.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\MatchRewardList.cshtml" />
+    <Content Include="Views\Shared\_LegendIcon.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

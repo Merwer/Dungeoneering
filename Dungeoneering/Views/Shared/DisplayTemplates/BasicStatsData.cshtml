@@ -1,0 +1,46 @@
+﻿@using Merwer.Chronicle.Dungeoneering.Tracker.Models;
+@model BasicStatsData
+
+@if (Model == null)
+{
+    <tr>
+        <th>Legend</th>
+        <th>W/L</th>
+        <th><span class="caption">Win %</span>Total</th>
+        <th><span class="caption">Win %</span>as First</th>
+        <th><span class="caption">Win %</span>as Second</th>
+        <th>Drafts</th>
+        <th>Matchups</th>
+        <th><span class="caption">Depth</span>Avg</th>
+        <th><span class="caption">Depth</span>0-2</th>
+        <th><span class="caption">Depth</span>3-6</th>
+        <th><span class="caption">Depth</span>7-11</th>
+        <th><span class="caption">Depth</span>12</th>
+    </tr>
+}
+else
+{
+    <tr>
+        <td>
+            @if (Model.GetType() == typeof(LegendSpecificStatsData))
+            {
+                @Html.Partial("_LegendIcon", ((LegendSpecificStatsData)Model).Legend)
+            }
+            else
+            {
+                <strong>All</strong>
+            }
+        </td>
+        <td>@Html.DisplayFor(m => m.TotalWins)/@Html.DisplayFor(m => m.TotalLosses)</td>
+        <td>@Html.DisplayFor(m => m.WinRate)</td>
+        <td>@Html.DisplayFor(m => m.FirstWinRate)</td>
+        <td>@Html.DisplayFor(m => m.SecondWinRate)</td>
+        <td>@Html.DisplayFor(m => m.Drafts)</td>
+        <td>@Html.DisplayFor(m => m.Games)</td>
+        <td>@Html.DisplayFor(m => m.AverageWins)</td>
+        <td>@Html.DisplayFor(m => m.ZeroToTwoWins)</td>
+        <td>@Html.DisplayFor(m => m.ThreeToSixWins)</td>
+        <td>@Html.DisplayFor(m => m.SevenToElevenWins)</td>
+        <td>@Html.DisplayFor(m => m.TwelveWins)</td>
+    </tr>
+}

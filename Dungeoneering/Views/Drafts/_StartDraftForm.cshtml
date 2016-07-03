@@ -11,7 +11,7 @@
             @foreach (Archetype legend in Enum.GetValues(typeof(Archetype)))
             {
                 <button type="submit" role="button" value="@((int)legend)" name="archetype" class="btn btn-legend-icon">
-                    <img class="legend-icon @legend.ToString()"/>
+                    @Html.Partial("_LegendIcon", legend)
                 </button>
             }
             </div>

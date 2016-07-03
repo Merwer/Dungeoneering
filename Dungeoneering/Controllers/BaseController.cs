@@ -5,6 +5,15 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
 {
     public abstract class BaseController : Controller
     {
+        private string _username;
+        protected string Username
+        {
+            get
+            {
+                return _username ?? (_username = User.Identity.Name);
+            }
+        }
+
         public new ActionResult Json(object data)
         {
             JsonNetResult result = new JsonNetResult();
