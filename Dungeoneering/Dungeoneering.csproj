@@ -319,6 +319,7 @@
     <Content Include="Content\css\bootstrap.min.css" />
     <Content Include="Content\css\draft.css" />
     <Content Include="Content\css\main.css" />
+    <Content Include="Content\css\offcanvas.css" />
     <Content Include="Content\css\typeahead.css" />
     <Content Include="Content\draft.html" />
     <Content Include="Content\favicon.ico" />
@@ -660,6 +661,7 @@
     <Content Include="Content\js\draft.js" />
     <Content Include="Content\js\draftIndex.js" />
     <Content Include="Content\js\main.js" />
+    <Content Include="Content\js\offcanvas.js" />
     <Content Include="Content\js\vendor\bootstrap.js" />
     <Content Include="Content\js\vendor\bootstrap.min.js" />
     <Content Include="Content\js\vendor\i18next.min.js" />
