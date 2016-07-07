@@ -123,3 +123,7 @@
 .tooltip .tooltip-arrow {
     display: none;
 }
+
+.twitter-typeahead, .tt-hint, .tt-input, .tt-menu {
+    width: 100%;
+}
