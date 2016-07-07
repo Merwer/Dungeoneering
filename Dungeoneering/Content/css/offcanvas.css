@@ -2,7 +2,8 @@
  * Off Canvas
  * --------------------------------------------------
  */
-@media screen and (max-width: 768px) {
+
+@media screen and (max-width: 480px) {
   .row-offcanvas {
     position: relative;
     -webkit-transition: all 0.25s ease-out;
@@ -12,7 +13,7 @@
 
   .row-offcanvas-right
   .sidebar-offcanvas {
-    right: -33%;
+    right: -50%;
   }
 
   .row-offcanvas-right.active .sidebar-offcanvas {
@@ -22,7 +23,6 @@
   .sidebar-offcanvas {
     position: absolute;
     top: 0;
-    width: 33%;
   }
 
   .sidebar-toggle-button {
