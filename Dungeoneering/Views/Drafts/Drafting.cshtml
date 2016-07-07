@@ -36,22 +36,22 @@
 <div class="row row-offcanvas row-offcanvas-right">
     <div class="col-xs-12 col-sm-8">
         <div class="row form-inline">
-            <div class="col-xs-8">
+            <div class="col-xs-8 col-sm-7">
                 <div class="user-input form-group">
                     <label data-i18n="card-name" class="control-label">Card Name</label>
                     <input class="typeahead form-control" type="text">
                 </div>
             </div>
-            <div class="col-xs-4">
+            <div class="col-xs-4 col-sm-5">
                 <div class="round-counter">
-                    <button class="btn fa fa-chevron-left prev"></button>
+                    <button class="btn fa fa-chevron-left prev visible-sm-inline-block""></button>
                     <select class="form-control current">
                         @for (var i = 1; i <= 15; i++)
                         {
                             <option value="@i">@i/15</option>
                         }
                     </select>
-                    <button class="btn fa fa-chevron-right next"></button>
+                    <button class="btn fa fa-chevron-right next visible-sm-inline-block"></button>
                 </div>
             </div>
         </div>
