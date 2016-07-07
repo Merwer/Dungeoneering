@@ -14,6 +14,7 @@
   .row-offcanvas-right
   .sidebar-offcanvas {
     right: -50%;
+    z-index: 10;
   }
 
   .row-offcanvas-right.active .sidebar-offcanvas {
