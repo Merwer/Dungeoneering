@@ -79,9 +79,11 @@
     <footer class="container bottom">
         <div class="bottom">
             <hr>
-            <p>&copy; <a href="//github.com/merwer">William Belanger</a> @DateTime.Now.Year</p>
+            <p>@Html.ActionLink("Privacy Policy", "Privacy", "Home", null, new { @class = "small pull-left" })</p>
+            <p class="pull-right">&copy; <a href="//github.com/merwer">William Belanger</a> @DateTime.Now.Year</p>
         </div>
     </footer>
+
     <!-- /container -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script>
