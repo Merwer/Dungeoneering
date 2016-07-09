@@ -79,6 +79,7 @@ footer {
 
 .rewards-container {
     list-style: none;
+    padding-left: 0;
 }
 
 .rewards-container li:before {
@@ -154,4 +155,13 @@ th .caption {
 
 tfoot {
     font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .btn-group-responsive > .btn {
+    padding: 1px 5px;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 3px;
+  }
 }

@@ -110,7 +110,7 @@ chronicle.drafting.index = (function ($) {
             $(this).find('form').data('action', action + "/" + draftId);
         });
         $(".toggle-icon-eye").on("click", function () {
-            $(this).children("span").toggleClass("fa-eye fa-eye-slash");
+            $(this).toggleClass("fa-eye fa-eye-slash");
             $(this).closest("tr").toggleClass("info");
         });
     };
