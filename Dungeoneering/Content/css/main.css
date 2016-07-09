@@ -80,6 +80,7 @@ footer {
 .rewards-container {
     list-style: none;
     padding-left: 0;
+    text-align: center;
 }
 
 .rewards-container li:before {
