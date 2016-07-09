@@ -744,6 +744,7 @@
     <Content Include="Views\Shared\DisplayTemplates\BasicStatsData.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\MatchRewardList.cshtml" />
     <Content Include="Views\Shared\_LegendIcon.cshtml" />
+    <Content Include="Views\Home\Privacy.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

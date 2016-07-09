@@ -16,6 +16,11 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
             );
         }
 
+        public ActionResult Privacy()
+        {
+            return View();
+        }
+
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
