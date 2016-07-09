@@ -122,29 +122,8 @@ footer {
     background-position: center;
     background-color: transparent;
     border: none;
-    height: 65px;
-    width: 65px;
-}
-
-.legend-icon.TheRaptor {
-    background-image: url(/Content/img/icons/TheRaptor.png);
-}
-
-.legend-icon.Ariane {
-    background-image: url(/Content/img/icons/Ariane.png);
-}
-
-.legend-icon.Ozan {
-    background-image: url(/Content/img/icons/Ozan.png);
-}
-
-.legend-icon.Linza {
-    background-image: url(/Content/img/icons/Linza.png);
-
-}
-
-.legend-icon.Vanescula {
-    background-image: url(/Content/img/icons/Vanescula.png);
+    height: 50px;
+    width: 50px;
 }
 
 th .caption {

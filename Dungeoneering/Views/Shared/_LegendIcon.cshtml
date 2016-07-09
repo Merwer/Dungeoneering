@@ -2,7 +2,7 @@
 @model Archetype
 
 @{ 
-    var name = Model.ToString();
+    var src = "/Content/img/icons/" + Model.ToString() + ".png";
 }
-<img class="legend-icon @Html.Raw(name)" />
+<img class="legend-icon" src="@src" />
 
