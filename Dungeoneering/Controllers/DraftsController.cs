@@ -25,9 +25,21 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
         }
 
         // GET: Drafts/Drafting/5
-        public ActionResult Drafting(long id)
+        public ActionResult Drafting(long? id)
         {
-            Draft draft = db.Drafts.Include(d => d.Rounds).FirstOrDefault(d => d.Id == id);
+            Draft draft = null;
+            if (! id.HasValue)
+            {
+                draft = db.Drafts.Include(d => d.Rounds).Where(d => d.OwnerName == Username).ToList().SingleOrDefault(d => !d.Complete);
+                if(draft == null)
+                {
+                    return HttpNotFound("No current draft");
+                } else
+                {
+                    return RedirectToAction("Drafting", new { id = draft.Id });
+                }
+            }
+            draft = db.Drafts.Include(d => d.Rounds).FirstOrDefault(d => d.Id == id.Value);
             if (draft == null)
             {
                 return HttpNotFound("Invalid draft ID");

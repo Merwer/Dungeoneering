@@ -1,84 +1,69 @@
-﻿@{
+﻿@using Merwer.Chronicle.Dungeoneering.Tracker.Models;
+@model bool
+@{
     ViewBag.Title = "Home Page";
 }
 
 <div class="row">
     <div class="col-xs-12">
-        <div class="panel panel-default">
-            <div class="panel-heading">Dungeoneering Tracker</div>
+        <div class="alert alert-info">Be aware: The card <em>images</em> are out of date, but the card data is accurate as of the last patch.</div>
+
+        <div class="panel">
             <div class="panel-body">
+                @if (Model)
+                {
+                    @Html.Partial("~/Views/Drafts/_StartDraftForm.cshtml", Archetype.Ariane)
+                }
+                else if (Request.IsAuthenticated)
+                {
+                    @Html.ActionLink("Go to your current draft", "Drafting", "Drafts", null, null)
+                }
+                else
+                {
+                    @Html.ActionLink("Login to start a dungeon draft", "Login", "Account", null, null)
+                }
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <button class="collapse-toggle close fa fa-minus" data-toggle="collapse" data-target="#welcome-panel"></button>
+                Welcome
+            </div>
+            <div class="panel-body collapse in" id="welcome-panel">
                 <p>
-                    Welcome to the dungeoneering tracker. This is a tool that is built to help new or experienced dungeoneers maximize their dungeon depth in Chronicle: Runescape Legends.
+                    Welcome to ChronicleCompass.com - your guide and logbook to the dungeons of <a href="http://rschronicle.com">Chronicle: Runescape Legends</a>.
+                    Your personal compass is built to help new or experienced dungeoneers improve their drafts, and to provide useful statistical information to help guide you even deper into the dungeon.
                 </p>
                 <p>
-                    The dugeoneering tracker was primarily built as a tool to improve the quality of a player's drafts.
-                    When performing a draft, the dungeoneering tracker presents you with a numerical value estimating the quality of the picks made available to you.
+                    ChronicleCompass.com was primarily built as a tool to improve the quality of a player's drafts.
+                    When performing a draft, your compass presents you with a numerical value estimating the quality of the picks made available to you.
                     The system is still rudimentary, so we recommend that you take these numbers as a guide, and not as a hard-and-fast guarenteed best pick. Common sense should always prevail.
-                    For example, even if you've already drawn 5 Ali Morrisanes, the system may still recommend you pick more - chances are though, it may not be the best option available.
+                    For example, even if you've already drawn 5 Ali Morrisanes, the system may still recommend you pick more. Chances are though, there are better options.
                 </p>
                 <p>
-                    The dungeoneering tracker lets users track their dungeon drafts and their matchups. Storing this data for future review, and to calculate individual and global user stats.
-                    Once you've completed your draft, you can record your match-ups on the "My Dungeon Runs" page. Each match for a draft is recorded individually as well as the rewards if you win.
+                    ChronicleCompass.com also provides users with a dungeon logbook which lets users track their previous dungeon drafts and matchups. Storing this data for future review, and to calculate individual and global user stats.
+                    Once you've completed a draft, you can record your match-ups on the "My Dungeon Runs" page. Each match for a draft is recorded individually as well as the rewards if you win.
                     All of this information is then aggregated and used to generate personalized statistics for you and your dungeon runs. This data can be viewed on the "My Stats" page.
-                </p>
-                <p>
-                    Eventually, everyone's personal stats are aggregated into a "Global Stats" list. This information can be invaluable to community in evaluating the meta, and how common certain cards are.
-                    Plus, data and numbers are always fun to look at.
                 </p>
             </div>
         </div>
         <div class="panel panel-default">
-            <div class="panel-heading">Credits</div>
-            <div class="panel-body">
+            <div class="panel-heading">
+                Credits
+                <button class="collapse-toggle collapse-panel close fa fa-plus" data-toggle="collapse" data-target="#credits-panel"></button>
+            </div>
+            <div class="panel-body collapse out" id="credits-panel">
                 <p>
-                    This tool was created to help the Chronicle community, and as such is completely <a href="https://github.com/Merwer/Dungeoneering">open source</a> and will always be free.
+                    This tool was created to help the Chronicle community, and as such is completely <a href="https://github.com/Merwer/Dungeoneering">open source</a> and will always be free to use.
                 </p>
                 <p>
-                    The rating of cards was created using the <a href="https://docs.google.com/spreadsheets/d/1Ktd5LScTKBEuYyFVDHZadV30fEsoqKyI-cIhILJoeB0/edit?usp=sharing">Chronicle Community Tier List</a>. This list was put together by some amazing members of the community and represents a lot of hard work and experience. This site would not have been possible without it.
+                    The rating of cards was created using the <a href="https://docs.google.com/spreadsheets/d/1Ktd5LScTKBEuYyFVDHZadV30fEsoqKyI-cIhILJoeB0/edit?usp=sharing">Chronicle Community Tier List</a>.
+                    This list was put together by some amazing members of the community and represents a lot of hard work and experience. This site would not have been possible without it.
                 </p>
                 <p>
                     <a href="http://rschronicle.com">Chronicle: Runescape Legends</a> is a registered trademark of <a href="http://www.jagex.com/">Jagex</a>, and all card images on this site are under their copyright.
                 </p>
-            </div>
-        </div>
-        <div class="panel panel-default">
-            <div class="panel-heading">Alpha Info</div>
-            <div class="panel-body">
-                <div class="alert alert-info">Be aware: The card <em>images</em> are out of date, but the card data is accurate as of the last patch.</div>
-                <p>
-                    Welcome, and thank you for participating in the v1 Alpha test of the dungeoneering tool. This test is going to be the first real-world test of the system, but it is an alpha, so you need to keep a couple of things in mind when using it:
-                </p>
-                <p>
-                    1) The site is hosted in Microsoft Azure's free tier hosting
-                    <br />
-                    This means that the site is 'put to sleep' if it is unused for 5 minutes. If you're the first to visit the site in the past 5 minutes, it will take a minute or two to 'wake up'.
-                </p>
-                <p>
-                    2) All data may be wiped
-                    <br />
-                    I hope that I won't have to wipe the data, but it is a very distinct possibility that as bugs are addressed and features added, I will have to.
-                </p>
-                <p>
-                    3) I need feedback
-                    <br />
-                    Without feedback, I can't improve the site. You can report issues directly to me at <a href="mailto:chronicle.dungeoneering@gmail.com">chronicle.dungeoneering@gmail.com</a>, or by creating an <a href="https://github.com/Merwer/Dungeoneering/issues">issue report</a> on github.
-                </p>
-                <p>
-                    4) Alpha doesn't mean pretty
-                    <br />
-                    Not only am I not a designer by nature, this is an alpha. There are features that will be clunky, and will just plain look bad. Feel free to report these, and offer suggestions - but don't expect them to get addressed right away.
-                </p>
-                <p>
-                    5) This is a side-project
-                    <br />
-                    I've got a real life and a family. Up until now, I've had about 5-10 hours to spend on this project per week, and I expect this trend to continue. I will do my best to address any critical problems that come up within the day.
-                </p>
-                <h4>Prospective Work</h4>
-                <ul>
-                    <li><a href="https://trello.com/b/iAhVhN5T/dungeoneering-backlog">Task Backlog</a></li>
-                    <li><a href="https://trello.com/b/dOoESxF2/dungeoneering-v1-0-alpha">v1 Alpha Task List</a></li>
-                    <li><a href="https://trello.com/b/aEGJSTtg/dungeoneering-v1-0-beta">v1 Beta Task List</a></li>
-                </ul>
             </div>
         </div>
     </div>

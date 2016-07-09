@@ -1,12 +1,19 @@
-﻿using System.Web.Mvc;
+﻿using Merwer.Chronicle.Dungeoneering.Tracker.Models;
+using System.Linq;
+using System.Web.Mvc;
 
 namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
+        private ApplicationDbContext db = new ApplicationDbContext();
+
         public ActionResult Index()
         {
-            return View();
+            return View(
+                Request.IsAuthenticated &&
+                db.Drafts.Where(d => d.OwnerName == Username).ToList().All(d => d.Complete)
+            );
         }
 
         public ActionResult About()
