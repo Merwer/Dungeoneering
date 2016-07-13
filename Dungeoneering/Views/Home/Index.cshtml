@@ -8,18 +8,20 @@
     <div class="col-xs-12">
         <div class="alert alert-info">Be aware: The card <em>images</em> are out of date, but the card data is accurate as of the last patch.</div>
 
-        @if (Model)
-        {
-            @Html.Partial("~/Views/Drafts/_StartDraftForm.cshtml", Archetype.Ariane)
-        }
-        else if (Request.IsAuthenticated)
-        {
-            @Html.ActionLink("Go to your current draft", "Drafting", "Drafts", null, null)
-        }
-        else
-        {
-            @Html.ActionLink("Login to start a dungeon draft", "Login", "Account", null, null)
-        }
+        <div class="well">
+            @if (Model)
+            {
+                @Html.Partial("~/Views/Drafts/_StartDraftForm.cshtml", Archetype.Ariane)
+            }
+            else if (Request.IsAuthenticated)
+            {
+                @Html.ActionLink("Go to your current draft", "Drafting", "Drafts", null, null)
+            }
+            else
+            {
+                @Html.ActionLink("Login to start a dungeon draft", "Login", "Account", null, null)
+            }
+        </div>
 
         <div class="panel panel-default">
             <div class="panel-heading">
@@ -54,12 +56,29 @@
                     This tool was created to help the Chronicle community, and as such is completely <a href="https://github.com/Merwer/Dungeoneering">open source</a> and will always be free to use.
                 </p>
                 <p>
+                    <a href="http://rschronicle.com">Chronicle: Runescape Legends</a> is a registered trademark of <a href="http://www.jagex.com/">Jagex</a>, and all card images on this site are under their copyright.
+                </p>
+                <p>
                     The rating of cards was created using the <a href="https://docs.google.com/spreadsheets/d/1Ktd5LScTKBEuYyFVDHZadV30fEsoqKyI-cIhILJoeB0/edit?usp=sharing">Chronicle Community Tier List</a>.
                     This list was put together by some amazing members of the community and represents a lot of hard work and experience. This site would not have been possible without it.
                 </p>
-                <p>
-                    <a href="http://rschronicle.com">Chronicle: Runescape Legends</a> is a registered trademark of <a href="http://www.jagex.com/">Jagex</a>, and all card images on this site are under their copyright.
-                </p>
+                <h4>Community Card List Stream Links</h4>
+                <ul class="multi-col-list">
+                    <li><a href="https://www.twitch.tv/freaker_play">Freaker Play</a></li>
+                    <li><a href="https://www.twitch.tv/frebbdekaka/">Frebbdekaka</a></li>
+                    <li><a href="https://www.twitch.tv/friendsofalkharid">The Friends of Alkharid Podcast</a></li>
+                    <li><a href="https://www.twitch.tv/glenn1wolves">Glenn</a></li>
+                    <li><a href="https://www.twitch.tv/iarenubcake">iAreNubcake</a></li>
+                    <li><a href="https://www.twitch.tv/interjectionvideos">Interjection</a></li>
+                    <li><a href="https://www.twitch.tv/jaggerous">Jaggerous</a></li>
+                    <li><a href="https://www.twitch.tv/musher93">Musher</a></li>
+                    <li><a href="https://www.twitch.tv/ollywankwell">OllyWankWell</a></li>
+                    <li><a href="https://www.twitch.tv/thisisryanneil">RyanN</a></li>
+                    <li><a href="https://www.twitch.tv/snowwywolf">SnowwyWolf</a></li>
+                    <li><a href="https://www.twitch.tv/tehunforgivenz">Unforgiven</a></li>
+                    <li><a href="https://www.twitch.tv/wolf_rsc">Wolf</a></li>
+                    <li><a href="https://www.twitch.tv/xalchs">Xalchs</a></li>
+                </ul>
             </div>
         </div>
     </div>
