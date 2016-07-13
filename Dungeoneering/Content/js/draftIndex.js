@@ -62,6 +62,34 @@ chronicle.drafting.index = (function ($) {
         return false;
     };
 
+    var abandonDeck = function () {
+        var form = $(this);
+        form.closest('.modal').modal('toggle');
+        $.ajax(form.data('action'), {
+            method: form.attr('method')
+        }).success(function (result) {
+            window.location.reload();
+            //TODO: Remove deck from table row
+        }).fail(function (xhr) {
+            alert("Failed");
+        });
+        return false;
+    };
+
+    var restoreDeck = function () {
+        var form = $(this);
+        form.closest('.modal').modal('toggle');
+        $.ajax(form.data('action'), {
+            method: form.attr('method')
+        }).success(function (result) {
+            window.location.reload();
+            //TODO: Remove deck from table row
+        }).fail(function (xhr) {
+            alert("Failed");
+        });
+        return false;
+    };
+
     var init = function () {
         $('#add-match form').submit(addMatch);
         $('#add-match').on('show.bs.modal', function (event) {
@@ -104,6 +132,20 @@ chronicle.drafting.index = (function ($) {
         });
         $('#delete-draft form').submit(deleteDeck);
         $('#delete-draft').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget);
+            var draftId = button.data('draftid');
+            var action = $(this).find('form').attr('action');
+            $(this).find('form').data('action', action + "/" + draftId);
+        });
+        $('#abandon-draft form').submit(abandonDeck);
+        $('#abandon-draft').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget);
+            var draftId = button.data('draftid');
+            var action = $(this).find('form').attr('action');
+            $(this).find('form').data('action', action + "/" + draftId);
+        });
+        $('#restore-draft form').submit(restoreDeck);
+        $('#restore-draft').on('show.bs.modal', function (event) {
             var button = $(event.relatedTarget);
             var draftId = button.data('draftid');
             var action = $(this).find('form').attr('action');

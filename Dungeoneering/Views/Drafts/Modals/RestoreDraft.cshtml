@@ -1,0 +1,22 @@
+﻿
+<div id="restore-draft" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <form action="@Url.Action("Restore", "Drafts")" method="post">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Restore confirmation</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Are you sure you wish to restore this deck?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" role="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    <button type="submit" role="button" class="btn btn-success">Restore</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

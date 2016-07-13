@@ -220,6 +220,42 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
             return new HttpStatusCodeResult(HttpStatusCode.OK);
         }
 
+        [HttpPost]
+        public ActionResult Abandon(int id)
+        {
+            var draft = db.Drafts.FirstOrDefault(d => d.Id == id);
+            if (draft == null)
+            {
+                return HttpNotFound("Invalid draft ID");
+            }
+            if (draft.OwnerName != Username)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.Unauthorized);
+            }
+            draft.Abandoned = true;
+            db.SaveChanges();
+
+            return new HttpStatusCodeResult(HttpStatusCode.OK);
+        }
+
+        [HttpPost]
+        public ActionResult Restore(int id)
+        {
+            var draft = db.Drafts.FirstOrDefault(d => d.Id == id);
+            if (draft == null)
+            {
+                return HttpNotFound("Invalid draft ID");
+            }
+            if (draft.OwnerName != Username)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.Unauthorized);
+            }
+            draft.Abandoned = false;
+            db.SaveChanges();
+
+            return new HttpStatusCodeResult(HttpStatusCode.OK);
+        }
+
         public ActionResult Cardlist(Archetype archetype)
         {
             var list = db.CardScores.Where(cs => cs.Archetype == archetype)

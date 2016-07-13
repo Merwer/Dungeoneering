@@ -745,6 +745,8 @@
     <Content Include="Views\Shared\DisplayTemplates\MatchRewardList.cshtml" />
     <Content Include="Views\Shared\_LegendIcon.cshtml" />
     <Content Include="Views\Home\Privacy.cshtml" />
+    <Content Include="Views\Drafts\Modals\AbandonDraft.cshtml" />
+    <Content Include="Views\Drafts\Modals\RestoreDraft.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
