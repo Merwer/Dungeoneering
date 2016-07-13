@@ -77,10 +77,14 @@
     </section>
 
     <footer class="container bottom">
-        <div class="bottom">
+        <div class="bottom small">
             <hr>
-            <p>@Html.ActionLink("Privacy Policy", "Privacy", "Home", null, new { @class = "small pull-left" })</p>
-            <p class="pull-right">&copy; <a href="//github.com/merwer">William Belanger</a> @DateTime.Now.Year</p>
+            <p>@Html.ActionLink("Privacy Policy", "Privacy", "Home", null, new { @class = "pull-left" })</p>
+            <p class="pull-right text-right">
+                <span>&copy; <a href="//github.com/merwer">William Belanger</a> @DateTime.Now.Year</span>
+                <br/>
+                <span><a href="mailto:chronicle.dungeoneering@gmail.com">chronicle.dungeoneering@gmail.com</a></span>
+            </p>
         </div>
     </footer>
 
