@@ -324,8 +324,10 @@
     <Content Include="Content\draft.html" />
     <Content Include="Content\favicon.ico" />
     <Content Include="Content\img\cards\50_Ships_Mufassah.png" />
+    <Content Include="Content\img\cards\Abyssal_Whip.png" />
     <Content Include="Content\img\cards\Adamant_Armour.png" />
     <Content Include="Content\img\cards\Adamant_Dragon.png" />
+    <Content Include="Content\img\cards\Afflicted.png" />
     <Content Include="Content\img\cards\Alchemy.png" />
     <Content Include="Content\img\cards\Ali_Morrisane.png" />
     <Content Include="Content\img\cards\Alpha_Werewolf.png" />
@@ -364,16 +366,20 @@
     <Content Include="Content\img\cards\Black_Demon.png" />
     <Content Include="Content\img\cards\Black_Knight_Titan.png" />
     <Content Include="Content\img\cards\Black_Marketeer.png" />
+    <Content Include="Content\img\cards\Bloodveld_Leecher.png" />
     <Content Include="Content\img\cards\Blood_Share.png" />
+    <Content Include="Content\img\cards\Blood_Tithe.png" />
     <Content Include="Content\img\cards\Bob_The_Cat.png" />
     <Content Include="Content\img\cards\Bounty_Hunt.png" />
     <Content Include="Content\img\cards\Brugsen_Bursen.png" />
     <Content Include="Content\img\cards\Bunyip.png" />
+    <Content Include="Content\img\cards\Burg_de_Rott_Citizen.png" />
     <Content Include="Content\img\cards\Burntmeat.png" />
     <Content Include="Content\img\cards\Cabbage.png" />
     <Content Include="Content\img\cards\Cabin_boy.png" />
     <Content Include="Content\img\cards\Captain_Rovin.png" />
     <Content Include="Content\img\cards\Cave_Slime.png" />
+    <Content Include="Content\img\cards\Cerberus.png" />
     <Content Include="Content\img\cards\Chain_Shot_Cannon.png" />
     <Content Include="Content\img\cards\Chaos_Druid.png" />
     <Content Include="Content\img\cards\Chaos_Dwarf.png" />
@@ -393,9 +399,11 @@
     <Content Include="Content\img\cards\Crypt.png" />
     <Content Include="Content\img\cards\Crystal_Flask.png" />
     <Content Include="Content\img\cards\Culinaromancer.png" />
+    <Content Include="Content\img\cards\Culling_the_Weak.png" />
     <Content Include="Content\img\cards\Customs_Officer.png" />
     <Content Include="Content\img\cards\Dagannoth_Fledgling.png" />
     <Content Include="Content\img\cards\Dagannoth_Sentinel.png" />
+    <Content Include="Content\img\cards\Dark_Crab.png" />
     <Content Include="Content\img\cards\Darren_Lightfinger.png" />
     <Content Include="Content\img\cards\Dazing_Shot.png" />
     <Content Include="Content\img\cards\Deadshot.png" />
@@ -414,6 +422,9 @@
     <Content Include="Content\img\cards\Dragonbone_Upgrade.png" />
     <Content Include="Content\img\cards\Dragon_Forge.png" />
     <Content Include="Content\img\cards\Dragon_Longsword.png" />
+    <Content Include="Content\img\cards\Dragon_Scimitar.png" />
+    <Content Include="Content\img\cards\Dragon_Set.png" />
+    <Content Include="Content\img\cards\Dragon_Warhammer.png" />
     <Content Include="Content\img\cards\Dreadnaut.png" />
     <Content Include="Content\img\cards\Drunken_Dwarf.png" />
     <Content Include="Content\img\cards\Drunken_Pirate.png" />
@@ -425,9 +436,12 @@
     <Content Include="Content\img\cards\Earth_Wave.png" />
     <Content Include="Content\img\cards\Ellaron.png" />
     <Content Include="Content\img\cards\Enfeeble.png" />
+    <Content Include="Content\img\cards\Entangle.png" />
     <Content Include="Content\img\cards\Eruni_Ayuni_Leeuni.png" />
     <Content Include="Content\img\cards\Exiled_Kalphite_Paragon.png" />
+    <Content Include="Content\img\cards\Explosive_Potion.png" />
     <Content Include="Content\img\cards\Falador_Party_Room.png" />
+    <Content Include="Content\img\cards\Feral_Vampire.png" />
     <Content Include="Content\img\cards\Fern.png" />
     <Content Include="Content\img\cards\Fight_Cauldron.png" />
     <Content Include="Content\img\cards\Fight_Pit.png" />
@@ -443,6 +457,7 @@
     <Content Include="Content\img\cards\Gadderanks.png" />
     <Content Include="Content\img\cards\Geeka.png" />
     <Content Include="Content\img\cards\General_Graardor.png" />
+    <Content Include="Content\img\cards\General_Wartface.png" />
     <Content Include="Content\img\cards\Ghostship.png" />
     <Content Include="Content\img\cards\Giant_Champion.png" />
     <Content Include="Content\img\cards\Giant_Rat.png" />
@@ -457,6 +472,7 @@
     <Content Include="Content\img\cards\Golden_Hammer.png" />
     <Content Include="Content\img\cards\Gorajo_Hoardstalker.png" />
     <Content Include="Content\img\cards\Gorge.png" />
+    <Content Include="Content\img\cards\Granite_Maul.png" />
     <Content Include="Content\img\cards\Gravecreeper.png" />
     <Content Include="Content\img\cards\Gravite_Longsword.png" />
     <Content Include="Content\img\cards\Greater_Demon.png" />
@@ -464,6 +480,7 @@
     <Content Include="Content\img\cards\Grizzly_Bear.png" />
     <Content Include="Content\img\cards\Grotworm.png" />
     <Content Include="Content\img\cards\Haemalchemist.png" />
+    <Content Include="Content\img\cards\Harold.png" />
     <Content Include="Content\img\cards\Haunted_Leech.png" />
     <Content Include="Content\img\cards\Haunted_Soul.png" />
     <Content Include="Content\img\cards\Heist.png" />
@@ -476,6 +493,7 @@
     <Content Include="Content\img\cards\Ice_Troll.png" />
     <Content Include="Content\img\cards\Ice_Warrior.png" />
     <Content Include="Content\img\cards\Infernal_Mage.png" />
+    <Content Include="Content\img\cards\Jerrod.png" />
     <Content Include="Content\img\cards\Jogre_Shaman.png" />
     <Content Include="Content\img\cards\Jubbly_Bird.png" />
     <Content Include="Content\img\cards\Kalphite_Egg_Chamber.png" />
@@ -496,12 +514,15 @@
     <Content Include="Content\img\cards\Kyzaj_Tournament.png" />
     <Content Include="Content\img\cards\Lady_Hefin.png" />
     <Content Include="Content\img\cards\Lady_Keli.png" />
+    <Content Include="Content\img\cards\Lady_Raven.png" />
     <Content Include="Content\img\cards\Lady_Zay.png" />
+    <Content Include="Content\img\cards\Lava_Dragon.png" />
     <Content Include="Content\img\cards\Leela.png" />
     <Content Include="Content\img\cards\Lesser_Demon.png" />
     <Content Include="Content\img\cards\Lexicus_Runewright.png" />
     <Content Include="Content\img\cards\Ling_The_Assassin.png" />
     <Content Include="Content\img\cards\Living_Rock_Brawler.png" />
+    <Content Include="Content\img\cards\Lobster.png" />
     <Content Include="Content\img\cards\Lord_Iban.png" />
     <Content Include="Content\img\cards\Lumpnose.png" />
     <Content Include="Content\img\cards\Lunar_Spellbook.png" />
@@ -517,6 +538,7 @@
     <Content Include="Content\img\cards\Miner_Ancestor.png" />
     <Content Include="Content\img\cards\Mischievous_Imp.png" />
     <Content Include="Content\img\cards\Mithril_Arrows.png" />
+    <Content Include="Content\img\cards\Mithril_Dragon.png" />
     <Content Include="Content\img\cards\Monolith_Chamber.png" />
     <Content Include="Content\img\cards\Morwenna.png" />
     <Content Include="Content\img\cards\Mutineer.png" />
@@ -540,7 +562,10 @@
     <Content Include="Content\img\cards\Ramokee_Hoarder.png" />
     <Content Include="Content\img\cards\Ranging_Guild.png" />
     <Content Include="Content\img\cards\Ranis_Drakan.png" />
+    <Content Include="Content\img\cards\Rantz.png" />
+    <Content Include="Content\img\cards\Ravenous_Snail.png" />
     <Content Include="Content\img\cards\Redbeard_Frank.png" />
+    <Content Include="Content\img\cards\Red_Chinchompa.png" />
     <Content Include="Content\img\cards\Reflect.png" />
     <Content Include="Content\img\cards\Relicyms_Balm.png" />
     <Content Include="Content\img\cards\Repurpose.png" />
@@ -552,6 +577,7 @@
     <Content Include="Content\img\cards\Ring_of_Charos.png" />
     <Content Include="Content\img\cards\Ring_of_Kinship.png" />
     <Content Include="Content\img\cards\Ring_of_Recoil.png" />
+    <Content Include="Content\img\cards\Ripper_Demon.png" />
     <Content Include="Content\img\cards\Rock_Cake.png" />
     <Content Include="Content\img\cards\Rock_Crab.png" />
     <Content Include="Content\img\cards\Rock_Golem.png" />
@@ -573,8 +599,10 @@
     <Content Include="Content\img\cards\Sergeant_Grimspike.png" />
     <Content Include="Content\img\cards\Sergeant_Slimetoes.png" />
     <Content Include="Content\img\cards\Shadow_Stalk.png" />
+    <Content Include="Content\img\cards\Shield_Dome.png" />
     <Content Include="Content\img\cards\Shug.png" />
     <Content Include="Content\img\cards\Silverlight.png" />
+    <Content Include="Content\img\cards\Sir_Tiffy_Cashien.png" />
     <Content Include="Content\img\cards\Skeletal_Mage.png" />
     <Content Include="Content\img\cards\Skeletal_Peon.png" />
     <Content Include="Content\img\cards\Skeleton_Champion.png" />
@@ -586,6 +614,7 @@
     <Content Include="Content\img\cards\South_Sea_Pillager.png" />
     <Content Include="Content\img\cards\Stack_o_Sharks.png" />
     <Content Include="Content\img\cards\Stagger.png" />
+    <Content Include="Content\img\cards\Stamina_Potion.png" />
     <Content Include="Content\img\cards\Steel_Titan.png" />
     <Content Include="Content\img\cards\Sticky_Sanders.png" />
     <Content Include="Content\img\cards\Stinkears.png" />
@@ -600,6 +629,7 @@
     <Content Include="Content\img\cards\Tok_Xil.png" />
     <Content Include="Content\img\cards\Toolbelt.png" />
     <Content Include="Content\img\cards\Tormented_Demon.png" />
+    <Content Include="Content\img\cards\Toxic_Blow_Pipe.png" />
     <Content Include="Content\img\cards\To_Kash.png" />
     <Content Include="Content\img\cards\Treus_Dayth.png" />
     <Content Include="Content\img\cards\Troll_Chucker.png" />
@@ -610,6 +640,7 @@
     <Content Include="Content\img\cards\TzTok_Jad.png" />
     <Content Include="Content\img\cards\Ugthanki.png" />
     <Content Include="Content\img\cards\Ullek_Mummy.png" />
+    <Content Include="Content\img\cards\Undead_Cow.png" />
     <Content Include="Content\img\cards\Undead_Dragon.png" />
     <Content Include="Content\img\cards\Unholy_Cursebearer.png" />
     <Content Include="Content\img\cards\Unstable_Concoction.png" />
@@ -629,6 +660,7 @@
     <Content Include="Content\img\cards\Wilderness.png" />
     <Content Include="Content\img\cards\Wind_Strike.png" />
     <Content Include="Content\img\cards\Wind_Surge.png" />
+    <Content Include="Content\img\cards\Wise_Old_Man.png" />
     <Content Include="Content\img\cards\Wizard_Mindbomb.png" />
     <Content Include="Content\img\cards\Wizard_Traiborn.png" />
     <Content Include="Content\img\cards\Work_Order.png" />
@@ -641,6 +673,7 @@
     <Content Include="Content\img\cards\Zamorakian_Occultist.png" />
     <Content Include="Content\img\cards\Zamorak_Brew.png" />
     <Content Include="Content\img\cards\Zemouregal.png" />
+    <Content Include="Content\img\cards\Zulrah.png" />
     <Content Include="Content\img\icons\Ariane.png" />
     <Content Include="Content\img\icons\armour.png" />
     <Content Include="Content\img\icons\attack.png" />
