@@ -6,6 +6,7 @@
         TheRaptor = 2,
         Ariane = 3,
         Ozan = 4,
-        Vanescula = 5
+        Vanescula = 5,
+        Morvran = 6
     }
 }
