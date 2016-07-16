@@ -112,8 +112,9 @@ chronicle.dungeoneering.draft = (function ($) {
     };
 
     var clearChoices = function () {
-        selectionSlots.addClass('hidden').removeClass('selected');
-        selectionSlots.children('img').attr('src', '');
+        selectionSlots.addClass('empty').removeClass('selected');
+        selectionSlots.children('img').attr('src', '/Content/img/card_back.png');
+        selectionSlots.children('.card-score').html('');
         selectionSlots.data('cardId', null);
     };
 
@@ -192,7 +193,7 @@ chronicle.dungeoneering.draft = (function ($) {
             return false;
         }
         var selectedCount = selectionSlots.filter('.selected').length;
-        var unfilledCount = selectionSlots.filter('.hidden').length;
+        var unfilledCount = selectionSlots.filter('.empty').length;
         if (selectedCount === 2 && unfilledCount === 0) {
             performSave();
             return true;
@@ -201,7 +202,7 @@ chronicle.dungeoneering.draft = (function ($) {
     };
 
     var findNextEmptySlot = function () {
-        var unfilledSlots = selectionSlots.filter('.hidden');
+        var unfilledSlots = selectionSlots.filter('.empty');
         return unfilledSlots.length === 0 ? null : $(unfilledSlots[0]);
     };
 
@@ -222,7 +223,7 @@ chronicle.dungeoneering.draft = (function ($) {
         img.attr('src', selectedCard.image);
         score = $(nextSlot.children('.card-score').eq(0));
         score.html(selectedCard.score);
-        nextSlot.removeClass('hidden');
+        nextSlot.removeClass('empty');
         nextSlot.data('cardId', selectedCard.id);
         clearText();
         saveCheck();
@@ -231,7 +232,9 @@ chronicle.dungeoneering.draft = (function ($) {
 
     var cardCloseClicked = function (evt) {
         var choiceSlot = $(this).closest('.card-choice');
-        choiceSlot.addClass('hidden').removeClass('selected');
+        choiceSlot.addClass('empty').removeClass('selected');
+        choiceSlot.children('img').attr('src', '/Content/img/card_back.png');
+        choiceSlot.children('.card-score').html('');
         choiceSlot.data('cardId', null);
     };
 
@@ -239,6 +242,8 @@ chronicle.dungeoneering.draft = (function ($) {
         var choice = $(this).closest('.card-choice');
         if (choice.hasClass('selected')) {
             choice.removeClass('selected');
+        } else if (choice.hasClass('empty')) {
+            return;
         } else {
             var selectedCount = selectionSlots.filter('.selected').length;
             if (selectedCount < 2) {

@@ -674,6 +674,7 @@
     <Content Include="Content\img\cards\Zamorak_Brew.png" />
     <Content Include="Content\img\cards\Zemouregal.png" />
     <Content Include="Content\img\cards\Zulrah.png" />
+    <Content Include="Content\img\card_back.png" />
     <Content Include="Content\img\icons\Ariane.png" />
     <Content Include="Content\img\icons\armour.png" />
     <Content Include="Content\img\icons\attack.png" />
