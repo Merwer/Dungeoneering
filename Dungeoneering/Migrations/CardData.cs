@@ -8,9 +8,9 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
 /* This is an auto-generated file */
     public static class CardData
     {
-        static List<CardContainer> containers = new List<CardContainer>();
-        static List<Card> cards = new List<Card>();
-        static List<CardScore> scores = new List<CardScore>();
+        static ICollection<CardContainer> containers = new HashSet<CardContainer>();
+        static ICollection<Card> cards = new HashSet<Card>();
+        static ICollection<CardScore> scores = new HashSet<CardScore>();
 
         static CardData() {
             containers.Add(new CardContainer { Id = 1, ChronicleId = 1, Archetype = null, Name = "Customs Officer", Rarity = Rarity.Emerald, Type = CardType.Combat });
@@ -738,7 +738,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 370 , Archetype = Archetype.Ozan     , Score = 80, Card = cards.Single(c => c.Id == 118) });
 
             containers.Add(new CardContainer { Id = 119, ChronicleId = 124, Archetype = null, Name = "Kayle", Rarity = Rarity.Diamond, Type = CardType.Combat });
-            cards.Add(new Card { Id = 119, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = true }, Image = "/Content/img/cards/Kayle.png", Version = "X", Cost = 0, Health = 2, Active = true, Parent = containers.Single(p => p.Id == 119) });
+            cards.Add(new Card { Id = 119, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = true }, Image = "/Content/img/cards/Kayle.png", Version = "X", Cost = 0, Health = 2, Active = false, Parent = containers.Single(p => p.Id == 119) });
             scores.Add(new CardScore { Id = 371 , Archetype = Archetype.TheRaptor, Score = 90, Card = cards.Single(c => c.Id == 119) });
             scores.Add(new CardScore { Id = 372 , Archetype = Archetype.Linza    , Score = 90, Card = cards.Single(c => c.Id == 119) });
             scores.Add(new CardScore { Id = 373 , Archetype = Archetype.Ariane   , Score = 90, Card = cards.Single(c => c.Id == 119) });
@@ -2066,227 +2066,233 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 999 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 351) });
 
             containers.Add(new CardContainer { Id = 352, ChronicleId = 394, Archetype = Archetype.Vanescula, Name = "Necrovarus", Rarity = Rarity.Ruby, Type = CardType.Combat });
-            cards.Add(new Card { Id = 352, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "//placehold.it/200?text=Necrovarus", Version = "X", Cost = 0, Health = 4, Active = true, Parent = containers.Single(p => p.Id == 352) });
+            cards.Add(new Card { Id = 352, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Necrovarus.png", Version = "X", Cost = 0, Health = 4, Active = true, Parent = containers.Single(p => p.Id == 352) });
             scores.Add(new CardScore { Id = 1000, Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 352) });
 
             containers.Add(new CardContainer { Id = 353, ChronicleId = 395, Archetype = Archetype.Morvran, Name = "Traitorous Imp", Rarity = Rarity.Saphire, Type = CardType.Combat });
-            cards.Add(new Card { Id = 353, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "//placehold.it/200?text=Traitorous Imp", Version = "X", Cost = 0, Health = 1, Active = true, Parent = containers.Single(p => p.Id == 353) });
+            cards.Add(new Card { Id = 353, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Traitorous_Imp.png", Version = "X", Cost = 0, Health = 1, Active = true, Parent = containers.Single(p => p.Id == 353) });
             scores.Add(new CardScore { Id = 1001, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 353) });
 
             containers.Add(new CardContainer { Id = 354, ChronicleId = 396, Archetype = Archetype.Morvran, Name = "Strength in Numbers", Rarity = Rarity.Saphire, Type = CardType.Support });
-            cards.Add(new Card { Id = 354, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "//placehold.it/200?text=Strength in Numbers", Version = "X", Cost = 0, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 354) });
+            cards.Add(new Card { Id = 354, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Strength_in_Numbers.png", Version = "X", Cost = 0, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 354) });
             scores.Add(new CardScore { Id = 1002, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 354) });
 
             containers.Add(new CardContainer { Id = 355, ChronicleId = 397, Archetype = Archetype.Morvran, Name = "Dungeon Spider", Rarity = Rarity.Saphire, Type = CardType.Combat });
-            cards.Add(new Card { Id = 355, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 2, Weapon = true }, Image = "//placehold.it/200?text=Dungeon Spider", Version = "X", Cost = 0, Health = 2, Active = true, Parent = containers.Single(p => p.Id == 355) });
+            cards.Add(new Card { Id = 355, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 2, Weapon = true }, Image = "/Content/img/cards/Dungeon_Spider.png", Version = "X", Cost = 0, Health = 2, Active = true, Parent = containers.Single(p => p.Id == 355) });
             scores.Add(new CardScore { Id = 1003, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 355) });
 
             containers.Add(new CardContainer { Id = 356, ChronicleId = 398, Archetype = Archetype.Morvran, Name = "Guard Dog", Rarity = Rarity.Saphire, Type = CardType.Combat });
-            cards.Add(new Card { Id = 356, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 2, Weapon = false }, Image = "//placehold.it/200?text=Guard Dog", Version = "X", Cost = 0, Health = 3, Active = true, Parent = containers.Single(p => p.Id == 356) });
+            cards.Add(new Card { Id = 356, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 2, Weapon = false }, Image = "/Content/img/cards/Guard_Dog.png", Version = "X", Cost = 0, Health = 3, Active = true, Parent = containers.Single(p => p.Id == 356) });
             scores.Add(new CardScore { Id = 1004, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 356) });
 
             containers.Add(new CardContainer { Id = 357, ChronicleId = 399, Archetype = Archetype.Morvran, Name = "Beastmaster", Rarity = Rarity.Saphire, Type = CardType.Support });
-            cards.Add(new Card { Id = 357, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "//placehold.it/200?text=Beastmaster", Version = "X", Cost = 0, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 357) });
+            cards.Add(new Card { Id = 357, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Beastmaster.png", Version = "X", Cost = 0, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 357) });
             scores.Add(new CardScore { Id = 1005, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 357) });
 
             containers.Add(new CardContainer { Id = 358, ChronicleId = 400, Archetype = Archetype.Morvran, Name = "Hollowtoof", Rarity = Rarity.Saphire, Type = CardType.Combat });
-            cards.Add(new Card { Id = 358, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "//placehold.it/200?text=Hollowtoof", Version = "X", Cost = 0, Health = 4, Active = true, Parent = containers.Single(p => p.Id == 358) });
+            cards.Add(new Card { Id = 358, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Hollowtoof.png", Version = "X", Cost = 0, Health = 4, Active = true, Parent = containers.Single(p => p.Id == 358) });
             scores.Add(new CardScore { Id = 1006, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 358) });
 
             containers.Add(new CardContainer { Id = 359, ChronicleId = 401, Archetype = Archetype.Morvran, Name = "Level Up", Rarity = Rarity.Saphire, Type = CardType.Support });
-            cards.Add(new Card { Id = 359, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "//placehold.it/200?text=Level Up", Version = "X", Cost = 0, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 359) });
+            cards.Add(new Card { Id = 359, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Level_Up.png", Version = "X", Cost = 0, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 359) });
             scores.Add(new CardScore { Id = 1007, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 359) });
 
             containers.Add(new CardContainer { Id = 360, ChronicleId = 402, Archetype = Archetype.Morvran, Name = "Preparing to Hunt", Rarity = Rarity.Emerald, Type = CardType.Support });
-            cards.Add(new Card { Id = 360, Rewards = new CardRewards { Attack = 0, Armour = 5, Health = 0, Coins = 0, Weapon = true }, Image = "//placehold.it/200?text=Preparing to Hunt", Version = "X", Cost = 3, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 360) });
+            cards.Add(new Card { Id = 360, Rewards = new CardRewards { Attack = 0, Armour = 5, Health = 0, Coins = 0, Weapon = true }, Image = "/Content/img/cards/Preparing_to_Hunt.png", Version = "X", Cost = 3, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 360) });
             scores.Add(new CardScore { Id = 1008, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 360) });
 
             containers.Add(new CardContainer { Id = 361, ChronicleId = 403, Archetype = Archetype.Morvran, Name = "Dragon Two Hander", Rarity = Rarity.Saphire, Type = CardType.Support });
-            cards.Add(new Card { Id = 361, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = true }, Image = "//placehold.it/200?text=Dragon Two Hander", Version = "X", Cost = 5, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 361) });
+            cards.Add(new Card { Id = 361, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = true }, Image = "/Content/img/cards/Dragon_Two_Hander.png", Version = "X", Cost = 5, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 361) });
             scores.Add(new CardScore { Id = 1009, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 361) });
 
             containers.Add(new CardContainer { Id = 362, ChronicleId = 404, Archetype = Archetype.Morvran, Name = "Kalphite Egg", Rarity = Rarity.Saphire, Type = CardType.Combat });
-            cards.Add(new Card { Id = 362, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "//placehold.it/200?text=Kalphite Egg", Version = "X", Cost = 0, Health = 8, Active = true, Parent = containers.Single(p => p.Id == 362) });
+            cards.Add(new Card { Id = 362, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Kalphite_Egg.png", Version = "X", Cost = 0, Health = 8, Active = true, Parent = containers.Single(p => p.Id == 362) });
             scores.Add(new CardScore { Id = 1010, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 362) });
 
             containers.Add(new CardContainer { Id = 363, ChronicleId = 405, Archetype = Archetype.Morvran, Name = "Dung Kalphite", Rarity = Rarity.Saphire, Type = CardType.Combat });
-            cards.Add(new Card { Id = 363, Rewards = new CardRewards { Attack = 0, Armour = 4, Health = 0, Coins = 1, Weapon = false }, Image = "//placehold.it/200?text=Dung Kalphite", Version = "X", Cost = 0, Health = 3, Active = true, Parent = containers.Single(p => p.Id == 363) });
+            cards.Add(new Card { Id = 363, Rewards = new CardRewards { Attack = 0, Armour = 4, Health = 0, Coins = 1, Weapon = false }, Image = "/Content/img/cards/Dung_Kalphite.png", Version = "X", Cost = 0, Health = 3, Active = true, Parent = containers.Single(p => p.Id == 363) });
             scores.Add(new CardScore { Id = 1011, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 363) });
 
             containers.Add(new CardContainer { Id = 364, ChronicleId = 406, Archetype = Archetype.Morvran, Name = "Tame", Rarity = Rarity.Emerald, Type = CardType.Support });
-            cards.Add(new Card { Id = 364, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "//placehold.it/200?text=Tame", Version = "X", Cost = 1, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 364) });
+            cards.Add(new Card { Id = 364, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Tame.png", Version = "X", Cost = 1, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 364) });
             scores.Add(new CardScore { Id = 1012, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 364) });
 
             containers.Add(new CardContainer { Id = 365, ChronicleId = 407, Archetype = Archetype.Morvran, Name = "Mazchna", Rarity = Rarity.Saphire, Type = CardType.Support });
-            cards.Add(new Card { Id = 365, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 1, Weapon = false }, Image = "//placehold.it/200?text=Mazchna", Version = "X", Cost = 0, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 365) });
+            cards.Add(new Card { Id = 365, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 1, Weapon = false }, Image = "/Content/img/cards/Mazchna.png", Version = "X", Cost = 0, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 365) });
             scores.Add(new CardScore { Id = 1013, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 365) });
 
             containers.Add(new CardContainer { Id = 366, ChronicleId = 408, Archetype = Archetype.Morvran, Name = "Mutated Jadinko", Rarity = Rarity.Saphire, Type = CardType.Combat });
-            cards.Add(new Card { Id = 366, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 2, Weapon = false }, Image = "//placehold.it/200?text=Mutated Jadinko", Version = "X", Cost = 0, Health = 5, Active = true, Parent = containers.Single(p => p.Id == 366) });
+            cards.Add(new Card { Id = 366, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 2, Weapon = false }, Image = "/Content/img/cards/Mutated_Jadinko.png", Version = "X", Cost = 0, Health = 5, Active = true, Parent = containers.Single(p => p.Id == 366) });
             scores.Add(new CardScore { Id = 1014, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 366) });
 
             containers.Add(new CardContainer { Id = 367, ChronicleId = 409, Archetype = Archetype.Morvran, Name = "Gorad", Rarity = Rarity.Saphire, Type = CardType.Combat });
-            cards.Add(new Card { Id = 367, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "//placehold.it/200?text=Gorad", Version = "X", Cost = 0, Health = 2, Active = true, Parent = containers.Single(p => p.Id == 367) });
+            cards.Add(new Card { Id = 367, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Gorad.png", Version = "X", Cost = 0, Health = 2, Active = true, Parent = containers.Single(p => p.Id == 367) });
             scores.Add(new CardScore { Id = 1015, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 367) });
 
             containers.Add(new CardContainer { Id = 368, ChronicleId = 410, Archetype = Archetype.Morvran, Name = "Woven Carapace", Rarity = Rarity.Saphire, Type = CardType.Support });
-            cards.Add(new Card { Id = 368, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "//placehold.it/200?text=Woven Carapace", Version = "X", Cost = 0, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 368) });
+            cards.Add(new Card { Id = 368, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Woven_Carapace.png", Version = "X", Cost = 0, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 368) });
             scores.Add(new CardScore { Id = 1016, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 368) });
 
             containers.Add(new CardContainer { Id = 369, ChronicleId = 411, Archetype = Archetype.Morvran, Name = "Bunny", Rarity = Rarity.Saphire, Type = CardType.Combat });
-            cards.Add(new Card { Id = 369, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 1, Coins = 1, Weapon = false }, Image = "//placehold.it/200?text=Bunny", Version = "X", Cost = 0, Health = 1, Active = true, Parent = containers.Single(p => p.Id == 369) });
+            cards.Add(new Card { Id = 369, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 1, Coins = 1, Weapon = false }, Image = "/Content/img/cards/Bunny.png", Version = "X", Cost = 0, Health = 1, Active = true, Parent = containers.Single(p => p.Id == 369) });
             scores.Add(new CardScore { Id = 1017, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 369) });
 
             containers.Add(new CardContainer { Id = 370, ChronicleId = 412, Archetype = Archetype.Morvran, Name = "Dire Wolf", Rarity = Rarity.Ruby, Type = CardType.Combat });
-            cards.Add(new Card { Id = 370, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "//placehold.it/200?text=Dire Wolf", Version = "X", Cost = 0, Health = 4, Active = true, Parent = containers.Single(p => p.Id == 370) });
+            cards.Add(new Card { Id = 370, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Dire_Wolf.png", Version = "X", Cost = 0, Health = 4, Active = true, Parent = containers.Single(p => p.Id == 370) });
             scores.Add(new CardScore { Id = 1018, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 370) });
 
             containers.Add(new CardContainer { Id = 371, ChronicleId = 413, Archetype = Archetype.Morvran, Name = "Set Trap", Rarity = Rarity.Saphire, Type = CardType.Support });
-            cards.Add(new Card { Id = 371, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "//placehold.it/200?text=Set Trap", Version = "X", Cost = 1, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 371) });
+            cards.Add(new Card { Id = 371, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Set_Trap.png", Version = "X", Cost = 1, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 371) });
             scores.Add(new CardScore { Id = 1019, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 371) });
 
             containers.Add(new CardContainer { Id = 372, ChronicleId = 414, Archetype = Archetype.Morvran, Name = "Iowerth Hellhound", Rarity = Rarity.Saphire, Type = CardType.Combat });
-            cards.Add(new Card { Id = 372, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 4, Weapon = false }, Image = "//placehold.it/200?text=Iowerth Hellhound", Version = "X", Cost = 0, Health = 2, Active = true, Parent = containers.Single(p => p.Id == 372) });
+            cards.Add(new Card { Id = 372, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 4, Weapon = false }, Image = "/Content/img/cards/Iowerth_Hellhound.png", Version = "X", Cost = 0, Health = 2, Active = true, Parent = containers.Single(p => p.Id == 372) });
             scores.Add(new CardScore { Id = 1020, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 372) });
 
             containers.Add(new CardContainer { Id = 373, ChronicleId = 415, Archetype = Archetype.Morvran, Name = "Zogre Mauler", Rarity = Rarity.Saphire, Type = CardType.Combat });
-            cards.Add(new Card { Id = 373, Rewards = new CardRewards { Attack = 0, Armour = 1, Health = 0, Coins = 1, Weapon = false }, Image = "//placehold.it/200?text=Zogre Mauler", Version = "X", Cost = 0, Health = 4, Active = true, Parent = containers.Single(p => p.Id == 373) });
+            cards.Add(new Card { Id = 373, Rewards = new CardRewards { Attack = 0, Armour = 1, Health = 0, Coins = 1, Weapon = false }, Image = "/Content/img/cards/Zogre_Mauler.png", Version = "X", Cost = 0, Health = 4, Active = true, Parent = containers.Single(p => p.Id == 373) });
             scores.Add(new CardScore { Id = 1021, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 373) });
 
             containers.Add(new CardContainer { Id = 374, ChronicleId = 416, Archetype = Archetype.Morvran, Name = "Ogress Champion", Rarity = Rarity.Saphire, Type = CardType.Combat });
-            cards.Add(new Card { Id = 374, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "//placehold.it/200?text=Ogress Champion", Version = "X", Cost = 0, Health = 5, Active = true, Parent = containers.Single(p => p.Id == 374) });
+            cards.Add(new Card { Id = 374, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Ogress_Champion.png", Version = "X", Cost = 0, Health = 5, Active = true, Parent = containers.Single(p => p.Id == 374) });
             scores.Add(new CardScore { Id = 1022, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 374) });
 
             containers.Add(new CardContainer { Id = 375, ChronicleId = 417, Archetype = Archetype.Morvran, Name = "Ambushed Hive", Rarity = Rarity.Emerald, Type = CardType.Support });
-            cards.Add(new Card { Id = 375, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "//placehold.it/200?text=Ambushed Hive", Version = "X", Cost = 2, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 375) });
+            cards.Add(new Card { Id = 375, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Ambushed_Hive.png", Version = "X", Cost = 2, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 375) });
             scores.Add(new CardScore { Id = 1023, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 375) });
 
             containers.Add(new CardContainer { Id = 376, ChronicleId = 418, Archetype = Archetype.Morvran, Name = "Unicorn", Rarity = Rarity.Saphire, Type = CardType.Combat });
-            cards.Add(new Card { Id = 376, Rewards = new CardRewards { Attack = 0, Armour = 6, Health = 6, Coins = 0, Weapon = false }, Image = "//placehold.it/200?text=Unicorn", Version = "X", Cost = 0, Health = 7, Active = true, Parent = containers.Single(p => p.Id == 376) });
+            cards.Add(new Card { Id = 376, Rewards = new CardRewards { Attack = 0, Armour = 6, Health = 6, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Unicorn.png", Version = "X", Cost = 0, Health = 7, Active = true, Parent = containers.Single(p => p.Id == 376) });
             scores.Add(new CardScore { Id = 1024, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 376) });
 
             containers.Add(new CardContainer { Id = 377, ChronicleId = 419, Archetype = Archetype.Morvran, Name = "Bouncer", Rarity = Rarity.Saphire, Type = CardType.Combat });
-            cards.Add(new Card { Id = 377, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "//placehold.it/200?text=Bouncer", Version = "X", Cost = 0, Health = 3, Active = true, Parent = containers.Single(p => p.Id == 377) });
+            cards.Add(new Card { Id = 377, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Bouncer.png", Version = "X", Cost = 0, Health = 3, Active = true, Parent = containers.Single(p => p.Id == 377) });
             scores.Add(new CardScore { Id = 1025, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 377) });
 
             containers.Add(new CardContainer { Id = 378, ChronicleId = 420, Archetype = Archetype.Morvran, Name = "Grunsh", Rarity = Rarity.Emerald, Type = CardType.Combat });
-            cards.Add(new Card { Id = 378, Rewards = new CardRewards { Attack = 0, Armour = 2, Health = 0, Coins = 0, Weapon = false }, Image = "//placehold.it/200?text=Grunsh", Version = "X", Cost = 0, Health = 4, Active = true, Parent = containers.Single(p => p.Id == 378) });
+            cards.Add(new Card { Id = 378, Rewards = new CardRewards { Attack = 0, Armour = 2, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Grunsh.png", Version = "X", Cost = 0, Health = 4, Active = true, Parent = containers.Single(p => p.Id == 378) });
             scores.Add(new CardScore { Id = 1026, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 378) });
 
             containers.Add(new CardContainer { Id = 379, ChronicleId = 421, Archetype = Archetype.Morvran, Name = "Rush of Blood", Rarity = Rarity.Saphire, Type = CardType.Support });
-            cards.Add(new Card { Id = 379, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "//placehold.it/200?text=Rush of Blood", Version = "X", Cost = 3, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 379) });
+            cards.Add(new Card { Id = 379, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Rush_of_Blood.png", Version = "X", Cost = 3, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 379) });
             scores.Add(new CardScore { Id = 1027, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 379) });
 
             containers.Add(new CardContainer { Id = 380, ChronicleId = 422, Archetype = Archetype.Morvran, Name = "Charging Monsters", Rarity = Rarity.Emerald, Type = CardType.Support });
-            cards.Add(new Card { Id = 380, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "//placehold.it/200?text=Charging Monsters", Version = "X", Cost = 0, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 380) });
+            cards.Add(new Card { Id = 380, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Charging_Monsters.png", Version = "X", Cost = 0, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 380) });
             scores.Add(new CardScore { Id = 1028, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 380) });
 
             containers.Add(new CardContainer { Id = 381, ChronicleId = 423, Archetype = Archetype.Morvran, Name = "Kalphite Acid", Rarity = Rarity.Emerald, Type = CardType.Support });
-            cards.Add(new Card { Id = 381, Rewards = new CardRewards { Attack = 0, Armour = 5, Health = 0, Coins = 0, Weapon = false }, Image = "//placehold.it/200?text=Kalphite Acid", Version = "X", Cost = 2, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 381) });
+            cards.Add(new Card { Id = 381, Rewards = new CardRewards { Attack = 0, Armour = 5, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Kalphite_Acid.png", Version = "X", Cost = 2, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 381) });
             scores.Add(new CardScore { Id = 1029, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 381) });
 
             containers.Add(new CardContainer { Id = 382, ChronicleId = 424, Archetype = Archetype.Morvran, Name = "Anger of Delrith", Rarity = Rarity.Emerald, Type = CardType.Support });
-            cards.Add(new Card { Id = 382, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "//placehold.it/200?text=Anger of Delrith", Version = "X", Cost = 0, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 382) });
+            cards.Add(new Card { Id = 382, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Anger_of_Delrith.png", Version = "X", Cost = 0, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 382) });
             scores.Add(new CardScore { Id = 1030, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 382) });
 
             containers.Add(new CardContainer { Id = 383, ChronicleId = 425, Archetype = Archetype.Morvran, Name = "Abyssal Demon", Rarity = Rarity.Emerald, Type = CardType.Combat });
-            cards.Add(new Card { Id = 383, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 2, Weapon = false }, Image = "//placehold.it/200?text=Abyssal Demon", Version = "X", Cost = 0, Health = 4, Active = true, Parent = containers.Single(p => p.Id == 383) });
+            cards.Add(new Card { Id = 383, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 2, Weapon = false }, Image = "/Content/img/cards/Abyssal_Demon.png", Version = "X", Cost = 0, Health = 4, Active = true, Parent = containers.Single(p => p.Id == 383) });
             scores.Add(new CardScore { Id = 1031, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 383) });
 
             containers.Add(new CardContainer { Id = 384, ChronicleId = 426, Archetype = Archetype.Morvran, Name = "Chaos Dwogre", Rarity = Rarity.Emerald, Type = CardType.Combat });
-            cards.Add(new Card { Id = 384, Rewards = new CardRewards { Attack = 0, Armour = 4, Health = 0, Coins = 2, Weapon = false }, Image = "//placehold.it/200?text=Chaos Dwogre", Version = "X", Cost = 0, Health = 9, Active = true, Parent = containers.Single(p => p.Id == 384) });
+            cards.Add(new Card { Id = 384, Rewards = new CardRewards { Attack = 0, Armour = 4, Health = 0, Coins = 2, Weapon = false }, Image = "/Content/img/cards/Chaos_Dwogre.png", Version = "X", Cost = 0, Health = 9, Active = true, Parent = containers.Single(p => p.Id == 384) });
             scores.Add(new CardScore { Id = 1032, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 384) });
 
             containers.Add(new CardContainer { Id = 385, ChronicleId = 428, Archetype = Archetype.Morvran, Name = "Toughened Warrior", Rarity = Rarity.Emerald, Type = CardType.Support });
-            cards.Add(new Card { Id = 385, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "//placehold.it/200?text=Toughened Warrior", Version = "X", Cost = 0, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 385) });
+            cards.Add(new Card { Id = 385, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Toughened_Warrior.png", Version = "X", Cost = 0, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 385) });
             scores.Add(new CardScore { Id = 1033, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 385) });
 
             containers.Add(new CardContainer { Id = 386, ChronicleId = 429, Archetype = Archetype.Morvran, Name = "Kalphite Marauder", Rarity = Rarity.Ruby, Type = CardType.Combat });
-            cards.Add(new Card { Id = 386, Rewards = new CardRewards { Attack = 0, Armour = 3, Health = 0, Coins = 0, Weapon = false }, Image = "//placehold.it/200?text=Kalphite Marauder", Version = "X", Cost = 0, Health = 6, Active = true, Parent = containers.Single(p => p.Id == 386) });
+            cards.Add(new Card { Id = 386, Rewards = new CardRewards { Attack = 0, Armour = 3, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Kalphite_Marauder.png", Version = "X", Cost = 0, Health = 6, Active = true, Parent = containers.Single(p => p.Id == 386) });
             scores.Add(new CardScore { Id = 1034, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 386) });
 
             containers.Add(new CardContainer { Id = 387, ChronicleId = 430, Archetype = Archetype.Morvran, Name = "Dragon Egg", Rarity = Rarity.Ruby, Type = CardType.Support });
-            cards.Add(new Card { Id = 387, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "//placehold.it/200?text=Dragon Egg", Version = "X", Cost = 1, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 387) });
+            cards.Add(new Card { Id = 387, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Dragon_Egg.png", Version = "X", Cost = 1, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 387) });
             scores.Add(new CardScore { Id = 1035, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 387) });
 
             containers.Add(new CardContainer { Id = 388, ChronicleId = 431, Archetype = Archetype.Morvran, Name = "Kalphite Queen", Rarity = Rarity.Diamond, Type = CardType.Combat });
-            cards.Add(new Card { Id = 388, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "//placehold.it/200?text=Kalphite Queen", Version = "X", Cost = 0, Health = 10, Active = true, Parent = containers.Single(p => p.Id == 388) });
+            cards.Add(new Card { Id = 388, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Kalphite_Queen.png", Version = "X", Cost = 0, Health = 10, Active = true, Parent = containers.Single(p => p.Id == 388) });
             scores.Add(new CardScore { Id = 1036, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 388) });
 
             containers.Add(new CardContainer { Id = 389, ChronicleId = 433, Archetype = Archetype.Morvran, Name = "Deadly Prey", Rarity = Rarity.Diamond, Type = CardType.Support });
-            cards.Add(new Card { Id = 389, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "//placehold.it/200?text=Deadly Prey", Version = "X", Cost = 0, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 389) });
+            cards.Add(new Card { Id = 389, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Deadly_Prey.png", Version = "X", Cost = 0, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 389) });
             scores.Add(new CardScore { Id = 1037, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 389) });
-
-            /*
-            cards.Add(new Card { Id = 390, Rewards = new CardRewards { Attack = 0, Armour = 3, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Kayle.png", Version = "2", Cost = 0, Health = 2, Active = true, Parent = containers.Single(p => p.Id == 119) });
+            
+            cards.Add(new Card { Id = 390, Rewards = new CardRewards { Attack = 0, Armour = 3, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Kayle_v1482056.png", Version = "1482056", Cost = 0, Health = 2, Active = true, Parent = containers.Single(p => p.Id == 119) });
             scores.Add(new CardScore { Id = 1038, Archetype = Archetype.TheRaptor, Score = 90, Card = cards.Single(c => c.Id == 390) });
-            scores.Add(new CardScore { Id = 1039, Archetype = Archetype.Linza, Score = 90, Card = cards.Single(c => c.Id == 390) });
-            scores.Add(new CardScore { Id = 1040, Archetype = Archetype.Ariane, Score = 90, Card = cards.Single(c => c.Id == 390) });
+            scores.Add(new CardScore { Id = 1039, Archetype = Archetype.Linza    , Score = 90, Card = cards.Single(c => c.Id == 390) });
+            scores.Add(new CardScore { Id = 1040, Archetype = Archetype.Ariane   , Score = 90, Card = cards.Single(c => c.Id == 390) });
             scores.Add(new CardScore { Id = 1041, Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 390) });
-            scores.Add(new CardScore { Id = 1042, Archetype = Archetype.Ozan, Score = 90, Card = cards.Single(c => c.Id == 390) });
+            scores.Add(new CardScore { Id = 1042, Archetype = Archetype.Ozan     , Score = 90, Card = cards.Single(c => c.Id == 390) });
 
-            cards.Add(new Card { Id = 391, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Haunted_Soul.png", Version = "2", Cost = 0, Health = 5, Active = true, Parent = containers.Single(p => p.Id == 162) });
+            cards.Add(new Card { Id = 391, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Haunted_Soul_v1482056.png", Version = "1482056", Cost = 0, Health = 5, Active = true, Parent = containers.Single(p => p.Id == 162) });
             scores.Add(new CardScore { Id = 1043, Archetype = Archetype.Ariane, Score = 100, Card = cards.Single(c => c.Id == 391) });
 
-            cards.Add(new Card { Id = 392, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Earth_Blast.png", Version = "2", Cost = 6, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 165) });
+            cards.Add(new Card { Id = 392, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Earth_Blast_v1482056.png", Version = "1482056", Cost = 6, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 165) });
             scores.Add(new CardScore { Id = 1044, Archetype = Archetype.Ariane, Score = 100, Card = cards.Single(c => c.Id == 392) });
 
-            cards.Add(new Card { Id = 393, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Redbeard_Frank.png", Version = "2", Cost = 0, Health = 3, Active = true, Parent = containers.Single(p => p.Id == 177) });
+            cards.Add(new Card { Id = 393, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Redbeard_Frank_v1482056.png", Version = "1482056", Cost = 0, Health = 3, Active = true, Parent = containers.Single(p => p.Id == 177) });
             scores.Add(new CardScore { Id = 1045, Archetype = Archetype.TheRaptor, Score = 70, Card = cards.Single(c => c.Id == 393) });
             scores.Add(new CardScore { Id = 1046, Archetype = Archetype.Linza, Score = 60, Card = cards.Single(c => c.Id == 393) });
             scores.Add(new CardScore { Id = 1047, Archetype = Archetype.Ariane, Score = 60, Card = cards.Single(c => c.Id == 393) });
             scores.Add(new CardScore { Id = 1048, Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 393) });
             scores.Add(new CardScore { Id = 1049, Archetype = Archetype.Ozan, Score = 40, Card = cards.Single(c => c.Id == 393) });
 
-            cards.Add(new Card { Id = 394, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/To_Kash.png", Version = "2", Cost = 0, Health = 12, Active = true, Parent = containers.Single(p => p.Id == 179) });
+            cards.Add(new Card { Id = 394, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/To_Kash_v1482056.png", Version = "1482056", Cost = 0, Health = 12, Active = true, Parent = containers.Single(p => p.Id == 179) });
             scores.Add(new CardScore { Id = 1050, Archetype = Archetype.TheRaptor, Score = 40, Card = cards.Single(c => c.Id == 394) });
             scores.Add(new CardScore { Id = 1051, Archetype = Archetype.Linza, Score = 40, Card = cards.Single(c => c.Id == 394) });
             scores.Add(new CardScore { Id = 1052, Archetype = Archetype.Ariane, Score = 40, Card = cards.Single(c => c.Id == 394) });
             scores.Add(new CardScore { Id = 1053, Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 394) });
             scores.Add(new CardScore { Id = 1054, Archetype = Archetype.Ozan, Score = 50, Card = cards.Single(c => c.Id == 394) });
 
-            cards.Add(new Card { Id = 395, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Enfeeble.png", Version = "2", Cost = 1, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 193) });
+            cards.Add(new Card { Id = 395, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Enfeeble_v1482056.png", Version = "1482056", Cost = 1, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 193) });
             scores.Add(new CardScore { Id = 1055, Archetype = Archetype.Ariane, Score = 90, Card = cards.Single(c => c.Id == 395) });
 
-            cards.Add(new Card { Id = 396, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Lady_Hefin.png", Version = "2", Cost = 2, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 195) });
+            cards.Add(new Card { Id = 396, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Lady_Hefin_v1482056.png", Version = "1482056", Cost = 2, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 195) });
             scores.Add(new CardScore { Id = 1056, Archetype = Archetype.Ariane, Score = 80, Card = cards.Single(c => c.Id == 396) });
 
-            cards.Add(new Card { Id = 397, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Stagger.png", Version = "2", Cost = 0, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 197) });
+            cards.Add(new Card { Id = 397, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Stagger_v1482056.png", Version = "1482056", Cost = 0, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 197) });
             scores.Add(new CardScore { Id = 1057, Archetype = Archetype.Ariane, Score = 100, Card = cards.Single(c => c.Id == 397) });
 
-            cards.Add(new Card { Id = 398, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Skeletal_Peon.png", Version = "2", Cost = 0, Health = 3, Active = true, Parent = containers.Single(p => p.Id == 240) });
+            cards.Add(new Card { Id = 398, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Skeletal_Peon_v1482056.png", Version = "1482056", Cost = 0, Health = 3, Active = true, Parent = containers.Single(p => p.Id == 240) });
             scores.Add(new CardScore { Id = 1058, Archetype = Archetype.Ariane, Score = 70, Card = cards.Single(c => c.Id == 398) });
 
-            cards.Add(new Card { Id = 399, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Char.png", Version = "2", Cost = 0, Health = 10, Active = true, Parent = containers.Single(p => p.Id == 261) });
+            cards.Add(new Card { Id = 399, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Char_v1482056.png", Version = "1482056", Cost = 0, Health = 10, Active = true, Parent = containers.Single(p => p.Id == 261) });
             scores.Add(new CardScore { Id = 1059, Archetype = Archetype.Linza, Score = 30, Card = cards.Single(c => c.Id == 399) });
 
-            cards.Add(new Card { Id = 400, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Papa_Mambo.png", Version = "2", Cost = 2, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 276) });
+            cards.Add(new Card { Id = 400, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Papa_Mambo_v1482056.png", Version = "1482056", Cost = 2, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 276) });
             scores.Add(new CardScore { Id = 1060, Archetype = Archetype.TheRaptor, Score = 10, Card = cards.Single(c => c.Id == 400) });
             scores.Add(new CardScore { Id = 1061, Archetype = Archetype.Linza, Score = 20, Card = cards.Single(c => c.Id == 400) });
             scores.Add(new CardScore { Id = 1062, Archetype = Archetype.Ariane, Score = 30, Card = cards.Single(c => c.Id == 400) });
             scores.Add(new CardScore { Id = 1063, Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 400) });
             scores.Add(new CardScore { Id = 1064, Archetype = Archetype.Ozan, Score = 20, Card = cards.Single(c => c.Id == 400) });
 
-            cards.Add(new Card { Id = 401, Rewards = new CardRewards { Attack = 1, Armour = 12, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Ranis_Drakan.png", Version = "2", Cost = 0, Health = 9, Active = true, Parent = containers.Single(p => p.Id == 302) });
+            cards.Add(new Card { Id = 401, Rewards = new CardRewards { Attack = 1, Armour = 12, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Ranis_Drakan_v1482056.png", Version = "1482056", Cost = 0, Health = 9, Active = true, Parent = containers.Single(p => p.Id == 302) });
             scores.Add(new CardScore { Id = 1065, Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 401) });
 
-            cards.Add(new Card { Id = 402, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Wise_Old_Man.png", Version = "2", Cost = 5, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 323) });
+            cards.Add(new Card { Id = 402, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Wise_Old_Man_v1482056.png", Version = "1482056", Cost = 5, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 323) });
             scores.Add(new CardScore { Id = 1066, Archetype = Archetype.Ariane, Score = 10, Card = cards.Single(c => c.Id == 402) });
 
-            cards.Add(new Card { Id = 403, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "//placehold.it/200?text=Zulrah", Version = "2", Cost = 0, Health = 8, Active = true, Parent = containers.Single(p => p.Id == 329) });
+            cards.Add(new Card { Id = 403, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Zulrah_v1482056.png", Version = "1482056", Cost = 0, Health = 8, Active = true, Parent = containers.Single(p => p.Id == 329) });
             scores.Add(new CardScore { Id = 1067, Archetype = Archetype.TheRaptor, Score = 30, Card = cards.Single(c => c.Id == 403) });
             scores.Add(new CardScore { Id = 1068, Archetype = Archetype.Linza, Score = 70, Card = cards.Single(c => c.Id == 403) });
             scores.Add(new CardScore { Id = 1069, Archetype = Archetype.Ariane, Score = 30, Card = cards.Single(c => c.Id == 403) });
             scores.Add(new CardScore { Id = 1070, Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 403) });
             scores.Add(new CardScore { Id = 1071, Archetype = Archetype.Ozan, Score = 30, Card = cards.Single(c => c.Id == 403) });
-            */
         }
 
         public static void SeedData(ApplicationDbContext db)
         {
-            db.CardContainers.AddOrUpdate(containers.ToArray());
-            db.Cards.AddOrUpdate(cards.ToArray());
-            db.CardScores.AddOrUpdate(scores.ToArray());
+            db.CardContainers.AddOrUpdate(c => c.Id, containers.ToArray());
+            foreach(var card in cards)
+            {
+                card.Parent = db.CardContainers.Find(card.Parent.Id);
+            }
+            db.Cards.AddOrUpdate(c => c.Id, cards.ToArray());
+            foreach (var cardScore in scores)
+            {
+                cardScore.Card = db.Cards.Find(cardScore.Card.Id);
+            }
+            db.CardScores.AddOrUpdate(c => c.Id, scores.ToArray());
         }
     }
 }

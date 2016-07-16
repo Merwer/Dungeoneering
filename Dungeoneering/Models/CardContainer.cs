@@ -9,6 +9,11 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Models
 {
     public class CardContainer : StaticIdEntity
     {
+        public CardContainer()
+        {
+            Versions = new List<Card>();
+        }
+
         public Archetype? Archetype { get; set; }
 
         [Required]
