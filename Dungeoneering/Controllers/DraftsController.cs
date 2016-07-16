@@ -260,19 +260,11 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
         {
             var list = db.CardScores.Where(cs => cs.Archetype == archetype)
                 .Select(cs => cs.Card)
+                .Where(c => c.Active)
                 .Include(c => c.Parent)
                 .Include(c => c.Scores)
+                .ToList();
 
-            //var list = db.CardScores
-            //    .Where(cs => cs.Archetype == archetype)
-            //    .Select(cs => cs.Card)
-            //    .Include(c => c.Parent)
-            //    .Include(c => c.Scores)
-
-            //var list = db.Cards.Include(c => c.Parent).Include(c => c.Scores)
-            //    .Where(c => c.Scores.Any(cs => cs.Archetype == archetype));
-
-            .ToList();
             list.ForEach(c =>
             {
                 c.Score = c.Scores.Single(s => s.Archetype == archetype).Score;
