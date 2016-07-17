@@ -20,6 +20,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 3   , Archetype = Archetype.Ariane   , Score = 70, Card = cards.Single(c => c.Id == 1) });
             scores.Add(new CardScore { Id = 4   , Archetype = Archetype.Vanescula, Score = 80, Card = cards.Single(c => c.Id == 1) });
             scores.Add(new CardScore { Id = 5   , Archetype = Archetype.Ozan     , Score = -1, Card = cards.Single(c => c.Id == 1) });
+            scores.Add(new CardScore { Id = 1072, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 1) });
 
             containers.Add(new CardContainer { Id = 2, ChronicleId = 2, Archetype = null, Name = "Goblin Flashmob", Rarity = Rarity.Saphire, Type = CardType.Combat });
             cards.Add(new Card { Id = 2, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 4, Weapon = false }, Image = "/Content/img/cards/Goblin_Flashmob.png", Version = "X", Cost = 0, Health = 9, Active = true, Parent = containers.Single(p => p.Id == 2) });
@@ -28,6 +29,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 8   , Archetype = Archetype.Ariane   , Score = 70, Card = cards.Single(c => c.Id == 2) });
             scores.Add(new CardScore { Id = 9   , Archetype = Archetype.Vanescula, Score = 60, Card = cards.Single(c => c.Id == 2) });
             scores.Add(new CardScore { Id = 10  , Archetype = Archetype.Ozan     , Score = -1, Card = cards.Single(c => c.Id == 2) });
+            scores.Add(new CardScore { Id = 1073, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 2) });
 
             containers.Add(new CardContainer { Id = 3, ChronicleId = 3, Archetype = null, Name = "Yelps", Rarity = Rarity.Diamond, Type = CardType.Combat });
             cards.Add(new Card { Id = 3, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Yelps.png", Version = "X", Cost = 0, Health = 3, Active = true, Parent = containers.Single(p => p.Id == 3) });
@@ -36,6 +38,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 13  , Archetype = Archetype.Ariane   , Score = 80, Card = cards.Single(c => c.Id == 3) });
             scores.Add(new CardScore { Id = 14  , Archetype = Archetype.Vanescula, Score = 80, Card = cards.Single(c => c.Id == 3) });
             scores.Add(new CardScore { Id = 15  , Archetype = Archetype.Ozan     , Score = -1, Card = cards.Single(c => c.Id == 3) });
+            scores.Add(new CardScore { Id = 1074, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 3) });
 
             containers.Add(new CardContainer { Id = 4, ChronicleId = 4, Archetype = null, Name = "General Graardor", Rarity = Rarity.Ruby, Type = CardType.Combat });
             cards.Add(new Card { Id = 4, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = true }, Image = "/Content/img/cards/General_Graardor.png", Version = "X", Cost = 0, Health = 13, Active = true, Parent = containers.Single(p => p.Id == 4) });
@@ -44,6 +47,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 18  , Archetype = Archetype.Ariane   , Score = 20, Card = cards.Single(c => c.Id == 4) });
             scores.Add(new CardScore { Id = 19  , Archetype = Archetype.Vanescula, Score = 30, Card = cards.Single(c => c.Id == 4) });
             scores.Add(new CardScore { Id = 20  , Archetype = Archetype.Ozan     , Score = -1, Card = cards.Single(c => c.Id == 4) });
+            scores.Add(new CardScore { Id = 1075, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 4) });
 
             containers.Add(new CardContainer { Id = 5, ChronicleId = 5, Archetype = null, Name = "Ogre Brute", Rarity = Rarity.Saphire, Type = CardType.Combat });
             cards.Add(new Card { Id = 5, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Ogre_Brute.png", Version = "X", Cost = 0, Health = 6, Active = true, Parent = containers.Single(p => p.Id == 5) });
@@ -52,6 +56,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 23  , Archetype = Archetype.Ariane   , Score = 20, Card = cards.Single(c => c.Id == 5) });
             scores.Add(new CardScore { Id = 24  , Archetype = Archetype.Vanescula, Score = 30, Card = cards.Single(c => c.Id == 5) });
             scores.Add(new CardScore { Id = 25  , Archetype = Archetype.Ozan     , Score = -1, Card = cards.Single(c => c.Id == 5) });
+            scores.Add(new CardScore { Id = 1076, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 5) });
 
             containers.Add(new CardContainer { Id = 6, ChronicleId = 6, Archetype = null, Name = "Black Arm Bandit", Rarity = Rarity.Saphire, Type = CardType.Combat });
             cards.Add(new Card { Id = 6, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 2, Weapon = false }, Image = "/Content/img/cards/Black_Arm_Bandit.png", Version = "X", Cost = 0, Health = 2, Active = true, Parent = containers.Single(p => p.Id == 6) });
@@ -60,6 +65,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 28  , Archetype = Archetype.Ariane   , Score = 70, Card = cards.Single(c => c.Id == 6) });
             scores.Add(new CardScore { Id = 29  , Archetype = Archetype.Vanescula, Score = 60, Card = cards.Single(c => c.Id == 6) });
             scores.Add(new CardScore { Id = 30  , Archetype = Archetype.Ozan     , Score = -1, Card = cards.Single(c => c.Id == 6) });
+            scores.Add(new CardScore { Id = 1077, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 6) });
 
             containers.Add(new CardContainer { Id = 7, ChronicleId = 8, Archetype = null, Name = "Troll Chucker", Rarity = Rarity.Saphire, Type = CardType.Combat });
             cards.Add(new Card { Id = 7, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 1, Weapon = false }, Image = "/Content/img/cards/Troll_Chucker.png", Version = "X", Cost = 0, Health = 3, Active = true, Parent = containers.Single(p => p.Id == 7) });
@@ -68,6 +74,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 33  , Archetype = Archetype.Ariane   , Score = 60, Card = cards.Single(c => c.Id == 7) });
             scores.Add(new CardScore { Id = 34  , Archetype = Archetype.Vanescula, Score = 60, Card = cards.Single(c => c.Id == 7) });
             scores.Add(new CardScore { Id = 35  , Archetype = Archetype.Ozan     , Score = -1, Card = cards.Single(c => c.Id == 7) });
+            scores.Add(new CardScore { Id = 1078, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 7) });
 
             containers.Add(new CardContainer { Id = 8, ChronicleId = 9, Archetype = null, Name = "Gluttonous Behemoth", Rarity = Rarity.Ruby, Type = CardType.Combat });
             cards.Add(new Card { Id = 8, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 3, Weapon = false }, Image = "/Content/img/cards/Gluttonous_Behemoth.png", Version = "X", Cost = 0, Health = 19, Active = true, Parent = containers.Single(p => p.Id == 8) });
@@ -76,6 +83,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 38  , Archetype = Archetype.Ariane   , Score = 20, Card = cards.Single(c => c.Id == 8) });
             scores.Add(new CardScore { Id = 39  , Archetype = Archetype.Vanescula, Score = 40, Card = cards.Single(c => c.Id == 8) });
             scores.Add(new CardScore { Id = 40  , Archetype = Archetype.Ozan     , Score = -1, Card = cards.Single(c => c.Id == 8) });
+            scores.Add(new CardScore { Id = 1079, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 8) });
 
             containers.Add(new CardContainer { Id = 9, ChronicleId = 10, Archetype = null, Name = "Vorago", Rarity = Rarity.Diamond, Type = CardType.Combat });
             cards.Add(new Card { Id = 9, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Vorago.png", Version = "X", Cost = 0, Health = 14, Active = true, Parent = containers.Single(p => p.Id == 9) });
@@ -84,6 +92,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 43  , Archetype = Archetype.Ariane   , Score = 20, Card = cards.Single(c => c.Id == 9) });
             scores.Add(new CardScore { Id = 44  , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 9) });
             scores.Add(new CardScore { Id = 45  , Archetype = Archetype.Ozan     , Score = 30, Card = cards.Single(c => c.Id == 9) });
+            scores.Add(new CardScore { Id = 1080, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 9) });
 
             containers.Add(new CardContainer { Id = 10, ChronicleId = 11, Archetype = null, Name = "TzTok-Jad", Rarity = Rarity.Ruby, Type = CardType.Combat });
             cards.Add(new Card { Id = 10, Rewards = new CardRewards { Attack = 1, Armour = 4, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/TzTok_Jad.png", Version = "X", Cost = 0, Health = 7, Active = true, Parent = containers.Single(p => p.Id == 10) });
@@ -92,6 +101,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 48  , Archetype = Archetype.Ariane   , Score = 70, Card = cards.Single(c => c.Id == 10) });
             scores.Add(new CardScore { Id = 49  , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 10) });
             scores.Add(new CardScore { Id = 50  , Archetype = Archetype.Ozan     , Score = 80, Card = cards.Single(c => c.Id == 10) });
+            scores.Add(new CardScore { Id = 1081, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 10) });
 
             containers.Add(new CardContainer { Id = 11, ChronicleId = 12, Archetype = null, Name = "Penguin Sheep", Rarity = Rarity.Emerald, Type = CardType.Combat });
             cards.Add(new Card { Id = 11, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Penguin_Sheep.png", Version = "X", Cost = 0, Health = 3, Active = true, Parent = containers.Single(p => p.Id == 11) });
@@ -100,6 +110,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 53  , Archetype = Archetype.Ariane   , Score = 30, Card = cards.Single(c => c.Id == 11) });
             scores.Add(new CardScore { Id = 54  , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 11) });
             scores.Add(new CardScore { Id = 55  , Archetype = Archetype.Ozan     , Score = 10, Card = cards.Single(c => c.Id == 11) });
+            scores.Add(new CardScore { Id = 1082, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 11) });
 
             containers.Add(new CardContainer { Id = 12, ChronicleId = 13, Archetype = null, Name = "KGP Agent", Rarity = Rarity.Saphire, Type = CardType.Combat });
             cards.Add(new Card { Id = 12, Rewards = new CardRewards { Attack = 1, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/KGP_Agent.png", Version = "X", Cost = 0, Health = 2, Active = true, Parent = containers.Single(p => p.Id == 12) });
@@ -108,6 +119,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 58  , Archetype = Archetype.Ariane   , Score = 100, Card = cards.Single(c => c.Id == 12) });
             scores.Add(new CardScore { Id = 59  , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 12) });
             scores.Add(new CardScore { Id = 60  , Archetype = Archetype.Ozan     , Score = 100, Card = cards.Single(c => c.Id == 12) });
+            scores.Add(new CardScore { Id = 1083, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 12) });
 
             containers.Add(new CardContainer { Id = 13, ChronicleId = 14, Archetype = null, Name = "Jubbly Bird", Rarity = Rarity.Saphire, Type = CardType.Combat });
             cards.Add(new Card { Id = 13, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 3, Coins = 1, Weapon = false }, Image = "/Content/img/cards/Jubbly_Bird.png", Version = "X", Cost = 0, Health = 3, Active = true, Parent = containers.Single(p => p.Id == 13) });
@@ -116,6 +128,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 63  , Archetype = Archetype.Ariane   , Score = 60, Card = cards.Single(c => c.Id == 13) });
             scores.Add(new CardScore { Id = 64  , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 13) });
             scores.Add(new CardScore { Id = 65  , Archetype = Archetype.Ozan     , Score = 60, Card = cards.Single(c => c.Id == 13) });
+            scores.Add(new CardScore { Id = 1084, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 13) });
 
             containers.Add(new CardContainer { Id = 14, ChronicleId = 15, Archetype = null, Name = "Mischievous Imp", Rarity = Rarity.Saphire, Type = CardType.Combat });
             cards.Add(new Card { Id = 14, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 1, Weapon = false }, Image = "/Content/img/cards/Mischievous_Imp.png", Version = "X", Cost = 0, Health = 2, Active = true, Parent = containers.Single(p => p.Id == 14) });
@@ -124,6 +137,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 68  , Archetype = Archetype.Ariane   , Score = 50, Card = cards.Single(c => c.Id == 14) });
             scores.Add(new CardScore { Id = 69  , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 14) });
             scores.Add(new CardScore { Id = 70  , Archetype = Archetype.Ozan     , Score = 60, Card = cards.Single(c => c.Id == 14) });
+            scores.Add(new CardScore { Id = 1085, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 14) });
 
             containers.Add(new CardContainer { Id = 15, ChronicleId = 16, Archetype = null, Name = "Combat Academy", Rarity = Rarity.Saphire, Type = CardType.Support });
             cards.Add(new Card { Id = 15, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = true }, Image = "/Content/img/cards/Combat_Academy.png", Version = "X", Cost = 1, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 15) });
@@ -132,6 +146,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 73  , Archetype = Archetype.Ariane   , Score = 50, Card = cards.Single(c => c.Id == 15) });
             scores.Add(new CardScore { Id = 74  , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 15) });
             scores.Add(new CardScore { Id = 75  , Archetype = Archetype.Ozan     , Score = 50, Card = cards.Single(c => c.Id == 15) });
+            scores.Add(new CardScore { Id = 1086, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 15) });
 
             containers.Add(new CardContainer { Id = 16, ChronicleId = 17, Archetype = null, Name = "Romily Weaklax", Rarity = Rarity.Saphire, Type = CardType.Support });
             cards.Add(new Card { Id = 16, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 7, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Romily_Weaklax.png", Version = "X", Cost = 2, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 16) });
@@ -140,6 +155,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 78  , Archetype = Archetype.Ariane   , Score = 50, Card = cards.Single(c => c.Id == 16) });
             scores.Add(new CardScore { Id = 79  , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 16) });
             scores.Add(new CardScore { Id = 80  , Archetype = Archetype.Ozan     , Score = 60, Card = cards.Single(c => c.Id == 16) });
+            scores.Add(new CardScore { Id = 1087, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 16) });
 
             containers.Add(new CardContainer { Id = 17, ChronicleId = 20, Archetype = null, Name = "Bar Fight", Rarity = Rarity.Saphire, Type = CardType.Support });
             cards.Add(new Card { Id = 17, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Bar_Fight.png", Version = "X", Cost = 0, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 17) });
@@ -148,6 +164,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 83  , Archetype = Archetype.Ariane   , Score = 70, Card = cards.Single(c => c.Id == 17) });
             scores.Add(new CardScore { Id = 84  , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 17) });
             scores.Add(new CardScore { Id = 85  , Archetype = Archetype.Ozan     , Score = 70, Card = cards.Single(c => c.Id == 17) });
+            scores.Add(new CardScore { Id = 1088, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 17) });
 
             containers.Add(new CardContainer { Id = 18, ChronicleId = 21, Archetype = null, Name = "Mimic", Rarity = Rarity.Saphire, Type = CardType.Support });
             cards.Add(new Card { Id = 18, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 4, Weapon = false }, Image = "/Content/img/cards/Mimic.png", Version = "X", Cost = 0, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 18) });
@@ -156,6 +173,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 88  , Archetype = Archetype.Ariane   , Score = 70, Card = cards.Single(c => c.Id == 18) });
             scores.Add(new CardScore { Id = 89  , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 18) });
             scores.Add(new CardScore { Id = 90  , Archetype = Archetype.Ozan     , Score = 60, Card = cards.Single(c => c.Id == 18) });
+            scores.Add(new CardScore { Id = 1089, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 18) });
 
             containers.Add(new CardContainer { Id = 19, ChronicleId = 23, Archetype = null, Name = "Death", Rarity = Rarity.Diamond, Type = CardType.Support });
             cards.Add(new Card { Id = 19, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Death.png", Version = "X", Cost = 9, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 19) });
@@ -164,6 +182,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 93  , Archetype = Archetype.Ariane   , Score = 50, Card = cards.Single(c => c.Id == 19) });
             scores.Add(new CardScore { Id = 94  , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 19) });
             scores.Add(new CardScore { Id = 95  , Archetype = Archetype.Ozan     , Score = 50, Card = cards.Single(c => c.Id == 19) });
+            scores.Add(new CardScore { Id = 1090, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 19) });
 
             containers.Add(new CardContainer { Id = 20, ChronicleId = 24, Archetype = null, Name = "Cabbage", Rarity = Rarity.Saphire, Type = CardType.Support });
             cards.Add(new Card { Id = 20, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 4, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Cabbage.png", Version = "X", Cost = 0, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 20) });
@@ -172,6 +191,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 98  , Archetype = Archetype.Ariane   , Score = 60, Card = cards.Single(c => c.Id == 20) });
             scores.Add(new CardScore { Id = 99  , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 20) });
             scores.Add(new CardScore { Id = 100 , Archetype = Archetype.Ozan     , Score = 60, Card = cards.Single(c => c.Id == 20) });
+            scores.Add(new CardScore { Id = 1091, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 20) });
 
             containers.Add(new CardContainer { Id = 21, ChronicleId = 25, Archetype = null, Name = "Partyhat", Rarity = Rarity.Diamond, Type = CardType.Support });
             cards.Add(new Card { Id = 21, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Partyhat.png", Version = "X", Cost = 0, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 21) });
@@ -180,6 +200,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 103 , Archetype = Archetype.Ariane   , Score = 60, Card = cards.Single(c => c.Id == 21) });
             scores.Add(new CardScore { Id = 104 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 21) });
             scores.Add(new CardScore { Id = 105 , Archetype = Archetype.Ozan     , Score = 50, Card = cards.Single(c => c.Id == 21) });
+            scores.Add(new CardScore { Id = 1092, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 21) });
 
             containers.Add(new CardContainer { Id = 22, ChronicleId = 26, Archetype = null, Name = "Solomon Madini", Rarity = Rarity.Emerald, Type = CardType.Support });
             cards.Add(new Card { Id = 22, Rewards = new CardRewards { Attack = 0, Armour = 4, Health = 0, Coins = 0, Weapon = true }, Image = "/Content/img/cards/Solomon_Madini.png", Version = "X", Cost = 4, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 22) });
@@ -188,6 +209,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 108 , Archetype = Archetype.Ariane   , Score = 80, Card = cards.Single(c => c.Id == 22) });
             scores.Add(new CardScore { Id = 109 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 22) });
             scores.Add(new CardScore { Id = 110 , Archetype = Archetype.Ozan     , Score = 80, Card = cards.Single(c => c.Id == 22) });
+            scores.Add(new CardScore { Id = 1093, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 22) });
 
             containers.Add(new CardContainer { Id = 23, ChronicleId = 27, Archetype = null, Name = "Gorajo Hoardstalker", Rarity = Rarity.Emerald, Type = CardType.Support });
             cards.Add(new Card { Id = 23, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 6, Coins = 0, Weapon = true }, Image = "/Content/img/cards/Gorajo_Hoardstalker.png", Version = "X", Cost = 6, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 23) });
@@ -196,6 +218,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 113 , Archetype = Archetype.Ariane   , Score = 70, Card = cards.Single(c => c.Id == 23) });
             scores.Add(new CardScore { Id = 114 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 23) });
             scores.Add(new CardScore { Id = 115 , Archetype = Archetype.Ozan     , Score = 90, Card = cards.Single(c => c.Id == 23) });
+            scores.Add(new CardScore { Id = 1094, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 23) });
 
             containers.Add(new CardContainer { Id = 24, ChronicleId = 28, Archetype = Archetype.Ozan, Name = "Highwayman", Rarity = Rarity.Ruby, Type = CardType.Support });
             cards.Add(new Card { Id = 24, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Highwayman.png", Version = "X", Cost = 8, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 24) });
@@ -208,6 +231,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 119 , Archetype = Archetype.Ariane   , Score = 80, Card = cards.Single(c => c.Id == 25) });
             scores.Add(new CardScore { Id = 120 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 25) });
             scores.Add(new CardScore { Id = 121 , Archetype = Archetype.Ozan     , Score = 80, Card = cards.Single(c => c.Id == 25) });
+            scores.Add(new CardScore { Id = 1095, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 25) });
 
             containers.Add(new CardContainer { Id = 26, ChronicleId = 30, Archetype = null, Name = "Nastroth", Rarity = Rarity.Saphire, Type = CardType.Support });
             cards.Add(new Card { Id = 26, Rewards = new CardRewards { Attack = 1, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Nastroth.png", Version = "X", Cost = 4, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 26) });
@@ -216,6 +240,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 124 , Archetype = Archetype.Ariane   , Score = 80, Card = cards.Single(c => c.Id == 26) });
             scores.Add(new CardScore { Id = 125 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 26) });
             scores.Add(new CardScore { Id = 126 , Archetype = Archetype.Ozan     , Score = 90, Card = cards.Single(c => c.Id == 26) });
+            scores.Add(new CardScore { Id = 1096, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 26) });
 
             containers.Add(new CardContainer { Id = 27, ChronicleId = 31, Archetype = Archetype.Linza, Name = "Artisan's Workshop", Rarity = Rarity.Saphire, Type = CardType.Support });
             cards.Add(new Card { Id = 27, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Artisans_Workshop.png", Version = "X", Cost = 2, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 27) });
@@ -240,6 +265,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 133 , Archetype = Archetype.Ariane   , Score = 40, Card = cards.Single(c => c.Id == 31) });
             scores.Add(new CardScore { Id = 134 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 31) });
             scores.Add(new CardScore { Id = 135 , Archetype = Archetype.Ozan     , Score = 50, Card = cards.Single(c => c.Id == 31) });
+            scores.Add(new CardScore { Id = 1097, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 31) });
 
             containers.Add(new CardContainer { Id = 32, ChronicleId = 36, Archetype = Archetype.TheRaptor, Name = "Defence Potion", Rarity = Rarity.Saphire, Type = CardType.Support });
             cards.Add(new Card { Id = 32, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Defence_Potion.png", Version = "X", Cost = 2, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 32) });
@@ -252,6 +278,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 139 , Archetype = Archetype.Ariane   , Score = 90, Card = cards.Single(c => c.Id == 33) });
             scores.Add(new CardScore { Id = 140 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 33) });
             scores.Add(new CardScore { Id = 141 , Archetype = Archetype.Ozan     , Score = 90, Card = cards.Single(c => c.Id == 33) });
+            scores.Add(new CardScore { Id = 1098, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 33) });
 
             containers.Add(new CardContainer { Id = 34, ChronicleId = 38, Archetype = null, Name = "Stack o' Sharks", Rarity = Rarity.Emerald, Type = CardType.Support });
             cards.Add(new Card { Id = 34, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Stack_o_Sharks.png", Version = "X", Cost = 3, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 34) });
@@ -260,6 +287,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 144 , Archetype = Archetype.Ariane   , Score = 40, Card = cards.Single(c => c.Id == 34) });
             scores.Add(new CardScore { Id = 145 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 34) });
             scores.Add(new CardScore { Id = 146 , Archetype = Archetype.Ozan     , Score = 50, Card = cards.Single(c => c.Id == 34) });
+            scores.Add(new CardScore { Id = 1099, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 34) });
 
             containers.Add(new CardContainer { Id = 35, ChronicleId = 39, Archetype = Archetype.TheRaptor, Name = "Dondakan's Cannon", Rarity = Rarity.Saphire, Type = CardType.Support });
             cards.Add(new Card { Id = 35, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Dondakans_Cannon.png", Version = "X", Cost = 2, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 35) });
@@ -272,6 +300,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 150 , Archetype = Archetype.Ariane   , Score = 50, Card = cards.Single(c => c.Id == 36) });
             scores.Add(new CardScore { Id = 151 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 36) });
             scores.Add(new CardScore { Id = 152 , Archetype = Archetype.Ozan     , Score = 50, Card = cards.Single(c => c.Id == 36) });
+            scores.Add(new CardScore { Id = 1100, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 36) });
 
             containers.Add(new CardContainer { Id = 37, ChronicleId = 41, Archetype = Archetype.Linza, Name = "Raging Kalphite", Rarity = Rarity.Emerald, Type = CardType.Combat });
             cards.Add(new Card { Id = 37, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Raging_Kalphite.png", Version = "X", Cost = 0, Health = 10, Active = true, Parent = containers.Single(p => p.Id == 37) });
@@ -284,6 +313,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 156 , Archetype = Archetype.Ariane   , Score = 20, Card = cards.Single(c => c.Id == 38) });
             scores.Add(new CardScore { Id = 157 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 38) });
             scores.Add(new CardScore { Id = 158 , Archetype = Archetype.Ozan     , Score = 60, Card = cards.Single(c => c.Id == 38) });
+            scores.Add(new CardScore { Id = 1101, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 38) });
 
             containers.Add(new CardContainer { Id = 39, ChronicleId = 43, Archetype = Archetype.TheRaptor, Name = "Steel Titan", Rarity = Rarity.Saphire, Type = CardType.Support });
             cards.Add(new Card { Id = 39, Rewards = new CardRewards { Attack = 1, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Steel_Titan.png", Version = "X", Cost = 6, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 39) });
@@ -296,6 +326,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 162 , Archetype = Archetype.Ariane   , Score = 40, Card = cards.Single(c => c.Id == 40) });
             scores.Add(new CardScore { Id = 163 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 40) });
             scores.Add(new CardScore { Id = 164 , Archetype = Archetype.Ozan     , Score = 60, Card = cards.Single(c => c.Id == 40) });
+            scores.Add(new CardScore { Id = 1102, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 40) });
 
             containers.Add(new CardContainer { Id = 41, ChronicleId = 45, Archetype = null, Name = "Doric", Rarity = Rarity.Saphire, Type = CardType.Support });
             cards.Add(new Card { Id = 41, Rewards = new CardRewards { Attack = 0, Armour = 4, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Doric.png", Version = "X", Cost = 3, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 41) });
@@ -304,6 +335,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 167 , Archetype = Archetype.Ariane   , Score = 50, Card = cards.Single(c => c.Id == 41) });
             scores.Add(new CardScore { Id = 168 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 41) });
             scores.Add(new CardScore { Id = 169 , Archetype = Archetype.Ozan     , Score = 60, Card = cards.Single(c => c.Id == 41) });
+            scores.Add(new CardScore { Id = 1103, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 41) });
 
             containers.Add(new CardContainer { Id = 42, ChronicleId = 46, Archetype = null, Name = "Skeleton Warrior", Rarity = Rarity.Saphire, Type = CardType.Combat });
             cards.Add(new Card { Id = 42, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 3, Weapon = false }, Image = "/Content/img/cards/Skeleton_Warrior.png", Version = "X", Cost = 0, Health = 3, Active = true, Parent = containers.Single(p => p.Id == 42) });
@@ -312,6 +344,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 172 , Archetype = Archetype.Ariane   , Score = 60, Card = cards.Single(c => c.Id == 42) });
             scores.Add(new CardScore { Id = 173 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 42) });
             scores.Add(new CardScore { Id = 174 , Archetype = Archetype.Ozan     , Score = 60, Card = cards.Single(c => c.Id == 42) });
+            scores.Add(new CardScore { Id = 1104, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 42) });
 
             containers.Add(new CardContainer { Id = 43, ChronicleId = 47, Archetype = null, Name = "Giant Rat", Rarity = Rarity.Emerald, Type = CardType.Combat });
             cards.Add(new Card { Id = 43, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Giant_Rat.png", Version = "X", Cost = 0, Health = 2, Active = true, Parent = containers.Single(p => p.Id == 43) });
@@ -320,6 +353,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 177 , Archetype = Archetype.Ariane   , Score = 70, Card = cards.Single(c => c.Id == 43) });
             scores.Add(new CardScore { Id = 178 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 43) });
             scores.Add(new CardScore { Id = 179 , Archetype = Archetype.Ozan     , Score = 70, Card = cards.Single(c => c.Id == 43) });
+            scores.Add(new CardScore { Id = 1105, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 43) });
 
             containers.Add(new CardContainer { Id = 44, ChronicleId = 48, Archetype = null, Name = "White Wolf", Rarity = Rarity.Saphire, Type = CardType.Combat });
             cards.Add(new Card { Id = 44, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 2, Weapon = false }, Image = "/Content/img/cards/White_Wolf.png", Version = "X", Cost = 0, Health = 4, Active = true, Parent = containers.Single(p => p.Id == 44) });
@@ -328,6 +362,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 182 , Archetype = Archetype.Ariane   , Score = 80, Card = cards.Single(c => c.Id == 44) });
             scores.Add(new CardScore { Id = 183 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 44) });
             scores.Add(new CardScore { Id = 184 , Archetype = Archetype.Ozan     , Score = 80, Card = cards.Single(c => c.Id == 44) });
+            scores.Add(new CardScore { Id = 1106, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 44) });
 
             containers.Add(new CardContainer { Id = 45, ChronicleId = 49, Archetype = Archetype.Ozan, Name = "Al Kharid Warrior", Rarity = Rarity.Saphire, Type = CardType.Combat });
             cards.Add(new Card { Id = 45, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 1, Weapon = false }, Image = "/Content/img/cards/Al_Kharid_Warrior.png", Version = "X", Cost = 0, Health = 5, Active = true, Parent = containers.Single(p => p.Id == 45) });
@@ -340,6 +375,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 188 , Archetype = Archetype.Ariane   , Score = 60, Card = cards.Single(c => c.Id == 46) });
             scores.Add(new CardScore { Id = 189 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 46) });
             scores.Add(new CardScore { Id = 190 , Archetype = Archetype.Ozan     , Score = 60, Card = cards.Single(c => c.Id == 46) });
+            scores.Add(new CardScore { Id = 1107, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 46) });
 
             containers.Add(new CardContainer { Id = 47, ChronicleId = 52, Archetype = null, Name = "Crassian Warrior", Rarity = Rarity.Emerald, Type = CardType.Combat });
             cards.Add(new Card { Id = 47, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 1, Weapon = false }, Image = "/Content/img/cards/Crassian_Warrior.png", Version = "X", Cost = 0, Health = 3, Active = true, Parent = containers.Single(p => p.Id == 47) });
@@ -348,6 +384,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 193 , Archetype = Archetype.Ariane   , Score = 60, Card = cards.Single(c => c.Id == 47) });
             scores.Add(new CardScore { Id = 194 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 47) });
             scores.Add(new CardScore { Id = 195 , Archetype = Archetype.Ozan     , Score = 70, Card = cards.Single(c => c.Id == 47) });
+            scores.Add(new CardScore { Id = 1108, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 47) });
 
             containers.Add(new CardContainer { Id = 48, ChronicleId = 53, Archetype = null, Name = "Grotworm", Rarity = Rarity.Saphire, Type = CardType.Combat });
             cards.Add(new Card { Id = 48, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 7, Weapon = false }, Image = "/Content/img/cards/Grotworm.png", Version = "X", Cost = 0, Health = 10, Active = true, Parent = containers.Single(p => p.Id == 48) });
@@ -356,6 +393,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 198 , Archetype = Archetype.Ariane   , Score = 50, Card = cards.Single(c => c.Id == 48) });
             scores.Add(new CardScore { Id = 199 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 48) });
             scores.Add(new CardScore { Id = 200 , Archetype = Archetype.Ozan     , Score = 40, Card = cards.Single(c => c.Id == 48) });
+            scores.Add(new CardScore { Id = 1109, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 48) });
 
             containers.Add(new CardContainer { Id = 49, ChronicleId = 54, Archetype = Archetype.TheRaptor, Name = "Ice Nihil", Rarity = Rarity.Saphire, Type = CardType.Combat });
             cards.Add(new Card { Id = 49, Rewards = new CardRewards { Attack = 0, Armour = 4, Health = 0, Coins = 1, Weapon = false }, Image = "/Content/img/cards/Ice_Nihil.png", Version = "X", Cost = 0, Health = 5, Active = true, Parent = containers.Single(p => p.Id == 49) });
@@ -368,6 +406,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 204 , Archetype = Archetype.Ariane   , Score = 30, Card = cards.Single(c => c.Id == 50) });
             scores.Add(new CardScore { Id = 205 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 50) });
             scores.Add(new CardScore { Id = 206 , Archetype = Archetype.Ozan     , Score = 30, Card = cards.Single(c => c.Id == 50) });
+            scores.Add(new CardScore { Id = 1110, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 50) });
 
             containers.Add(new CardContainer { Id = 51, ChronicleId = 56, Archetype = Archetype.TheRaptor, Name = "Corporeal Beast", Rarity = Rarity.Diamond, Type = CardType.Combat });
             cards.Add(new Card { Id = 51, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Corporeal_Beast.png", Version = "X", Cost = 0, Health = 14, Active = true, Parent = containers.Single(p => p.Id == 51) });
@@ -380,6 +419,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 210 , Archetype = Archetype.Ariane   , Score = 80, Card = cards.Single(c => c.Id == 52) });
             scores.Add(new CardScore { Id = 211 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 52) });
             scores.Add(new CardScore { Id = 212 , Archetype = Archetype.Ozan     , Score = 80, Card = cards.Single(c => c.Id == 52) });
+            scores.Add(new CardScore { Id = 1111, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 52) });
 
             containers.Add(new CardContainer { Id = 53, ChronicleId = 58, Archetype = Archetype.Linza, Name = "Thurgo", Rarity = Rarity.Saphire, Type = CardType.Support });
             cards.Add(new Card { Id = 53, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Thurgo.png", Version = "X", Cost = 2, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 53) });
@@ -412,6 +452,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 221 , Archetype = Archetype.Ariane   , Score = 30, Card = cards.Single(c => c.Id == 59) });
             scores.Add(new CardScore { Id = 222 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 59) });
             scores.Add(new CardScore { Id = 223 , Archetype = Archetype.Ozan     , Score = 30, Card = cards.Single(c => c.Id == 59) });
+            scores.Add(new CardScore { Id = 1112, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 59) });
 
             containers.Add(new CardContainer { Id = 60, ChronicleId = 65, Archetype = Archetype.Ozan, Name = "Deadshot", Rarity = Rarity.Saphire, Type = CardType.Support });
             cards.Add(new Card { Id = 60, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Deadshot.png", Version = "X", Cost = 3, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 60) });
@@ -432,6 +473,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 229 , Archetype = Archetype.Ariane   , Score = 40, Card = cards.Single(c => c.Id == 63) });
             scores.Add(new CardScore { Id = 230 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 63) });
             scores.Add(new CardScore { Id = 231 , Archetype = Archetype.Ozan     , Score = 50, Card = cards.Single(c => c.Id == 63) });
+            scores.Add(new CardScore { Id = 1113, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 63) });
 
             containers.Add(new CardContainer { Id = 64, ChronicleId = 69, Archetype = null, Name = "Bunyip", Rarity = Rarity.Saphire, Type = CardType.Support });
             cards.Add(new Card { Id = 64, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Bunyip.png", Version = "X", Cost = 1, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 64) });
@@ -440,6 +482,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 234 , Archetype = Archetype.Ariane   , Score = 50, Card = cards.Single(c => c.Id == 64) });
             scores.Add(new CardScore { Id = 235 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 64) });
             scores.Add(new CardScore { Id = 236 , Archetype = Archetype.Ozan     , Score = 50, Card = cards.Single(c => c.Id == 64) });
+            scores.Add(new CardScore { Id = 1114, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 64) });
 
             containers.Add(new CardContainer { Id = 65, ChronicleId = 70, Archetype = Archetype.Ozan, Name = "Captain Rovin", Rarity = Rarity.Emerald, Type = CardType.Combat });
             cards.Add(new Card { Id = 65, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Captain_Rovin.png", Version = "X", Cost = 0, Health = 10, Active = true, Parent = containers.Single(p => p.Id == 65) });
@@ -456,6 +499,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 241 , Archetype = Archetype.Ariane   , Score = 70, Card = cards.Single(c => c.Id == 67) });
             scores.Add(new CardScore { Id = 242 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 67) });
             scores.Add(new CardScore { Id = 243 , Archetype = Archetype.Ozan     , Score = 80, Card = cards.Single(c => c.Id == 67) });
+            scores.Add(new CardScore { Id = 1115, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 67) });
 
             containers.Add(new CardContainer { Id = 68, ChronicleId = 73, Archetype = null, Name = "Dragon Longsword", Rarity = Rarity.Saphire, Type = CardType.Support });
             cards.Add(new Card { Id = 68, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = true }, Image = "/Content/img/cards/Dragon_Longsword.png", Version = "X", Cost = 5, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 68) });
@@ -464,6 +508,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 246 , Archetype = Archetype.Ariane   , Score = 80, Card = cards.Single(c => c.Id == 68) });
             scores.Add(new CardScore { Id = 247 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 68) });
             scores.Add(new CardScore { Id = 248 , Archetype = Archetype.Ozan     , Score = 90, Card = cards.Single(c => c.Id == 68) });
+            scores.Add(new CardScore { Id = 1116, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 68) });
 
             containers.Add(new CardContainer { Id = 69, ChronicleId = 74, Archetype = Archetype.Linza, Name = "Dragonbone Upgrade", Rarity = Rarity.Saphire, Type = CardType.Support });
             cards.Add(new Card { Id = 69, Rewards = new CardRewards { Attack = 0, Armour = 5, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Dragonbone_Upgrade.png", Version = "X", Cost = 3, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 69) });
@@ -476,6 +521,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 252 , Archetype = Archetype.Ariane   , Score = 60, Card = cards.Single(c => c.Id == 70) });
             scores.Add(new CardScore { Id = 253 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 70) });
             scores.Add(new CardScore { Id = 254 , Archetype = Archetype.Ozan     , Score = 70, Card = cards.Single(c => c.Id == 70) });
+            scores.Add(new CardScore { Id = 1117, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 70) });
 
             containers.Add(new CardContainer { Id = 71, ChronicleId = 76, Archetype = Archetype.TheRaptor, Name = "Fight Cauldron", Rarity = Rarity.Saphire, Type = CardType.Support });
             cards.Add(new Card { Id = 71, Rewards = new CardRewards { Attack = 0, Armour = 7, Health = 0, Coins = 2, Weapon = false }, Image = "/Content/img/cards/Fight_Cauldron.png", Version = "X", Cost = 0, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 71) });
@@ -500,6 +546,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 261 , Archetype = Archetype.Ariane   , Score = 70, Card = cards.Single(c => c.Id == 75) });
             scores.Add(new CardScore { Id = 262 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 75) });
             scores.Add(new CardScore { Id = 263 , Archetype = Archetype.Ozan     , Score = 70, Card = cards.Single(c => c.Id == 75) });
+            scores.Add(new CardScore { Id = 1119, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 75) });
 
             containers.Add(new CardContainer { Id = 76, ChronicleId = 81, Archetype = null, Name = "Watchtower Guard", Rarity = Rarity.Saphire, Type = CardType.Combat });
             cards.Add(new Card { Id = 76, Rewards = new CardRewards { Attack = 0, Armour = 2, Health = 0, Coins = 0, Weapon = true }, Image = "/Content/img/cards/Watchtower_Guard.png", Version = "X", Cost = 0, Health = 3, Active = true, Parent = containers.Single(p => p.Id == 76) });
@@ -508,6 +555,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 266 , Archetype = Archetype.Ariane   , Score = 50, Card = cards.Single(c => c.Id == 76) });
             scores.Add(new CardScore { Id = 267 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 76) });
             scores.Add(new CardScore { Id = 268 , Archetype = Archetype.Ozan     , Score = 50, Card = cards.Single(c => c.Id == 76) });
+            scores.Add(new CardScore { Id = 1120, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 76) });
 
             containers.Add(new CardContainer { Id = 77, ChronicleId = 82, Archetype = Archetype.TheRaptor, Name = "Void Brawler", Rarity = Rarity.Saphire, Type = CardType.Combat });
             cards.Add(new Card { Id = 77, Rewards = new CardRewards { Attack = 0, Armour = 8, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Void_Brawler.png", Version = "X", Cost = 0, Health = 2, Active = true, Parent = containers.Single(p => p.Id == 77) });
@@ -524,6 +572,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 273 , Archetype = Archetype.Ariane   , Score = 30, Card = cards.Single(c => c.Id == 79) });
             scores.Add(new CardScore { Id = 274 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 79) });
             scores.Add(new CardScore { Id = 275 , Archetype = Archetype.Ozan     , Score = 30, Card = cards.Single(c => c.Id == 79) });
+            scores.Add(new CardScore { Id = 1121, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 79) });
 
             containers.Add(new CardContainer { Id = 80, ChronicleId = 85, Archetype = Archetype.Linza, Name = "Toolbelt", Rarity = Rarity.Saphire, Type = CardType.Support });
             cards.Add(new Card { Id = 80, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Toolbelt.png", Version = "X", Cost = 0, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 80) });
@@ -552,6 +601,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 283 , Archetype = Archetype.Ariane   , Score = 70, Card = cards.Single(c => c.Id == 85) });
             scores.Add(new CardScore { Id = 284 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 85) });
             scores.Add(new CardScore { Id = 285 , Archetype = Archetype.Ozan     , Score = 70, Card = cards.Single(c => c.Id == 85) });
+            scores.Add(new CardScore { Id = 1122, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 85) });
 
             containers.Add(new CardContainer { Id = 86, ChronicleId = 91, Archetype = Archetype.TheRaptor, Name = "Saradomin Brew", Rarity = Rarity.Saphire, Type = CardType.Support });
             cards.Add(new Card { Id = 86, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 2, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Saradomin_Brew.png", Version = "X", Cost = 4, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 86) });
@@ -572,6 +622,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 291 , Archetype = Archetype.Ariane   , Score = 80, Card = cards.Single(c => c.Id == 89) });
             scores.Add(new CardScore { Id = 292 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 89) });
             scores.Add(new CardScore { Id = 293 , Archetype = Archetype.Ozan     , Score = 80, Card = cards.Single(c => c.Id == 89) });
+            scores.Add(new CardScore { Id = 1123, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 89) });
 
             containers.Add(new CardContainer { Id = 90, ChronicleId = 95, Archetype = null, Name = "Revenant Demon", Rarity = Rarity.Saphire, Type = CardType.Combat });
             cards.Add(new Card { Id = 90, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Revenant_Demon.png", Version = "X", Cost = 0, Health = 4, Active = true, Parent = containers.Single(p => p.Id == 90) });
@@ -580,6 +631,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 296 , Archetype = Archetype.Ariane   , Score = 30, Card = cards.Single(c => c.Id == 90) });
             scores.Add(new CardScore { Id = 297 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 90) });
             scores.Add(new CardScore { Id = 298 , Archetype = Archetype.Ozan     , Score = 50, Card = cards.Single(c => c.Id == 90) });
+            scores.Add(new CardScore { Id = 1124, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 90) });
 
             containers.Add(new CardContainer { Id = 91, ChronicleId = 96, Archetype = Archetype.Linza, Name = "Repurpose", Rarity = Rarity.Ruby, Type = CardType.Support });
             cards.Add(new Card { Id = 91, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Repurpose.png", Version = "X", Cost = 0, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 91) });
@@ -596,6 +648,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 303 , Archetype = Archetype.Ariane   , Score = 50, Card = cards.Single(c => c.Id == 93) });
             scores.Add(new CardScore { Id = 304 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 93) });
             scores.Add(new CardScore { Id = 305 , Archetype = Archetype.Ozan     , Score = 50, Card = cards.Single(c => c.Id == 93) });
+            scores.Add(new CardScore { Id = 1125, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 93) });
 
             containers.Add(new CardContainer { Id = 94, ChronicleId = 99, Archetype = null, Name = "Ogre Chieftain", Rarity = Rarity.Emerald, Type = CardType.Combat });
             cards.Add(new Card { Id = 94, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 2, Weapon = false }, Image = "/Content/img/cards/Ogre_Chieftain.png", Version = "X", Cost = 0, Health = 10, Active = true, Parent = containers.Single(p => p.Id == 94) });
@@ -604,6 +657,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 308 , Archetype = Archetype.Ariane   , Score = 70, Card = cards.Single(c => c.Id == 94) });
             scores.Add(new CardScore { Id = 309 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 94) });
             scores.Add(new CardScore { Id = 310 , Archetype = Archetype.Ozan     , Score = 70, Card = cards.Single(c => c.Id == 94) });
+            scores.Add(new CardScore { Id = 1126, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 94) });
 
             containers.Add(new CardContainer { Id = 95, ChronicleId = 100, Archetype = Archetype.TheRaptor, Name = "Monolith Chamber", Rarity = Rarity.Saphire, Type = CardType.Support });
             cards.Add(new Card { Id = 95, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Monolith_Chamber.png", Version = "X", Cost = 0, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 95) });
@@ -624,6 +678,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 316 , Archetype = Archetype.Ariane   , Score = 30, Card = cards.Single(c => c.Id == 98) });
             scores.Add(new CardScore { Id = 317 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 98) });
             scores.Add(new CardScore { Id = 318 , Archetype = Archetype.Ozan     , Score = 50, Card = cards.Single(c => c.Id == 98) });
+            scores.Add(new CardScore { Id = 1127, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 98) });
 
             containers.Add(new CardContainer { Id = 99, ChronicleId = 104, Archetype = Archetype.Linza, Name = "Karam", Rarity = Rarity.Saphire, Type = CardType.Support });
             cards.Add(new Card { Id = 99, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Karam.png", Version = "X", Cost = 7, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 99) });
@@ -644,6 +699,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 324 , Archetype = Archetype.Ariane   , Score = 50, Card = cards.Single(c => c.Id == 102) });
             scores.Add(new CardScore { Id = 325 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 102) });
             scores.Add(new CardScore { Id = 326 , Archetype = Archetype.Ozan     , Score = 50, Card = cards.Single(c => c.Id == 102) });
+            scores.Add(new CardScore { Id = 1128, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 102) });
 
             containers.Add(new CardContainer { Id = 103, ChronicleId = 108, Archetype = Archetype.Linza, Name = "Goblin Raider", Rarity = Rarity.Saphire, Type = CardType.Combat });
             cards.Add(new Card { Id = 103, Rewards = new CardRewards { Attack = 0, Armour = 2, Health = 0, Coins = 0, Weapon = true }, Image = "/Content/img/cards/Goblin_Raider.png", Version = "X", Cost = 0, Health = 2, Active = true, Parent = containers.Single(p => p.Id == 103) });
@@ -660,6 +716,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 331 , Archetype = Archetype.Ariane   , Score = 80, Card = cards.Single(c => c.Id == 105) });
             scores.Add(new CardScore { Id = 332 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 105) });
             scores.Add(new CardScore { Id = 333 , Archetype = Archetype.Ozan     , Score = 80, Card = cards.Single(c => c.Id == 105) });
+            scores.Add(new CardScore { Id = 1129, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 105) });
 
             containers.Add(new CardContainer { Id = 106, ChronicleId = 111, Archetype = Archetype.Ozan, Name = "Eruni, Ayuni & Leeuni", Rarity = Rarity.Ruby, Type = CardType.Combat });
             cards.Add(new Card { Id = 106, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 6, Weapon = false }, Image = "/Content/img/cards/Eruni_Ayuni_Leeuni.png", Version = "X", Cost = 0, Health = 13, Active = true, Parent = containers.Single(p => p.Id == 106) });
@@ -684,6 +741,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 340 , Archetype = Archetype.Ariane   , Score = 60, Card = cards.Single(c => c.Id == 110) });
             scores.Add(new CardScore { Id = 341 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 110) });
             scores.Add(new CardScore { Id = 342 , Archetype = Archetype.Ozan     , Score = 60, Card = cards.Single(c => c.Id == 110) });
+            scores.Add(new CardScore { Id = 1130, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 110) });
 
             containers.Add(new CardContainer { Id = 111, ChronicleId = 116, Archetype = null, Name = "Undead Dragon", Rarity = Rarity.Saphire, Type = CardType.Combat });
             cards.Add(new Card { Id = 111, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 2, Weapon = false }, Image = "/Content/img/cards/Undead_Dragon.png", Version = "X", Cost = 0, Health = 13, Active = true, Parent = containers.Single(p => p.Id == 111) });
@@ -692,6 +750,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 345 , Archetype = Archetype.Ariane   , Score = 60, Card = cards.Single(c => c.Id == 111) });
             scores.Add(new CardScore { Id = 346 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 111) });
             scores.Add(new CardScore { Id = 347 , Archetype = Archetype.Ozan     , Score = 70, Card = cards.Single(c => c.Id == 111) });
+            scores.Add(new CardScore { Id = 1131, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 111) });
 
             containers.Add(new CardContainer { Id = 112, ChronicleId = 117, Archetype = null, Name = "King Black Dragon", Rarity = Rarity.Emerald, Type = CardType.Combat });
             cards.Add(new Card { Id = 112, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 11, Weapon = false }, Image = "/Content/img/cards/King_Black_Dragon.png", Version = "X", Cost = 0, Health = 14, Active = true, Parent = containers.Single(p => p.Id == 112) });
@@ -700,6 +759,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 350 , Archetype = Archetype.Ariane   , Score = 20, Card = cards.Single(c => c.Id == 112) });
             scores.Add(new CardScore { Id = 351 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 112) });
             scores.Add(new CardScore { Id = 352 , Archetype = Archetype.Ozan     , Score = 20, Card = cards.Single(c => c.Id == 112) });
+            scores.Add(new CardScore { Id = 1132, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 112) });
 
             containers.Add(new CardContainer { Id = 113, ChronicleId = 118, Archetype = null, Name = "Giant Spider", Rarity = Rarity.Saphire, Type = CardType.Combat });
             cards.Add(new Card { Id = 113, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = true }, Image = "/Content/img/cards/Giant_Spider.png", Version = "X", Cost = 0, Health = 2, Active = true, Parent = containers.Single(p => p.Id == 113) });
@@ -708,6 +768,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 355 , Archetype = Archetype.Ariane   , Score = 60, Card = cards.Single(c => c.Id == 113) });
             scores.Add(new CardScore { Id = 356 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 113) });
             scores.Add(new CardScore { Id = 357 , Archetype = Archetype.Ozan     , Score = 60, Card = cards.Single(c => c.Id == 113) });
+            scores.Add(new CardScore { Id = 1133, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 113) });
 
             containers.Add(new CardContainer { Id = 114, ChronicleId = 119, Archetype = null, Name = "Ring of Recoil", Rarity = Rarity.Saphire, Type = CardType.Support });
             cards.Add(new Card { Id = 114, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Ring_of_Recoil.png", Version = "X", Cost = 0, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 114) });
@@ -716,6 +777,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 360 , Archetype = Archetype.Ariane   , Score = 50, Card = cards.Single(c => c.Id == 114) });
             scores.Add(new CardScore { Id = 361 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 114) });
             scores.Add(new CardScore { Id = 362 , Archetype = Archetype.Ozan     , Score = 50, Card = cards.Single(c => c.Id == 114) });
+            scores.Add(new CardScore { Id = 1134, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 114) });
 
             containers.Add(new CardContainer { Id = 115, ChronicleId = 120, Archetype = Archetype.Linza, Name = "Gravite Longsword", Rarity = Rarity.Saphire, Type = CardType.Support });
             cards.Add(new Card { Id = 115, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = true }, Image = "/Content/img/cards/Gravite_Longsword.png", Version = "X", Cost = 0, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 115) });
@@ -736,6 +798,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 368 , Archetype = Archetype.Ariane   , Score = 80, Card = cards.Single(c => c.Id == 118) });
             scores.Add(new CardScore { Id = 369 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 118) });
             scores.Add(new CardScore { Id = 370 , Archetype = Archetype.Ozan     , Score = 80, Card = cards.Single(c => c.Id == 118) });
+            scores.Add(new CardScore { Id = 1135, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 118) });
 
             containers.Add(new CardContainer { Id = 119, ChronicleId = 124, Archetype = null, Name = "Kayle", Rarity = Rarity.Diamond, Type = CardType.Combat });
             cards.Add(new Card { Id = 119, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = true }, Image = "/Content/img/cards/Kayle.png", Version = "X", Cost = 0, Health = 2, Active = false, Parent = containers.Single(p => p.Id == 119) });
@@ -744,6 +807,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 373 , Archetype = Archetype.Ariane   , Score = 90, Card = cards.Single(c => c.Id == 119) });
             scores.Add(new CardScore { Id = 374 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 119) });
             scores.Add(new CardScore { Id = 375 , Archetype = Archetype.Ozan     , Score = 90, Card = cards.Single(c => c.Id == 119) });
+            scores.Add(new CardScore { Id = 1136, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 119) });
 
             containers.Add(new CardContainer { Id = 120, ChronicleId = 125, Archetype = null, Name = "Morwenna", Rarity = Rarity.Diamond, Type = CardType.Combat });
             cards.Add(new Card { Id = 120, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Morwenna.png", Version = "X", Cost = 0, Health = 2, Active = true, Parent = containers.Single(p => p.Id == 120) });
@@ -752,6 +816,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 378 , Archetype = Archetype.Ariane   , Score = 90, Card = cards.Single(c => c.Id == 120) });
             scores.Add(new CardScore { Id = 379 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 120) });
             scores.Add(new CardScore { Id = 380 , Archetype = Archetype.Ozan     , Score = 90, Card = cards.Single(c => c.Id == 120) });
+            scores.Add(new CardScore { Id = 1137, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 120) });
 
             containers.Add(new CardContainer { Id = 121, ChronicleId = 126, Archetype = Archetype.Ozan, Name = "Ling, the Assassin", Rarity = Rarity.Emerald, Type = CardType.Support });
             cards.Add(new Card { Id = 121, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Ling_the_Assassin.png", Version = "X", Cost = 0, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 121) });
@@ -768,6 +833,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 385 , Archetype = Archetype.Ariane   , Score = 40, Card = cards.Single(c => c.Id == 123) });
             scores.Add(new CardScore { Id = 386 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 123) });
             scores.Add(new CardScore { Id = 387 , Archetype = Archetype.Ozan     , Score = 60, Card = cards.Single(c => c.Id == 123) });
+            scores.Add(new CardScore { Id = 1138, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 123) });
 
             containers.Add(new CardContainer { Id = 124, ChronicleId = 129, Archetype = null, Name = "Exiled Kalphite Paragon", Rarity = Rarity.Saphire, Type = CardType.Combat });
             cards.Add(new Card { Id = 124, Rewards = new CardRewards { Attack = 0, Armour = 5, Health = 0, Coins = 1, Weapon = false }, Image = "/Content/img/cards/Exiled_Kalphite_Paragon.png", Version = "X", Cost = 0, Health = 9, Active = true, Parent = containers.Single(p => p.Id == 124) });
@@ -776,6 +842,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 390 , Archetype = Archetype.Ariane   , Score = 20, Card = cards.Single(c => c.Id == 124) });
             scores.Add(new CardScore { Id = 391 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 124) });
             scores.Add(new CardScore { Id = 392 , Archetype = Archetype.Ozan     , Score = 20, Card = cards.Single(c => c.Id == 124) });
+            scores.Add(new CardScore { Id = 1139, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 124) });
 
             containers.Add(new CardContainer { Id = 125, ChronicleId = 130, Archetype = null, Name = "Oozing Kalphite", Rarity = Rarity.Saphire, Type = CardType.Combat });
             cards.Add(new Card { Id = 125, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Oozing_Kalphite.png", Version = "X", Cost = 0, Health = 5, Active = true, Parent = containers.Single(p => p.Id == 125) });
@@ -784,6 +851,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 395 , Archetype = Archetype.Ariane   , Score = 60, Card = cards.Single(c => c.Id == 125) });
             scores.Add(new CardScore { Id = 396 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 125) });
             scores.Add(new CardScore { Id = 397 , Archetype = Archetype.Ozan     , Score = 70, Card = cards.Single(c => c.Id == 125) });
+            scores.Add(new CardScore { Id = 1140, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 125) });
 
             containers.Add(new CardContainer { Id = 126, ChronicleId = 131, Archetype = null, Name = "Kalphite Soldier", Rarity = Rarity.Saphire, Type = CardType.Combat });
             cards.Add(new Card { Id = 126, Rewards = new CardRewards { Attack = 0, Armour = 2, Health = 0, Coins = 3, Weapon = false }, Image = "/Content/img/cards/Kalphite_Soldier.png", Version = "X", Cost = 0, Health = 6, Active = true, Parent = containers.Single(p => p.Id == 126) });
@@ -792,6 +860,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 400 , Archetype = Archetype.Ariane   , Score = 70, Card = cards.Single(c => c.Id == 126) });
             scores.Add(new CardScore { Id = 401 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 126) });
             scores.Add(new CardScore { Id = 402 , Archetype = Archetype.Ozan     , Score = 70, Card = cards.Single(c => c.Id == 126) });
+            scores.Add(new CardScore { Id = 1141, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 126) });
 
             containers.Add(new CardContainer { Id = 127, ChronicleId = 132, Archetype = null, Name = "Kalphite Worker", Rarity = Rarity.Saphire, Type = CardType.Combat });
             cards.Add(new Card { Id = 127, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 2, Weapon = true }, Image = "/Content/img/cards/Kalphite_Worker.png", Version = "X", Cost = 0, Health = 4, Active = true, Parent = containers.Single(p => p.Id == 127) });
@@ -800,6 +869,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 405 , Archetype = Archetype.Ariane   , Score = 70, Card = cards.Single(c => c.Id == 127) });
             scores.Add(new CardScore { Id = 406 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 127) });
             scores.Add(new CardScore { Id = 407 , Archetype = Archetype.Ozan     , Score = 70, Card = cards.Single(c => c.Id == 127) });
+            scores.Add(new CardScore { Id = 1142, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 127) });
 
             containers.Add(new CardContainer { Id = 128, ChronicleId = 133, Archetype = null, Name = "Dagannoth Fledgling", Rarity = Rarity.Saphire, Type = CardType.Combat });
             cards.Add(new Card { Id = 128, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 6, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Dagannoth_Fledgling.png", Version = "X", Cost = 0, Health = 3, Active = true, Parent = containers.Single(p => p.Id == 128) });
@@ -808,6 +878,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 410 , Archetype = Archetype.Ariane   , Score = 60, Card = cards.Single(c => c.Id == 128) });
             scores.Add(new CardScore { Id = 411 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 128) });
             scores.Add(new CardScore { Id = 412 , Archetype = Archetype.Ozan     , Score = 60, Card = cards.Single(c => c.Id == 128) });
+            scores.Add(new CardScore { Id = 1143, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 128) });
 
             containers.Add(new CardContainer { Id = 129, ChronicleId = 134, Archetype = Archetype.TheRaptor, Name = "Slam", Rarity = Rarity.Emerald, Type = CardType.Support });
             cards.Add(new Card { Id = 129, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Slam.png", Version = "X", Cost = 4, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 129) });
@@ -820,6 +891,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 416 , Archetype = Archetype.Ariane   , Score = 20, Card = cards.Single(c => c.Id == 130) });
             scores.Add(new CardScore { Id = 417 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 130) });
             scores.Add(new CardScore { Id = 418 , Archetype = Archetype.Ozan     , Score = 10, Card = cards.Single(c => c.Id == 130) });
+            scores.Add(new CardScore { Id = 1144, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 130) });
 
             containers.Add(new CardContainer { Id = 131, ChronicleId = 136, Archetype = null, Name = "Rock Golem", Rarity = Rarity.Saphire, Type = CardType.Combat });
             cards.Add(new Card { Id = 131, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 2, Weapon = false }, Image = "/Content/img/cards/Rock_Golem.png", Version = "X", Cost = 0, Health = 5, Active = true, Parent = containers.Single(p => p.Id == 131) });
@@ -828,6 +900,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 421 , Archetype = Archetype.Ariane   , Score = 40, Card = cards.Single(c => c.Id == 131) });
             scores.Add(new CardScore { Id = 422 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 131) });
             scores.Add(new CardScore { Id = 423 , Archetype = Archetype.Ozan     , Score = 40, Card = cards.Single(c => c.Id == 131) });
+            scores.Add(new CardScore { Id = 1145, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 131) });
 
             containers.Add(new CardContainer { Id = 132, ChronicleId = 137, Archetype = null, Name = "Sergeant Grimspike", Rarity = Rarity.Saphire, Type = CardType.Combat });
             cards.Add(new Card { Id = 132, Rewards = new CardRewards { Attack = 0, Armour = 2, Health = 0, Coins = 2, Weapon = false }, Image = "/Content/img/cards/Sergeant_Grimspike.png", Version = "X", Cost = 0, Health = 10, Active = true, Parent = containers.Single(p => p.Id == 132) });
@@ -836,6 +909,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 426 , Archetype = Archetype.Ariane   , Score = 60, Card = cards.Single(c => c.Id == 132) });
             scores.Add(new CardScore { Id = 427 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 132) });
             scores.Add(new CardScore { Id = 428 , Archetype = Archetype.Ozan     , Score = 70, Card = cards.Single(c => c.Id == 132) });
+            scores.Add(new CardScore { Id = 1146, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 132) });
 
             containers.Add(new CardContainer { Id = 133, ChronicleId = 138, Archetype = null, Name = "Sergeant Slimetoes", Rarity = Rarity.Saphire, Type = CardType.Combat });
             cards.Add(new Card { Id = 133, Rewards = new CardRewards { Attack = 0, Armour = 2, Health = 0, Coins = 0, Weapon = true }, Image = "/Content/img/cards/Sergeant_Slimetoes.png", Version = "X", Cost = 0, Health = 6, Active = true, Parent = containers.Single(p => p.Id == 133) });
@@ -844,6 +918,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 431 , Archetype = Archetype.Ariane   , Score = 90, Card = cards.Single(c => c.Id == 133) });
             scores.Add(new CardScore { Id = 432 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 133) });
             scores.Add(new CardScore { Id = 433 , Archetype = Archetype.Ozan     , Score = 90, Card = cards.Single(c => c.Id == 133) });
+            scores.Add(new CardScore { Id = 1118, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 133) });
 
             containers.Add(new CardContainer { Id = 134, ChronicleId = 139, Archetype = null, Name = "South Sea Pillager", Rarity = Rarity.Saphire, Type = CardType.Combat });
             cards.Add(new Card { Id = 134, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = true }, Image = "/Content/img/cards/South_Sea_Pillager.png", Version = "X", Cost = 0, Health = 3, Active = true, Parent = containers.Single(p => p.Id == 134) });
@@ -852,6 +927,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 436 , Archetype = Archetype.Ariane   , Score = 60, Card = cards.Single(c => c.Id == 134) });
             scores.Add(new CardScore { Id = 437 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 134) });
             scores.Add(new CardScore { Id = 438 , Archetype = Archetype.Ozan     , Score = 60, Card = cards.Single(c => c.Id == 134) });
+            scores.Add(new CardScore { Id = 1147, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 134) });
 
             containers.Add(new CardContainer { Id = 135, ChronicleId = 140, Archetype = Archetype.Linza, Name = "Armadylean Golem", Rarity = Rarity.Saphire, Type = CardType.Combat });
             cards.Add(new Card { Id = 135, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 4, Weapon = false }, Image = "/Content/img/cards/Armadylean_Golem.png", Version = "X", Cost = 0, Health = 10, Active = true, Parent = containers.Single(p => p.Id == 135) });
@@ -920,6 +996,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 456 , Archetype = Archetype.Ariane   , Score = 60, Card = cards.Single(c => c.Id == 150) });
             scores.Add(new CardScore { Id = 457 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 150) });
             scores.Add(new CardScore { Id = 458 , Archetype = Archetype.Ozan     , Score = 60, Card = cards.Single(c => c.Id == 150) });
+            scores.Add(new CardScore { Id = 1148, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 150) });
 
             containers.Add(new CardContainer { Id = 151, ChronicleId = 156, Archetype = null, Name = "Strength Potion", Rarity = Rarity.Emerald, Type = CardType.Support });
             cards.Add(new Card { Id = 151, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Strength_Potion.png", Version = "X", Cost = 4, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 151) });
@@ -928,6 +1005,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 461 , Archetype = Archetype.Ariane   , Score = 70, Card = cards.Single(c => c.Id == 151) });
             scores.Add(new CardScore { Id = 462 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 151) });
             scores.Add(new CardScore { Id = 463 , Archetype = Archetype.Ozan     , Score = 80, Card = cards.Single(c => c.Id == 151) });
+            scores.Add(new CardScore { Id = 1149, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 151) });
 
             containers.Add(new CardContainer { Id = 152, ChronicleId = 157, Archetype = Archetype.Linza, Name = "Prototype", Rarity = Rarity.Saphire, Type = CardType.Support });
             cards.Add(new Card { Id = 152, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Prototype.png", Version = "X", Cost = 1, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 152) });
@@ -960,6 +1038,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 472 , Archetype = Archetype.Ariane   , Score = 50, Card = cards.Single(c => c.Id == 158) });
             scores.Add(new CardScore { Id = 473 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 158) });
             scores.Add(new CardScore { Id = 474 , Archetype = Archetype.Ozan     , Score = 50, Card = cards.Single(c => c.Id == 158) });
+            scores.Add(new CardScore { Id = 1150, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 158) });
 
             containers.Add(new CardContainer { Id = 159, ChronicleId = 164, Archetype = null, Name = "Dagannoth Sentinel", Rarity = Rarity.Saphire, Type = CardType.Combat });
             cards.Add(new Card { Id = 159, Rewards = new CardRewards { Attack = 1, Armour = 0, Health = 5, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Dagannoth_Sentinel.png", Version = "X", Cost = 0, Health = 9, Active = true, Parent = containers.Single(p => p.Id == 159) });
@@ -968,6 +1047,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 477 , Archetype = Archetype.Ariane   , Score = 60, Card = cards.Single(c => c.Id == 159) });
             scores.Add(new CardScore { Id = 478 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 159) });
             scores.Add(new CardScore { Id = 479 , Archetype = Archetype.Ozan     , Score = 60, Card = cards.Single(c => c.Id == 159) });
+            scores.Add(new CardScore { Id = 1151, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 159) });
 
             containers.Add(new CardContainer { Id = 160, ChronicleId = 165, Archetype = null, Name = "Gee'ka", Rarity = Rarity.Saphire, Type = CardType.Support });
             cards.Add(new Card { Id = 160, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = true }, Image = "/Content/img/cards/Geeka.png", Version = "X", Cost = 0, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 160) });
@@ -976,6 +1056,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 482 , Archetype = Archetype.Ariane   , Score = 50, Card = cards.Single(c => c.Id == 160) });
             scores.Add(new CardScore { Id = 483 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 160) });
             scores.Add(new CardScore { Id = 484 , Archetype = Archetype.Ozan     , Score = 50, Card = cards.Single(c => c.Id == 160) });
+            scores.Add(new CardScore { Id = 1152, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 160) });
 
             containers.Add(new CardContainer { Id = 161, ChronicleId = 166, Archetype = Archetype.Ariane, Name = "Infernal Mage", Rarity = Rarity.Saphire, Type = CardType.Combat });
             cards.Add(new Card { Id = 161, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Infernal_Mage.png", Version = "X", Cost = 0, Health = 10, Active = true, Parent = containers.Single(p => p.Id == 161) });
@@ -1008,6 +1089,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 493 , Archetype = Archetype.Ariane   , Score = 10, Card = cards.Single(c => c.Id == 167) });
             scores.Add(new CardScore { Id = 494 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 167) });
             scores.Add(new CardScore { Id = 495 , Archetype = Archetype.Ozan     , Score = 10, Card = cards.Single(c => c.Id == 167) });
+            scores.Add(new CardScore { Id = 1153, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 167) });
 
             containers.Add(new CardContainer { Id = 168, ChronicleId = 173, Archetype = null, Name = "Black Demon", Rarity = Rarity.Ruby, Type = CardType.Combat });
             cards.Add(new Card { Id = 168, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Black_Demon.png", Version = "X", Cost = 0, Health = 6, Active = true, Parent = containers.Single(p => p.Id == 168) });
@@ -1016,6 +1098,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 498 , Archetype = Archetype.Ariane   , Score = 50, Card = cards.Single(c => c.Id == 168) });
             scores.Add(new CardScore { Id = 499 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 168) });
             scores.Add(new CardScore { Id = 500 , Archetype = Archetype.Ozan     , Score = 60, Card = cards.Single(c => c.Id == 168) });
+            scores.Add(new CardScore { Id = 1154, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 168) });
 
             containers.Add(new CardContainer { Id = 169, ChronicleId = 174, Archetype = null, Name = "Cave Slime", Rarity = Rarity.Saphire, Type = CardType.Combat });
             cards.Add(new Card { Id = 169, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Cave_Slime.png", Version = "X", Cost = 0, Health = 2, Active = true, Parent = containers.Single(p => p.Id == 169) });
@@ -1024,6 +1107,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 503 , Archetype = Archetype.Ariane   , Score = 60, Card = cards.Single(c => c.Id == 169) });
             scores.Add(new CardScore { Id = 504 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 169) });
             scores.Add(new CardScore { Id = 505 , Archetype = Archetype.Ozan     , Score = 60, Card = cards.Single(c => c.Id == 169) });
+            scores.Add(new CardScore { Id = 1155, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 169) });
 
             containers.Add(new CardContainer { Id = 170, ChronicleId = 175, Archetype = null, Name = "Commander Zilyana", Rarity = Rarity.Ruby, Type = CardType.Combat });
             cards.Add(new Card { Id = 170, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 12, Coins = 7, Weapon = false }, Image = "/Content/img/cards/Commander_Zilyana.png", Version = "X", Cost = 0, Health = 13, Active = true, Parent = containers.Single(p => p.Id == 170) });
@@ -1032,6 +1116,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 508 , Archetype = Archetype.Ariane   , Score = 60, Card = cards.Single(c => c.Id == 170) });
             scores.Add(new CardScore { Id = 509 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 170) });
             scores.Add(new CardScore { Id = 510 , Archetype = Archetype.Ozan     , Score = 60, Card = cards.Single(c => c.Id == 170) });
+            scores.Add(new CardScore { Id = 1156, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 170) });
 
             containers.Add(new CardContainer { Id = 171, ChronicleId = 176, Archetype = null, Name = "Greater Demon", Rarity = Rarity.Emerald, Type = CardType.Combat });
             cards.Add(new Card { Id = 171, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 2, Weapon = false }, Image = "/Content/img/cards/Greater_Demon.png", Version = "X", Cost = 0, Health = 5, Active = true, Parent = containers.Single(p => p.Id == 171) });
@@ -1040,6 +1125,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 513 , Archetype = Archetype.Ariane   , Score = 60, Card = cards.Single(c => c.Id == 171) });
             scores.Add(new CardScore { Id = 514 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 171) });
             scores.Add(new CardScore { Id = 515 , Archetype = Archetype.Ozan     , Score = 70, Card = cards.Single(c => c.Id == 171) });
+            scores.Add(new CardScore { Id = 1157, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 171) });
 
             containers.Add(new CardContainer { Id = 172, ChronicleId = 177, Archetype = null, Name = "Green Dragon", Rarity = Rarity.Saphire, Type = CardType.Combat });
             cards.Add(new Card { Id = 172, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Green_Dragon.png", Version = "X", Cost = 0, Health = 5, Active = true, Parent = containers.Single(p => p.Id == 172) });
@@ -1048,6 +1134,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 518 , Archetype = Archetype.Ariane   , Score = 50, Card = cards.Single(c => c.Id == 172) });
             scores.Add(new CardScore { Id = 519 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 172) });
             scores.Add(new CardScore { Id = 520 , Archetype = Archetype.Ozan     , Score = 50, Card = cards.Single(c => c.Id == 172) });
+            scores.Add(new CardScore { Id = 1158, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 172) });
 
             containers.Add(new CardContainer { Id = 173, ChronicleId = 178, Archetype = null, Name = "Jogre Shaman", Rarity = Rarity.Emerald, Type = CardType.Combat });
             cards.Add(new Card { Id = 173, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Jogre_Shaman.png", Version = "X", Cost = 0, Health = 9, Active = true, Parent = containers.Single(p => p.Id == 173) });
@@ -1056,6 +1143,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 523 , Archetype = Archetype.Ariane   , Score = 70, Card = cards.Single(c => c.Id == 173) });
             scores.Add(new CardScore { Id = 524 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 173) });
             scores.Add(new CardScore { Id = 525 , Archetype = Archetype.Ozan     , Score = 70, Card = cards.Single(c => c.Id == 173) });
+            scores.Add(new CardScore { Id = 1159, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 173) });
 
             containers.Add(new CardContainer { Id = 174, ChronicleId = 179, Archetype = null, Name = "Lesser Demon", Rarity = Rarity.Saphire, Type = CardType.Combat });
             cards.Add(new Card { Id = 174, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 2, Weapon = false }, Image = "/Content/img/cards/Lesser_Demon.png", Version = "X", Cost = 0, Health = 3, Active = true, Parent = containers.Single(p => p.Id == 174) });
@@ -1064,6 +1152,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 528 , Archetype = Archetype.Ariane   , Score = 40, Card = cards.Single(c => c.Id == 174) });
             scores.Add(new CardScore { Id = 529 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 174) });
             scores.Add(new CardScore { Id = 530 , Archetype = Archetype.Ozan     , Score = 50, Card = cards.Single(c => c.Id == 174) });
+            scores.Add(new CardScore { Id = 1160, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 174) });
 
             containers.Add(new CardContainer { Id = 175, ChronicleId = 180, Archetype = null, Name = "Mutineer", Rarity = Rarity.Saphire, Type = CardType.Combat });
             cards.Add(new Card { Id = 175, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 1, Weapon = false }, Image = "/Content/img/cards/Mutineer.png", Version = "X", Cost = 0, Health = 3, Active = true, Parent = containers.Single(p => p.Id == 175) });
@@ -1072,6 +1161,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 533 , Archetype = Archetype.Ariane   , Score = 40, Card = cards.Single(c => c.Id == 175) });
             scores.Add(new CardScore { Id = 534 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 175) });
             scores.Add(new CardScore { Id = 535 , Archetype = Archetype.Ozan     , Score = 40, Card = cards.Single(c => c.Id == 175) });
+            scores.Add(new CardScore { Id = 1161, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 175) });
 
             containers.Add(new CardContainer { Id = 176, ChronicleId = 181, Archetype = null, Name = "Ogre Warlord", Rarity = Rarity.Emerald, Type = CardType.Combat });
             cards.Add(new Card { Id = 176, Rewards = new CardRewards { Attack = 1, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Ogre_Warlord.png", Version = "X", Cost = 0, Health = 10, Active = true, Parent = containers.Single(p => p.Id == 176) });
@@ -1080,6 +1170,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 538 , Archetype = Archetype.Ariane   , Score = 60, Card = cards.Single(c => c.Id == 176) });
             scores.Add(new CardScore { Id = 539 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 176) });
             scores.Add(new CardScore { Id = 540 , Archetype = Archetype.Ozan     , Score = 60, Card = cards.Single(c => c.Id == 176) });
+            scores.Add(new CardScore { Id = 1162, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 176) });
 
             containers.Add(new CardContainer { Id = 177, ChronicleId = 182, Archetype = null, Name = "Redbeard Frank", Rarity = Rarity.Diamond, Type = CardType.Combat });
             cards.Add(new Card { Id = 177, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Redbeard_Frank.png", Version = "X", Cost = 0, Health = 9, Active = true, Parent = containers.Single(p => p.Id == 177) });
@@ -1088,6 +1179,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 543 , Archetype = Archetype.Ariane   , Score = 60, Card = cards.Single(c => c.Id == 177) });
             scores.Add(new CardScore { Id = 544 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 177) });
             scores.Add(new CardScore { Id = 545 , Archetype = Archetype.Ozan     , Score = 40, Card = cards.Single(c => c.Id == 177) });
+            scores.Add(new CardScore { Id = 1163, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 177) });
 
             containers.Add(new CardContainer { Id = 178, ChronicleId = 183, Archetype = null, Name = "Scarface Pete", Rarity = Rarity.Ruby, Type = CardType.Combat });
             cards.Add(new Card { Id = 178, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Scarface_Pete.png", Version = "X", Cost = 0, Health = 9, Active = true, Parent = containers.Single(p => p.Id == 178) });
@@ -1096,6 +1188,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 548 , Archetype = Archetype.Ariane   , Score = 30, Card = cards.Single(c => c.Id == 178) });
             scores.Add(new CardScore { Id = 549 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 178) });
             scores.Add(new CardScore { Id = 550 , Archetype = Archetype.Ozan     , Score = 30, Card = cards.Single(c => c.Id == 178) });
+            scores.Add(new CardScore { Id = 1164, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 178) });
 
             containers.Add(new CardContainer { Id = 179, ChronicleId = 184, Archetype = null, Name = "To'Kash", Rarity = Rarity.Diamond, Type = CardType.Combat });
             cards.Add(new Card { Id = 179, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/To_Kash.png", Version = "X", Cost = 0, Health = 14, Active = true, Parent = containers.Single(p => p.Id == 179) });
@@ -1104,6 +1197,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 553 , Archetype = Archetype.Ariane   , Score = 40, Card = cards.Single(c => c.Id == 179) });
             scores.Add(new CardScore { Id = 554 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 179) });
             scores.Add(new CardScore { Id = 555 , Archetype = Archetype.Ozan     , Score = 50, Card = cards.Single(c => c.Id == 179) });
+            scores.Add(new CardScore { Id = 1165, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 179) });
 
             containers.Add(new CardContainer { Id = 180, ChronicleId = 185, Archetype = null, Name = "Wounded Kalphite", Rarity = Rarity.Saphire, Type = CardType.Combat });
             cards.Add(new Card { Id = 180, Rewards = new CardRewards { Attack = 0, Armour = 2, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Wounded_Kalphite.png", Version = "X", Cost = 0, Health = 2, Active = true, Parent = containers.Single(p => p.Id == 180) });
@@ -1112,6 +1206,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 558 , Archetype = Archetype.Ariane   , Score = 50, Card = cards.Single(c => c.Id == 180) });
             scores.Add(new CardScore { Id = 559 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 180) });
             scores.Add(new CardScore { Id = 560 , Archetype = Archetype.Ozan     , Score = 50, Card = cards.Single(c => c.Id == 180) });
+            scores.Add(new CardScore { Id = 1166, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 180) });
 
             containers.Add(new CardContainer { Id = 181, ChronicleId = 186, Archetype = null, Name = "Shug", Rarity = Rarity.Ruby, Type = CardType.Support });
             cards.Add(new Card { Id = 181, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Shug.png", Version = "X", Cost = 0, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 181) });
@@ -1120,6 +1215,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 563 , Archetype = Archetype.Ariane   , Score = 80, Card = cards.Single(c => c.Id == 181) });
             scores.Add(new CardScore { Id = 564 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 181) });
             scores.Add(new CardScore { Id = 565 , Archetype = Archetype.Ozan     , Score = 80, Card = cards.Single(c => c.Id == 181) });
+            scores.Add(new CardScore { Id = 1167, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 181) });
 
             containers.Add(new CardContainer { Id = 182, ChronicleId = 187, Archetype = null, Name = "Ghostship", Rarity = Rarity.Ruby, Type = CardType.Support });
             cards.Add(new Card { Id = 182, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Ghostship.png", Version = "X", Cost = 3, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 182) });
@@ -1128,6 +1224,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 568 , Archetype = Archetype.Ariane   , Score = 30, Card = cards.Single(c => c.Id == 182) });
             scores.Add(new CardScore { Id = 569 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 182) });
             scores.Add(new CardScore { Id = 570 , Archetype = Archetype.Ozan     , Score = 40, Card = cards.Single(c => c.Id == 182) });
+            scores.Add(new CardScore { Id = 1168, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 182) });
 
             containers.Add(new CardContainer { Id = 183, ChronicleId = 188, Archetype = null, Name = "Weapon Poison", Rarity = Rarity.Saphire, Type = CardType.Support });
             cards.Add(new Card { Id = 183, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Weapon_Poison.png", Version = "X", Cost = 0, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 183) });
@@ -1136,6 +1233,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 573 , Archetype = Archetype.Ariane   , Score = 30, Card = cards.Single(c => c.Id == 183) });
             scores.Add(new CardScore { Id = 574 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 183) });
             scores.Add(new CardScore { Id = 575 , Archetype = Archetype.Ozan     , Score = 30, Card = cards.Single(c => c.Id == 183) });
+            scores.Add(new CardScore { Id = 1169, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 183) });
 
             containers.Add(new CardContainer { Id = 184, ChronicleId = 189, Archetype = Archetype.Ariane, Name = "Ankou", Rarity = Rarity.Saphire, Type = CardType.Combat });
             cards.Add(new Card { Id = 184, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 2, Weapon = true }, Image = "/Content/img/cards/Ankou.png", Version = "X", Cost = 0, Health = 6, Active = true, Parent = containers.Single(p => p.Id == 184) });
@@ -1288,6 +1386,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 614 , Archetype = Archetype.Ariane   , Score = 50, Card = cards.Single(c => c.Id == 220) });
             scores.Add(new CardScore { Id = 615 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 220) });
             scores.Add(new CardScore { Id = 616 , Archetype = Archetype.Ozan     , Score = 60, Card = cards.Single(c => c.Id == 220) });
+            scores.Add(new CardScore { Id = 1170, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 220) });
 
             containers.Add(new CardContainer { Id = 221, ChronicleId = 233, Archetype = null, Name = "Ket-Zek", Rarity = Rarity.Saphire, Type = CardType.Combat });
             cards.Add(new Card { Id = 221, Rewards = new CardRewards { Attack = 0, Armour = 2, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Ket_Zek.png", Version = "X", Cost = 0, Health = 7, Active = true, Parent = containers.Single(p => p.Id == 221) });
@@ -1296,6 +1395,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 619 , Archetype = Archetype.Ariane   , Score = 60, Card = cards.Single(c => c.Id == 221) });
             scores.Add(new CardScore { Id = 620 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 221) });
             scores.Add(new CardScore { Id = 621 , Archetype = Archetype.Ozan     , Score = 70, Card = cards.Single(c => c.Id == 221) });
+            scores.Add(new CardScore { Id = 1171, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 221) });
 
             containers.Add(new CardContainer { Id = 222, ChronicleId = 234, Archetype = null, Name = "Kree'arra", Rarity = Rarity.Saphire, Type = CardType.Combat });
             cards.Add(new Card { Id = 222, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = true }, Image = "/Content/img/cards/Kree_arra.png", Version = "X", Cost = 0, Health = 13, Active = true, Parent = containers.Single(p => p.Id == 222) });
@@ -1304,6 +1404,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 624 , Archetype = Archetype.Ariane   , Score = 10, Card = cards.Single(c => c.Id == 222) });
             scores.Add(new CardScore { Id = 625 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 222) });
             scores.Add(new CardScore { Id = 626 , Archetype = Archetype.Ozan     , Score = 10, Card = cards.Single(c => c.Id == 222) });
+            scores.Add(new CardScore { Id = 1172, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 222) });
 
             containers.Add(new CardContainer { Id = 223, ChronicleId = 235, Archetype = null, Name = "Tenebra", Rarity = Rarity.Ruby, Type = CardType.Combat });
             cards.Add(new Card { Id = 223, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Tenebra.png", Version = "X", Cost = 0, Health = 13, Active = true, Parent = containers.Single(p => p.Id == 223) });
@@ -1312,6 +1413,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 629 , Archetype = Archetype.Ariane   , Score = 60, Card = cards.Single(c => c.Id == 223) });
             scores.Add(new CardScore { Id = 630 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 223) });
             scores.Add(new CardScore { Id = 631 , Archetype = Archetype.Ozan     , Score = 70, Card = cards.Single(c => c.Id == 223) });
+            scores.Add(new CardScore { Id = 1173, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 223) });
 
             containers.Add(new CardContainer { Id = 224, ChronicleId = 237, Archetype = null, Name = "Kyzaj Tournament", Rarity = Rarity.Diamond, Type = CardType.Support });
             cards.Add(new Card { Id = 224, Rewards = new CardRewards { Attack = 1, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Kyzaj_Tournament.png", Version = "X", Cost = 0, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 224) });
@@ -1320,6 +1422,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 634 , Archetype = Archetype.Ariane   , Score = 90, Card = cards.Single(c => c.Id == 224) });
             scores.Add(new CardScore { Id = 635 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 224) });
             scores.Add(new CardScore { Id = 636 , Archetype = Archetype.Ozan     , Score = 90, Card = cards.Single(c => c.Id == 224) });
+            scores.Add(new CardScore { Id = 1174, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 224) });
 
             containers.Add(new CardContainer { Id = 225, ChronicleId = 239, Archetype = Archetype.Ariane, Name = "Zamorakian Occultist", Rarity = Rarity.Emerald, Type = CardType.Combat });
             cards.Add(new Card { Id = 225, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 2, Weapon = false }, Image = "/Content/img/cards/Zamorakian_Occultist.png", Version = "X", Cost = 0, Health = 5, Active = true, Parent = containers.Single(p => p.Id == 225) });
@@ -1340,6 +1443,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 642 , Archetype = Archetype.Ariane   , Score = 40, Card = cards.Single(c => c.Id == 228) });
             scores.Add(new CardScore { Id = 643 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 228) });
             scores.Add(new CardScore { Id = 644 , Archetype = Archetype.Ozan     , Score = 40, Card = cards.Single(c => c.Id == 228) });
+            scores.Add(new CardScore { Id = 1175, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 228) });
 
             containers.Add(new CardContainer { Id = 229, ChronicleId = 243, Archetype = null, Name = "Count Draynor", Rarity = Rarity.Ruby, Type = CardType.Combat });
             cards.Add(new Card { Id = 229, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Count_Draynor.png", Version = "X", Cost = 0, Health = 5, Active = true, Parent = containers.Single(p => p.Id == 229) });
@@ -1348,6 +1452,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 647 , Archetype = Archetype.Ariane   , Score = 60, Card = cards.Single(c => c.Id == 229) });
             scores.Add(new CardScore { Id = 648 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 229) });
             scores.Add(new CardScore { Id = 649 , Archetype = Archetype.Ozan     , Score = 60, Card = cards.Single(c => c.Id == 229) });
+            scores.Add(new CardScore { Id = 1176, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 229) });
 
             containers.Add(new CardContainer { Id = 230, ChronicleId = 244, Archetype = null, Name = "Dr. Fenkenstrain", Rarity = Rarity.Emerald, Type = CardType.Combat });
             cards.Add(new Card { Id = 230, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 3, Weapon = false }, Image = "/Content/img/cards/Dr_Fenkenstrain.png", Version = "X", Cost = 0, Health = 6, Active = true, Parent = containers.Single(p => p.Id == 230) });
@@ -1356,6 +1461,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 652 , Archetype = Archetype.Ariane   , Score = 70, Card = cards.Single(c => c.Id == 230) });
             scores.Add(new CardScore { Id = 653 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 230) });
             scores.Add(new CardScore { Id = 654 , Archetype = Archetype.Ozan     , Score = 70, Card = cards.Single(c => c.Id == 230) });
+            scores.Add(new CardScore { Id = 1177, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 230) });
 
             containers.Add(new CardContainer { Id = 231, ChronicleId = 245, Archetype = null, Name = "Grizzly Bear", Rarity = Rarity.Saphire, Type = CardType.Combat });
             cards.Add(new Card { Id = 231, Rewards = new CardRewards { Attack = 0, Armour = 2, Health = 0, Coins = 1, Weapon = false }, Image = "/Content/img/cards/Grizzly_Bear.png", Version = "X", Cost = 0, Health = 6, Active = true, Parent = containers.Single(p => p.Id == 231) });
@@ -1364,6 +1470,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 657 , Archetype = Archetype.Ariane   , Score = 40, Card = cards.Single(c => c.Id == 231) });
             scores.Add(new CardScore { Id = 658 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 231) });
             scores.Add(new CardScore { Id = 659 , Archetype = Archetype.Ozan     , Score = 40, Card = cards.Single(c => c.Id == 231) });
+            scores.Add(new CardScore { Id = 1178, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 231) });
 
             containers.Add(new CardContainer { Id = 232, ChronicleId = 246, Archetype = null, Name = "Kalphite Emissary", Rarity = Rarity.Saphire, Type = CardType.Combat });
             cards.Add(new Card { Id = 232, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 1, Weapon = false }, Image = "/Content/img/cards/Kalphite_Emissary.png", Version = "X", Cost = 0, Health = 4, Active = true, Parent = containers.Single(p => p.Id == 232) });
@@ -1372,6 +1479,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 662 , Archetype = Archetype.Ariane   , Score = 70, Card = cards.Single(c => c.Id == 232) });
             scores.Add(new CardScore { Id = 663 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 232) });
             scores.Add(new CardScore { Id = 664 , Archetype = Archetype.Ozan     , Score = 70, Card = cards.Single(c => c.Id == 232) });
+            scores.Add(new CardScore { Id = 1179, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 232) });
 
             containers.Add(new CardContainer { Id = 233, ChronicleId = 248, Archetype = null, Name = "Melzar the Mad", Rarity = Rarity.Ruby, Type = CardType.Combat });
             cards.Add(new Card { Id = 233, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 1, Weapon = false }, Image = "/Content/img/cards/Melzar_the_Mad.png", Version = "X", Cost = 0, Health = 5, Active = true, Parent = containers.Single(p => p.Id == 233) });
@@ -1380,6 +1488,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 667 , Archetype = Archetype.Ariane   , Score = 60, Card = cards.Single(c => c.Id == 233) });
             scores.Add(new CardScore { Id = 668 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 233) });
             scores.Add(new CardScore { Id = 669 , Archetype = Archetype.Ozan     , Score = 60, Card = cards.Single(c => c.Id == 233) });
+            scores.Add(new CardScore { Id = 1180, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 233) });
 
             containers.Add(new CardContainer { Id = 234, ChronicleId = 249, Archetype = null, Name = "Tok-Xil", Rarity = Rarity.Emerald, Type = CardType.Combat });
             cards.Add(new Card { Id = 234, Rewards = new CardRewards { Attack = 0, Armour = 2, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Tok_Xil.png", Version = "X", Cost = 0, Health = 5, Active = true, Parent = containers.Single(p => p.Id == 234) });
@@ -1388,6 +1497,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 672 , Archetype = Archetype.Ariane   , Score = 60, Card = cards.Single(c => c.Id == 234) });
             scores.Add(new CardScore { Id = 673 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 234) });
             scores.Add(new CardScore { Id = 674 , Archetype = Archetype.Ozan     , Score = 60, Card = cards.Single(c => c.Id == 234) });
+            scores.Add(new CardScore { Id = 1181, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 234) });
 
             containers.Add(new CardContainer { Id = 235, ChronicleId = 250, Archetype = Archetype.Ariane, Name = "Skeletal Mage", Rarity = Rarity.Emerald, Type = CardType.Combat });
             cards.Add(new Card { Id = 235, Rewards = new CardRewards { Attack = 0, Armour = 3, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Skeletal_Mage.png", Version = "X", Cost = 0, Health = 4, Active = true, Parent = containers.Single(p => p.Id == 235) });
@@ -1412,6 +1522,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 681 , Archetype = Archetype.Ariane   , Score = 40, Card = cards.Single(c => c.Id == 239) });
             scores.Add(new CardScore { Id = 682 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 239) });
             scores.Add(new CardScore { Id = 683 , Archetype = Archetype.Ozan     , Score = 40, Card = cards.Single(c => c.Id == 239) });
+            scores.Add(new CardScore { Id = 1182, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 239) });
 
             containers.Add(new CardContainer { Id = 240, ChronicleId = 255, Archetype = Archetype.Ariane, Name = "Skeletal Peon", Rarity = Rarity.Saphire, Type = CardType.Combat });
             cards.Add(new Card { Id = 240, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Skeletal_Peon.png", Version = "X", Cost = 0, Health = 2, Active = true, Parent = containers.Single(p => p.Id == 240) });
@@ -1424,6 +1535,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 687 , Archetype = Archetype.Ariane   , Score = 20, Card = cards.Single(c => c.Id == 241) });
             scores.Add(new CardScore { Id = 688 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 241) });
             scores.Add(new CardScore { Id = 689 , Archetype = Archetype.Ozan     , Score = 40, Card = cards.Single(c => c.Id == 241) });
+            scores.Add(new CardScore { Id = 1183, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 241) });
 
             containers.Add(new CardContainer { Id = 242, ChronicleId = 257, Archetype = null, Name = "Relicym's Balm", Rarity = Rarity.Emerald, Type = CardType.Support });
             cards.Add(new Card { Id = 242, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Relicyms_Balm.png", Version = "X", Cost = 4, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 242) });
@@ -1432,6 +1544,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 692 , Archetype = Archetype.Ariane   , Score = 50, Card = cards.Single(c => c.Id == 242) });
             scores.Add(new CardScore { Id = 693 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 242) });
             scores.Add(new CardScore { Id = 694 , Archetype = Archetype.Ozan     , Score = 40, Card = cards.Single(c => c.Id == 242) });
+            scores.Add(new CardScore { Id = 1184, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 242) });
 
             containers.Add(new CardContainer { Id = 243, ChronicleId = 262, Archetype = Archetype.Ariane, Name = "Ancient Spellbook", Rarity = Rarity.Ruby, Type = CardType.Support });
             cards.Add(new Card { Id = 243, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Ancient_Spellbook.png", Version = "X", Cost = 8, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 243) });
@@ -1448,6 +1561,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 699 , Archetype = Archetype.Ariane   , Score = 20, Card = cards.Single(c => c.Id == 245) });
             scores.Add(new CardScore { Id = 700 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 245) });
             scores.Add(new CardScore { Id = 701 , Archetype = Archetype.Ozan     , Score = 20, Card = cards.Single(c => c.Id == 245) });
+            scores.Add(new CardScore { Id = 1185, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 245) });
 
             containers.Add(new CardContainer { Id = 246, ChronicleId = 276, Archetype = null, Name = "Zemouregal", Rarity = Rarity.Diamond, Type = CardType.Combat });
             cards.Add(new Card { Id = 246, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Zemouregal.png", Version = "X", Cost = 0, Health = 7, Active = true, Parent = containers.Single(p => p.Id == 246) });
@@ -1456,6 +1570,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 704 , Archetype = Archetype.Ariane   , Score = 10, Card = cards.Single(c => c.Id == 246) });
             scores.Add(new CardScore { Id = 705 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 246) });
             scores.Add(new CardScore { Id = 706 , Archetype = Archetype.Ozan     , Score = 20, Card = cards.Single(c => c.Id == 246) });
+            scores.Add(new CardScore { Id = 1186, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 246) });
 
             containers.Add(new CardContainer { Id = 247, ChronicleId = 277, Archetype = Archetype.Ariane, Name = "Revenant Knight", Rarity = Rarity.Saphire, Type = CardType.Combat });
             cards.Add(new Card { Id = 247, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Revenant_Knight.png", Version = "X", Cost = 0, Health = 10, Active = true, Parent = containers.Single(p => p.Id == 247) });
@@ -1476,6 +1591,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 712 , Archetype = Archetype.Ariane   , Score = 70, Card = cards.Single(c => c.Id == 250) });
             scores.Add(new CardScore { Id = 713 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 250) });
             scores.Add(new CardScore { Id = 714 , Archetype = Archetype.Ozan     , Score = 70, Card = cards.Single(c => c.Id == 250) });
+            scores.Add(new CardScore { Id = 1187, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 250) });
 
             containers.Add(new CardContainer { Id = 251, ChronicleId = 281, Archetype = Archetype.Ariane, Name = "Animated Book", Rarity = Rarity.Saphire, Type = CardType.Combat });
             cards.Add(new Card { Id = 251, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Animated_Book.png", Version = "X", Cost = 0, Health = 1, Active = true, Parent = containers.Single(p => p.Id == 251) });
@@ -1504,6 +1620,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 722 , Archetype = Archetype.Ariane   , Score = 30, Card = cards.Single(c => c.Id == 256) });
             scores.Add(new CardScore { Id = 723 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 256) });
             scores.Add(new CardScore { Id = 724 , Archetype = Archetype.Ozan     , Score = 30, Card = cards.Single(c => c.Id == 256) });
+            scores.Add(new CardScore { Id = 1188, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 256) });
 
             containers.Add(new CardContainer { Id = 257, ChronicleId = 288, Archetype = null, Name = "Drunken Pirate", Rarity = Rarity.Saphire, Type = CardType.Combat });
             cards.Add(new Card { Id = 257, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 1, Weapon = false }, Image = "/Content/img/cards/Drunken_Pirate.png", Version = "X", Cost = 0, Health = 2, Active = true, Parent = containers.Single(p => p.Id == 257) });
@@ -1512,6 +1629,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 727 , Archetype = Archetype.Ariane   , Score = 60, Card = cards.Single(c => c.Id == 257) });
             scores.Add(new CardScore { Id = 728 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 257) });
             scores.Add(new CardScore { Id = 729 , Archetype = Archetype.Ozan     , Score = 60, Card = cards.Single(c => c.Id == 257) });
+            scores.Add(new CardScore { Id = 1189, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 257) });
 
             containers.Add(new CardContainer { Id = 258, ChronicleId = 295, Archetype = null, Name = "Saradomin Godsword", Rarity = Rarity.Saphire, Type = CardType.Support });
             cards.Add(new Card { Id = 258, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 4, Coins = 0, Weapon = true }, Image = "/Content/img/cards/Saradomin_Godsword.png", Version = "X", Cost = 7, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 258) });
@@ -1520,6 +1638,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 732 , Archetype = Archetype.Ariane   , Score = 60, Card = cards.Single(c => c.Id == 258) });
             scores.Add(new CardScore { Id = 733 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 258) });
             scores.Add(new CardScore { Id = 734 , Archetype = Archetype.Ozan     , Score = 80, Card = cards.Single(c => c.Id == 258) });
+            scores.Add(new CardScore { Id = 1190, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 258) });
 
             containers.Add(new CardContainer { Id = 259, ChronicleId = 296, Archetype = Archetype.Ariane, Name = "Lexicus Runewright", Rarity = Rarity.Diamond, Type = CardType.Combat });
             cards.Add(new Card { Id = 259, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 4, Weapon = false }, Image = "/Content/img/cards/Lexicus_Runewright.png", Version = "X", Cost = 0, Health = 5, Active = true, Parent = containers.Single(p => p.Id == 259) });
@@ -1548,6 +1667,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 742 , Archetype = Archetype.Ariane   , Score = 10, Card = cards.Single(c => c.Id == 264) });
             scores.Add(new CardScore { Id = 743 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 264) });
             scores.Add(new CardScore { Id = 744 , Archetype = Archetype.Ozan     , Score = 10, Card = cards.Single(c => c.Id == 264) });
+            scores.Add(new CardScore { Id = 1191, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 264) });
 
             containers.Add(new CardContainer { Id = 265, ChronicleId = 302, Archetype = null, Name = "Lumpnose", Rarity = Rarity.Emerald, Type = CardType.Combat });
             cards.Add(new Card { Id = 265, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Lumpnose.png", Version = "X", Cost = 0, Health = 5, Active = true, Parent = containers.Single(p => p.Id == 265) });
@@ -1556,6 +1676,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 747 , Archetype = Archetype.Ariane   , Score = 10, Card = cards.Single(c => c.Id == 265) });
             scores.Add(new CardScore { Id = 748 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 265) });
             scores.Add(new CardScore { Id = 749 , Archetype = Archetype.Ozan     , Score = 10, Card = cards.Single(c => c.Id == 265) });
+            scores.Add(new CardScore { Id = 1192, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 265) });
 
             containers.Add(new CardContainer { Id = 266, ChronicleId = 303, Archetype = null, Name = "Keris", Rarity = Rarity.Emerald, Type = CardType.Support });
             cards.Add(new Card { Id = 266, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = true }, Image = "/Content/img/cards/Keris.png", Version = "X", Cost = 3, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 266) });
@@ -1564,6 +1685,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 752 , Archetype = Archetype.Ariane   , Score = 20, Card = cards.Single(c => c.Id == 266) });
             scores.Add(new CardScore { Id = 753 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 266) });
             scores.Add(new CardScore { Id = 754 , Archetype = Archetype.Ozan     , Score = 20, Card = cards.Single(c => c.Id == 266) });
+            scores.Add(new CardScore { Id = 1193, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 266) });
 
             containers.Add(new CardContainer { Id = 267, ChronicleId = 304, Archetype = Archetype.Ariane, Name = "Banshee", Rarity = Rarity.Saphire, Type = CardType.Combat });
             cards.Add(new Card { Id = 267, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 1, Weapon = false }, Image = "/Content/img/cards/Banshee.png", Version = "X", Cost = 0, Health = 4, Active = true, Parent = containers.Single(p => p.Id == 267) });
@@ -1576,6 +1698,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 758 , Archetype = Archetype.Ariane   , Score = 10, Card = cards.Single(c => c.Id == 268) });
             scores.Add(new CardScore { Id = 759 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 268) });
             scores.Add(new CardScore { Id = 760 , Archetype = Archetype.Ozan     , Score = 10, Card = cards.Single(c => c.Id == 268) });
+            scores.Add(new CardScore { Id = 1194, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 268) });
 
             containers.Add(new CardContainer { Id = 269, ChronicleId = 307, Archetype = Archetype.Ozan, Name = "Black Marketeer", Rarity = Rarity.Saphire, Type = CardType.Support });
             cards.Add(new Card { Id = 269, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 1, Weapon = false }, Image = "/Content/img/cards/Black_Marketeer.png", Version = "X", Cost = 0, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 269) });
@@ -1588,6 +1711,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 764 , Archetype = Archetype.Ariane   , Score = 20, Card = cards.Single(c => c.Id == 270) });
             scores.Add(new CardScore { Id = 765 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 270) });
             scores.Add(new CardScore { Id = 766 , Archetype = Archetype.Ozan     , Score = 20, Card = cards.Single(c => c.Id == 270) });
+            scores.Add(new CardScore { Id = 1195, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 270) });
 
             containers.Add(new CardContainer { Id = 271, ChronicleId = 309, Archetype = null, Name = "Crystal Flask", Rarity = Rarity.Emerald, Type = CardType.Support });
             cards.Add(new Card { Id = 271, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Crystal_Flask.png", Version = "X", Cost = 0, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 271) });
@@ -1596,6 +1720,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 769 , Archetype = Archetype.Ariane   , Score = 30, Card = cards.Single(c => c.Id == 271) });
             scores.Add(new CardScore { Id = 770 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 271) });
             scores.Add(new CardScore { Id = 771 , Archetype = Archetype.Ozan     , Score = 20, Card = cards.Single(c => c.Id == 271) });
+            scores.Add(new CardScore { Id = 1196, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 271) });
 
             containers.Add(new CardContainer { Id = 272, ChronicleId = 310, Archetype = null, Name = "Corpse Archer", Rarity = Rarity.Saphire, Type = CardType.Combat });
             cards.Add(new Card { Id = 272, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = true }, Image = "/Content/img/cards/Corpse_Archer.png", Version = "X", Cost = 0, Health = 3, Active = true, Parent = containers.Single(p => p.Id == 272) });
@@ -1604,6 +1729,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 774 , Archetype = Archetype.Ariane   , Score = 50, Card = cards.Single(c => c.Id == 272) });
             scores.Add(new CardScore { Id = 775 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 272) });
             scores.Add(new CardScore { Id = 776 , Archetype = Archetype.Ozan     , Score = 50, Card = cards.Single(c => c.Id == 272) });
+            scores.Add(new CardScore { Id = 1197, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 272) });
 
             containers.Add(new CardContainer { Id = 273, ChronicleId = 311, Archetype = null, Name = "Kaqemeex", Rarity = Rarity.Emerald, Type = CardType.Support });
             cards.Add(new Card { Id = 273, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Kaqemeex.png", Version = "X", Cost = 1, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 273) });
@@ -1612,6 +1738,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 779 , Archetype = Archetype.Ariane   , Score = 30, Card = cards.Single(c => c.Id == 273) });
             scores.Add(new CardScore { Id = 780 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 273) });
             scores.Add(new CardScore { Id = 781 , Archetype = Archetype.Ozan     , Score = 30, Card = cards.Single(c => c.Id == 273) });
+            scores.Add(new CardScore { Id = 1198, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 273) });
 
             containers.Add(new CardContainer { Id = 274, ChronicleId = 312, Archetype = null, Name = "Dragith Nurn", Rarity = Rarity.Ruby, Type = CardType.Combat });
             cards.Add(new Card { Id = 274, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Dragith_Nurn.png", Version = "X", Cost = 0, Health = 2, Active = true, Parent = containers.Single(p => p.Id == 274) });
@@ -1620,6 +1747,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 784 , Archetype = Archetype.Ariane   , Score = 10, Card = cards.Single(c => c.Id == 274) });
             scores.Add(new CardScore { Id = 785 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 274) });
             scores.Add(new CardScore { Id = 786 , Archetype = Archetype.Ozan     , Score = 10, Card = cards.Single(c => c.Id == 274) });
+            scores.Add(new CardScore { Id = 1199, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 274) });
 
             containers.Add(new CardContainer { Id = 275, ChronicleId = 313, Archetype = null, Name = "Falador Party Room", Rarity = Rarity.Saphire, Type = CardType.Support });
             cards.Add(new Card { Id = 275, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Falador_Party_Room.png", Version = "X", Cost = 0, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 275) });
@@ -1628,6 +1756,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 789 , Archetype = Archetype.Ariane   , Score = 30, Card = cards.Single(c => c.Id == 275) });
             scores.Add(new CardScore { Id = 790 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 275) });
             scores.Add(new CardScore { Id = 791 , Archetype = Archetype.Ozan     , Score = 50, Card = cards.Single(c => c.Id == 275) });
+            scores.Add(new CardScore { Id = 1200, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 275) });
 
             containers.Add(new CardContainer { Id = 276, ChronicleId = 314, Archetype = null, Name = "Papa Mambo", Rarity = Rarity.Diamond, Type = CardType.Support });
             cards.Add(new Card { Id = 276, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Papa_Mambo.png", Version = "X", Cost = 3, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 276) });
@@ -1636,6 +1765,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 794 , Archetype = Archetype.Ariane   , Score = 30, Card = cards.Single(c => c.Id == 276) });
             scores.Add(new CardScore { Id = 795 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 276) });
             scores.Add(new CardScore { Id = 796 , Archetype = Archetype.Ozan     , Score = 20, Card = cards.Single(c => c.Id == 276) });
+            scores.Add(new CardScore { Id = 1201, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 276) });
 
             containers.Add(new CardContainer { Id = 277, ChronicleId = 315, Archetype = null, Name = "Ice Troll", Rarity = Rarity.Ruby, Type = CardType.Combat });
             cards.Add(new Card { Id = 277, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = true }, Image = "/Content/img/cards/Ice_Troll.png", Version = "X", Cost = 0, Health = 9, Active = true, Parent = containers.Single(p => p.Id == 277) });
@@ -1644,6 +1774,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 799 , Archetype = Archetype.Ariane   , Score = 10, Card = cards.Single(c => c.Id == 277) });
             scores.Add(new CardScore { Id = 800 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 277) });
             scores.Add(new CardScore { Id = 801 , Archetype = Archetype.Ozan     , Score = 10, Card = cards.Single(c => c.Id == 277) });
+            scores.Add(new CardScore { Id = 1202, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 277) });
 
             containers.Add(new CardContainer { Id = 278, ChronicleId = 316, Archetype = null, Name = "Kalphite Egg Chamber", Rarity = Rarity.Saphire, Type = CardType.Support });
             cards.Add(new Card { Id = 278, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Kalphite_Egg_Chamber.png", Version = "X", Cost = 2, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 278) });
@@ -1652,6 +1783,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 804 , Archetype = Archetype.Ariane   , Score = 20, Card = cards.Single(c => c.Id == 278) });
             scores.Add(new CardScore { Id = 805 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 278) });
             scores.Add(new CardScore { Id = 806 , Archetype = Archetype.Ozan     , Score = 40, Card = cards.Single(c => c.Id == 278) });
+            scores.Add(new CardScore { Id = 1203, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 278) });
 
             containers.Add(new CardContainer { Id = 279, ChronicleId = 317, Archetype = null, Name = "Unstable Concoction", Rarity = Rarity.Emerald, Type = CardType.Support });
             cards.Add(new Card { Id = 279, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Unstable_Concoction.png", Version = "X", Cost = 0, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 279) });
@@ -1660,6 +1792,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 809 , Archetype = Archetype.Ariane   , Score = 30, Card = cards.Single(c => c.Id == 279) });
             scores.Add(new CardScore { Id = 810 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 279) });
             scores.Add(new CardScore { Id = 811 , Archetype = Archetype.Ozan     , Score = 20, Card = cards.Single(c => c.Id == 279) });
+            scores.Add(new CardScore { Id = 1204, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 279) });
 
             containers.Add(new CardContainer { Id = 280, ChronicleId = 318, Archetype = null, Name = "50 Ships Mufassah", Rarity = Rarity.Ruby, Type = CardType.Support });
             cards.Add(new Card { Id = 280, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/50_Ships_Mufassah.png", Version = "X", Cost = 0, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 280) });
@@ -1668,6 +1801,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 814 , Archetype = Archetype.Ariane   , Score = 40, Card = cards.Single(c => c.Id == 280) });
             scores.Add(new CardScore { Id = 815 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 280) });
             scores.Add(new CardScore { Id = 816 , Archetype = Archetype.Ozan     , Score = 30, Card = cards.Single(c => c.Id == 280) });
+            scores.Add(new CardScore { Id = 1205, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 280) });
 
             containers.Add(new CardContainer { Id = 281, ChronicleId = 319, Archetype = null, Name = "Barker Toad", Rarity = Rarity.Ruby, Type = CardType.Support });
             cards.Add(new Card { Id = 281, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Barker_Toad.png", Version = "X", Cost = 1, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 281) });
@@ -1676,6 +1810,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 819 , Archetype = Archetype.Ariane   , Score = 50, Card = cards.Single(c => c.Id == 281) });
             scores.Add(new CardScore { Id = 820 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 281) });
             scores.Add(new CardScore { Id = 821 , Archetype = Archetype.Ozan     , Score = 50, Card = cards.Single(c => c.Id == 281) });
+            scores.Add(new CardScore { Id = 1206, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 281) });
 
             containers.Add(new CardContainer { Id = 282, ChronicleId = 321, Archetype = null, Name = "Cabin Boy", Rarity = Rarity.Saphire, Type = CardType.Support });
             cards.Add(new Card { Id = 282, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Cabin_Boy.png", Version = "X", Cost = 1, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 282) });
@@ -1684,6 +1819,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 824 , Archetype = Archetype.Ariane   , Score = 10, Card = cards.Single(c => c.Id == 282) });
             scores.Add(new CardScore { Id = 825 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 282) });
             scores.Add(new CardScore { Id = 826 , Archetype = Archetype.Ozan     , Score = 10, Card = cards.Single(c => c.Id == 282) });
+            scores.Add(new CardScore { Id = 1207, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 282) });
 
             containers.Add(new CardContainer { Id = 283, ChronicleId = 322, Archetype = null, Name = "Chain Shot Cannon", Rarity = Rarity.Emerald, Type = CardType.Support });
             cards.Add(new Card { Id = 283, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Chain_Shot_Cannon.png", Version = "X", Cost = 0, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 283) });
@@ -1692,6 +1828,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 829 , Archetype = Archetype.Ariane   , Score = 10, Card = cards.Single(c => c.Id == 283) });
             scores.Add(new CardScore { Id = 830 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 283) });
             scores.Add(new CardScore { Id = 831 , Archetype = Archetype.Ozan     , Score = 10, Card = cards.Single(c => c.Id == 283) });
+            scores.Add(new CardScore { Id = 1208, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 283) });
 
             containers.Add(new CardContainer { Id = 284, ChronicleId = 323, Archetype = null, Name = "Lady Zay", Rarity = Rarity.Diamond, Type = CardType.Support });
             cards.Add(new Card { Id = 284, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Lady_Zay.png", Version = "X", Cost = 0, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 284) });
@@ -1700,6 +1837,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 834 , Archetype = Archetype.Ariane   , Score = 70, Card = cards.Single(c => c.Id == 284) });
             scores.Add(new CardScore { Id = 835 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 284) });
             scores.Add(new CardScore { Id = 836 , Archetype = Archetype.Ozan     , Score = 60, Card = cards.Single(c => c.Id == 284) });
+            scores.Add(new CardScore { Id = 1209, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 284) });
 
             containers.Add(new CardContainer { Id = 285, ChronicleId = 324, Archetype = null, Name = "Meg", Rarity = Rarity.Emerald, Type = CardType.Combat });
             cards.Add(new Card { Id = 285, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 2, Weapon = false }, Image = "/Content/img/cards/Meg.png", Version = "X", Cost = 0, Health = 3, Active = true, Parent = containers.Single(p => p.Id == 285) });
@@ -1708,6 +1846,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 839 , Archetype = Archetype.Ariane   , Score = 50, Card = cards.Single(c => c.Id == 285) });
             scores.Add(new CardScore { Id = 840 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 285) });
             scores.Add(new CardScore { Id = 841 , Archetype = Archetype.Ozan     , Score = 50, Card = cards.Single(c => c.Id == 285) });
+            scores.Add(new CardScore { Id = 1210, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 285) });
 
             containers.Add(new CardContainer { Id = 286, ChronicleId = 325, Archetype = null, Name = "Pirates' Hideout", Rarity = Rarity.Emerald, Type = CardType.Support });
             cards.Add(new Card { Id = 286, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Pirates_Hideout.png", Version = "X", Cost = 1, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 286) });
@@ -1716,6 +1855,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 844 , Archetype = Archetype.Ariane   , Score = 40, Card = cards.Single(c => c.Id == 286) });
             scores.Add(new CardScore { Id = 845 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 286) });
             scores.Add(new CardScore { Id = 846 , Archetype = Archetype.Ozan     , Score = 40, Card = cards.Single(c => c.Id == 286) });
+            scores.Add(new CardScore { Id = 1211, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 286) });
 
             containers.Add(new CardContainer { Id = 287, ChronicleId = 326, Archetype = null, Name = "Rowdy Cannoneer", Rarity = Rarity.Emerald, Type = CardType.Combat });
             cards.Add(new Card { Id = 287, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Rowdy_Cannoneer.png", Version = "X", Cost = 0, Health = 5, Active = true, Parent = containers.Single(p => p.Id == 287) });
@@ -1724,6 +1864,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 849 , Archetype = Archetype.Ariane   , Score = 70, Card = cards.Single(c => c.Id == 287) });
             scores.Add(new CardScore { Id = 850 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 287) });
             scores.Add(new CardScore { Id = 851 , Archetype = Archetype.Ozan     , Score = 70, Card = cards.Single(c => c.Id == 287) });
+            scores.Add(new CardScore { Id = 1212, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 287) });
 
             containers.Add(new CardContainer { Id = 288, ChronicleId = 327, Archetype = null, Name = "Saucy Wench Deckhand", Rarity = Rarity.Emerald, Type = CardType.Combat });
             cards.Add(new Card { Id = 288, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Saucy_Wench_Deckhand.png", Version = "X", Cost = 0, Health = 3, Active = true, Parent = containers.Single(p => p.Id == 288) });
@@ -1732,6 +1873,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 854 , Archetype = Archetype.Ariane   , Score = 50, Card = cards.Single(c => c.Id == 288) });
             scores.Add(new CardScore { Id = 855 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 288) });
             scores.Add(new CardScore { Id = 856 , Archetype = Archetype.Ozan     , Score = 50, Card = cards.Single(c => c.Id == 288) });
+            scores.Add(new CardScore { Id = 1213, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 288) });
 
             containers.Add(new CardContainer { Id = 289, ChronicleId = 328, Archetype = null, Name = "The Adventurous", Rarity = Rarity.Ruby, Type = CardType.Support });
             cards.Add(new Card { Id = 289, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/The_Adventurous.png", Version = "X", Cost = 4, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 289) });
@@ -1740,6 +1882,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 859 , Archetype = Archetype.Ariane   , Score = 30, Card = cards.Single(c => c.Id == 289) });
             scores.Add(new CardScore { Id = 860 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 289) });
             scores.Add(new CardScore { Id = 861 , Archetype = Archetype.Ozan     , Score = 40, Card = cards.Single(c => c.Id == 289) });
+            scores.Add(new CardScore { Id = 1214, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 289) });
 
             containers.Add(new CardContainer { Id = 290, ChronicleId = 329, Archetype = null, Name = "Sticky Sanders", Rarity = Rarity.Saphire, Type = CardType.Support });
             cards.Add(new Card { Id = 290, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Sticky_Sanders.png", Version = "X", Cost = 0, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 290) });
@@ -1748,6 +1891,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 864 , Archetype = Archetype.Ariane   , Score = 40, Card = cards.Single(c => c.Id == 290) });
             scores.Add(new CardScore { Id = 865 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 290) });
             scores.Add(new CardScore { Id = 866 , Archetype = Archetype.Ozan     , Score = 40, Card = cards.Single(c => c.Id == 290) });
+            scores.Add(new CardScore { Id = 1215, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 290) });
 
             containers.Add(new CardContainer { Id = 291, ChronicleId = 330, Archetype = Archetype.Vanescula, Name = "Flying Leech", Rarity = Rarity.Saphire, Type = CardType.Combat });
             cards.Add(new Card { Id = 291, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Flying_Leech.png", Version = "X", Cost = 0, Health = 3, Active = true, Parent = containers.Single(p => p.Id == 291) });
@@ -1892,6 +2036,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 903 , Archetype = Archetype.Ariane   , Score = 20, Card = cards.Single(c => c.Id == 325) });
             scores.Add(new CardScore { Id = 904 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 325) });
             scores.Add(new CardScore { Id = 905 , Archetype = Archetype.Ozan     , Score = 20, Card = cards.Single(c => c.Id == 325) });
+            scores.Add(new CardScore { Id = 1216, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 325) });
 
             containers.Add(new CardContainer { Id = 326, ChronicleId = 367, Archetype = null, Name = "Lava Dragon", Rarity = Rarity.Ruby, Type = CardType.Combat });
             cards.Add(new Card { Id = 326, Rewards = new CardRewards { Attack = 1, Armour = 0, Health = 0, Coins = 5, Weapon = false }, Image = "/Content/img/cards/Lava_Dragon.png", Version = "X", Cost = 0, Health = 9, Active = true, Parent = containers.Single(p => p.Id == 326) });
@@ -1900,6 +2045,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 908 , Archetype = Archetype.Ariane   , Score = 20, Card = cards.Single(c => c.Id == 326) });
             scores.Add(new CardScore { Id = 909 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 326) });
             scores.Add(new CardScore { Id = 910 , Archetype = Archetype.Ozan     , Score = 30, Card = cards.Single(c => c.Id == 326) });
+            scores.Add(new CardScore { Id = 1217, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 326) });
 
             containers.Add(new CardContainer { Id = 327, ChronicleId = 368, Archetype = null, Name = "Dark Crab", Rarity = Rarity.Saphire, Type = CardType.Support });
             cards.Add(new Card { Id = 327, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 6, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Dark_Crab.png", Version = "X", Cost = 1, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 327) });
@@ -1908,6 +2054,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 913 , Archetype = Archetype.Ariane   , Score = 60, Card = cards.Single(c => c.Id == 327) });
             scores.Add(new CardScore { Id = 914 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 327) });
             scores.Add(new CardScore { Id = 915 , Archetype = Archetype.Ozan     , Score = 60, Card = cards.Single(c => c.Id == 327) });
+            scores.Add(new CardScore { Id = 1218, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 327) });
 
             containers.Add(new CardContainer { Id = 328, ChronicleId = 369, Archetype = null, Name = "Stamina Potion", Rarity = Rarity.Saphire, Type = CardType.Support });
             cards.Add(new Card { Id = 328, Rewards = new CardRewards { Attack = 1, Armour = 0, Health = 7, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Stamina_Potion.png", Version = "X", Cost = 6, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 328) });
@@ -1916,6 +2063,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 918 , Archetype = Archetype.Ariane   , Score = 80, Card = cards.Single(c => c.Id == 328) });
             scores.Add(new CardScore { Id = 919 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 328) });
             scores.Add(new CardScore { Id = 920 , Archetype = Archetype.Ozan     , Score = 90, Card = cards.Single(c => c.Id == 328) });
+            scores.Add(new CardScore { Id = 1219, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 328) });
 
             containers.Add(new CardContainer { Id = 329, ChronicleId = 370, Archetype = null, Name = "Zulrah", Rarity = Rarity.Diamond, Type = CardType.Combat });
             cards.Add(new Card { Id = 329, Rewards = new CardRewards { Attack = 0, Armour = 4, Health = 0, Coins = 4, Weapon = false }, Image = "/Content/img/cards/Zulrah.png", Version = "X", Cost = 0, Health = 11, Active = true, Parent = containers.Single(p => p.Id == 329) });
@@ -1924,6 +2072,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 923 , Archetype = Archetype.Ariane   , Score = 30, Card = cards.Single(c => c.Id == 329) });
             scores.Add(new CardScore { Id = 924 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 329) });
             scores.Add(new CardScore { Id = 925 , Archetype = Archetype.Ozan     , Score = 30, Card = cards.Single(c => c.Id == 329) });
+            scores.Add(new CardScore { Id = 1220, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 329) });
 
             containers.Add(new CardContainer { Id = 330, ChronicleId = 372, Archetype = null, Name = "Undead Cow", Rarity = Rarity.Saphire, Type = CardType.Combat });
             cards.Add(new Card { Id = 330, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Undead_Cow.png", Version = "X", Cost = 0, Health = 2, Active = true, Parent = containers.Single(p => p.Id == 330) });
@@ -1932,6 +2081,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 928 , Archetype = Archetype.Ariane   , Score = 40, Card = cards.Single(c => c.Id == 330) });
             scores.Add(new CardScore { Id = 929 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 330) });
             scores.Add(new CardScore { Id = 930 , Archetype = Archetype.Ozan     , Score = 40, Card = cards.Single(c => c.Id == 330) });
+            scores.Add(new CardScore { Id = 1221, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 330) });
 
             containers.Add(new CardContainer { Id = 331, ChronicleId = 373, Archetype = null, Name = "Red Chinchompa", Rarity = Rarity.Saphire, Type = CardType.Support });
             cards.Add(new Card { Id = 331, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = true }, Image = "/Content/img/cards/Red_Chinchompa.png", Version = "X", Cost = 1, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 331) });
@@ -1940,6 +2090,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 933 , Archetype = Archetype.Ariane   , Score = 60, Card = cards.Single(c => c.Id == 331) });
             scores.Add(new CardScore { Id = 934 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 331) });
             scores.Add(new CardScore { Id = 935 , Archetype = Archetype.Ozan     , Score = 60, Card = cards.Single(c => c.Id == 331) });
+            scores.Add(new CardScore { Id = 1222, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 331) });
 
             containers.Add(new CardContainer { Id = 332, ChronicleId = 374, Archetype = null, Name = "Toxic Blowpipe", Rarity = Rarity.Saphire, Type = CardType.Support });
             cards.Add(new Card { Id = 332, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 3, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Toxic_Blowpipe.png", Version = "X", Cost = 2, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 332) });
@@ -1948,6 +2099,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 938 , Archetype = Archetype.Ariane   , Score = 50, Card = cards.Single(c => c.Id == 332) });
             scores.Add(new CardScore { Id = 939 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 332) });
             scores.Add(new CardScore { Id = 940 , Archetype = Archetype.Ozan     , Score = 60, Card = cards.Single(c => c.Id == 332) });
+            scores.Add(new CardScore { Id = 1223, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 332) });
 
             containers.Add(new CardContainer { Id = 333, ChronicleId = 375, Archetype = null, Name = "Cerberus", Rarity = Rarity.Ruby, Type = CardType.Combat });
             cards.Add(new Card { Id = 333, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 3, Coins = 2, Weapon = false }, Image = "/Content/img/cards/Cerberus.png", Version = "X", Cost = 0, Health = 9, Active = true, Parent = containers.Single(p => p.Id == 333) });
@@ -1956,6 +2108,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 943 , Archetype = Archetype.Ariane   , Score = 10, Card = cards.Single(c => c.Id == 333) });
             scores.Add(new CardScore { Id = 944 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 333) });
             scores.Add(new CardScore { Id = 945 , Archetype = Archetype.Ozan     , Score = 10, Card = cards.Single(c => c.Id == 333) });
+            scores.Add(new CardScore { Id = 1224, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 333) });
 
             containers.Add(new CardContainer { Id = 334, ChronicleId = 376, Archetype = Archetype.Vanescula, Name = "Burgh de Rott Citizen", Rarity = Rarity.Saphire, Type = CardType.Combat });
             cards.Add(new Card { Id = 334, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 2, Weapon = false }, Image = "/Content/img/cards/Burgh_de_Rott_Citizen.png", Version = "X", Cost = 0, Health = 2, Active = true, Parent = containers.Single(p => p.Id == 334) });
@@ -1972,6 +2125,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 950 , Archetype = Archetype.Ariane   , Score = 70, Card = cards.Single(c => c.Id == 336) });
             scores.Add(new CardScore { Id = 951 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 336) });
             scores.Add(new CardScore { Id = 952 , Archetype = Archetype.Ozan     , Score = 80, Card = cards.Single(c => c.Id == 336) });
+            scores.Add(new CardScore { Id = 1225, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 336) });
 
             containers.Add(new CardContainer { Id = 337, ChronicleId = 379, Archetype = null, Name = "Granite Maul", Rarity = Rarity.Ruby, Type = CardType.Support });
             cards.Add(new Card { Id = 337, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = true }, Image = "/Content/img/cards/Granite_Maul.png", Version = "X", Cost = 5, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 337) });
@@ -1980,6 +2134,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 955 , Archetype = Archetype.Ariane   , Score = 60, Card = cards.Single(c => c.Id == 337) });
             scores.Add(new CardScore { Id = 956 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 337) });
             scores.Add(new CardScore { Id = 957 , Archetype = Archetype.Ozan     , Score = 80, Card = cards.Single(c => c.Id == 337) });
+            scores.Add(new CardScore { Id = 1226, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 337) });
 
             containers.Add(new CardContainer { Id = 338, ChronicleId = 380, Archetype = null, Name = "General Wartface", Rarity = Rarity.Saphire, Type = CardType.Combat });
             cards.Add(new Card { Id = 338, Rewards = new CardRewards { Attack = 0, Armour = 3, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/General_Wartface.png", Version = "X", Cost = 0, Health = 4, Active = true, Parent = containers.Single(p => p.Id == 338) });
@@ -1988,6 +2143,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 960 , Archetype = Archetype.Ariane   , Score = 30, Card = cards.Single(c => c.Id == 338) });
             scores.Add(new CardScore { Id = 961 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 338) });
             scores.Add(new CardScore { Id = 962 , Archetype = Archetype.Ozan     , Score = 30, Card = cards.Single(c => c.Id == 338) });
+            scores.Add(new CardScore { Id = 1227, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 338) });
 
             containers.Add(new CardContainer { Id = 339, ChronicleId = 381, Archetype = null, Name = "Dragon Scimitar", Rarity = Rarity.Saphire, Type = CardType.Support });
             cards.Add(new Card { Id = 339, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = true }, Image = "/Content/img/cards/Dragon_Scimitar.png", Version = "X", Cost = 6, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 339) });
@@ -1996,6 +2152,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 965 , Archetype = Archetype.Ariane   , Score = 70, Card = cards.Single(c => c.Id == 339) });
             scores.Add(new CardScore { Id = 966 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 339) });
             scores.Add(new CardScore { Id = 967 , Archetype = Archetype.Ozan     , Score = 90, Card = cards.Single(c => c.Id == 339) });
+            scores.Add(new CardScore { Id = 1228, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 339) });
 
             containers.Add(new CardContainer { Id = 340, ChronicleId = 382, Archetype = null, Name = "Lobster", Rarity = Rarity.Saphire, Type = CardType.Combat });
             cards.Add(new Card { Id = 340, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 4, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Lobster.png", Version = "X", Cost = 0, Health = 1, Active = true, Parent = containers.Single(p => p.Id == 340) });
@@ -2004,6 +2161,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 970 , Archetype = Archetype.Ariane   , Score = 60, Card = cards.Single(c => c.Id == 340) });
             scores.Add(new CardScore { Id = 971 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 340) });
             scores.Add(new CardScore { Id = 972 , Archetype = Archetype.Ozan     , Score = 60, Card = cards.Single(c => c.Id == 340) });
+            scores.Add(new CardScore { Id = 1229, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 340) });
 
             containers.Add(new CardContainer { Id = 341, ChronicleId = 383, Archetype = null, Name = "Rantz", Rarity = Rarity.Emerald, Type = CardType.Support });
             cards.Add(new Card { Id = 341, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = true }, Image = "/Content/img/cards/Rantz.png", Version = "X", Cost = 2, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 341) });
@@ -2012,6 +2170,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 975 , Archetype = Archetype.Ariane   , Score = 50, Card = cards.Single(c => c.Id == 341) });
             scores.Add(new CardScore { Id = 976 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 341) });
             scores.Add(new CardScore { Id = 977 , Archetype = Archetype.Ozan     , Score = 60, Card = cards.Single(c => c.Id == 341) });
+            scores.Add(new CardScore { Id = 1230, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 341) });
 
             containers.Add(new CardContainer { Id = 342, ChronicleId = 384, Archetype = null, Name = "Explosive Potion", Rarity = Rarity.Saphire, Type = CardType.Support });
             cards.Add(new Card { Id = 342, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Explosive_Potion.png", Version = "X", Cost = 2, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 342) });
@@ -2020,6 +2179,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 980 , Archetype = Archetype.Ariane   , Score = 10, Card = cards.Single(c => c.Id == 342) });
             scores.Add(new CardScore { Id = 981 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 342) });
             scores.Add(new CardScore { Id = 982 , Archetype = Archetype.Ozan     , Score = 10, Card = cards.Single(c => c.Id == 342) });
+            scores.Add(new CardScore { Id = 1231, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 342) });
 
             containers.Add(new CardContainer { Id = 343, ChronicleId = 385, Archetype = null, Name = "Mithril Dragon", Rarity = Rarity.Emerald, Type = CardType.Combat });
             cards.Add(new Card { Id = 343, Rewards = new CardRewards { Attack = 0, Armour = 12, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Mithril_Dragon.png", Version = "X", Cost = 0, Health = 12, Active = true, Parent = containers.Single(p => p.Id == 343) });
@@ -2028,6 +2188,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 985 , Archetype = Archetype.Ariane   , Score = 20, Card = cards.Single(c => c.Id == 343) });
             scores.Add(new CardScore { Id = 986 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 343) });
             scores.Add(new CardScore { Id = 987 , Archetype = Archetype.Ozan     , Score = 20, Card = cards.Single(c => c.Id == 343) });
+            scores.Add(new CardScore { Id = 1232, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 343) });
 
             containers.Add(new CardContainer { Id = 344, ChronicleId = 386, Archetype = null, Name = "Abyssal Whip", Rarity = Rarity.Diamond, Type = CardType.Support });
             cards.Add(new Card { Id = 344, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = true }, Image = "/Content/img/cards/Abyssal_Whip.png", Version = "X", Cost = 8, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 344) });
@@ -2036,6 +2197,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 990 , Archetype = Archetype.Ariane   , Score = 70, Card = cards.Single(c => c.Id == 344) });
             scores.Add(new CardScore { Id = 991 , Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 344) });
             scores.Add(new CardScore { Id = 992 , Archetype = Archetype.Ozan     , Score = 80, Card = cards.Single(c => c.Id == 344) });
+            scores.Add(new CardScore { Id = 1233, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 344) });
 
             containers.Add(new CardContainer { Id = 345, ChronicleId = 387, Archetype = Archetype.Vanescula, Name = "Jerrod", Rarity = Rarity.Saphire, Type = CardType.Combat });
             cards.Add(new Card { Id = 345, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Jerrod.png", Version = "X", Cost = 0, Health = 6, Active = true, Parent = containers.Single(p => p.Id == 345) });
@@ -2223,6 +2385,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 1040, Archetype = Archetype.Ariane   , Score = 90, Card = cards.Single(c => c.Id == 390) });
             scores.Add(new CardScore { Id = 1041, Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 390) });
             scores.Add(new CardScore { Id = 1042, Archetype = Archetype.Ozan     , Score = 90, Card = cards.Single(c => c.Id == 390) });
+            scores.Add(new CardScore { Id = 1234, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 390) });
 
             cards.Add(new Card { Id = 391, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Haunted_Soul_v1482056.png", Version = "1482056", Cost = 0, Health = 5, Active = true, Parent = containers.Single(p => p.Id == 162) });
             scores.Add(new CardScore { Id = 1043, Archetype = Archetype.Ariane, Score = 100, Card = cards.Single(c => c.Id == 391) });
@@ -2236,6 +2399,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 1047, Archetype = Archetype.Ariane, Score = 60, Card = cards.Single(c => c.Id == 393) });
             scores.Add(new CardScore { Id = 1048, Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 393) });
             scores.Add(new CardScore { Id = 1049, Archetype = Archetype.Ozan, Score = 40, Card = cards.Single(c => c.Id == 393) });
+            scores.Add(new CardScore { Id = 1235, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 393) });
 
             cards.Add(new Card { Id = 394, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/To_Kash_v1482056.png", Version = "1482056", Cost = 0, Health = 12, Active = true, Parent = containers.Single(p => p.Id == 179) });
             scores.Add(new CardScore { Id = 1050, Archetype = Archetype.TheRaptor, Score = 40, Card = cards.Single(c => c.Id == 394) });
@@ -2243,6 +2407,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 1052, Archetype = Archetype.Ariane, Score = 40, Card = cards.Single(c => c.Id == 394) });
             scores.Add(new CardScore { Id = 1053, Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 394) });
             scores.Add(new CardScore { Id = 1054, Archetype = Archetype.Ozan, Score = 50, Card = cards.Single(c => c.Id == 394) });
+            scores.Add(new CardScore { Id = 1236, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 394) });
 
             cards.Add(new Card { Id = 395, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Enfeeble_v1482056.png", Version = "1482056", Cost = 1, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 193) });
             scores.Add(new CardScore { Id = 1055, Archetype = Archetype.Ariane, Score = 90, Card = cards.Single(c => c.Id == 395) });
@@ -2265,6 +2430,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 1062, Archetype = Archetype.Ariane, Score = 30, Card = cards.Single(c => c.Id == 400) });
             scores.Add(new CardScore { Id = 1063, Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 400) });
             scores.Add(new CardScore { Id = 1064, Archetype = Archetype.Ozan, Score = 20, Card = cards.Single(c => c.Id == 400) });
+            scores.Add(new CardScore { Id = 1237, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 400) });
 
             cards.Add(new Card { Id = 401, Rewards = new CardRewards { Attack = 1, Armour = 12, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Ranis_Drakan_v1482056.png", Version = "1482056", Cost = 0, Health = 9, Active = true, Parent = containers.Single(p => p.Id == 302) });
             scores.Add(new CardScore { Id = 1065, Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 401) });
@@ -2278,6 +2444,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 1069, Archetype = Archetype.Ariane, Score = 30, Card = cards.Single(c => c.Id == 403) });
             scores.Add(new CardScore { Id = 1070, Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 403) });
             scores.Add(new CardScore { Id = 1071, Archetype = Archetype.Ozan, Score = 30, Card = cards.Single(c => c.Id == 403) });
+            scores.Add(new CardScore { Id = 1238, Archetype = Archetype.Morvran, Score = -1, Card = cards.Single(c => c.Id == 403) });
         }
 
         public static void SeedData(ApplicationDbContext db)
