@@ -733,6 +733,7 @@
     <Content Include="Content\img\icons\gold.png" />
     <Content Include="Content\img\icons\health.png" />
     <Content Include="Content\img\icons\Linza.png" />
+    <Content Include="Content\img\icons\Morvran.png" />
     <Content Include="Content\img\icons\Ozan.png" />
     <Content Include="Content\img\icons\pack.png" />
     <Content Include="Content\img\icons\shard.png" />
