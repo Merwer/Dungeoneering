@@ -69,9 +69,9 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker
                 })
             });
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            app.UseFacebookAuthentication(
+               appId: ConfigurationManager.AppSettings["FacebookClientId"],
+               appSecret: ConfigurationManager.AppSettings["FacebookClientSecret"]);
 
             app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             {
