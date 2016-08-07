@@ -16,7 +16,8 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
         {
             return View();
         }
-        // GET: Stats
+
+        [Authorize]
         public ActionResult My()
         {
             var drafts = db.Drafts.Include(d => d.Matches).Where(d => d.OwnerName == Username).ToList();
