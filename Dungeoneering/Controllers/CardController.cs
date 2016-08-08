@@ -9,6 +9,7 @@ using System;
 
 namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
 {
+    [RoutePrefix("Cards")]
     public class CardController : BaseController
     {
         private ApplicationDbContext db = new ApplicationDbContext();
