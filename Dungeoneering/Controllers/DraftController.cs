@@ -9,12 +9,12 @@ using System;
 
 namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
 {
-    [Route("Draft")]
+    [RoutePrefix("Drafts")]
     public class DraftController : BaseController
     {
         private ApplicationDbContext db = new ApplicationDbContext();
         
-        [Route("")]
+        [Route]
         public ActionResult Index()
         {
             //TODO: Paging?
@@ -25,17 +25,18 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
             return View(playerDrafts);
         }
         
-        [Route("{id:int}")]
+        [Route("{id:long?}")]
         public ActionResult Drafting(long? id)
         {
             Draft draft = null;
-            if (! id.HasValue)
+            if (!id.HasValue)
             {
                 draft = db.Drafts.Include(d => d.Rounds).Where(d => d.OwnerName == Username).ToList().SingleOrDefault(d => !d.Complete);
-                if(draft == null)
+                if (draft == null)
                 {
                     return HttpNotFound("No current draft");
-                } else
+                }
+                else
                 {
                     return RedirectToAction("Drafting", new { id = draft.Id });
                 }
@@ -83,8 +84,9 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
             return RedirectToAction("Drafting", new { id = draft.Id });
         }
 
+        [Route("{id:long}")]
         [HttpDelete]
-        public ActionResult Delete(int id)
+        public ActionResult Delete(long id)
         {
             var draft = db.Drafts.FirstOrDefault(d => d.Id == id);
             if (draft == null)
@@ -101,8 +103,9 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
             return new HttpStatusCodeResult(HttpStatusCode.OK);
         }
 
+        [Route("{id:long}")]
         [HttpPatch]
-        public ActionResult Abandon(int id)
+        public ActionResult Abandon(long id)
         {
             var draft = db.Drafts.FirstOrDefault(d => d.Id == id);
             if (draft == null)
@@ -119,8 +122,9 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
             return new HttpStatusCodeResult(HttpStatusCode.OK);
         }
 
+        [Route("{id:long}")]
         [HttpPatch]
-        public ActionResult Restore(int id)
+        public ActionResult Restore(long id)
         {
             var draft = db.Drafts.FirstOrDefault(d => d.Id == id);
             if (draft == null)
