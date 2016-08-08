@@ -27,7 +27,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
         }
 
         [Route("current")]
-        public ActionResult Drafting()
+        public ActionResult CurrentDraft()
         {
             Draft draft = db.Drafts.Include(d => d.Rounds).Where(d => d.OwnerName == Username).ToList().SingleOrDefault(d => !d.Complete);
             if (draft == null)
@@ -36,13 +36,13 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
             }
             else
             {
-                return RedirectToAction("Drafting", new { id = draft.Id });
+                return RedirectToAction("View", new { id = draft.Id });
             }
         }
 
         [AllowAnonymous]
         [Route("{id:long}")]
-        public ActionResult Drafting(long id)
+        public ActionResult View(long id)
         {
             Draft draft = null;
             draft = db.Drafts.Include(d => d.Rounds).FirstOrDefault(d => d.Id == id);
@@ -73,7 +73,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
             }
             db.Drafts.Add(draft);
             db.SaveChanges();
-            return RedirectToAction("Drafting", new { id = draft.Id });
+            return RedirectToAction("View", new { id = draft.Id });
         }
 
         [Route("{id:long}")]

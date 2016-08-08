@@ -824,7 +824,7 @@
     <Content Include="Views\Shared\DisplayTemplates\MatchRewardList.cshtml" />
     <Content Include="Views\Shared\_LegendIcon.cshtml" />
     <Content Include="Views\Home\Privacy.cshtml" />
-    <Content Include="Views\Draft\Drafting.cshtml" />
+    <Content Include="Views\Draft\View.cshtml" />
     <Content Include="Views\Draft\Index.cshtml" />
     <Content Include="Views\Draft\Modals\AbandonDraft.cshtml" />
     <Content Include="Views\Draft\Modals\AddMatch.cshtml" />
