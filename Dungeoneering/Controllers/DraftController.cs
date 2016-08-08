@@ -9,11 +9,12 @@ using System;
 
 namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
 {
+    [Authorize]
     [RoutePrefix("Drafts")]
     public class DraftController : BaseController
     {
         private ApplicationDbContext db = new ApplicationDbContext();
-        
+
         [Route]
         public ActionResult Index()
         {
@@ -24,24 +25,27 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
                 .ThenByDescending(d => d.Id).ToList();
             return View(playerDrafts);
         }
-        
-        [Route("{id:long?}")]
-        public ActionResult Drafting(long? id)
+
+        [Route("current")]
+        public ActionResult Drafting()
+        {
+            Draft draft = db.Drafts.Include(d => d.Rounds).Where(d => d.OwnerName == Username).ToList().SingleOrDefault(d => !d.Complete);
+            if (draft == null)
+            {
+                return HttpNotFound("No current draft");
+            }
+            else
+            {
+                return RedirectToAction("Drafting", new { id = draft.Id });
+            }
+        }
+
+        [AllowAnonymous]
+        [Route("{id:long}")]
+        public ActionResult Drafting(long id)
         {
             Draft draft = null;
-            if (!id.HasValue)
-            {
-                draft = db.Drafts.Include(d => d.Rounds).Where(d => d.OwnerName == Username).ToList().SingleOrDefault(d => !d.Complete);
-                if (draft == null)
-                {
-                    return HttpNotFound("No current draft");
-                }
-                else
-                {
-                    return RedirectToAction("Drafting", new { id = draft.Id });
-                }
-            }
-            draft = db.Drafts.Include(d => d.Rounds).FirstOrDefault(d => d.Id == id.Value);
+            draft = db.Drafts.Include(d => d.Rounds).FirstOrDefault(d => d.Id == id);
             if (draft == null)
             {
                 return HttpNotFound("Invalid draft ID");
@@ -64,7 +68,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
             }
             return View();
         }
-        
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(Archetype archetype)
