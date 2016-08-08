@@ -834,6 +834,16 @@
     <Content Include="Views\Home\Privacy.cshtml" />
     <Content Include="Views\Draft\Modals\AbandonDraft.cshtml" />
     <Content Include="Views\Draft\Modals\RestoreDraft.cshtml" />
+    <Content Include="Views\Drafts\Create.cshtml" />
+    <Content Include="Views\Drafts\Drafting.cshtml" />
+    <Content Include="Views\Drafts\Index.cshtml" />
+    <Content Include="Views\Drafts\Modals\AbandonDraft.cshtml" />
+    <Content Include="Views\Drafts\Modals\AddMatch.cshtml" />
+    <Content Include="Views\Drafts\Modals\DeleteDraft.cshtml" />
+    <Content Include="Views\Drafts\Modals\DeleteMatch.cshtml" />
+    <Content Include="Views\Drafts\Modals\EditMatch.cshtml" />
+    <Content Include="Views\Drafts\Modals\RestoreDraft.cshtml" />
+    <Content Include="Views\Drafts\_StartDraftForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
