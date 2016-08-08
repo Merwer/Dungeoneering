@@ -57,18 +57,6 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
             return View(draft);
         }
 
-        [Route("Create")]
-        public ActionResult Create()
-        {
-            var playerDrafts = db.Drafts.Where(d => d.OwnerName == Username).ToList();
-            var currentDraft = playerDrafts.SingleOrDefault(d => !d.Complete);
-            if(currentDraft != null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest, "Dungeon run is currently active");
-            }
-            return View();
-        }
-
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(Archetype archetype)
