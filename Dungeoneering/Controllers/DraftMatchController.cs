@@ -10,14 +10,14 @@ using System;
 namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
 {
     [Authorize]
-    [Route("Draft/{draftId:int}/Match")]
+    [RoutePrefix("Drafts/{draftId:long}/Match")]
     public class DraftMatchController : BaseController
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        [Route("")]
+        [Route]
         [HttpPost]
-        public ActionResult Create([Bind(Exclude = "Draft")]Match match, int draftId)
+        public ActionResult Create([Bind(Exclude = "Draft")]Match match, long draftId)
         {
             Draft draft = db.Drafts.FirstOrDefault(d => d.Id == draftId);
             if (draft == null)
@@ -41,9 +41,9 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
             return Json(match.Id);
         }
 
-        [Route("{id:int}")]
+        [Route("{id:long}")]
         [HttpPatch]
-        public ActionResult EditMatch(int id, [Bind(Exclude = "Draft")]Match match)
+        public ActionResult EditMatch(long id, [Bind(Exclude = "Draft")]Match match)
         {
             Match dbMatch = db.Matches.Include(m => m.Draft.Matches).FirstOrDefault(m => m.Id == id);
             if (dbMatch == null)
@@ -78,9 +78,9 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
             return Json(match.Id);
         }
 
-        [Route("{id:int}")]
+        [Route("{id:long}")]
         [HttpDelete]
-        public ActionResult DeleteMatch(int id)
+        public ActionResult DeleteMatch(long id)
         {
             var match = db.Matches.FirstOrDefault(d => d.Id == id);
             if (match == null)

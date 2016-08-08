@@ -10,20 +10,20 @@ using System;
 namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
 {
     [Authorize]
-    [Route("Draft/{draftId:int}/Round")]
+    [RoutePrefix("Drafts/{draftId:long}/Round")]
     public class DraftRoundController : BaseController
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        [Route("{roundId:int}")]
+        [Route("{roundId:int?}")]
         [HttpPost]
-        public ActionResult Create(int? draftId, int? roundId, List<int> options, List<int> selected)
+        public ActionResult Create(long draftId, int? roundId, List<int> options, List<int> selected)
         {
-            if (draftId == null || roundId == null || options.Count != 5 || selected.Count != 2)
+            if (roundId == null || options.Count != 5 || selected.Count != 2)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest, "Missing information");
             }
-            Draft draft = db.Drafts.Include(d => d.Rounds).FirstOrDefault(d => d.Id == draftId.Value);
+            Draft draft = db.Drafts.Include(d => d.Rounds).FirstOrDefault(d => d.Id == draftId);
             if(draft == null)
             {
                 return HttpNotFound("Invalid draft ID");
