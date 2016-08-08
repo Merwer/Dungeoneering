@@ -14,7 +14,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        [Route("{archetype:int}")]
+        [Route("{archetype}")]
         public ActionResult Index(Archetype archetype)
         {
             var list = db.CardScores.Where(cs => cs.Archetype == archetype)

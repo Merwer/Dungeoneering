@@ -28,7 +28,7 @@ chronicle.CardList = function (archetype, callback) {
         }
     };
 
-    jQuery.getJSON('/Drafts/cardList?archetype=' + archetype, function (data) {
+    jQuery.getJSON('/Cards/' + archetype, function (data) {
         init(data);
     });
 
