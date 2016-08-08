@@ -222,7 +222,10 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
-    <Compile Include="Controllers\DraftsController.cs" />
+    <Compile Include="Controllers\DraftMatchController.cs" />
+    <Compile Include="Controllers\DraftRoundController.cs" />
+    <Compile Include="Controllers\DraftController.cs" />
+    <Compile Include="Controllers\CardController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\StatsController.cs" />
@@ -814,26 +817,28 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Drafts\Create.cshtml" />
-    <Content Include="Views\Drafts\Drafting.cshtml" />
-    <Content Include="Views\Drafts\Index.cshtml" />
-    <Content Include="Views\Drafts\Modals\DeleteDraft.cshtml" />
-    <Content Include="Views\Drafts\Modals\EditMatch.cshtml" />
-    <Content Include="Views\Drafts\Modals\DeleteMatch.cshtml" />
-    <Content Include="Views\Drafts\Modals\AddMatch.cshtml" />
+    <Content Include="Views\Draft\Create.cshtml" />
+    <Content Include="Views\Draft\Drafting.cshtml" />
+    <Content Include="Views\Draft\Index.cshtml" />
+    <Content Include="Views\Draft\Modals\DeleteDraft.cshtml" />
+    <Content Include="Views\Draft\Modals\EditMatch.cshtml" />
+    <Content Include="Views\Draft\Modals\DeleteMatch.cshtml" />
+    <Content Include="Views\Draft\Modals\AddMatch.cshtml" />
     <Content Include="Views\Stats\Global.cshtml" />
     <Content Include="Views\Stats\My.cshtml" />
-    <Content Include="Views\Drafts\_StartDraftForm.cshtml" />
+    <Content Include="Views\Draft\_StartDraftForm.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\MyStatsData.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\BasicStatsData.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\MatchRewardList.cshtml" />
     <Content Include="Views\Shared\_LegendIcon.cshtml" />
     <Content Include="Views\Home\Privacy.cshtml" />
-    <Content Include="Views\Drafts\Modals\AbandonDraft.cshtml" />
-    <Content Include="Views\Drafts\Modals\RestoreDraft.cshtml" />
+    <Content Include="Views\Draft\Modals\AbandonDraft.cshtml" />
+    <Content Include="Views\Draft\Modals\RestoreDraft.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\DraftMatch\" />
+    <Folder Include="Views\DraftRound\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
