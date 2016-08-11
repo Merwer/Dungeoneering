@@ -6,6 +6,7 @@ using System.Net;
 using System.Web.Mvc;
 using Merwer.Chronicle.Dungeoneering.Tracker.Models;
 using System;
+using Merwer.Chronicle.Dungeoneering.Tracker.ViewModels.Draft;
 
 namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
 {
@@ -30,7 +31,13 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
                 .Where(d => d.OwnerName == username)
                 .OrderByDescending(d => d.CreatedOn)
                 .ThenByDescending(d => d.Id).ToList();
-            return View(playerDrafts);
+            return View(new IndexView
+            {
+                Username = username,
+                Drafts = playerDrafts,
+                IsSelf = User.Identity.IsAuthenticated && Username.Equals(username),
+                ShowNewDraft = playerDrafts.All(draft => draft.Complete)
+            });
         }
 
         [Route("current")]

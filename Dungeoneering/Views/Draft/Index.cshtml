@@ -1,5 +1,6 @@
 ﻿@using Merwer.Chronicle.Dungeoneering.Tracker.Models;
-@model IEnumerable<Draft>
+@using Merwer.Chronicle.Dungeoneering.Tracker.ViewModels.Draft;
+@model IndexView
 
 @{
     ViewBag.Title = "Index";
@@ -9,9 +10,9 @@
     @Scripts.Render("/Content/js/draftIndex.js")
 }
 
-<h2>My Dungeon Runs</h2>
+<h2>/u/@Model.Username</h2>
 
-@if (Model.All(draft => draft.Complete))
+@if (Model.IsSelf && Model.ShowNewDraft)
 {
     <div class="well">
         @Html.Partial("_StartDraftForm", Archetype.Ariane)
@@ -31,7 +32,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (var item in Model)
+                @foreach (var item in Model.Drafts)
                 {
                     <tr class="class-transition">
                         <td>
@@ -42,29 +43,32 @@
                                         <i class="toggle-icon-eye fa fa-eye"></i>
                                     </button>
                                 }
-                                <a href="@Url.Action("View", new { id = item.Id })" class="btn btn-default" role="button" title="Edit" alt="Edit">
-                                    <i class="fa fa-pencil"></i>
-                                </a>
-                                @if (item.Abandoned)
+                                @if (Model.IsSelf)
                                 {
-                                    <button class="btn btn-default" role="button" title="Restore Deck" alt="Restore Deck" data-toggle="modal" data-target="#restore-draft" data-draftid="@item.Id">
-                                        <i class="fa fa-level-up fa-rotate-270"></i>
+                                    <a href="@Url.Action("View", new { id = item.Id })" class="btn btn-default" role="button" title="Edit" alt="Edit">
+                                        <i class="fa fa-pencil"></i>
+                                    </a>
+                                    if (item.Abandoned)
+                                    {
+                                        <button class="btn btn-default" role="button" title="Restore Deck" alt="Restore Deck" data-toggle="modal" data-target="#restore-draft" data-draftid="@item.Id">
+                                            <i class="fa fa-level-up fa-rotate-270"></i>
+                                        </button>
+                                    }
+                                    else if (!item.Complete)
+                                    {
+                                        <button class="btn btn-default" role="button" title="Abandon Deck" alt="Abandon Deck" data-toggle="modal" data-target="#abandon-draft" data-draftid="@item.Id">
+                                            <i class="fa fa-exclamation"></i>
+                                        </button>
+                                    }
+                                    <button class="btn btn-default" role="button" title="Delete Deck" alt="Delete Deck" data-toggle="modal" data-target="#delete-draft" data-draftid="@item.Id">
+                                        <i class="fa fa-trash"></i>
                                     </button>
-                                }
-                                else if (!item.Complete)
-                                {
-                                    <button class="btn btn-default" role="button" title="Abandon Deck" alt="Abandon Deck" data-toggle="modal" data-target="#abandon-draft" data-draftid="@item.Id">
-                                        <i class="fa fa-exclamation"></i>
-                                    </button>
-                                }
-                                <button class="btn btn-default" role="button" title="Delete Deck" alt="Delete Deck" data-toggle="modal" data-target="#delete-draft" data-draftid="@item.Id">
-                                    <i class="fa fa-trash"></i>
-                                </button>
-                                @if (item.DraftComplete && !item.Complete)
-                                {
-                                    <button class="btn btn-default" role="button" title="Add Match" alt="Add Match" data-toggle="modal" data-target="#add-match" data-draftid="@item.Id">
-                                        <i class="fa fa-plus"></i>
-                                    </button>
+                                    if (item.DraftComplete && !item.Complete)
+                                    {
+                                        <button class="btn btn-default" role="button" title="Add Match" alt="Add Match" data-toggle="modal" data-target="#add-match" data-draftid="@item.Id">
+                                            <i class="fa fa-plus"></i>
+                                        </button>
+                                    }
                                 }
                             </div>
                         </td>
@@ -73,11 +77,11 @@
                         <td class="hidden-xs">@item.CreatedOn.ToString("dd/MM/yyyy")</td>
                         <td>
                             @Html.Partial("DisplayTemplates/MatchRewardList", new MatchRewardList
-                               {
-                                   Copper = item.Matches.Select(m => m.Rewards).AsQueryable().Sum(m => m.Copper),
-                                   Shards = item.Matches.Select(m => m.Rewards).AsQueryable().Sum(m => m.Shards),
-                                   Packs = (item.Matches.Select(m => m.Rewards).AsQueryable().Sum(m => m.Packs) + 1)
-                               })
+                       {
+                           Copper = item.Matches.Select(m => m.Rewards).AsQueryable().Sum(m => m.Copper),
+                           Shards = item.Matches.Select(m => m.Rewards).AsQueryable().Sum(m => m.Shards),
+                           Packs = (item.Matches.Select(m => m.Rewards).AsQueryable().Sum(m => m.Packs) + 1)
+                       })
                         </td>
                     </tr>
                     if (item.Matches.Any())
@@ -99,14 +103,17 @@
                                         {
                                             <tr data-first="@match.First">
                                                 <td>
-                                                    <div class="btn-group btn-group-responsive" role="group">
-                                                        <button class="btn btn-default" role="button" title="Edit Match" alt="Edit Match" data-toggle="modal" data-target="#edit-match" data-draftid="@item.Id" data-matchid="@match.Id">
-                                                            <i class="fa fa-pencil"></i>
-                                                        </button>
-                                                        <button class="btn btn-default" role="button" title="Delete Match" alt="Delete Match" data-toggle="modal" data-target="#delete-match" data-draftid="@item.Id" data-matchid="@match.Id">
-                                                            <i class="fa fa-trash"></i>
-                                                        </button>
-                                                    </div>
+                                                    @if (Model.IsSelf)
+                                                    {
+                                                        <div class="btn-group btn-group-responsive" role="group">
+                                                            <button class="btn btn-default" role="button" title="Edit Match" alt="Edit Match" data-toggle="modal" data-target="#edit-match" data-draftid="@item.Id" data-matchid="@match.Id">
+                                                                <i class="fa fa-pencil"></i>
+                                                            </button>
+                                                            <button class="btn btn-default" role="button" title="Delete Match" alt="Delete Match" data-toggle="modal" data-target="#delete-match" data-draftid="@item.Id" data-matchid="@match.Id">
+                                                                <i class="fa fa-trash"></i>
+                                                            </button>
+                                                        </div>
+                                                    }
                                                 </td>
                                                 <td data-value="@((int)match.OpponentArchetype)">@Html.Partial("_LegendIcon", @match.OpponentArchetype)</td>
                                                 <td class="hidden-xs">@match.CreatedOn.ToString("dd/MM/yyyy")</td>
@@ -125,11 +132,12 @@
     </div>
 </div>
 
-@{
-            Html.RenderPartial("Modals/DeleteDraft");
-            Html.RenderPartial("Modals/AbandonDraft");
-            Html.RenderPartial("Modals/RestoreDraft");
-            Html.RenderPartial("Modals/AddMatch", new Match());
-            Html.RenderPartial("Modals/EditMatch", new Match());
-            Html.RenderPartial("Modals/DeleteMatch");
+@if (Model.IsSelf)
+{
+    Html.RenderPartial("Modals/DeleteDraft");
+    Html.RenderPartial("Modals/AbandonDraft");
+    Html.RenderPartial("Modals/RestoreDraft");
+    Html.RenderPartial("Modals/AddMatch", new Match());
+    Html.RenderPartial("Modals/EditMatch", new Match());
+    Html.RenderPartial("Modals/DeleteMatch");
 }
