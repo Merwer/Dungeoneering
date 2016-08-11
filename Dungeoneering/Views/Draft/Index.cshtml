@@ -40,14 +40,14 @@
                                 @if (item.Matches.Any())
                                 {
                                     <button class="btn btn-default" role="button" title="View Matches" data-toggle="collapse" data-target="#draft-@item.Id">
-                                        <i class="toggle-icon-eye fa fa-eye"></i>
+                                        <i class="fa fa-list"></i>
                                     </button>
                                 }
+                                <a href="@Url.Action("View", new { id = item.Id })" class="btn btn-default" role="button" title="Edit" alt="Edit">
+                                    <i class="fa fa-eye"></i>
+                                </a>
                                 @if (Model.IsSelf)
                                 {
-                                    <a href="@Url.Action("View", new { id = item.Id })" class="btn btn-default" role="button" title="Edit" alt="Edit">
-                                        <i class="fa fa-pencil"></i>
-                                    </a>
                                     if (item.Abandoned)
                                     {
                                         <button class="btn btn-default" role="button" title="Restore Deck" alt="Restore Deck" data-toggle="modal" data-target="#restore-draft" data-draftid="@item.Id">
