@@ -64,10 +64,6 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
             {
                 return HttpNotFound("Invalid draft ID");
             }
-            if (draft.OwnerName != Username)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.Unauthorized);
-            }
             return View(draft);
         }
 
