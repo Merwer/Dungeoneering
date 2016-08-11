@@ -15,12 +15,19 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        [Route]
+        [Route("my")]
         public ActionResult Index()
+        {
+            return Index(Username);
+        }
+
+        [AllowAnonymous]
+        [Route("u/{username}")]
+        public ActionResult Index(string username)
         {
             //TODO: Paging?
             var playerDrafts = db.Drafts
-                .Where(d => d.OwnerName == Username)
+                .Where(d => d.OwnerName == username)
                 .OrderByDescending(d => d.CreatedOn)
                 .ThenByDescending(d => d.Id).ToList();
             return View(playerDrafts);
