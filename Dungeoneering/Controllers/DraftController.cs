@@ -64,7 +64,11 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
             {
                 return HttpNotFound("Invalid draft ID");
             }
-            return View(draft);
+            return View(new DraftView
+            {
+                IsSelf = User.Identity.IsAuthenticated && Username.Equals(draft.OwnerName),
+                Draft = draft
+            });
         }
 
         [HttpPost]
