@@ -313,7 +313,6 @@
     <Compile Include="Models\StaticIdEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
-    <Compile Include="ViewModels\Draft\DraftView.cs" />
     <Compile Include="ViewModels\Draft\ListView.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -835,6 +834,7 @@
     <Content Include="Views\Draft\Modals\EditMatch.cshtml" />
     <Content Include="Views\Draft\Modals\RestoreDraft.cshtml" />
     <Content Include="Views\Draft\_StartDraftForm.cshtml" />
+    <Content Include="Views\Draft\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -64,11 +64,11 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
             {
                 return HttpNotFound("Invalid draft ID");
             }
-            return View(new DraftView
+            if (User.Identity.IsAuthenticated && Username.Equals(draft.OwnerName))
             {
-                IsSelf = User.Identity.IsAuthenticated && Username.Equals(draft.OwnerName),
-                Draft = draft
-            });
+                return View("Edit", draft);
+            }
+            return View("View", draft);
         }
 
         [HttpPost]
@@ -87,7 +87,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
             }
             db.Drafts.Add(draft);
             db.SaveChanges();
-            return RedirectToAction("View", new { id = draft.Id });
+            return RedirectToAction("Edit", new { id = draft.Id });
         }
 
         [Route("{id:long}")]
