@@ -49,7 +49,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
             dynamic data = round.Id;
             if (draft.DraftComplete)
             {
-                data = new { redirect = Url.Action("Index", null, null, Request.Url.Scheme) };
+                data = new { redirect = Url.Action("Index", "Draft", null, Request.Url.Scheme) };
             }
             return Json(data);
         }
