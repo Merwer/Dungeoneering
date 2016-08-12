@@ -31,7 +31,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
                 .Where(d => d.OwnerName == username)
                 .OrderByDescending(d => d.CreatedOn)
                 .ThenByDescending(d => d.Id).ToList();
-            return View(new ListView
+            return View("List", new ListView
             {
                 Username = username,
                 Drafts = playerDrafts,

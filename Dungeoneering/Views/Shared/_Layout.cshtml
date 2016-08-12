@@ -51,7 +51,7 @@
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                 @if (Request.IsAuthenticated) {
-                    <li><a href="@Url.Action("Index", "Drafts")"><i class="fa fa-heart"></i> My Dungeon Runs</a></li>
+                    <li><a href="@Url.Action("Index", "Draft")"><i class="fa fa-heart"></i> My Dungeon Runs</a></li>
                     <li><a href="@Url.Action("My", "Stats")"><i class="fa fa-bar-chart"></i> My Stats</a></li>
                 }
                     <li><a href="@Url.Action("Global", "Stats")"><i class="fa fa-globe"></i> Global Stats</a></li>>
