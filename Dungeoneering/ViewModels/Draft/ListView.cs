@@ -6,7 +6,7 @@ using System.Web;
 
 namespace Merwer.Chronicle.Dungeoneering.Tracker.ViewModels.Draft
 {
-    public class IndexView
+    public class ListView
     {
         public string Username { get; internal set; }
         public IEnumerable<Models.Draft> Drafts { get; internal set; }

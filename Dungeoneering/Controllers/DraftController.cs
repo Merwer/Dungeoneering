@@ -19,19 +19,19 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
         [Route("my")]
         public ActionResult Index()
         {
-            return Index(Username);
+            return List(Username);
         }
 
         [AllowAnonymous]
         [Route("u/{username}")]
-        public ActionResult Index(string username)
+        public ActionResult List(string username)
         {
             //TODO: Paging?
             var playerDrafts = db.Drafts
                 .Where(d => d.OwnerName == username)
                 .OrderByDescending(d => d.CreatedOn)
                 .ThenByDescending(d => d.Id).ToList();
-            return View(new IndexView
+            return View(new ListView
             {
                 Username = username,
                 Drafts = playerDrafts,

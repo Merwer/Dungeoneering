@@ -1,6 +1,6 @@
 ﻿@using Merwer.Chronicle.Dungeoneering.Tracker.Models;
 @using Merwer.Chronicle.Dungeoneering.Tracker.ViewModels.Draft;
-@model IndexView
+@model ListView
 
 @{
     ViewBag.Title = "Index";
@@ -10,7 +10,8 @@
     @Scripts.Render("/Content/js/draftIndex.js")
 }
 
-<h2>/u/@Model.Username</h2>
+<h3>/u/@Model.Username <small>@Html.ActionLink(Url.Action("List", "Draft", new { username = Model.Username }, Request.Url.Scheme),
+                             "List", "Draft", new { username = Model.Username }, null)</small></h3>
 
 @if (Model.IsSelf && Model.ShowNewDraft)
 {
