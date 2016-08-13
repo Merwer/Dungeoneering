@@ -10,8 +10,12 @@
     @Scripts.Render("/Content/js/draftIndex.js")
 }
 
-<h3>/u/@Model.Username <small>@Html.ActionLink(Url.Action("List", "Draft", new { username = Model.Username }, Request.Url.Scheme),
-                             "List", "Draft", new { username = Model.Username }, null)</small></h3>
+<h3>
+    /u/@Model.Username <small>
+        @Html.ActionLink(Url.Action("List", "Draft", new { username = Model.Username }, Request.Url.Scheme),
+                             "List", "Draft", new { username = Model.Username }, null)
+</small>
+</h3>
 
 @if (Model.IsSelf && Model.ShowNewDraft)
 {
@@ -51,22 +55,22 @@
                                 {
                                     if (item.Abandoned)
                                     {
-                                        <button class="btn btn-default" role="button" title="Restore Deck" alt="Restore Deck" data-toggle="modal" data-target="#restore-draft" data-draftid="@item.Id">
+                                        <button class="btn btn-default" role="button" title="Restore Deck" alt="Restore Deck" data-toggle="modal" data-target="#restore-draft" data-replacements='{"-1":@item.Id}'>
                                             <i class="fa fa-level-up fa-rotate-270"></i>
                                         </button>
                                     }
                                     else if (!item.Complete)
                                     {
-                                        <button class="btn btn-default" role="button" title="Abandon Deck" alt="Abandon Deck" data-toggle="modal" data-target="#abandon-draft" data-draftid="@item.Id">
+                                        <button class="btn btn-default" role="button" title="Abandon Deck" alt="Abandon Deck" data-toggle="modal" data-target="#abandon-draft" data-replacements='{"-1":@item.Id}'>
                                             <i class="fa fa-exclamation"></i>
                                         </button>
                                     }
-                                    <button class="btn btn-default" role="button" title="Delete Deck" alt="Delete Deck" data-toggle="modal" data-target="#delete-draft" data-draftid="@item.Id">
+                                    <button class="btn btn-default" role="button" title="Delete Deck" alt="Delete Deck" data-toggle="modal" data-target="#delete-draft" data-replacements='{"-1":@item.Id}'>
                                         <i class="fa fa-trash"></i>
                                     </button>
                                     if (item.DraftComplete && !item.Complete)
                                     {
-                                        <button class="btn btn-default" role="button" title="Add Match" alt="Add Match" data-toggle="modal" data-target="#add-match" data-draftid="@item.Id">
+                                        <button class="btn btn-default" role="button" title="Add Match" alt="Add Match" data-toggle="modal" data-target="#add-match" data-replacements='{"-1":@item.Id}'>
                                             <i class="fa fa-plus"></i>
                                         </button>
                                     }

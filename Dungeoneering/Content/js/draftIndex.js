@@ -132,26 +132,8 @@ chronicle.drafting.index = (function ($) {
         });
         $('#delete-match form').submit(deleteMatch);
         $('#delete-draft form').submit(deleteDeck);
-        $('#delete-draft').on('show.bs.modal', function (event) {
-            var button = $(event.relatedTarget);
-            var draftId = button.data('draftid');
-            var action = $(this).find('form').attr('action');
-            $(this).find('form').data('action', action + "/" + draftId);
-        });
         $('#abandon-draft form').submit(abandonDeck);
-        $('#abandon-draft').on('show.bs.modal', function (event) {
-            var button = $(event.relatedTarget);
-            var draftId = button.data('draftid');
-            var action = $(this).find('form').attr('action');
-            $(this).find('form').data('action', action + "/" + draftId);
-        });
         $('#restore-draft form').submit(restoreDeck);
-        $('#restore-draft').on('show.bs.modal', function (event) {
-            var button = $(event.relatedTarget);
-            var draftId = button.data('draftid');
-            var action = $(this).find('form').attr('action');
-            $(this).find('form').data('action', action + "/" + draftId);
-        });
 
         $('.action-sub').on('show.bs.modal', substituteActionValues);
     };

@@ -1,10 +1,10 @@
 ﻿
-<div id="delete-draft" class="modal fade" role="dialog">
+<div id="delete-draft" class="modal fade action-sub" role="dialog">
     <div class="modal-dialog">
 
         <!-- Modal content-->
         <div class="modal-content">
-            @using (Html.BeginForm("Delete", "Draft"))
+            @using (Html.BeginForm("Delete", "Draft", new { id = -1 }, FormMethod.Post, null))
             {
                 @Html.HttpMethodOverride(HttpVerbs.Delete)
                 <div class="modal-header">
