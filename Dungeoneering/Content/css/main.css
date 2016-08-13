@@ -141,6 +141,9 @@ th .caption {
 tfoot {
     font-weight: bold;
 }
+.news-list li:last-child hr {
+    display: none;
+}
 
 @media (max-width: 768px) {
   .btn-group-responsive > .btn {

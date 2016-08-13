@@ -5,9 +5,13 @@
     Layout = null;
 }
 
-<h3>News</h3>
-
-@foreach(NewsArticle article in Model) {
-    <h4>@article.Title <small>(@article.CreatedOn.ToShortDateString())</small></h4>
-    <p>@article.Text</p>
-}
+<ol class="list-unstyled news-list">
+    @foreach (NewsArticle article in Model)
+    {
+        <li>
+            <h4>@article.Title <small>(@article.CreatedOn.ToShortDateString())</small></h4>
+            <p>@article.Text</p>
+            <hr/>
+        </li>
+    }
+</ol>
