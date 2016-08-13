@@ -113,11 +113,12 @@ chronicle.drafting.index = (function ($) {
         $('#edit-match').on('show.bs.modal', function (event) {
             var button = $(event.relatedTarget);
             var row = button.closest('tr');
+            var draftId = button.data('draftid');
             var matchId = button.data('matchid');
             var action = $(this).find('form').attr('action').replace('-1', draftId).replace('-2', matchId);
-            $(this).find('select[name="OpponentArchetype"]').val(row.find('td').eq(0).data('value'));
+            $(this).find('select[name="OpponentArchetype"]').val(row.find('td').eq(1).data('value'));
             $(this).find('input[name="First"]').prop('checked', row.data('first') === "True");
-            var win = row.find('td').eq(2).html() === "True";
+            var win = row.find('td').eq(3).html() === "True";
             $(this).find('input[name="Win"]').prop('checked', win);
             $(this).find('.match-rewards').collapse(win ? 'show' : 'hide');
             $(this).find('input[name="Rewards.Copper"]').val(parseInt(row.find('.reward-copper').eq(0).html(), 10));
