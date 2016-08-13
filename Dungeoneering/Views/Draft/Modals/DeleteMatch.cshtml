@@ -5,7 +5,7 @@
         <!-- Modal content-->
         <div class="modal-content">
             @*Using negative numbers as placeholders for JS URL replacement*@
-            @using (Html.BeginForm("Delete", "DraftMatch", new { draftId = -1, id = -2 }, FormMethod.Post, null))
+            @using (Html.BeginForm("Delete", "DraftMatch", new { draftId = -1, id = -2 }, FormMethod.Post, new { @class = "submitModal" }))
             {
                 @Html.HttpMethodOverride(HttpVerbs.Delete)
                 <div class="modal-header">

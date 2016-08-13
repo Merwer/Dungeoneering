@@ -109,7 +109,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
             return new HttpStatusCodeResult(HttpStatusCode.OK);
         }
 
-        [Route("{id:long}")]
+        [Route("{id:long}/Abandon")]
         [HttpPatch]
         public ActionResult Abandon(long id)
         {
@@ -128,7 +128,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
             return new HttpStatusCodeResult(HttpStatusCode.OK);
         }
 
-        [Route("{id:long}")]
+        [Route("{id:long}/Restore")]
         [HttpPatch]
         public ActionResult Restore(long id)
         {

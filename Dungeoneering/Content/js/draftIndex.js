@@ -4,7 +4,7 @@ chronicle.drafting = chronicle.drafting || {};
 chronicle.drafting.index = (function ($) {
     "use strict";
 
-    var addMatch = function () {
+    var submitModal = function () {
         var form = $(this);
         form.closest('.modal').modal('toggle');
         $.ajax(form.data('action'), {
@@ -12,82 +12,6 @@ chronicle.drafting.index = (function ($) {
             data: form.serialize()
         }).success(function (result) {
             window.location.reload();
-            //TODO: Add match & rewards to table row instead of refreshing the page
-        }).fail(function (xhr) {
-            alert("Failed");
-        });
-        return false;
-    }
-
-    var editMatch = function () {
-        var form = $(this);
-        form.closest('.modal').modal('toggle');
-        $.ajax(form.data('action'), {
-            method: form.attr('method'),
-            data: form.serialize()
-        }).success(function (result) {
-            window.location.reload();
-            //TODO: Add match & rewards to table row instead of refreshing the page
-        }).fail(function (xhr) {
-            alert("Failed");
-        });
-        return false;
-    }
-
-    var deleteMatch = function () {
-        var form = $(this);
-        form.closest('.modal').modal('toggle');
-        $.ajax(form.data('action'), {
-            method: form.attr('method'),
-            data: form.serialize()
-        }).success(function (result) {
-            window.location.reload();
-            //TODO: Remove deck from table row
-        }).fail(function (xhr) {
-            alert("Failed");
-        });
-        return false;
-    };
-
-    var deleteDeck = function () {
-        var form = $(this);
-        form.closest('.modal').modal('toggle');
-        $.ajax(form.data('action'), {
-            method: form.attr('method'),
-            data: form.serialize()
-        }).success(function (result) {
-            window.location.reload();
-            //TODO: Remove deck from table row
-        }).fail(function (xhr) {
-            alert("Failed");
-        });
-        return false;
-    };
-
-    var abandonDeck = function () {
-        var form = $(this);
-        form.closest('.modal').modal('toggle');
-        $.ajax(form.data('action'), {
-            method: form.attr('method'),
-            data: form.serialize()
-        }).success(function (result) {
-            window.location.reload();
-            //TODO: Remove deck from table row
-        }).fail(function (xhr) {
-            alert("Failed");
-        });
-        return false;
-    };
-
-    var restoreDeck = function () {
-        var form = $(this);
-        form.closest('.modal').modal('toggle');
-        $.ajax(form.data('action'), {
-            method: form.attr('method'),
-            data: form.serialize()
-        }).success(function (result) {
-            window.location.reload();
-            //TODO: Remove deck from table row
         }).fail(function (xhr) {
             alert("Failed");
         });
@@ -108,7 +32,6 @@ chronicle.drafting.index = (function ($) {
     };
 
     var init = function () {
-        $('#add-match form').submit(addMatch);
         $('#add-match').on('show.bs.modal', function (event) {
             $(this).find('select[name="OpponentArchetype"]').val("");
             $(this).find('input[name="First"]').prop('checked', false);
@@ -118,7 +41,6 @@ chronicle.drafting.index = (function ($) {
             $(this).find('input[name="Rewards.Shards"]').val("0");
             $(this).find('input[name="Rewards.Packs"]').val("0");
         });
-        $('#edit-match form').submit(editMatch);
         $('#edit-match').on('show.bs.modal', function (event) {
             var row = $(event.relatedTarget).closest('tr');
             $(this).find('select[name="OpponentArchetype"]').val(row.find('td').eq(1).data('value'));
@@ -130,11 +52,8 @@ chronicle.drafting.index = (function ($) {
             $(this).find('input[name="Rewards.Shards"]').val(parseInt(row.find('.reward-shards').eq(0).html(), 10));
             $(this).find('input[name="Rewards.Packs"]').val(parseInt(row.find('.reward-packs').eq(0).html(), 10));
         });
-        $('#delete-match form').submit(deleteMatch);
-        $('#delete-draft form').submit(deleteDeck);
-        $('#abandon-draft form').submit(abandonDeck);
-        $('#restore-draft form').submit(restoreDeck);
 
+        $('form.submitModal').submit(submitModal);
         $('.action-sub').on('show.bs.modal', substituteActionValues);
     };
 

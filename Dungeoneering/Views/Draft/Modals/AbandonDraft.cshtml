@@ -4,7 +4,7 @@
 
         <!-- Modal content-->
         <div class="modal-content">
-            @using (Html.BeginForm("Abandon", "Draft", new { id = -1 }, FormMethod.Post, null))
+            @using (Html.BeginForm("Abandon", "Draft", new { id = -1 }, FormMethod.Post, new { @class = "submitModal" }))
             {
                 @Html.HttpMethodOverride(HttpVerbs.Patch)
                 <div class="modal-header">
