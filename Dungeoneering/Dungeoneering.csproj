@@ -331,7 +331,6 @@
     <Content Include="Content\css\main.css" />
     <Content Include="Content\css\offcanvas.css" />
     <Content Include="Content\css\typeahead.css" />
-    <Content Include="Content\draft.html" />
     <Content Include="Content\favicon.ico" />
     <Content Include="Content\img\cards\50_Ships_Mufassah.png" />
     <Content Include="Content\img\cards\Abyssal_Demon.png" />
@@ -754,7 +753,8 @@
     <Content Include="Content\js\cardList.js" />
     <Content Include="Content\js\chronicle-base.js" />
     <Content Include="Content\js\deck.js" />
-    <Content Include="Content\js\draft.js" />
+    <Content Include="Content\js\draft-write.js" />
+    <Content Include="Content\js\draft-read.js" />
     <Content Include="Content\js\draftIndex.js" />
     <Content Include="Content\js\main.js" />
     <Content Include="Content\js\offcanvas.js" />

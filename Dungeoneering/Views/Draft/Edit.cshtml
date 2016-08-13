@@ -24,12 +24,13 @@
     "/Content/js/chronicle-base.js",
     "/Content/js/cardList.js",
     "/Content/js/deck.js",
-    "/Content/js/draft.js",
+    "/Content/js/draft-read.js",
+    "/Content/js/draft-write.js",
     "/Content/js/offcanvas.js")
     <script>
         (function () {
             var state = @Html.Raw(Html.ToJson(Model));
-            chronicle.dungeoneering.draft.setState(state);
+            chronicle.dungeoneering.draft.write.setState(state);
         }());
     </script>
 }
