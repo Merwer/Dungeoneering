@@ -36,5 +36,6 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Models
         public DbSet<CardContainer> CardContainers { get; set; }
         public DbSet<Card> Cards { get; set; }
         public DbSet<CardScore> CardScores { get; set; }
+        public DbSet<NewsArticle> News { get; set; }
     }
 }

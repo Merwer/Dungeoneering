@@ -1,0 +1,13 @@
+﻿@using Merwer.Chronicle.Dungeoneering.Tracker.Models;
+@model IEnumerable<NewsArticle>
+
+@{
+    Layout = null;
+}
+
+<h3>News</h3>
+
+@foreach(NewsArticle article in Model) {
+    <h4>@article.Title <small>(@article.CreatedOn.ToShortDateString())</small></h4>
+    <p>@article.Text</p>
+}

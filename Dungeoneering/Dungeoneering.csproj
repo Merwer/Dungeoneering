@@ -225,6 +225,7 @@
     <Compile Include="Controllers\DraftsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Controllers\StatsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -287,6 +288,10 @@
     <Compile Include="Migrations\201606210202488_HealthAndCost.Designer.cs">
       <DependentUpon>201606210202488_HealthAndCost.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201608131040082_News.cs" />
+    <Compile Include="Migrations\201608131040082_News.Designer.cs">
+      <DependentUpon>201608131040082_News.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\CardData.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -304,6 +309,7 @@
     <Compile Include="Models\Match.cs" />
     <Compile Include="Models\MatchRewardList.cs" />
     <Compile Include="Models\MyStatsData.cs" />
+    <Compile Include="Models\NewsArticle.cs" />
     <Compile Include="Models\OwnedEntity.cs" />
     <Compile Include="Models\Rarity.cs" />
     <Compile Include="Models\Round.cs" />
@@ -833,6 +839,7 @@
     <Content Include="Views\Home\Privacy.cshtml" />
     <Content Include="Views\Drafts\Modals\AbandonDraft.cshtml" />
     <Content Include="Views\Drafts\Modals\RestoreDraft.cshtml" />
+    <Content Include="Views\News\List.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -887,6 +894,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201606210202488_HealthAndCost.resx">
       <DependentUpon>201606210202488_HealthAndCost.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608131040082_News.resx">
+      <DependentUpon>201608131040082_News.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
