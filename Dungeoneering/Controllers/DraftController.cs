@@ -87,7 +87,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
             }
             db.Drafts.Add(draft);
             db.SaveChanges();
-            return RedirectToAction("Edit", new { id = draft.Id });
+            return RedirectToAction("View", new { id = draft.Id });
         }
 
         [Route("{id:long}")]
