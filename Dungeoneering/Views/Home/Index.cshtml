@@ -9,11 +9,11 @@
         <div class="well">
             @if (Model)
             {
-                @Html.Partial("~/Views/Drafts/_StartDraftForm.cshtml", Archetype.Ariane)
+                @Html.Partial("~/Views/Draft/_StartDraftForm.cshtml", Archetype.Ariane)
             }
             else if (Request.IsAuthenticated)
             {
-                @Html.ActionLink("Go to your current draft", "Drafting", "Drafts", null, null)
+                @Html.ActionLink("Go to your current draft", "Current", "Draft", null, null)
             }
             else
             {

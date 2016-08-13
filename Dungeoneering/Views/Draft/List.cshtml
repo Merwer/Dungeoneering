@@ -1,0 +1,148 @@
+﻿@using Merwer.Chronicle.Dungeoneering.Tracker.Models;
+@using Merwer.Chronicle.Dungeoneering.Tracker.ViewModels.Draft;
+@model ListView
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@section scripts {
+    @Scripts.Render("/Content/js/draftIndex.js")
+}
+
+<h3>
+    /u/@Model.Username <small>
+        @Html.ActionLink(Url.Action("List", "Draft", new { username = Model.Username }, Request.Url.Scheme),
+                             "List", "Draft", new { username = Model.Username }, null)
+</small>
+</h3>
+
+@if (Model.IsSelf && Model.ShowNewDraft)
+{
+    <div class="well">
+        @Html.Partial("_StartDraftForm", Archetype.Ariane)
+    </div>
+}
+
+<div class="row">
+    <div class="table-responsive">
+        <table class="table table-striped table-hover table-condensed">
+            <thead>
+                <tr>
+                    <th>Options</th>
+                    <th>Legend</th>
+                    <th>Record</th>
+                    <th class="hidden-xs">Date</th>
+                    <th>Rewards</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Drafts)
+                {
+                    <tr class="class-transition">
+                        <td>
+                            <div class="btn-group btn-group-responsive" role="group">
+                                @if (item.Matches.Any())
+                                {
+                                    <button class="btn btn-default" role="button" title="View Matches" data-toggle="collapse" data-target="#draft-@item.Id">
+                                        <i class="fa fa-list"></i>
+                                    </button>
+                                }
+                                <a href="@Url.Action("View", new { id = item.Id })" class="btn btn-default" role="button" title="Edit" alt="Edit">
+                                    <i class="fa fa-eye"></i>
+                                </a>
+                                @if (Model.IsSelf)
+                                {
+                                    if (item.Abandoned)
+                                    {
+                                        <button class="btn btn-default" role="button" title="Restore Deck" alt="Restore Deck" data-toggle="modal" data-target="#restore-draft" data-replacements='{"-1":@item.Id}'>
+                                            <i class="fa fa-level-up fa-rotate-270"></i>
+                                        </button>
+                                    }
+                                    else if (!item.Complete)
+                                    {
+                                        <button class="btn btn-default" role="button" title="Abandon Deck" alt="Abandon Deck" data-toggle="modal" data-target="#abandon-draft" data-replacements='{"-1":@item.Id}'>
+                                            <i class="fa fa-exclamation"></i>
+                                        </button>
+                                    }
+                                    <button class="btn btn-default" role="button" title="Delete Deck" alt="Delete Deck" data-toggle="modal" data-target="#delete-draft" data-replacements='{"-1":@item.Id}'>
+                                        <i class="fa fa-trash"></i>
+                                    </button>
+                                    if (item.DraftComplete && !item.Complete)
+                                    {
+                                        <button class="btn btn-default" role="button" title="Add Match" alt="Add Match" data-toggle="modal" data-target="#add-match" data-replacements='{"-1":@item.Id}'>
+                                            <i class="fa fa-plus"></i>
+                                        </button>
+                                    }
+                                }
+                            </div>
+                        </td>
+                        <td>@Html.Partial("_LegendIcon", item.Archetype)</td>
+                        <td>@item.Matches.Count(m => m.Win) - @item.Matches.Count(m => !m.Win)</td>
+                        <td class="hidden-xs">@item.CreatedOn.ToString("dd/MM/yyyy")</td>
+                        <td>
+                            @Html.Partial("DisplayTemplates/MatchRewardList", new MatchRewardList
+                       {
+                           Copper = item.Matches.Select(m => m.Rewards).AsQueryable().Sum(m => m.Copper),
+                           Shards = item.Matches.Select(m => m.Rewards).AsQueryable().Sum(m => m.Shards),
+                           Packs = (item.Matches.Select(m => m.Rewards).AsQueryable().Sum(m => m.Packs) + 1)
+                       })
+                        </td>
+                    </tr>
+                    if (item.Matches.Any())
+                    {
+                        <tr class="collapse" id="draft-@item.Id">
+                            <td colspan="6">
+                                <table class="table table-striped table-bordered table-condensed">
+                                    <thead>
+                                        <tr>
+                                            <th>Options</th>
+                                            <th>Versus</th>
+                                            <th class="hidden-xs">Date</th>
+                                            <th>Win</th>
+                                            <th>Rewards</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var match in item.Matches)
+                                        {
+                                            <tr data-first="@match.First">
+                                                <td>
+                                                    @if (Model.IsSelf)
+                                                    {
+                                                        <div class="btn-group btn-group-responsive" role="group">
+                                                            <button class="btn btn-default" role="button" title="Edit Match" alt="Edit Match" data-toggle="modal" data-target="#edit-match" data-replacements='{"-1":@item.Id,"-2":@match.Id}'>
+                                                                <i class="fa fa-pencil"></i>
+                                                            </button>
+                                                            <button class="btn btn-default" role="button" title="Delete Match" alt="Delete Match" data-toggle="modal" data-target="#delete-match" data-replacements='{"-1":@item.Id,"-2":@match.Id}'>
+                                                                <i class="fa fa-trash"></i>
+                                                            </button>
+                                                        </div>
+                                                    }
+                                                </td>
+                                                <td data-value="@((int)match.OpponentArchetype)">@Html.Partial("_LegendIcon", @match.OpponentArchetype)</td>
+                                                <td class="hidden-xs">@match.CreatedOn.ToString("dd/MM/yyyy")</td>
+                                                <td>@match.Win</td>
+                                                <td>@Html.DisplayFor(m => match.Rewards)</td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@if (Model.IsSelf)
+{
+    Html.RenderPartial("Modals/DeleteDraft");
+    Html.RenderPartial("Modals/AbandonDraft");
+    Html.RenderPartial("Modals/RestoreDraft");
+    Html.RenderPartial("Modals/AddMatch", new Match());
+    Html.RenderPartial("Modals/EditMatch", new Match());
+    Html.RenderPartial("Modals/DeleteMatch");
+}

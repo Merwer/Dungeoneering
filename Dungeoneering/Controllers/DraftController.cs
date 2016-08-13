@@ -1,0 +1,159 @@
+﻿using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity;
+using System.Linq;
+using System.Net;
+using System.Web.Mvc;
+using Merwer.Chronicle.Dungeoneering.Tracker.Models;
+using System;
+using Merwer.Chronicle.Dungeoneering.Tracker.ViewModels.Draft;
+
+namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
+{
+    [Authorize]
+    [RoutePrefix("Drafts")]
+    public class DraftController : BaseController
+    {
+        private ApplicationDbContext db = new ApplicationDbContext();
+
+        [Route("my")]
+        public ActionResult Index()
+        {
+            return List(Username);
+        }
+
+        [AllowAnonymous]
+        [Route("u/{username}")]
+        public ActionResult List(string username)
+        {
+            //TODO: Paging?
+            var playerDrafts = db.Drafts
+                .Where(d => d.OwnerName == username)
+                .OrderByDescending(d => d.CreatedOn)
+                .ThenByDescending(d => d.Id).ToList();
+            return View("List", new ListView
+            {
+                Username = username,
+                Drafts = playerDrafts,
+                IsSelf = User.Identity.IsAuthenticated && Username.Equals(username),
+                ShowNewDraft = playerDrafts.All(draft => draft.Complete)
+            });
+        }
+
+        [Route("current")]
+        public ActionResult CurrentDraft()
+        {
+            Draft draft = db.Drafts.Include(d => d.Rounds).Where(d => d.OwnerName == Username).ToList().SingleOrDefault(d => !d.Complete);
+            if (draft == null)
+            {
+                return HttpNotFound("No current draft");
+            }
+            else
+            {
+                return RedirectToAction("View", new { id = draft.Id });
+            }
+        }
+
+        [AllowAnonymous]
+        [Route("{id:long}")]
+        public ActionResult View(long id)
+        {
+            Draft draft = null;
+            draft = db.Drafts.Include(d => d.Rounds).FirstOrDefault(d => d.Id == id);
+            if (draft == null)
+            {
+                return HttpNotFound("Invalid draft ID");
+            }
+            if (User.Identity.IsAuthenticated && Username.Equals(draft.OwnerName))
+            {
+                return View("Edit", draft);
+            }
+            return View("View", draft);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(Archetype archetype)
+        {
+            Draft draft = new Draft();
+            draft.OwnerName = Username;
+            draft.Archetype = archetype;
+
+            var playerDrafts = db.Drafts.Where(d => d.OwnerName == Username).ToList();
+            var currentDraft = playerDrafts.SingleOrDefault(d => !d.Complete);
+            if (currentDraft != null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest, "Another dungeon run is currently active");
+            }
+            db.Drafts.Add(draft);
+            db.SaveChanges();
+            return RedirectToAction("View", new { id = draft.Id });
+        }
+
+        [Route("{id:long}")]
+        [HttpDelete]
+        public ActionResult Delete(long id)
+        {
+            var draft = db.Drafts.FirstOrDefault(d => d.Id == id);
+            if (draft == null)
+            {
+                return HttpNotFound("Invalid draft ID");
+            }
+            if (draft.OwnerName != Username)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.Unauthorized);
+            }
+            db.Drafts.Remove(draft);
+            db.SaveChanges();
+
+            return new HttpStatusCodeResult(HttpStatusCode.OK);
+        }
+
+        [Route("{id:long}/Abandon")]
+        [HttpPatch]
+        public ActionResult Abandon(long id)
+        {
+            var draft = db.Drafts.FirstOrDefault(d => d.Id == id);
+            if (draft == null)
+            {
+                return HttpNotFound("Invalid draft ID");
+            }
+            if (draft.OwnerName != Username)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.Unauthorized);
+            }
+            draft.Abandoned = true;
+            db.SaveChanges();
+
+            return new HttpStatusCodeResult(HttpStatusCode.OK);
+        }
+
+        [Route("{id:long}/Restore")]
+        [HttpPatch]
+        public ActionResult Restore(long id)
+        {
+            var draft = db.Drafts.FirstOrDefault(d => d.Id == id);
+            if (draft == null)
+            {
+                return HttpNotFound("Invalid draft ID");
+            }
+            if (draft.OwnerName != Username)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.Unauthorized);
+            }
+            draft.Abandoned = false;
+            db.SaveChanges();
+
+            return new HttpStatusCodeResult(HttpStatusCode.OK);
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                db.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+    }
+}

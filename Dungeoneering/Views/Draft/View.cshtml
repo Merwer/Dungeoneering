@@ -1,5 +1,6 @@
 ﻿@using Merwer.Chronicle.Dungeoneering.Tracker.Helpers;
-@model Merwer.Chronicle.Dungeoneering.Tracker.Models.Draft
+@using Merwer.Chronicle.Dungeoneering.Tracker.Models;
+@model Draft
 
 @{
     ViewBag.Title = "Details";
@@ -37,7 +38,6 @@
     <div class="col-xs-12 col-sm-8">
         <div class="row">
             <div class="col-xs-8 col-sm-7">
-                <label data-i18n="card-name" class="control-label">Card Name</label>
             </div>
             <div class="col-xs-4 col-sm-5">
                 <label data-i18n="round-name" class="control-label">Round</label>
@@ -45,9 +45,6 @@
         </div>
         <div class="row form-inline">
             <div class="col-xs-8 col-sm-7">
-                <div class="user-input form-group">
-                    <input class="typeahead form-control" type="text">
-                </div>
             </div>
             <div class="col-xs-4 col-sm-5">
                 <div class="round-counter">
@@ -67,21 +64,18 @@
                 <div class="row">
                     <div class="col-xs-4">
                         <div id="card-choice-1" class="card-choice shift-down rotate-counterclockwise empty">
-                            <button type="button" class="close top-right" aria-label="close"><span aria-hidden="true">&times;</span></button>
                             <img src="~/Content/img/card_back.png">
                             <p class="card-score"></p>
                         </div>
                     </div>
                     <div class="col-xs-4">
                         <div id="card-choice-2" class="card-choice empty">
-                            <button type="button" class="close top-right" aria-label="close"><span aria-hidden="true">&times;</span></button>
                             <img src="~/Content/img/card_back.png">
                             <p class="card-score"></p>
                         </div>
                     </div>
                     <div class="col-xs-4">
                         <div id="card-choice-3" class="card-choice shift-down rotate-clockwise empty">
-                            <button type="button" class="close top-right" aria-label="close"><span aria-hidden="true">&times;</span></button>
                             <img src="~/Content/img/card_back.png">
                             <p class="card-score"></p>
                         </div>
@@ -90,14 +84,12 @@
                 <div class="row">
                     <div class="col-xs-4 col-xs-offset-2">
                         <div id="card-choice-4" class="card-choice rotate-counterclockwise empty">
-                            <button type="button" class="close top-right" aria-label="close"><span aria-hidden="true">&times;</span></button>
                             <img src="~/Content/img/card_back.png">
                             <p class="card-score"></p>
                         </div>
                     </div>
                     <div class="col-xs-4 col-xs-offset-1">
                         <div id="card-choice-5" class="card-choice rotate-clockwise empty">
-                            <button type="button" class="close top-right" aria-label="close"><span aria-hidden="true">&times;</span></button>
                             <img src="~/Content/img/card_back.png">
                             <p class="card-score"></p>
                         </div>

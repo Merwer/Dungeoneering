@@ -1,4 +1,6 @@
 ﻿using Merwer.Chronicle.Dungeoneering.Tracker.Helpers;
+using System.Net;
+using System.Web;
 using System.Web.Mvc;
 
 namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
@@ -10,7 +12,18 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
         {
             get
             {
-                return _username ?? (_username = User.Identity.Name);
+                if(_username == null)
+                {
+                    if(User.Identity.IsAuthenticated)
+                    {
+                        _username = User.Identity.Name;
+                    }
+                    else
+                    {
+                        throw new HttpException((int)HttpStatusCode.Unauthorized, HttpStatusCode.Unauthorized.ToString());
+                    }
+                }
+                return _username;
             }
         }
 

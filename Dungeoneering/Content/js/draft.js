@@ -171,7 +171,7 @@ chronicle.dungeoneering.draft = (function ($) {
         var data = constructRound();
         $.ajax({
             type: 'POST',
-            url: '/Drafts/Round',
+            url: '/Drafts/' + data.draftId + '/Round',
             data: data,
             dataType: "json"
         }).done(function (response) {
@@ -296,7 +296,7 @@ chronicle.dungeoneering.draft = (function ($) {
         var cardData = new Bloodhound({
             datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
             queryTokenizer: Bloodhound.tokenizers.whitespace,
-            local: cardList.allCards()
+            local: cardList.activeCards()
         });
         cardData.initialize();
 

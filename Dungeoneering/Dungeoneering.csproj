@@ -222,7 +222,10 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
-    <Compile Include="Controllers\DraftsController.cs" />
+    <Compile Include="Controllers\DraftMatchController.cs" />
+    <Compile Include="Controllers\DraftRoundController.cs" />
+    <Compile Include="Controllers\DraftController.cs" />
+    <Compile Include="Controllers\CardController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
@@ -316,6 +319,7 @@
     <Compile Include="Models\StaticIdEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\Draft\ListView.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\apple-touch-icon.png" />
@@ -799,8 +803,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
@@ -822,21 +824,23 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Drafts\Create.cshtml" />
-    <Content Include="Views\Drafts\Drafting.cshtml" />
-    <Content Include="Views\Drafts\Index.cshtml" />
-    <Content Include="Views\Drafts\Modals\DeleteDraft.cshtml" />
-    <Content Include="Views\Drafts\Modals\EditMatch.cshtml" />
-    <Content Include="Views\Drafts\Modals\DeleteMatch.cshtml" />
-    <Content Include="Views\Drafts\Modals\AddMatch.cshtml" />
     <Content Include="Views\Stats\Global.cshtml" />
     <Content Include="Views\Stats\My.cshtml" />
-    <Content Include="Views\Drafts\_StartDraftForm.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\MyStatsData.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\BasicStatsData.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\MatchRewardList.cshtml" />
     <Content Include="Views\Shared\_LegendIcon.cshtml" />
     <Content Include="Views\Home\Privacy.cshtml" />
+    <Content Include="Views\Draft\View.cshtml" />
+    <Content Include="Views\Draft\List.cshtml" />
+    <Content Include="Views\Draft\Modals\AbandonDraft.cshtml" />
+    <Content Include="Views\Draft\Modals\AddMatch.cshtml" />
+    <Content Include="Views\Draft\Modals\DeleteDraft.cshtml" />
+    <Content Include="Views\Draft\Modals\DeleteMatch.cshtml" />
+    <Content Include="Views\Draft\Modals\EditMatch.cshtml" />
+    <Content Include="Views\Draft\Modals\RestoreDraft.cshtml" />
+    <Content Include="Views\Draft\_StartDraftForm.cshtml" />
+    <Content Include="Views\Draft\Edit.cshtml" />
     <Content Include="Views\Drafts\Modals\AbandonDraft.cshtml" />
     <Content Include="Views\Drafts\Modals\RestoreDraft.cshtml" />
     <Content Include="Views\News\List.cshtml" />

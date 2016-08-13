@@ -1,15 +1,17 @@
 ﻿
 @model Merwer.Chronicle.Dungeoneering.Tracker.Models.Match
 
-<div id="add-match" class="modal fade" role="dialog">
+<div id="edit-match" class="modal fade action-sub" role="dialog">
     <div class="modal-dialog">
         <!-- Modal content-->
         <div class="modal-content">
-            <form method="post" action="@Url.Action("Match", "Drafts")">
-                <input type="hidden" name="draftId" />
+            @*Using negative numbers as placeholders for JS URL replacement*@
+            @using (Html.BeginForm("Edit", "DraftMatch", new { draftId = -1, id = -2 }, FormMethod.Post, new { @class = "submitModal" }))
+            {
+                @Html.HttpMethodOverride(HttpVerbs.Put)
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Record Match</h4>
+                    <h4 class="modal-title">Edit Match</h4>
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
@@ -48,7 +50,7 @@
                     <button type="button" role="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                     <button type="submit" role="button" class="btn btn-info">Record</button>
                 </div>
-            </form>
+            }
         </div>
     </div>
 </div>
