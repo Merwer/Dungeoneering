@@ -107,10 +107,10 @@
                                                     @if (Model.IsSelf)
                                                     {
                                                         <div class="btn-group btn-group-responsive" role="group">
-                                                            <button class="btn btn-default" role="button" title="Edit Match" alt="Edit Match" data-toggle="modal" data-target="#edit-match" data-draftid="@item.Id" data-matchid="@match.Id">
+                                                            <button class="btn btn-default" role="button" title="Edit Match" alt="Edit Match" data-toggle="modal" data-target="#edit-match" data-replacements='{"-1":@item.Id,"-2":@match.Id}'>
                                                                 <i class="fa fa-pencil"></i>
                                                             </button>
-                                                            <button class="btn btn-default" role="button" title="Delete Match" alt="Delete Match" data-toggle="modal" data-target="#delete-match" data-draftid="@item.Id" data-matchid="@match.Id">
+                                                            <button class="btn btn-default" role="button" title="Delete Match" alt="Delete Match" data-toggle="modal" data-target="#delete-match" data-replacements='{"-1":@item.Id,"-2":@match.Id}'>
                                                                 <i class="fa fa-trash"></i>
                                                             </button>
                                                         </div>

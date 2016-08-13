@@ -94,12 +94,22 @@ chronicle.drafting.index = (function ($) {
         return false;
     };
 
+    var substituteActionValues = function (event) {
+        var button = $(event.relatedTarget);
+        var form = $(this).find('form');
+        var action = form.attr('action');
+        var replacements = button.data('replacements');
+        for (var key in replacements) {
+            if (replacements.hasOwnProperty(key)) {
+                action = action.replace(key, replacements[key]);
+            }
+        }
+        form.data('action', action);
+    };
+
     var init = function () {
         $('#add-match form').submit(addMatch);
         $('#add-match').on('show.bs.modal', function (event) {
-            var button = $(event.relatedTarget);
-            var draftId = button.data('draftid');
-            var action = $(this).find('form').attr('action').replace('-1', draftId);
             $(this).find('select[name="OpponentArchetype"]').val("");
             $(this).find('input[name="First"]').prop('checked', false);
             $(this).find('input[name="Win"]').prop('checked', false);
@@ -107,15 +117,10 @@ chronicle.drafting.index = (function ($) {
             $(this).find('input[name="Rewards.Copper"]').val("0");
             $(this).find('input[name="Rewards.Shards"]').val("0");
             $(this).find('input[name="Rewards.Packs"]').val("0");
-            $(this).find('form').data('action', action);
         });
         $('#edit-match form').submit(editMatch);
         $('#edit-match').on('show.bs.modal', function (event) {
-            var button = $(event.relatedTarget);
-            var row = button.closest('tr');
-            var draftId = button.data('draftid');
-            var matchId = button.data('matchid');
-            var action = $(this).find('form').attr('action').replace('-1', draftId).replace('-2', matchId);
+            var row = $(event.relatedTarget).closest('tr');
             $(this).find('select[name="OpponentArchetype"]').val(row.find('td').eq(1).data('value'));
             $(this).find('input[name="First"]').prop('checked', row.data('first') === "True");
             var win = row.find('td').eq(3).html() === "True";
@@ -124,16 +129,8 @@ chronicle.drafting.index = (function ($) {
             $(this).find('input[name="Rewards.Copper"]').val(parseInt(row.find('.reward-copper').eq(0).html(), 10));
             $(this).find('input[name="Rewards.Shards"]').val(parseInt(row.find('.reward-shards').eq(0).html(), 10));
             $(this).find('input[name="Rewards.Packs"]').val(parseInt(row.find('.reward-packs').eq(0).html(), 10));
-            $(this).find('form').data('action', action);
         });
         $('#delete-match form').submit(deleteMatch);
-        $('#delete-match').on('show.bs.modal', function (event) {
-            var button = $(event.relatedTarget);
-            var draftId = button.data('draftid');
-            var matchId = button.data('matchid');
-            var action = $(this).find('form').attr('action').replace('-1', draftId).replace('-2', matchId);
-            $(this).find('form').data('action', action);
-        });
         $('#delete-draft form').submit(deleteDeck);
         $('#delete-draft').on('show.bs.modal', function (event) {
             var button = $(event.relatedTarget);
@@ -155,10 +152,8 @@ chronicle.drafting.index = (function ($) {
             var action = $(this).find('form').attr('action');
             $(this).find('form').data('action', action + "/" + draftId);
         });
-        $(".toggle-icon-eye").on("click", function () {
-            $(this).toggleClass("fa-eye fa-eye-slash");
-            $(this).closest("tr").toggleClass("info");
-        });
+
+        $('.action-sub').on('show.bs.modal', substituteActionValues);
     };
 
     init();
