@@ -4,7 +4,9 @@
 
         <!-- Modal content-->
         <div class="modal-content">
-            <form action="@Url.Action("Restore", "Drafts")" method="post">
+            @using (Html.BeginForm("Restore", "Draft"))
+            {
+                @Html.HttpMethodOverride(HttpVerbs.Patch)
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                     <h4 class="modal-title">Restore confirmation</h4>
@@ -16,7 +18,7 @@
                     <button type="button" role="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                     <button type="submit" role="button" class="btn btn-success">Restore</button>
                 </div>
-            </form>
+            }
         </div>
     </div>
 </div>

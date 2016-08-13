@@ -4,7 +4,9 @@
 
         <!-- Modal content-->
         <div class="modal-content">
-            <form action="@Url.Action("Abandon", "Drafts")" method="post">
+            @using (Html.BeginForm("Abandon", "Draft"))
+            {
+                @Html.HttpMethodOverride(HttpVerbs.Patch)
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                     <h4 class="modal-title">Abandon confirmation</h4>
@@ -16,7 +18,7 @@
                     <button type="button" role="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                     <button type="submit" role="button" class="btn btn-danger">Abandon</button>
                 </div>
-            </form>
+            }
         </div>
     </div>
 </div>

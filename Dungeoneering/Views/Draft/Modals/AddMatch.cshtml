@@ -5,9 +5,9 @@
     <div class="modal-dialog">
         <!-- Modal content-->
         <div class="modal-content">
-            @using (Html.BeginForm("Create", "DraftMatch", new { draftId = 0 }, FormMethod.Post, null))
+            @*Using negative numbers as placeholders for JS URL replacement*@
+            @using (Html.BeginForm("Create", "DraftMatch", new { draftId = -1 }, FormMethod.Post, null))
             {
-                <input type="hidden" name="draftId" />
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                     <h4 class="modal-title">Record Match</h4>

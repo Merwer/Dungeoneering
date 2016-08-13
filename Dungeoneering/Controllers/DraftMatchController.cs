@@ -42,8 +42,8 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
         }
 
         [Route("{id:long}")]
-        [HttpPatch]
-        public ActionResult EditMatch(long id, [Bind(Exclude = "Draft")]Match match)
+        [HttpPut]
+        public ActionResult Edit(long id, [Bind(Exclude = "Draft")]Match match)
         {
             Match dbMatch = db.Matches.Include(m => m.Draft.Matches).FirstOrDefault(m => m.Id == id);
             if (dbMatch == null)
@@ -80,7 +80,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
 
         [Route("{id:long}")]
         [HttpDelete]
-        public ActionResult DeleteMatch(long id)
+        public ActionResult Delete(long id)
         {
             var match = db.Matches.FirstOrDefault(d => d.Id == id);
             if (match == null)

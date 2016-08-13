@@ -38,7 +38,8 @@ chronicle.drafting.index = (function ($) {
         var form = $(this);
         form.closest('.modal').modal('toggle');
         $.ajax(form.data('action'), {
-            method: form.attr('method')
+            method: form.attr('method'),
+            data: form.serialize()
         }).success(function (result) {
             window.location.reload();
             //TODO: Remove deck from table row
@@ -52,7 +53,8 @@ chronicle.drafting.index = (function ($) {
         var form = $(this);
         form.closest('.modal').modal('toggle');
         $.ajax(form.data('action'), {
-            method: form.attr('method')
+            method: form.attr('method'),
+            data: form.serialize()
         }).success(function (result) {
             window.location.reload();
             //TODO: Remove deck from table row
@@ -66,7 +68,8 @@ chronicle.drafting.index = (function ($) {
         var form = $(this);
         form.closest('.modal').modal('toggle');
         $.ajax(form.data('action'), {
-            method: form.attr('method')
+            method: form.attr('method'),
+            data: form.serialize()
         }).success(function (result) {
             window.location.reload();
             //TODO: Remove deck from table row
@@ -80,7 +83,8 @@ chronicle.drafting.index = (function ($) {
         var form = $(this);
         form.closest('.modal').modal('toggle');
         $.ajax(form.data('action'), {
-            method: form.attr('method')
+            method: form.attr('method'),
+            data: form.serialize()
         }).success(function (result) {
             window.location.reload();
             //TODO: Remove deck from table row
@@ -95,8 +99,7 @@ chronicle.drafting.index = (function ($) {
         $('#add-match').on('show.bs.modal', function (event) {
             var button = $(event.relatedTarget);
             var draftId = button.data('draftid');
-            var action = $(this).find('form').attr('action');
-            $(this).find('input[name="draftId"]').val(draftId);
+            var action = $(this).find('form').attr('action').replace('-1', draftId);
             $(this).find('select[name="OpponentArchetype"]').val("");
             $(this).find('input[name="First"]').prop('checked', false);
             $(this).find('input[name="Win"]').prop('checked', false);
@@ -111,8 +114,7 @@ chronicle.drafting.index = (function ($) {
             var button = $(event.relatedTarget);
             var row = button.closest('tr');
             var matchId = button.data('matchid');
-            var action = $(this).find('form').attr('action');
-            $(this).find('input[name="Id"]').val(matchId);
+            var action = $(this).find('form').attr('action').replace('-1', draftId).replace('-2', matchId);
             $(this).find('select[name="OpponentArchetype"]').val(row.find('td').eq(0).data('value'));
             $(this).find('input[name="First"]').prop('checked', row.data('first') === "True");
             var win = row.find('td').eq(2).html() === "True";
@@ -121,14 +123,15 @@ chronicle.drafting.index = (function ($) {
             $(this).find('input[name="Rewards.Copper"]').val(parseInt(row.find('.reward-copper').eq(0).html(), 10));
             $(this).find('input[name="Rewards.Shards"]').val(parseInt(row.find('.reward-shards').eq(0).html(), 10));
             $(this).find('input[name="Rewards.Packs"]').val(parseInt(row.find('.reward-packs').eq(0).html(), 10));
-            $(this).find('form').data('action', action + "/" + matchId);
+            $(this).find('form').data('action', action);
         });
         $('#delete-match form').submit(deleteMatch);
         $('#delete-match').on('show.bs.modal', function (event) {
             var button = $(event.relatedTarget);
+            var draftId = button.data('draftid');
             var matchId = button.data('matchid');
-            var action = $(this).find('form').attr('action');
-            $(this).find('form').data('action', action + "/" + matchId);
+            var action = $(this).find('form').attr('action').replace('-1', draftId).replace('-2', matchId);
+            $(this).find('form').data('action', action);
         });
         $('#delete-draft form').submit(deleteDeck);
         $('#delete-draft').on('show.bs.modal', function (event) {
