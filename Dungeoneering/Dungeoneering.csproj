@@ -842,8 +842,6 @@
     <Content Include="Views\Draft\Modals\RestoreDraft.cshtml" />
     <Content Include="Views\Draft\_StartDraftForm.cshtml" />
     <Content Include="Views\Draft\Edit.cshtml" />
-    <Content Include="Views\Drafts\Modals\AbandonDraft.cshtml" />
-    <Content Include="Views\Drafts\Modals\RestoreDraft.cshtml" />
     <Content Include="Views\News\List.cshtml" />
   </ItemGroup>
   <ItemGroup>
