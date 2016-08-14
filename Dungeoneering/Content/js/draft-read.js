@@ -105,7 +105,8 @@ chronicle.dungeoneering.draft.read = (function ($) {
         refreshDeck();
     };
 
-    var addCard = function (card) {
+    var addCard = function (cardId) {
+        var card = cardList.getCard(cardId);
         deck.addCard(card);
         addCardRewards(card);
         refreshDeck();
@@ -121,24 +122,6 @@ chronicle.dungeoneering.draft.read = (function ($) {
     var getRound = function () {
         return window.parseInt(roundCounter.find('.current').val(), 10);
     }
-
-    var constructRound = function () {
-        var round = {
-            draftId: draftState.id,
-            roundId: getRound(),
-            options: [],
-            selected: []
-        };
-        $.each(selectionSlots, function (index, element) {
-            var ele = $(element);
-            var cardId = ele.data('cardId');
-            round.options.push(cardId);
-            if (ele.hasClass('selected')) {
-                round.selected.push(cardId);
-            }
-        });
-        return round;
-    };
 
     var showRoundFromHash = function () {
         var roundId = window.location.hash.substr(1);
@@ -158,7 +141,7 @@ chronicle.dungeoneering.draft.read = (function ($) {
                 var round = draftState.rounds[roundId - 1];
                 var index;
                 for (index = 0; index < round.options.length; index++) {
-                    var slot = cardSelected(null, cardList.getCard(round.options[index]));
+                    var slot = cardSelected(cardList.getCard(round.options[index]));
                     if ($.inArray(round.options[index], round.selected) > -1) {
                         cardPicked.apply(slot);
                     }
@@ -172,7 +155,7 @@ chronicle.dungeoneering.draft.read = (function ($) {
         return unfilledSlots.length === 0 ? null : $(unfilledSlots[0]);
     };
 
-    var cardSelected = function (ev, selectedCard) {
+    var cardSelected = function (selectedCard) {
         var img;
         var score;
         var nextSlot = findNextEmptySlot();
@@ -256,11 +239,10 @@ chronicle.dungeoneering.draft.read = (function ($) {
         displayRound: setRoundHash,
         markSelected: cardPicked,
         showCard: cardSelected,
-        selectionSlots,
-        cardList: function () { return cardList; },
-        draftState: function () { return draftState },
+        getCardList: function () { return cardList; },
+        getDraftState: function () { return draftState },
         addCard,
         setRoundHash,
-        constructRound
+        getRound
     };
 }(jQuery));

@@ -16,8 +16,28 @@ chronicle.dungeoneering.draft = chronicle.dungeoneering.draft || {};
 chronicle.dungeoneering.draft.write = (function ($) {
     'use strict';
 
+    var selectionSlots = $('.card-choices .card-choice');
+
+    var constructRound = function () {
+        var round = {
+            draftId: chronicle.dungeoneering.draft.read.getDraftState().id,
+            roundId: chronicle.dungeoneering.draft.read.getRound(),
+            options: [],
+            selected: []
+        };
+        $.each(selectionSlots, function (index, element) {
+            var ele = $(element);
+            var cardId = ele.data('cardId');
+            round.options.push(cardId);
+            if (ele.hasClass('selected')) {
+                round.selected.push(cardId);
+            }
+        });
+        return round;
+    };
+
     var performSave = function () {
-        var data = chronicle.dungeoneering.draft.read.constructRound();
+        var data = constructRound();
         $.ajax({
             type: 'POST',
             url: '/Drafts/' + data.draftId + '/Round',
@@ -27,10 +47,11 @@ chronicle.dungeoneering.draft.write = (function ($) {
             if (response && response.redirect) {
                 window.location.href = response.redirect;
             } else {
-                chronicle.dungeoneering.draft.read.draftState().rounds.push(data);
-                chronicle.dungeoneering.draft.read.addCard(chronicle.dungeoneering.draft.read.cardList().getCard(data.selected[0]));
-                chronicle.dungeoneering.draft.read.addCard(chronicle.dungeoneering.draft.read.cardList().getCard(data.selected[1]));
-                chronicle.dungeoneering.draft.read.setRoundHash(chronicle.dungeoneering.draft.read.draftState().rounds.length + 1);
+                var draftState = chronicle.dungeoneering.draft.read.getDraftState();
+                draftState.rounds.push(data);
+                chronicle.dungeoneering.draft.read.addCard(data.selected[0]);
+                chronicle.dungeoneering.draft.read.addCard(data.selected[1]);
+                chronicle.dungeoneering.draft.read.setRoundHash(draftState.rounds.length + 1);
             }
         }).fail(function () {
             window.alert('Save failed');
@@ -38,8 +59,8 @@ chronicle.dungeoneering.draft.write = (function ($) {
     };
 
     var saveCheck = function () {
-        var selectedCount = chronicle.dungeoneering.draft.read.selectionSlots.filter('.selected').length;
-        var unfilledCount = chronicle.dungeoneering.draft.read.selectionSlots.filter('.empty').length;
+        var selectedCount = selectionSlots.filter('.selected').length;
+        var unfilledCount = selectionSlots.filter('.empty').length;
         if (selectedCount === 2 && unfilledCount === 0) {
             performSave();
             return true;
@@ -52,7 +73,7 @@ chronicle.dungeoneering.draft.write = (function ($) {
     };
 
     var cardSelected = function (ev, selectedCard) {
-        chronicle.dungeoneering.draft.read.showCard(ev, selectedCard);
+        chronicle.dungeoneering.draft.read.showCard(selectedCard);
         clearText();
         saveCheck();
     };
@@ -75,13 +96,13 @@ chronicle.dungeoneering.draft.write = (function ($) {
     };
 
     var init = function () {
-        chronicle.dungeoneering.draft.read.selectionSlots.find('.close').click(cardCloseClicked);
-        chronicle.dungeoneering.draft.read.selectionSlots.find('img').click(cardPicked);
+        selectionSlots.find('.close').click(cardCloseClicked);
+        selectionSlots.find('img').click(cardPicked);
 
         var cardData = new Bloodhound({
             datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
             queryTokenizer: Bloodhound.tokenizers.whitespace,
-            local: chronicle.dungeoneering.draft.read.cardList().activeCards()
+            local: chronicle.dungeoneering.draft.read.getCardList().activeCards()
         });
         cardData.initialize();
 
