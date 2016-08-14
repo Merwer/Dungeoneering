@@ -10,7 +10,7 @@
     {
         <li>
             <h4>@article.Title <small>(@article.CreatedOn.ToShortDateString())</small></h4>
-            <p>@article.Text</p>
+            <p>@Html.Raw(article.Text)</p>
             <hr/>
         </li>
     }
