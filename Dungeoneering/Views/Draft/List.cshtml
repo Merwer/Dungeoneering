@@ -4,6 +4,8 @@
 
 @{
     ViewBag.Title = "Index";
+    var link = Url.Action("List", "Draft", new { username = Model.Username }, Request.Url.Scheme) + "/";
+    var shortLink = Url.Action("List", "Draft", new { username = Model.Username }) + "/";
 }
 
 @section scripts {
@@ -11,10 +13,10 @@
 }
 
 <h3>
-    /u/@Model.Username <small>
-        @Html.ActionLink(Url.Action("List", "Draft", new { username = Model.Username }, Request.Url.Scheme),
-                             "List", "Draft", new { username = Model.Username }, null)
-</small>
+    /u/@Model.Username
+    <br/>
+    <small><a href="@link">@shortLink</a>
+    </small>
 </h3>
 
 @if (Model.IsSelf && Model.ShowNewDraft)
