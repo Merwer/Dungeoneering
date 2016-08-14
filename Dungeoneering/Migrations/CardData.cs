@@ -8,6 +8,8 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
 /* This is an auto-generated file */
     public static class CardData
     {
+        static readonly bool SHOULD_UPDATE = false;
+
         static ICollection<CardContainer> containers = new HashSet<CardContainer>();
         static ICollection<Card> cards = new HashSet<Card>();
         static ICollection<CardScore> scores = new HashSet<CardScore>();
@@ -2449,6 +2451,10 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
 
         public static void SeedData(ApplicationDbContext db)
         {
+            if (!SHOULD_UPDATE)
+            {
+                return;
+            }
             db.CardContainers.AddOrUpdate(c => c.Id, containers.ToArray());
             foreach(var card in cards)
             {
