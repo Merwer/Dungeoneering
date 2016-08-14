@@ -14,7 +14,13 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
         // GET: Stats
         public ActionResult Global()
         {
-            return View();
+            var stats = new GlobalStatsData
+            {
+                Players = db.Users.Count(),
+                Matches = db.Matches.Count(),
+                Drafts = db.Drafts.Count()
+            };
+            return View(stats);
         }
 
         [Authorize]

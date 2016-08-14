@@ -307,6 +307,7 @@
     <Compile Include="Models\CreatableEntity.cs" />
     <Compile Include="Models\Draft.cs" />
     <Compile Include="Models\Entity.cs" />
+    <Compile Include="Models\GlobalStatsData.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Match.cs" />

@@ -1,11 +1,14 @@
-﻿@{
+﻿@using Merwer.Chronicle.Dungeoneering.Tracker.Models
+@model GlobalStatsData
+@{
     ViewBag.Title = "Global Stats";
 }
 
 <div class="row">
     <div class="col-xs-12">
         <div class="alert alert-info">
-            This is a placeholder for the Global Stats page
+            More stats to come
         </div>
+        <p>Tracking <strong>@Model.Players</strong> players with <strong>@Model.Matches</strong> matches from <strong>@Model.Drafts</strong> drafts</p>
     </div>
 </div>
