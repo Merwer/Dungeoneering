@@ -581,7 +581,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 276 , Archetype = Archetype.Linza    , Score = 80, Card = cards.Single(c => c.Id == 80) });
 
             containers.Add(new CardContainer { Id = 81, ChronicleId = 86, Archetype = Archetype.Linza, Name = "Tetsu Katana", Rarity = Rarity.Diamond, Type = CardType.Support });
-            cards.Add(new Card { Id = 81, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = true }, Image = "/Content/img/cards/Tetsu_Katana.png", Version = "X", Cost = 6, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 81) });
+            cards.Add(new Card { Id = 81, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = true }, Image = "/Content/img/cards/Tetsu_Katana.png", Version = "X", Cost = 6, Health = 0, Active = false, Parent = containers.Single(p => p.Id == 81) });
             scores.Add(new CardScore { Id = 277 , Archetype = Archetype.Linza    , Score = 100, Card = cards.Single(c => c.Id == 81) });
 
             containers.Add(new CardContainer { Id = 82, ChronicleId = 87, Archetype = Archetype.Ozan, Name = "Snap Shot", Rarity = Rarity.Saphire, Type = CardType.Support });
@@ -825,7 +825,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 381 , Archetype = Archetype.Ozan     , Score = 30, Card = cards.Single(c => c.Id == 121) });
 
             containers.Add(new CardContainer { Id = 122, ChronicleId = 127, Archetype = Archetype.Ozan, Name = "Amascut Templeguard", Rarity = Rarity.Saphire, Type = CardType.Combat });
-            cards.Add(new Card { Id = 122, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Amascut_Templeguard.png", Version = "X", Cost = 0, Health = 5, Active = true, Parent = containers.Single(p => p.Id == 122) });
+            cards.Add(new Card { Id = 122, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Amascut_Templeguard.png", Version = "X", Cost = 0, Health = 5, Active = false, Parent = containers.Single(p => p.Id == 122) });
             scores.Add(new CardScore { Id = 382 , Archetype = Archetype.Ozan     , Score = 40, Card = cards.Single(c => c.Id == 122) });
 
             containers.Add(new CardContainer { Id = 123, ChronicleId = 128, Archetype = null, Name = "Culinaromancer", Rarity = Rarity.Saphire, Type = CardType.Combat });
@@ -1431,7 +1431,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 637 , Archetype = Archetype.Ariane   , Score = 80, Card = cards.Single(c => c.Id == 225) });
 
             containers.Add(new CardContainer { Id = 226, ChronicleId = 240, Archetype = Archetype.Ozan, Name = "Amascut Mystic", Rarity = Rarity.Emerald, Type = CardType.Combat });
-            cards.Add(new Card { Id = 226, Rewards = new CardRewards { Attack = 0, Armour = 2, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Amascut_Mystic.png", Version = "X", Cost = 0, Health = 5, Active = true, Parent = containers.Single(p => p.Id == 226) });
+            cards.Add(new Card { Id = 226, Rewards = new CardRewards { Attack = 0, Armour = 2, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Amascut_Mystic.png", Version = "X", Cost = 0, Health = 5, Active = false, Parent = containers.Single(p => p.Id == 226) });
             scores.Add(new CardScore { Id = 638 , Archetype = Archetype.Ozan     , Score = 40, Card = cards.Single(c => c.Id == 226) });
 
             containers.Add(new CardContainer { Id = 227, ChronicleId = 241, Archetype = Archetype.TheRaptor, Name = "TzHaar-Ket", Rarity = Rarity.Emerald, Type = CardType.Combat });
@@ -2447,6 +2447,26 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 1070, Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 403) });
             scores.Add(new CardScore { Id = 1071, Archetype = Archetype.Ozan, Score = 30, Card = cards.Single(c => c.Id == 403) });
             scores.Add(new CardScore { Id = 1238, Archetype = Archetype.Morvran, Score = -1, Card = cards.Single(c => c.Id == 403) });
+
+            // Release v1.4.4 (build: 1498451)
+            cards.Add(new Card { Id = 404, Rewards = new CardRewards { Attack = 0, Armour = 4, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/v1_4_4/Amascut_Mystic.png", Version = "1498451", Cost = 0, Health = 4, Active = true, Parent = containers.Single(p => p.Id == 226) });
+            scores.Add(new CardScore { Id = 1239, Archetype = Archetype.Ozan, Score = -1, Card = cards.Single(c => c.Id == 404) });
+
+            cards.Add(new Card { Id = 405, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/v1_4_4/Amascut_Templeguard.png", Version = "1498451", Cost = 0, Health = 5, Active = true, Parent = containers.Single(p => p.Id == 122) });
+            scores.Add(new CardScore { Id = 1240, Archetype = Archetype.Ozan, Score = -1, Card = cards.Single(c => c.Id == 405) });
+
+            containers.Add(new CardContainer { Id = 390, ChronicleId = , Archetype = null, Name = "Black Chinchompa", Rarity = Rarity.Saphire, Type = CardType.Combat });
+            cards.Add(new Card { Id = 406, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/v1_4_4/Black_Chinchompa.png", Version = "1498451", Cost = 0, Health = 2, Active = true, Parent = containers.Single(p => p.Id == 390) });
+            scores.Add(new CardScore { Id = 1241, Archetype = Archetype.TheRaptor, Score = -1, Card = cards.Single(c => c.Id == 406) });
+            scores.Add(new CardScore { Id = 1242, Archetype = Archetype.Linza, Score = -1, Card = cards.Single(c => c.Id == 406) });
+            scores.Add(new CardScore { Id = 1243, Archetype = Archetype.Ariane, Score = -1, Card = cards.Single(c => c.Id == 406) });
+            scores.Add(new CardScore { Id = 1244, Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 406) });
+            scores.Add(new CardScore { Id = 1245, Archetype = Archetype.Ozan, Score = -1, Card = cards.Single(c => c.Id == 406) });
+            scores.Add(new CardScore { Id = 1246, Archetype = Archetype.Morvran, Score = -1, Card = cards.Single(c => c.Id == 406) });
+
+            cards.Add(new Card { Id = 404, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = true }, Image = "/Content/img/cards/v1_4_4/Tetsu_Katana.png", Version = "X", Cost = 7, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 81) });
+            scores.Add(new CardScore { Id = 277, Archetype = Archetype.Linza, Score = 100, Card = cards.Single(c => c.Id == 404) });
+
         }
 
         public static void SeedData(ApplicationDbContext db)
