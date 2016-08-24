@@ -2330,7 +2330,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 1024, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 376) });
 
             containers.Add(new CardContainer { Id = 377, ChronicleId = 419, Archetype = Archetype.Morvran, Name = "Bouncer", Rarity = Rarity.Saphire, Type = CardType.Combat });
-            cards.Add(new Card { Id = 377, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Bouncer.png", Version = "X", Cost = 0, Health = 3, Active = true, Parent = containers.Single(p => p.Id == 377) });
+            cards.Add(new Card { Id = 377, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Bouncer.png", Version = "X", Cost = 0, Health = 3, Active = false, Parent = containers.Single(p => p.Id == 377) });
             scores.Add(new CardScore { Id = 1025, Archetype = Archetype.Morvran  , Score = -1, Card = cards.Single(c => c.Id == 377) });
 
             containers.Add(new CardContainer { Id = 378, ChronicleId = 420, Archetype = Archetype.Morvran, Name = "Grunsh", Rarity = Rarity.Emerald, Type = CardType.Combat });
@@ -2463,6 +2463,13 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 1244, Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 406) });
             scores.Add(new CardScore { Id = 1245, Archetype = Archetype.Ozan, Score = -1, Card = cards.Single(c => c.Id == 406) });
             scores.Add(new CardScore { Id = 1246, Archetype = Archetype.Morvran, Score = -1, Card = cards.Single(c => c.Id == 406) });
+
+            cards.Add(new Card { Id = 407, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/v1_4_4/Bouncer.png", Version = "1498451", Cost = 0, Health = 3, Active = true, Parent = containers.Single(p => p.Id == 377) });
+            scores.Add(new CardScore { Id = 1247, Archetype = Archetype.Morvran, Score = -1, Card = cards.Single(c => c.Id == 407) });
+
+            containers.Add(new CardContainer { Id = 391, ChronicleId = , Archetype = Archetype.Ariane, Name = "Clairvoyance", Rarity = Rarity.Saphire, Type = CardType.Support });
+            cards.Add(new Card { Id = 407, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/v1_4_4/Clairvoyance.png", Version = "1498451", Cost = 0, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 391) });
+            scores.Add(new CardScore { Id = 1248, Archetype = Archetype.Ariane, Score = -1, Card = cards.Single(c => c.Id == 407) });
 
             cards.Add(new Card { Id = 404, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = true }, Image = "/Content/img/cards/v1_4_4/Tetsu_Katana.png", Version = "X", Cost = 7, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 81) });
             scores.Add(new CardScore { Id = 277, Archetype = Archetype.Linza, Score = 100, Card = cards.Single(c => c.Id == 404) });
