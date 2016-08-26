@@ -2557,7 +2557,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 1293, Archetype = Archetype.Morvran, Score = -1, Card = cards.Single(c => c.Id == 426) });
 
             cards.Add(new Card { Id = 427, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/v1_4_4/Tame.png", Version = "1498451", Cost = 1, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 364) });
-            scores.Add(new CardScore { Id = 1294, Archetype = Archetype.Morvran, Score = -1, Card = cards.Single(c => c.Id == 437) });
+            scores.Add(new CardScore { Id = 1294, Archetype = Archetype.Morvran, Score = -1, Card = cards.Single(c => c.Id == 427) });
 
             containers.Add(new CardContainer { Id = 395, ChronicleId = 443, Archetype = null, Name = "Test of Might", Rarity = Rarity.Saphire, Type = CardType.Support });
             cards.Add(new Card { Id = 428, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/v1_4_4/Test_of_Might.png", Version = "1498451", Cost = 0, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 395) });
