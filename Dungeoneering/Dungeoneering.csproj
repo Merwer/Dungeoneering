@@ -734,6 +734,12 @@
     <Content Include="Content\img\cards\v1_4_4\Zamorakian_Recruiter.png" />
     <Content Include="Content\img\cards\v1_4_4\Zombie_Crew.png" />
     <Content Include="Content\img\cards\v1_4_4\Zombie_Monkey.png" />
+    <Content Include="Content\img\cards\v1_4_5\Chain_Shot_Cannon.png" />
+    <Content Include="Content\img\cards\v1_4_5\Chaos_Druid.png" />
+    <Content Include="Content\img\cards\v1_4_5\Keris.png" />
+    <Content Include="Content\img\cards\v1_4_5\Lumpnose.png" />
+    <Content Include="Content\img\cards\v1_4_5\Solomon_Madini.png" />
+    <Content Include="Content\img\cards\v1_4_5\Tame.png" />
     <Content Include="Content\img\cards\Vampyre_Power.png" />
     <Content Include="Content\img\cards\Vampyre_Trader.png" />
     <Content Include="Content\img\cards\Varrock_Guard.png" />
