@@ -8,7 +8,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
 /* This is an auto-generated file */
     public static class CardData
     {
-        static readonly bool SHOULD_UPDATE = true;
+        static readonly bool SHOULD_UPDATE = false;
 
         static ICollection<CardContainer> containers = new HashSet<CardContainer>();
         static ICollection<Card> cards = new HashSet<Card>();
