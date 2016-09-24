@@ -107,7 +107,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
             var rounds = drafts.Where(d => d.Archetype == archetype).SelectMany(d => d.Rounds);
             var timesOffered = rounds.SelectMany(r => r.Options)
                 .GroupBy(k => k)
-                .Select(x => new CardsPlayed { Card = db.Cards.Find(x.Key), Appearances = x.Count(), Selections = rounds.SelectMany(q => q.Selected).Where(q => q == x.Key).Count(), Legend = archetype })
+                .Select(x => new CardsPlayed { Card = db.Cards.Include(c => c.Parent).FirstOrDefault(c => c.Id == x.Key), Appearances = x.Count(), Selections = rounds.SelectMany(q => q.Selected).Where(q => q == x.Key).Count(), Legend = archetype })
                 .OrderByDescending(x => ((double)x.Appearances) / x.Selections)
                 .Take(5).ToList();
             return timesOffered;
