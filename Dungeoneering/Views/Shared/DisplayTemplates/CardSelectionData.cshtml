@@ -1,0 +1,20 @@
+﻿@using Merwer.Chronicle.Dungeoneering.Tracker.Models;
+@model CardSelectionData
+
+<div class="row">
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                @Html.Partial("DisplayTemplates/CardsPlayed", (LegendSpecificStatsData)null, new ViewDataDictionary())
+            </thead>
+            <tbody>
+                @Html.DisplayFor(m => m.RaptorCards)
+                @Html.DisplayFor(m => m.ArianeCards)
+                @Html.DisplayFor(m => m.LinzaCards)
+                @Html.DisplayFor(m => m.OzanCards)
+                @Html.DisplayFor(m => m.VanesculaCards)
+                @Html.DisplayFor(m => m.MorvranCards)
+            </tbody>
+        </table>
+    </div>
+</div>

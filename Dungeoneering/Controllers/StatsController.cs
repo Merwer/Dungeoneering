@@ -14,13 +14,33 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
         // GET: Stats
         public ActionResult Global()
         {
-            var stats = new GlobalStatsData
+            var drafts = db.Drafts.Include(d => d.Matches).ToList();
+            var data = CalculateStats<GlobalStatsData>(drafts);
+            data.ArianeStats = CalculateStats<LegendSpecificStatsData>(drafts.Where(d => d.Archetype == Archetype.Ariane).ToList());
+            data.ArianeStats.Legend = Archetype.Ariane;
+            data.OzanStats = CalculateStats<LegendSpecificStatsData>(drafts.Where(d => d.Archetype == Archetype.Ozan).ToList());
+            data.OzanStats.Legend = Archetype.Ozan;
+            data.LinzaStats = CalculateStats<LegendSpecificStatsData>(drafts.Where(d => d.Archetype == Archetype.Linza).ToList());
+            data.LinzaStats.Legend = Archetype.Linza;
+            data.RaptorStats = CalculateStats<LegendSpecificStatsData>(drafts.Where(d => d.Archetype == Archetype.TheRaptor).ToList());
+            data.RaptorStats.Legend = Archetype.TheRaptor;
+            data.VanesculaStats = CalculateStats<LegendSpecificStatsData>(drafts.Where(d => d.Archetype == Archetype.Vanescula).ToList());
+            data.VanesculaStats.Legend = Archetype.Vanescula;
+            data.MorvranStats = CalculateStats<LegendSpecificStatsData>(drafts.Where(d => d.Archetype == Archetype.Morvran).ToList());
+            data.MorvranStats.Legend = Archetype.Morvran;
+            data.Players = db.Users.Count();
+
+            data.CardSelections = new CardSelectionData
             {
-                Players = db.Users.Count(),
-                Matches = db.Matches.Count(),
-                Drafts = db.Drafts.Count()
+                ArianeCards = CalculateCardSelections(drafts, Archetype.Ariane),
+                LinzaCards = CalculateCardSelections(drafts, Archetype.Linza),
+                MorvranCards = CalculateCardSelections(drafts, Archetype.Morvran),
+                OzanCards = CalculateCardSelections(drafts, Archetype.Ozan),
+                RaptorCards = CalculateCardSelections(drafts, Archetype.TheRaptor),
+                VanesculaCards = CalculateCardSelections(drafts, Archetype.Vanescula)
             };
-            return View(stats);
+
+            return View(data);
         }
 
         [Authorize]
@@ -80,6 +100,17 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
             data.SevenToElevenWins = drafts.Count(d => d.Matches.Count(g => g.Win) >= 7 && d.Matches.Count(g => g.Win) <= 11);
             data.TwelveWins = drafts.Count(d => d.Matches.Count(g => g.Win) >= 12);
             return data;
+        }
+
+        private List<CardsPlayed> CalculateCardSelections(IEnumerable<Draft> drafts, Archetype archetype)
+        {
+            var rounds = drafts.Where(d => d.Archetype == archetype).SelectMany(d => d.Rounds);
+            var timesOffered = rounds.SelectMany(r => r.Options)
+                .GroupBy(k => k)
+                .Select(x => new CardsPlayed { Card = db.Cards.Find(x.Key), Appearances = x.Count(), Selections = rounds.SelectMany(q => q.Selected).Where(q => q == x.Key).Count(), Legend = archetype })
+                .OrderByDescending(x => ((double)x.Appearances) / x.Selections)
+                .Take(5).ToList();
+            return timesOffered;
         }
     }
 }

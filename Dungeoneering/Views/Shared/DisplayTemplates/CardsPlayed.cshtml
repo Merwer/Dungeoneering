@@ -1,0 +1,23 @@
+﻿@using Merwer.Chronicle.Dungeoneering.Tracker.Models;
+@model CardsPlayed
+
+@if (Model == null)
+{
+    <tr>
+        <th>Legend</th>
+        <th>Card</th>
+        <th>Pick %</th>
+        <th>Offered</th>
+        <th>Selected</th>
+    </tr>
+}
+else
+{
+    <tr>
+        <td>@Html.Partial("_LegendIcon", Model.Legend)</td>
+        <td>@Html.DisplayFor(m => m.Card.Name)</td>
+        <td>@Html.DisplayFor(m => m.PickRate)</td>
+        <td>@Html.DisplayFor(m => m.Appearances)</td>
+        <td>@Html.DisplayFor(m => m.Selections)</td>
+    </tr>
+}

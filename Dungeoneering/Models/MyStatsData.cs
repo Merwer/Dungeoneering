@@ -67,5 +67,6 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Models
         public LegendSpecificStatsData OzanStats { get; set; }
         public LegendSpecificStatsData VanesculaStats { get; set; }
         public LegendSpecificStatsData LinzaStats { get; set; }
+        public LegendSpecificStatsData MorvranStats { get; internal set; }
     }
 }
