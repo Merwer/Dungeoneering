@@ -132,7 +132,18 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
                     Packs = games.Sum(g => g.Rewards.Packs) / drafts.Count(),
                     Shards = games.Sum(g => g.Rewards.Shards) / drafts.Count()
                 };
+
+                data.LegendMatches = new ArchetypeMatchData
+                {
+                    Raptor = CalculateLegendMatchups(drafts, Archetype.TheRaptor),
+                    Linza = CalculateLegendMatchups(drafts, Archetype.Linza),
+                    Ariane = CalculateLegendMatchups(drafts, Archetype.Ariane),
+                    Morvran = CalculateLegendMatchups(drafts, Archetype.Morvran),
+                    Ozan = CalculateLegendMatchups(drafts, Archetype.Ozan),
+                    Vanescula = CalculateLegendMatchups(drafts, Archetype.Vanescula)
+                };
             }
+
             return View(data);
         }
 

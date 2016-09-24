@@ -7,7 +7,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
 {
     public abstract class BaseController : Controller
     {
-        private string _username;
+        private string _username = "ZB7QP06KS0KCIZL";
         protected string Username
         {
             get
