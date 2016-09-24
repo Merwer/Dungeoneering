@@ -1,0 +1,20 @@
+﻿@using Merwer.Chronicle.Dungeoneering.Tracker.Models;
+@model ArchetypeMatchData
+
+<div class="row">
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead class="border-bottom">
+                @Html.Partial("DisplayTemplates/ArchetypeMatchList", (ArchetypeMatchList)null, new ViewDataDictionary())
+            </thead>
+            <tbody>
+                @Html.DisplayFor(m => m.Raptor)
+                @Html.DisplayFor(m => m.Linza)
+                @Html.DisplayFor(m => m.Ariane)
+                @Html.DisplayFor(m => m.Ozan)
+                @Html.DisplayFor(m => m.Vanescula)
+                @Html.DisplayFor(m => m.Morvran)
+            </tbody>
+        </table>
+    </div>
+</div>

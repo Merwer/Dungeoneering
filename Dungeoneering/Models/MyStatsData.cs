@@ -38,11 +38,11 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Models
         public int TotalLosses { get; set; }
         [DisplayFormat(DataFormatString = "{0:N}", ApplyFormatInEditMode = true)]
         public double AverageWins { get; set; }
-        [DisplayFormat(DataFormatString = "{0:N}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:P2}", ApplyFormatInEditMode = true)]
         public double WinRate { get; set; }
-        [DisplayFormat(DataFormatString = "{0:N}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:P2}", ApplyFormatInEditMode = true)]
         public double FirstWinRate { get; set; }
-        [DisplayFormat(DataFormatString = "{0:N}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:P2}", ApplyFormatInEditMode = true)]
         public double SecondWinRate { get; set; }
         public int ZeroToTwoWins { get; set; }
         public int ThreeToSixWins { get; set; }

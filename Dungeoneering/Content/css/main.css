@@ -172,3 +172,8 @@ tfoot {
         float:none;
     }
 }
+
+.corner-divider {
+    transform-origin: center;
+    transform: rotate(25deg);
+}

@@ -47,10 +47,47 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
                 Ariane = CalculateLegendSelections(drafts, Archetype.Ariane),
                 Morvran = CalculateLegendSelections(drafts, Archetype.Morvran),
                 Ozan = CalculateLegendSelections(drafts, Archetype.Ozan),
-                Vanescula = CalculateLegendSelections(drafts, Archetype.Vanescula),
+                Vanescula = CalculateLegendSelections(drafts, Archetype.Vanescula)
+            };
+
+            data.LegendMatches = new ArchetypeMatchData
+            {
+                Raptor = CalculateLegendMatchups(drafts, Archetype.TheRaptor),
+                Linza = CalculateLegendMatchups(drafts, Archetype.Linza),
+                Ariane = CalculateLegendMatchups(drafts, Archetype.Ariane),
+                Morvran = CalculateLegendMatchups(drafts, Archetype.Morvran),
+                Ozan = CalculateLegendMatchups(drafts, Archetype.Ozan),
+                Vanescula = CalculateLegendMatchups(drafts, Archetype.Vanescula)
             };
 
             return View(data);
+        }
+
+        private ArchetypeMatchList CalculateLegendMatchups(List<Draft> drafts, Archetype archetype)
+        {
+            var legendDrafts = drafts.Where(d => d.Archetype == archetype);
+            return new ArchetypeMatchList
+            {
+                Legend = archetype,
+                VersusRaptor = CalculateLegendSpecificMatchups(legendDrafts, Archetype.TheRaptor),
+                VersusLinza = CalculateLegendSpecificMatchups(legendDrafts, Archetype.Linza),
+                VersusAriane = CalculateLegendSpecificMatchups(legendDrafts, Archetype.Ariane),
+                VersusMorvran = CalculateLegendSpecificMatchups(legendDrafts, Archetype.Morvran),
+                VersusOzan = CalculateLegendSpecificMatchups(legendDrafts, Archetype.Ozan),
+                VersusVanescula = CalculateLegendSpecificMatchups(legendDrafts, Archetype.Vanescula)
+            };
+        }
+
+        private ArchetypeMatch CalculateLegendSpecificMatchups(IEnumerable<Draft> legendDrafts, Archetype archetype)
+        {
+            var matches = legendDrafts.SelectMany(d => d.Matches)
+                .Where(m => m.OpponentArchetype == archetype).ToList();
+            return new ArchetypeMatch
+            {
+                Opponent = archetype,
+                Matches = matches.Count(),
+                Wins = matches.Count(m => m.Win)
+            };
         }
 
         private ArchetypeSelection CalculateLegendSelections(List<Draft> drafts, Archetype archetype)

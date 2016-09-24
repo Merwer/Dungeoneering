@@ -908,6 +908,9 @@
     <Content Include="Views\Shared\DisplayTemplates\CardsPlayed.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\ArchetypeSelectionData.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\ArchetypeSelection.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\ArchetypeMatchData.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\ArchetypeMatchList.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\ArchetypeMatch.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
