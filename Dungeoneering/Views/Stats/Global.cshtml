@@ -4,18 +4,23 @@
     ViewBag.Title = "Global Stats";
 }
 
+<h3 class="text-center">Data collected from <strong>@Model.Players</strong> players</h3>
 <div class="row">
     <div class="col-xs-12">
-        <p class="text-center">Data collected from <strong>@Model.Players</strong> players</p>
-
         @Html.DisplayForModel("MyStatsData")
     </div>
 </div>
 
+<h3 class="text-center">Most common legends</h3>
 <div class="row">
     <div class="col-xs-12">
-        <p class="text-center">Most common cards by class</p>
+        @Html.DisplayFor(m => m.LegendSelections)
+    </div>
+</div>
 
+<h3 class="text-center">Most common cards by class</h3>
+<div class="row">
+    <div class="col-xs-12">
         @Html.DisplayFor(m => m.CardSelections)
     </div>
 </div>

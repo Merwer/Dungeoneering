@@ -40,7 +40,28 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
                 VanesculaCards = CalculateCardSelections(drafts, Archetype.Vanescula)
             };
 
+            data.LegendSelections = new ArchetypeSelectionData
+            {
+                Raptor = CalculateLegendSelections(drafts, Archetype.TheRaptor),
+                Linza = CalculateLegendSelections(drafts, Archetype.Linza),
+                Ariane = CalculateLegendSelections(drafts, Archetype.Ariane),
+                Morvran = CalculateLegendSelections(drafts, Archetype.Morvran),
+                Ozan = CalculateLegendSelections(drafts, Archetype.Ozan),
+                Vanescula = CalculateLegendSelections(drafts, Archetype.Vanescula),
+            };
+
             return View(data);
+        }
+
+        private ArchetypeSelection CalculateLegendSelections(List<Draft> drafts, Archetype archetype)
+        {
+            var selectionData = new ArchetypeSelection
+            {
+                Legend = archetype,
+                Selections = drafts.Count(d => d.Archetype == archetype)
+            };
+            selectionData.PickRate = ((double)selectionData.Selections) / drafts.Count();
+            return selectionData;
         }
 
         [Authorize]

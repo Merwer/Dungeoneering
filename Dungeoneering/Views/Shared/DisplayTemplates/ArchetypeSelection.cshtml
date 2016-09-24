@@ -1,0 +1,19 @@
+﻿@using Merwer.Chronicle.Dungeoneering.Tracker.Models;
+@model ArchetypeSelection
+
+@if (Model == null)
+{
+    <tr>
+        <th>Legend</th>
+        <th>Times Picked</th>
+        <th>Pick %</th>
+    </tr>
+}
+else
+{
+    <tr>
+        <td>@Html.Partial("_LegendIcon", Model.Legend)</td>
+        <td>@Html.DisplayFor(m => m.Selections)</td>
+        <td>@Html.DisplayFor(m => m.PickRate)</td>
+    </tr>
+}
