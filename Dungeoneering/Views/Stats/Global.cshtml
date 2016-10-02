@@ -3,6 +3,26 @@
 @{
     ViewBag.Title = "Global Stats";
 }
+<div class="row">
+    <form>
+        <h3>Display stats for</h3>
+        <div class="col-xs-6">
+            <div class="form-group">
+                @Html.LabelFor(m => m.StartDate, new { @class = "control-label" })
+                @Html.EditorFor(m => m.StartDate, null)
+            </div>
+        </div>
+        <div class="col-xs-6">
+            <div class="form-group">
+                @Html.LabelFor(m => m.EndDate, new { @class = "control-label" })
+                @Html.EditorFor(m => m.EndDate)
+            </div>
+        </div>
+        <div class="col-xs-12">
+            <input type="submit" value="Get Stats" />
+        </div>
+    </form>
+</div>
 
 <h3 class="text-center">Data collected from <strong>@Model.Players</strong> players</h3>
 <div class="row">

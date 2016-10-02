@@ -10,14 +10,14 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
         private StatsRepository repo = new StatsRepository();
 
         // GET: Stats
-        [OutputCache(Duration = ONE_HOUR, VaryByParam = "start;end")]
-        public ActionResult Global(long start = 0, long end = 0)
+        [OutputCache(Duration = ONE_HOUR, VaryByParam = "startDate;endDate")]
+        public ActionResult Global(DateTime? startDate = null, DateTime? endDate = null)
         {
-            DateTime startDate = start == 0 ? DateTime.UtcNow.AddMonths(-1) : new DateTime(start);
-            DateTime endDate = end == 0 ? DateTime.UtcNow : new DateTime(end);
-            var data = repo.GetCurrentGlobalStats(startDate, endDate);
-            data.StartDate = startDate;
-            data.EndDate = endDate;
+            DateTime start = startDate.HasValue ? startDate.Value : DateTime.UtcNow.AddMonths(-1);
+            DateTime end = endDate.HasValue ? endDate.Value : DateTime.UtcNow;
+            var data = repo.GetCurrentGlobalStats(start, end);
+            data.StartDate = start;
+            data.EndDate = end;
             data.LastUpdated = DateTime.UtcNow;
             return View(data);
         }

@@ -11,8 +11,17 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Models
         public int Players { get; set; }
         public ArchetypeSelectionData LegendSelections { get; set; } 
         public CardSelectionData CardSelections { get; set; }
+        [Display(Name ="Last Updated")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime LastUpdated { get; set; }
+        [Display(Name = "Start")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime StartDate { get; set; }
+        [Display(Name = "End")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime EndDate { get;  set; }
     }
 
