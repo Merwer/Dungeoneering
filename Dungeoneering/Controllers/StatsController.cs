@@ -28,7 +28,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
             data.VanesculaStats.Legend = Archetype.Vanescula;
             data.MorvranStats = CalculateStats<LegendSpecificStatsData>(drafts.Where(d => d.Archetype == Archetype.Morvran).ToList());
             data.MorvranStats.Legend = Archetype.Morvran;
-            data.Players = db.Users.Count();
+            data.Players = drafts.Select(d => d.OwnerName).Distinct().Count();
 
             var games = drafts.SelectMany(d => d.Matches);
             data.TotalRewards = new MatchRewardList
