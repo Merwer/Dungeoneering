@@ -14,7 +14,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
         // GET: Stats
         public ActionResult Global()
         {
-            var drafts = db.Drafts.Include(d => d.Matches).ToList();
+            var drafts = db.Drafts.Include(d => d.Matches).ToList().Where(d => d.Complete).ToList();
             var data = CalculateStats<GlobalStatsData>(drafts);
             data.ArianeStats = CalculateStats<LegendSpecificStatsData>(drafts.Where(d => d.Archetype == Archetype.Ariane).ToList());
             data.ArianeStats.Legend = Archetype.Ariane;
@@ -29,6 +29,20 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
             data.MorvranStats = CalculateStats<LegendSpecificStatsData>(drafts.Where(d => d.Archetype == Archetype.Morvran).ToList());
             data.MorvranStats.Legend = Archetype.Morvran;
             data.Players = db.Users.Count();
+
+            var games = drafts.SelectMany(d => d.Matches);
+            data.TotalRewards = new MatchRewardList
+            {
+                Copper = games.Sum(g => g.Rewards.Copper),
+                Packs = games.Sum(g => g.Rewards.Packs),
+                Shards = games.Sum(g => g.Rewards.Shards)
+            };
+            data.AverageRewards = new MatchRewardList
+            {
+                Copper = games.Sum(g => g.Rewards.Copper) / drafts.Count(),
+                Packs = games.Sum(g => g.Rewards.Packs) / drafts.Count(),
+                Shards = games.Sum(g => g.Rewards.Shards) / drafts.Count()
+            };
 
             data.CardSelections = new CardSelectionData
             {
@@ -104,7 +118,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
         [Authorize]
         public ActionResult My()
         {
-            var drafts = db.Drafts.Include(d => d.Matches).Where(d => d.OwnerName == Username).ToList();
+            var drafts = db.Drafts.Include(d => d.Matches).Where(d => d.OwnerName == Username).ToList().Where(d => d.Complete).ToList();
             var data = CalculateStats<MyStatsData>(drafts);
             data.ArianeStats = CalculateStats<LegendSpecificStatsData>(drafts.Where(d => d.Archetype == Archetype.Ariane).ToList());
             data.ArianeStats.Legend = Archetype.Ariane;
