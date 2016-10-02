@@ -6,11 +6,11 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
 {
     public class StatsController : BaseController
     {
-        private const int ONE_HOUR = 3600;
+        private const int ONE_DAY = 60 * 60 * 24;
         private StatsRepository repo = new StatsRepository();
 
         // GET: Stats
-        [OutputCache(Duration = ONE_HOUR, VaryByParam = "startDate;endDate")]
+        [OutputCache(Duration = ONE_DAY, VaryByParam = "startDate;endDate")]
         public ActionResult Global(DateTime? startDate = null, DateTime? endDate = null)
         {
             DateTime start = startDate.HasValue ? startDate.Value : DateTime.UtcNow.AddMonths(-2);
