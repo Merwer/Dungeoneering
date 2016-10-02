@@ -12,10 +12,15 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Data
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Stats
-        public GlobalStatsData GetCurrentGlobalStats()
+        public GlobalStatsData GetCurrentGlobalStats(DateTime startDate, DateTime endDate)
         {
-            var drafts = db.Drafts.Include(d => d.Matches).ToList().Where(d => d.Complete).ToList();
-            var data = CalculateStats<GlobalStatsData>(drafts);
+            GlobalStatsData data;
+            //TODO: Caching
+
+            var drafts = db.Drafts.Include(d => d.Matches).Where(Draft.FuncComplete)
+                .Where(d => d.CreatedOn >= startDate && d.CreatedOn <= endDate)
+                .ToList();
+            data = CalculateStats<GlobalStatsData>(drafts);
             data.ArianeStats = CalculateStats<LegendSpecificStatsData>(drafts.Where(d => d.Archetype == Archetype.Ariane).ToList());
             data.ArianeStats.Legend = Archetype.Ariane;
             data.OzanStats = CalculateStats<LegendSpecificStatsData>(drafts.Where(d => d.Archetype == Archetype.Ozan).ToList());
@@ -30,50 +35,52 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Data
             data.MorvranStats.Legend = Archetype.Morvran;
             data.Players = drafts.Select(d => d.OwnerName).Distinct().Count();
 
-            var games = drafts.SelectMany(d => d.Matches);
-            data.TotalRewards = new MatchRewardList
+            if (drafts.Any())
             {
-                Copper = games.Sum(g => g.Rewards.Copper),
-                Packs = games.Sum(g => g.Rewards.Packs),
-                Shards = games.Sum(g => g.Rewards.Shards)
-            };
-            data.AverageRewards = new MatchRewardList
-            {
-                Copper = games.Sum(g => g.Rewards.Copper) / drafts.Count(),
-                Packs = games.Sum(g => g.Rewards.Packs) / drafts.Count(),
-                Shards = games.Sum(g => g.Rewards.Shards) / drafts.Count()
-            };
+                var games = drafts.SelectMany(d => d.Matches);
+                data.TotalRewards = new MatchRewardList
+                {
+                    Copper = games.Sum(g => g.Rewards.Copper),
+                    Packs = games.Sum(g => g.Rewards.Packs),
+                    Shards = games.Sum(g => g.Rewards.Shards)
+                };
+                data.AverageRewards = new MatchRewardList
+                {
+                    Copper = data.TotalRewards.Copper / drafts.Count(),
+                    Packs = data.TotalRewards.Packs / drafts.Count(),
+                    Shards = data.TotalRewards.Shards / drafts.Count()
+                };
 
-            data.CardSelections = new CardSelectionData
-            {
-                ArianeCards = CalculateCardSelections(drafts, Archetype.Ariane),
-                LinzaCards = CalculateCardSelections(drafts, Archetype.Linza),
-                MorvranCards = CalculateCardSelections(drafts, Archetype.Morvran),
-                OzanCards = CalculateCardSelections(drafts, Archetype.Ozan),
-                RaptorCards = CalculateCardSelections(drafts, Archetype.TheRaptor),
-                VanesculaCards = CalculateCardSelections(drafts, Archetype.Vanescula)
-            };
+                data.CardSelections = new CardSelectionData
+                {
+                    ArianeCards = CalculateCardSelections(drafts, Archetype.Ariane),
+                    LinzaCards = CalculateCardSelections(drafts, Archetype.Linza),
+                    MorvranCards = CalculateCardSelections(drafts, Archetype.Morvran),
+                    OzanCards = CalculateCardSelections(drafts, Archetype.Ozan),
+                    RaptorCards = CalculateCardSelections(drafts, Archetype.TheRaptor),
+                    VanesculaCards = CalculateCardSelections(drafts, Archetype.Vanescula)
+                };
 
-            data.LegendSelections = new ArchetypeSelectionData
-            {
-                Raptor = CalculateLegendSelections(drafts, Archetype.TheRaptor),
-                Linza = CalculateLegendSelections(drafts, Archetype.Linza),
-                Ariane = CalculateLegendSelections(drafts, Archetype.Ariane),
-                Morvran = CalculateLegendSelections(drafts, Archetype.Morvran),
-                Ozan = CalculateLegendSelections(drafts, Archetype.Ozan),
-                Vanescula = CalculateLegendSelections(drafts, Archetype.Vanescula)
-            };
+                data.LegendSelections = new ArchetypeSelectionData
+                {
+                    Raptor = CalculateLegendSelections(drafts, Archetype.TheRaptor),
+                    Linza = CalculateLegendSelections(drafts, Archetype.Linza),
+                    Ariane = CalculateLegendSelections(drafts, Archetype.Ariane),
+                    Morvran = CalculateLegendSelections(drafts, Archetype.Morvran),
+                    Ozan = CalculateLegendSelections(drafts, Archetype.Ozan),
+                    Vanescula = CalculateLegendSelections(drafts, Archetype.Vanescula)
+                };
 
-            data.LegendMatches = new ArchetypeMatchData
-            {
-                Raptor = CalculateLegendMatchups(drafts, Archetype.TheRaptor),
-                Linza = CalculateLegendMatchups(drafts, Archetype.Linza),
-                Ariane = CalculateLegendMatchups(drafts, Archetype.Ariane),
-                Morvran = CalculateLegendMatchups(drafts, Archetype.Morvran),
-                Ozan = CalculateLegendMatchups(drafts, Archetype.Ozan),
-                Vanescula = CalculateLegendMatchups(drafts, Archetype.Vanescula)
-            };
-
+                data.LegendMatches = new ArchetypeMatchData
+                {
+                    Raptor = CalculateLegendMatchups(drafts, Archetype.TheRaptor),
+                    Linza = CalculateLegendMatchups(drafts, Archetype.Linza),
+                    Ariane = CalculateLegendMatchups(drafts, Archetype.Ariane),
+                    Morvran = CalculateLegendMatchups(drafts, Archetype.Morvran),
+                    Ozan = CalculateLegendMatchups(drafts, Archetype.Ozan),
+                    Vanescula = CalculateLegendMatchups(drafts, Archetype.Vanescula)
+                };
+            }
             return data;
         }
 
@@ -117,6 +124,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Data
         
         public MyStatsData SinglePlayer(String username)
         {
+            //TODO: Caching
             var drafts = db.Drafts.Include(d => d.Matches).Where(d => d.OwnerName == username).ToList().Where(d => d.Complete).ToList();
             var data = CalculateStats<MyStatsData>(drafts);
             data.ArianeStats = CalculateStats<LegendSpecificStatsData>(drafts.Where(d => d.Archetype == Archetype.Ariane).ToList());

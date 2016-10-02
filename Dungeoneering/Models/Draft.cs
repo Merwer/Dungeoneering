@@ -2,6 +2,7 @@
 using System.Linq;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System;
 
 namespace Merwer.Chronicle.Dungeoneering.Tracker.Models
 {
@@ -26,7 +27,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Models
         {
             get
             {
-                return Abandoned || Matches.Count(m => !m.Win) >= 3 || Matches.Count(m => m.Win) >= 12;
+                return FuncComplete(this);
             }
         }
 
@@ -35,8 +36,11 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Models
         {
             get
             {
-                return Rounds.Count(r => r != null && r.Selected != null && r.Selected.Count() == 2) == 15;
+                return FuncDraftComplete(this);
             }
         }
+
+        public static Func<Draft, bool> FuncComplete { get { return (Draft d) => d.Abandoned || d.Matches.Count(m => !m.Win) >= 3 || d.Matches.Count(m => m.Win) >= 12; } }
+        public static Func<Draft, bool> FuncDraftComplete { get { return (Draft d) => d.Rounds.Count(r => r != null && r.Selected != null && r.Selected.Count() == 2) == 15; } }
     }
 }

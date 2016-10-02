@@ -11,6 +11,9 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Models
         public int Players { get; set; }
         public ArchetypeSelectionData LegendSelections { get; set; } 
         public CardSelectionData CardSelections { get; set; }
+        public DateTime LastUpdated { get; set; }
+        public DateTime StartDate { get; set; }
+        public DateTime EndDate { get;  set; }
     }
 
     public class ArchetypeSelectionData
