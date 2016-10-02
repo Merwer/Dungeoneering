@@ -13,7 +13,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
         [OutputCache(Duration = ONE_HOUR, VaryByParam = "startDate;endDate")]
         public ActionResult Global(DateTime? startDate = null, DateTime? endDate = null)
         {
-            DateTime start = startDate.HasValue ? startDate.Value : DateTime.UtcNow.AddMonths(-1);
+            DateTime start = startDate.HasValue ? startDate.Value : DateTime.UtcNow.AddMonths(-2);
             DateTime end = endDate.HasValue ? endDate.Value : DateTime.UtcNow;
             var data = repo.GetCurrentGlobalStats(start, end);
             data.StartDate = start;
