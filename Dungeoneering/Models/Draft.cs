@@ -11,6 +11,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Models
         public Draft()
         {
             Abandoned = false;
+            DraftSkipped = false;
             Rounds = new List<Round>();
             Matches = new List<Match>();
         }
@@ -21,6 +22,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Models
 
         public virtual List<Match> Matches { get; set; }
         public bool Abandoned { get; set; }
+        public bool DraftSkipped { get; set; }
 
         [NotMapped]
         public bool Complete
@@ -41,6 +43,6 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Models
         }
 
         public static Func<Draft, bool> FuncComplete { get { return (Draft d) => d.Abandoned || d.Matches.Count(m => !m.Win) >= 3 || d.Matches.Count(m => m.Win) >= 12; } }
-        public static Func<Draft, bool> FuncDraftComplete { get { return (Draft d) => d.Rounds.Count(r => r != null && r.Selected != null && r.Selected.Count() == 2) == 15; } }
+        public static Func<Draft, bool> FuncDraftComplete { get { return (Draft d) => d.DraftSkipped || d.Rounds.Count(r => r != null && r.Selected != null && r.Selected.Count() == 2) == 15; } }
     }
 }

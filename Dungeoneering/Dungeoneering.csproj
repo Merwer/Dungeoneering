@@ -299,6 +299,10 @@
     <Compile Include="Migrations\201608131040082_News.Designer.cs">
       <DependentUpon>201608131040082_News.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201610081353569_SkipDrafts.cs" />
+    <Compile Include="Migrations\201610081353569_SkipDrafts.Designer.cs">
+      <DependentUpon>201610081353569_SkipDrafts.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\CardData.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -965,6 +969,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201608131040082_News.resx">
       <DependentUpon>201608131040082_News.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610081353569_SkipDrafts.resx">
+      <DependentUpon>201610081353569_SkipDrafts.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

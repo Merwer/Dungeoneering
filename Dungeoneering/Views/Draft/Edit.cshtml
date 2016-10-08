@@ -64,6 +64,12 @@
                 </div>
             </div>
         </div>
+        @if (!Model.DraftComplete)
+        {
+        <form action="@Url.Action("Skip", "Draft", new { id = Model.Id })" method="post">
+            <input type="submit" class="btn btn-danger" value="Skip Draft">
+        </form>
+        }
         <div class="card-choices row">
             <div class="col-xs-12">
                 <div class="row">

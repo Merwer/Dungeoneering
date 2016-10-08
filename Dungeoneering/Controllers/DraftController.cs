@@ -90,6 +90,25 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
             return RedirectToAction("View", new { id = draft.Id });
         }
 
+        [Route("{id:long}/skip")]
+        [HttpPost]
+        public ActionResult Skip(long id)
+        {
+            var draft = db.Drafts.FirstOrDefault(d => d.Id == id);
+            if (draft == null)
+            {
+                return HttpNotFound("Invalid draft ID");
+            }
+            if (draft.OwnerName != Username)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.Unauthorized);
+            }
+            draft.DraftSkipped = true;
+            db.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
+
         [Route("{id:long}")]
         [HttpDelete]
         public ActionResult Delete(long id)
