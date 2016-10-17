@@ -17,6 +17,16 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
         [Route("{archetype}")]
         public ActionResult Index(Archetype archetype)
         {
+            return Json(GetCards(archetype));
+        }
+
+        public ActionResult TierList()
+        {
+            return View();
+        }
+
+        public List<Card> GetCards(Archetype archetype)
+        {
             var list = db.CardScores.Where(cs => cs.Archetype == archetype)
                 .Select(cs => cs.Card)
                 .Include(c => c.Parent)
@@ -27,7 +37,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
             {
                 c.Score = c.Scores.Single(s => s.Archetype == archetype).Score;
             });
-            return Json(list);
+            return list;
         }
 
         protected override void Dispose(bool disposing)

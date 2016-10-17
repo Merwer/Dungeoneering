@@ -1,0 +1,38 @@
+﻿@using Merwer.Chronicle.Dungeoneering.Tracker.Models;
+
+@{
+    ViewBag.Title = "TierList";
+}
+
+<h2>TierList</h2>
+
+<ul class="nav nav-tabs" data-tabs="tabs">
+    @foreach (var archetype in Enum.GetValues(typeof(Archetype)))
+    {
+        <li role="presentation">
+            <a role="tab" href="#@archetype.ToString().ToLower()" data-toggle="tab">
+                @Html.Partial("_LegendIcon", archetype)
+            </a>
+        </li>
+    }
+</ul>
+
+<div class="tab-content">
+    @foreach (var archetype in Enum.GetValues(typeof(Archetype)))
+    {
+        <div id="@archetype.ToString().ToLower()" role="tabpanel" class="tab-pane">
+            <ul class="nav nav-tabs" data-tabs="tabs">
+                <li role="presentation" class="active"><a role="tab" href="#saphire-@archetype" data-toggle="tab">Saphire</a></li>
+                <li role="presentation"><a role="tab" href="#emerald-@archetype" data-toggle="tab">Emerald</a></li>
+                <li role="presentation"><a role="tab" href="#ruby-@archetype" data-toggle="tab">Ruby</a></li>
+                <li role="presentation"><a role="tab" href="#diamond-@archetype" data-toggle="tab">Diamond</a></li>
+            </ul>
+            <div class="tab-content">
+                <div id="saphire-@archetype" role="tabpanel" class="tab-pane active">Test: Saphire (@archetype)</div>
+                <div id="emerald-@archetype" role="tabpanel" class="tab-pane">Test: Emerald (@archetype)</div>
+                <div id="ruby-@archetype" role="tabpanel" class="tab-pane">Test: Ruby (@archetype)</div>
+                <div id="diamond-@archetype" role="tabpanel" class="tab-pane">Test: Diamond (@archetype)</div>
+            </div>
+        </div>
+    }
+</div>
