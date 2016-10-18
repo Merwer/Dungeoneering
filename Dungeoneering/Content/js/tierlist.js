@@ -1,5 +1,4 @@
 ﻿function createTable(ele, cards) {
-    ele.html('');
     var rarities = {
         saphire: Array.apply(null, Array(11)).map(function () { return []; }),
         emerald: Array.apply(null, Array(11)).map(function () { return []; }),
@@ -20,7 +19,6 @@
     
     for (var rarityIndex in rarities) {
         var section = $('<section>');
-        section.append($('<h3>').text(rarityIndex));
         for (var categoryIndex in rarities[rarityIndex]) {
             var list = rarities[rarityIndex][categoryIndex];
             if (list.length != 0) {
@@ -40,7 +38,8 @@
                 section.append(subsection);
             }
         }
-        ele.append(section);
+        var content = $('.' + rarityIndex + "-content", ele);
+        content.html('').append(section);
     }
 }
 
