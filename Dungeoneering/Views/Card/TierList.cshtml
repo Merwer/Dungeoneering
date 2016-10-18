@@ -25,18 +25,18 @@
     @foreach (var archetype in Enum.GetValues(typeof(Archetype)))
     {
         <div id="@archetype.ToString().ToLower()" role="tabpanel" class="tab-pane">
-            <ul class="nav nav-tabs" data-tabs="tabs">
+            <ul class="nav nav-pills" data-pills="pills">
                 <li role="presentation" class="active">
-                    <a role="tab" href="#saphire-@archetype" data-toggle="tab">Saphire</a>
+                    <a role="tab" href="#saphire-@archetype" data-toggle="pill">Saphire</a>
                 </li>
                 <li role="presentation">
-                    <a role="tab" href="#emerald-@archetype" data-toggle="tab">Emerald</a>
+                    <a role="tab" href="#emerald-@archetype" data-toggle="pill">Emerald</a>
                 </li>
                 <li role="presentation">
-                    <a role="tab" href="#ruby-@archetype" data-toggle="tab">Ruby</a>
+                    <a role="tab" href="#ruby-@archetype" data-toggle="pill">Ruby</a>
                 </li>
                 <li role="presentation">
-                    <a role="tab" href="#diamond-@archetype" data-toggle="tab">Diamond</a>
+                    <a role="tab" href="#diamond-@archetype" data-toggle="pill">Diamond</a>
                 </li>
             </ul>
             <div class="tab-content">
