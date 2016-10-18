@@ -19,7 +19,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
         {
             return Json(GetCards(archetype));
         }
-
+        [Route("TierList")]
         public ActionResult TierList()
         {
             return View();

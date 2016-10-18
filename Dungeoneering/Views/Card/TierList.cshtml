@@ -1,5 +1,9 @@
 ﻿@using Merwer.Chronicle.Dungeoneering.Tracker.Models;
 
+@section scripts {
+    @Scripts.Render("/Content/js/tierlist.js")
+}
+
 @{
     ViewBag.Title = "TierList";
 }
@@ -10,7 +14,7 @@
     @foreach (var archetype in Enum.GetValues(typeof(Archetype)))
     {
         <li role="presentation">
-            <a role="tab" href="#@archetype.ToString().ToLower()" data-toggle="tab">
+            <a role="tab" href="#@archetype.ToString().ToLower()" data-toggle="tab" class="archetype-tab" data-archetype="@archetype">
                 @Html.Partial("_LegendIcon", archetype)
             </a>
         </li>

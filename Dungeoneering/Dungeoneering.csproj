@@ -809,6 +809,7 @@
     <Content Include="Content\js\draftIndex.js" />
     <Content Include="Content\js\main.js" />
     <Content Include="Content\js\offcanvas.js" />
+    <Content Include="Content\js\tierlist.js" />
     <Content Include="Content\js\vendor\bootstrap.js" />
     <Content Include="Content\js\vendor\bootstrap.min.js" />
     <Content Include="Content\js\vendor\i18next.min.js" />
