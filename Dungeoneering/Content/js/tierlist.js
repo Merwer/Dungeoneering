@@ -22,19 +22,24 @@
         for (var categoryIndex in rarities[rarityIndex]) {
             var list = rarities[rarityIndex][categoryIndex];
             if (list.length != 0) {
-                var subsection = $('<div>');
+                var subsection = $('<div>').addClass('panel').addClass('panel-default');
+                var head = $('<div>').addClass('panel-heading');
                 if (categoryIndex == 0) {
-                    subsection.append($('<h3>').text('Undecided'));
+                    head.append($('<h3>').addClass('panel-title').text('Undecided'));
                 } else {
                     var low = (categoryIndex * 10);
-                    subsection.append($('<h3>').text(low + "-" + (low + 9)));
+                    head.append($('<h3>').addClass('panel-title').text(low + "-" + (low + 9)));
                 }
-                var htmlList = $('<ul>');
+                subsection.append(head);
+
+                var body = $('<div>').addClass('panel-body');
+                var htmlList = $('<ul>').addClass("list-inline");
                 for (var cardIndex in list) {
                     var card = list[cardIndex];
                     htmlList.append($('<li>').addClass('card').text(card.name));
                 }
-                subsection.append(htmlList);
+                body.append(htmlList);
+                subsection.append(body);
                 section.append(subsection);
             }
         }
