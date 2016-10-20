@@ -18,33 +18,42 @@
     }
     
     for (var rarityIndex in rarities) {
-        var section = $('<section>');
-        for (var categoryIndex in rarities[rarityIndex]) {
-            var list = rarities[rarityIndex][categoryIndex];
-            if (list.length != 0) {
-                var subsection = $('<div>').addClass('panel').addClass('panel-default');
-                var head = $('<div>').addClass('panel-heading');
-                if (categoryIndex == 0) {
-                    head.append($('<h3>').addClass('panel-title').text('Undecided'));
-                } else {
-                    var low = (categoryIndex * 10);
-                    head.append($('<h3>').addClass('panel-title').text(low + "-" + (low + 9)));
-                }
-                subsection.append(head);
-
-                var body = $('<div>').addClass('panel-body');
-                var htmlList = $('<ul>').addClass("list-inline");
-                for (var cardIndex in list) {
-                    var card = list[cardIndex];
-                    htmlList.append($('<li>').addClass('card').text(card.name));
-                }
-                body.append(htmlList);
-                subsection.append(body);
-                section.append(subsection);
-            }
-        }
         var content = $('.' + rarityIndex + "-content", ele);
-        content.html('').append(section);
+        var table = $('table tbody', content);
+        var categories = rarities[rarityIndex];
+        for (var categoryIndex = categories.length - 1; categoryIndex >= 0; categoryIndex--) {
+            var cardList = categories[categoryIndex];
+            var row = $('<tr>');
+            for (var cardIndex in cardList) {
+                var card = cardList[cardIndex];
+                var cell = $('<td>');
+                cell.text(card.name + ' (' + card.score + ')');
+                row.append(cell);
+            }
+            table.append(row);
+        }
+
+        table.each(function () {
+            var $this = $(this);
+            var newrows = [];
+            $this.find("tr").each(function (rowIndex) {
+                var i = 0;
+                $(this).find("td").each(function () {
+                    i++;
+                    if (newrows[i] === undefined) {
+                        newrows[i] = $("<tr></tr>");
+                    }
+                    while ($('td', newrows[i]).length < rowIndex) {
+                        newrows[i].append($('<td>'));
+                    }
+                    newrows[i].append($(this));
+                });
+            });
+            $this.find("tr").remove();
+            $.each(newrows, function () {
+                $this.append(this);
+            });
+        });
     }
 }
 
