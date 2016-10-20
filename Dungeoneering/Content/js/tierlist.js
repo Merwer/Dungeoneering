@@ -13,21 +13,27 @@
         } else {
             categoryIndex = Math.floor(card.score / 10);
         }
-
         rarities[card.rarity][categoryIndex].push(card);
     }
     
     for (var rarityIndex in rarities) {
         var content = $('.' + rarityIndex + "-content", ele);
         var table = $('table tbody', content);
+        table.html('');
         var categories = rarities[rarityIndex];
+        var maxLength = Math.max.apply(null, (categories.map(function (cardList) {
+            return cardList.length;
+        })));
+
         for (var categoryIndex = categories.length - 1; categoryIndex >= 0; categoryIndex--) {
             var cardList = categories[categoryIndex];
             var row = $('<tr>');
-            for (var cardIndex in cardList) {
-                var card = cardList[cardIndex];
+            for (var fillerIndex = 0; fillerIndex < maxLength; fillerIndex++) {
                 var cell = $('<td>');
-                cell.text(card.name + ' (' + card.score + ')');
+                if (fillerIndex < cardList.length) {
+                    var card = cardList[fillerIndex];
+                    cell.text(card.name + ' (' + card.score + ')');
+                }
                 row.append(cell);
             }
             table.append(row);
@@ -36,15 +42,12 @@
         table.each(function () {
             var $this = $(this);
             var newrows = [];
-            $this.find("tr").each(function (rowIndex) {
+            $this.find("tr").each(function () {
                 var i = 0;
                 $(this).find("td").each(function () {
                     i++;
                     if (newrows[i] === undefined) {
                         newrows[i] = $("<tr></tr>");
-                    }
-                    while ($('td', newrows[i]).length < rowIndex) {
-                        newrows[i].append($('<td>'));
                     }
                     newrows[i].append($(this));
                 });
