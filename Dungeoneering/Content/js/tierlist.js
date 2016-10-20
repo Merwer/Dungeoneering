@@ -32,7 +32,10 @@
                 var cell = $('<td>');
                 if (fillerIndex < cardList.length) {
                     var card = cardList[fillerIndex];
-                    cell.text(card.name + ' (' + card.score + ')');
+                    var cardDetail = $('<div>').addClass('text-nowrap')
+                        .append($('<span>').text(card.name + ' '))
+                        .append($('<span>').addClass('badge').text(card.score));
+                    cell.append(cardDetail);
                 }
                 row.append(cell);
             }
