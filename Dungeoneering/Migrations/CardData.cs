@@ -2437,7 +2437,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             cards.Add(new Card { Id = 401, Rewards = new CardRewards { Attack = 1, Armour = 12, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Ranis_Drakan_v1482056.png", Version = "1482056", Cost = 0, Health = 9, Active = true, Parent = containers.Single(p => p.Id == 302) });
             scores.Add(new CardScore { Id = 1065, Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 401) });
 
-            cards.Add(new Card { Id = 402, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Wise_Old_Man_v1482056.png", Version = "1482056", Cost = 5, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 323) });
+            cards.Add(new Card { Id = 402, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Wise_Old_Man.png", Version = "1482056", Cost = 5, Health = 0, Active = true, Parent = containers.Single(p => p.Id == 323) });
             scores.Add(new CardScore { Id = 1066, Archetype = Archetype.Ariane, Score = 10, Card = cards.Single(c => c.Id == 402) });
 
             cards.Add(new Card { Id = 403, Rewards = new CardRewards { Attack = 0, Armour = 0, Health = 0, Coins = 0, Weapon = false }, Image = "/Content/img/cards/Zulrah_v1482056.png", Version = "1482056", Cost = 0, Health = 8, Active = true, Parent = containers.Single(p => p.Id == 329) });
