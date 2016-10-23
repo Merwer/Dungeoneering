@@ -2731,6 +2731,15 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Migrations
             scores.Add(new CardScore { Id = 1409, Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 454) });
             scores.Add(new CardScore { Id = 1410, Archetype = Archetype.Ozan, Score = -1, Card = cards.Single(c => c.Id == 454) });
             scores.Add(new CardScore { Id = 1411, Archetype = Archetype.Morvran, Score = -1, Card = cards.Single(c => c.Id == 454) });
+
+            containers.Add(new CardContainer { Id = 405, ChronicleId = 456, Archetype = null, Name = "Radimus Erkle", Rarity = Rarity.Diamond, Type = CardType.Support });
+            cards.Add(new Card { Id = 455, Rewards = new CardRewards { Armour = 5, Weapon = true }, Image = "/Content/img/cards/Radimus_Erkle.png", Version = "1.4.10", Cost = 2, Active = true, Parent = containers.Single(p => p.Id == 405) });
+            scores.Add(new CardScore { Id = 1412, Archetype = Archetype.TheRaptor, Score = -1, Card = cards.Single(c => c.Id == 455) });
+            scores.Add(new CardScore { Id = 1413, Archetype = Archetype.Linza, Score = -1, Card = cards.Single(c => c.Id == 455) });
+            scores.Add(new CardScore { Id = 1414, Archetype = Archetype.Ariane, Score = -1, Card = cards.Single(c => c.Id == 455) });
+            scores.Add(new CardScore { Id = 1415, Archetype = Archetype.Vanescula, Score = -1, Card = cards.Single(c => c.Id == 455) });
+            scores.Add(new CardScore { Id = 1416, Archetype = Archetype.Ozan, Score = -1, Card = cards.Single(c => c.Id == 455) });
+            scores.Add(new CardScore { Id = 1417, Archetype = Archetype.Morvran, Score = -1, Card = cards.Single(c => c.Id == 455) });
         }
 
         public static void SeedData(ApplicationDbContext db)
