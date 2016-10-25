@@ -22,113 +22,35 @@
 </ul>
 
 <div class="tab-content">
-    @foreach (var archetype in Enum.GetValues(typeof(Archetype)))
+    @foreach (var archetype in Enum.GetValues(typeof(Archetype)).Cast<Archetype>())
     {
-        <div id="@archetype.ToString().ToLower()" role="tabpanel" class="tab-pane">
+        var archetypeStr = archetype.ToString().ToLower();
+        <div id="@archetypeStr" role="tabpanel" class="tab-pane">
             <ul class="nav nav-pills" data-pills="pills">
-                <li role="presentation" class="active">
-                    <a role="tab" href="#saphire-@archetype" data-toggle="pill">Saphire</a>
-                </li>
-                <li role="presentation">
-                    <a role="tab" href="#emerald-@archetype" data-toggle="pill">Emerald</a>
-                </li>
-                <li role="presentation">
-                    <a role="tab" href="#ruby-@archetype" data-toggle="pill">Ruby</a>
-                </li>
-                <li role="presentation">
-                    <a role="tab" href="#diamond-@archetype" data-toggle="pill">Diamond</a>
-                </li>
+                @foreach (var rarity in Enum.GetValues(typeof(Rarity)).Cast<Rarity>())
+                {
+                    var rarityStr = rarity.ToString().ToLower();
+                    <li role="presentation" @if(rarity == Rarity.Saphire) { <text>class="active"</text> }>
+                        <a role="tab" href="#@rarityStr-@archetypeStr" data-toggle="pill">@rarity.ToString()</a>
+                    </li>
+                }
             </ul>
 
             <div class="tab-content">
-                <div id="saphire-@archetype" role="tabpanel" class="tab-pane active saphire-content">
-                    <div class="table-responsive">
-                        <table class="table text-nowrap">
-                            <thead>
-                                <tr>
-                                    <th>Insta-pick</th>
-                                    <th>God Tier</th>
-                                    <th>Excellent</th>
-                                    <th>Good</th>
-                                    <th>Above Average</th>
-                                    <th>Average</th>
-                                    <th>Below Average</th>
-                                    <th>Bad</th>
-                                    <th>Terrible</th>
-                                    <th>Brick</th>
-                                    <th>Undecided</th>
-                                </tr>
-                            </thead>
-                            <tbody></tbody>
-                        </table>
+                @foreach (var rarity in Enum.GetValues(typeof(Rarity)).Cast<Rarity>())
+                {
+                    var rarityStr = rarity.ToString().ToLower();
+                    <div id="@rarityStr-@archetypeStr" role="tabpanel" class="tab-pane @if(rarity == Rarity.Saphire) { <text>active</text> } @rarityStr-content">
+                        <ol class="tiers">
+                            @for (var i = 1; i <= 11; i++)
+                            {
+                                <li class="tier tier-@i">
+                                    <ol class="tiered-cards tier-@i"></ol>
+                                </li>
+                            }
+                        </ol>
                     </div>
-                </div>
-                <div id="emerald-@archetype" role="tabpanel" class="tab-pane emerald-content">
-                    <div class="table-responsive">
-                        <table class="table text-nowrap"">
-                            <thead>
-                                <tr>
-                                    <th>Insta-pick</th>
-                                    <th>God Tier</th>
-                                    <th>Excellent</th>
-                                    <th>Good</th>
-                                    <th>Above Average</th>
-                                    <th>Average</th>
-                                    <th>Below Average</th>
-                                    <th>Bad</th>
-                                    <th>Terrible</th>
-                                    <th>Brick</th>
-                                    <th>Undecided</th>
-                                </tr>
-                            </thead>
-                            <tbody></tbody>
-                        </table>
-                    </div>
-                </div>
-                <div id="ruby-@archetype" role="tabpanel" class="tab-pane ruby-content">
-                    <div class="table-responsive">
-                        <table class="table text-nowrap">
-                            <thead>
-                                <tr>
-                                    <th>Insta-pick</th>
-                                    <th>God Tier</th>
-                                    <th>Excellent</th>
-                                    <th>Good</th>
-                                    <th>Above Average</th>
-                                    <th>Average</th>
-                                    <th>Below Average</th>
-                                    <th>Bad</th>
-                                    <th>Terrible</th>
-                                    <th>Brick</th>
-                                    <th>Undecided</th>
-                                </tr>
-                            </thead>
-                            <tbody></tbody>
-                        </table>
-                    </div>
-                </div>
-                <div id="diamond-@archetype" role="tabpanel" class="tab-pane diamond-content">
-                    <div class="table-responsive">
-                        <table class="table text-nowrap"">
-                            <thead>
-                                <tr>
-                                    <th>Insta-pick</th>
-                                    <th>God Tier</th>
-                                    <th>Excellent</th>
-                                    <th>Good</th>
-                                    <th>Above Average</th>
-                                    <th>Average</th>
-                                    <th>Below Average</th>
-                                    <th>Bad</th>
-                                    <th>Terrible</th>
-                                    <th>Brick</th>
-                                    <th>Undecided</th>
-                                </tr>
-                            </thead>
-                            <tbody></tbody>
-                        </table>
-                    </div>
-                </div>
+                }
             </div>
         </div>
     }
