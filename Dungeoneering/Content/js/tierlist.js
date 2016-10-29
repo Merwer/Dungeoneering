@@ -34,14 +34,22 @@
                         .addClass("card")
                         .append($('<dt>').addClass('card-name'))
                         .append($('<dd>').addClass('card-score'));
+
                 if(cardList.length > cardIndex) {
                     var card = cardList[cardIndex];
                     cardDescription.removeClass('empty')
                         .addClass(card.parent.archetype || 'common')
                         .addClass(card.rarity)
                         .addClass(card.type);
+                    cardDescription.attr("data-toggle", "tooltip")
                     cardDescription.find('dt').text(card.name);
                     cardDescription.find('dd').text(card.score);
+                    cardDescription.tooltip({
+                        animated: 'fade',
+                        placement: 'bottom',
+                        title: "<img class='card-tooltip' src='" + card.image + "'/>",
+                        html: true
+                    });
                 }
                 cardItem.append(cardDescription);
                 listEle.append(cardItem);

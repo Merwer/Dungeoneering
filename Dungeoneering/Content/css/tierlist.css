@@ -126,3 +126,19 @@
 .card {
     background-color: blanchedalmond;
 }
+
+.card-tooltip {
+    width: 200px;
+}
+
+.tooltip.in {
+    opacity: 1;
+}
+
+.tooltip .tooltip-inner {
+    background-color: transparent;
+}
+
+.tooltip .tooltip-arrow {
+    display: none;
+}
