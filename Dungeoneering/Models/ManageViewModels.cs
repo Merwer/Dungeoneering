@@ -58,6 +58,13 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Models
         public string ConfirmPassword { get; set; }
     }
 
+    public class ChangeUsernameViewModel
+    {
+        [Required]
+        [Display(Name = "Username")]
+        public string UserName { get; set; }
+    }
+
     public class AddPhoneNumberViewModel
     {
         [Required]

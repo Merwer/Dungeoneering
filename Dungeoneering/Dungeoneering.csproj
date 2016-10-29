@@ -933,6 +933,7 @@
     <Content Include="Views\Shared\DisplayTemplates\ArchetypeMatchList.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\ArchetypeMatch.cshtml" />
     <Content Include="Views\Card\TierList.cshtml" />
+    <Content Include="Views\Manage\ChangeUsername.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

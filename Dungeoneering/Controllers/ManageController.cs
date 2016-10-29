@@ -55,6 +55,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
         {
             ViewBag.StatusMessage =
                 message == ManageMessageId.ChangePasswordSuccess ? "Your password has been changed."
+                : message == ManageMessageId.ChangeUsernameSuccess ? "Your username has been changed."
                 : message == ManageMessageId.SetPasswordSuccess ? "Your password has been set."
                 : message == ManageMessageId.SetTwoFactorSuccess ? "Your two-factor authentication provider has been set."
                 : message == ManageMessageId.Error ? "An error has occurred."
@@ -276,6 +277,41 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
         }
 
         //
+        // GET: /Manage/ChangePassword
+        public ActionResult ChangeUsername()
+        {
+            return View(new ChangeUsernameViewModel
+            {
+                UserName = User.Identity.GetUserName()
+            });
+        }
+
+        //
+        // POST: /Manage/ChangePassword
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> ChangeUsername(ChangeUsernameViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+            var result = await UserManager.ChangeUsernameAsync(User.Identity.GetUserId(),  model.UserName);
+            if (result.Succeeded)
+            {
+                var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
+                if (user != null)
+                {
+                    await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+                }
+                // TODO: Update all things associated to the user.
+                return RedirectToAction("Index", new { Message = ManageMessageId.ChangeUsernameSuccess });
+            }
+            AddErrors(result);
+            return View(model);
+        }
+
+        //
         // GET: /Manage/ManageLogins
         public async Task<ActionResult> ManageLogins(ManageMessageId? message)
         {
@@ -380,7 +416,8 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
             SetPasswordSuccess,
             RemoveLoginSuccess,
             RemovePhoneSuccess,
-            Error
+            Error,
+            ChangeUsernameSuccess
         }
 
 #endregion
