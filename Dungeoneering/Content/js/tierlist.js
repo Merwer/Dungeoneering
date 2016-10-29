@@ -1,4 +1,11 @@
-﻿function createTable(ele, cards) {
+﻿function getCategoryForScore(score) {
+    if (score === -1) {
+        return 0;
+    }
+    return Math.floor(score / 10);
+}
+
+function createTable(ele, cards) {
     var rarities = {
         saphire: Array.apply(null, Array(11)).map(function () { return []; }),
         emerald: Array.apply(null, Array(11)).map(function () { return []; }),
@@ -8,14 +15,11 @@
     var maxLength = 0;
     for (var index in cards) {
         var card = cards[index];
-        var categoryIndex;
-        if (card.score === -1) {
-            categoryIndex = 0;
-        } else {
-            categoryIndex = Math.floor(card.score / 10);
-        }
+        var categoryIndex = getCategoryForScore(card.score);
         var arr = rarities[card.rarity][categoryIndex];
         arr.push(card);
+        // This could be done at the end, which would be quicker, but would involve another double-loop
+        arr.sort(function (c1, c2) { return c2.score - c1.score; });
         if (arr.length > maxLength) {
             maxLength = arr.length;
         }
