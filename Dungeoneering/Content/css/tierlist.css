@@ -44,6 +44,7 @@
     border-bottom: none;
     margin: 0;
     padding: 0.5em;
+    min-width: 5em
 }
 
 .tiered-card:first-child .card-name,
