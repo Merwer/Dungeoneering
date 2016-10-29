@@ -8,8 +8,28 @@
     @Styles.Render("/Content/css/tierlist.css")
 }
 
+@functions {
+    MvcHtmlString GetTierName(int i) {
+        switch (i)
+        {
+            case 1: return new MvcHtmlString("Insta-pick");
+            case 2: return new MvcHtmlString("God Tier");
+            case 3: return new MvcHtmlString("Excellent");
+            case 4: return new MvcHtmlString("Good");
+            case 5: return new MvcHtmlString("Above Average");
+            case 6: return new MvcHtmlString("Average");
+            case 7: return new MvcHtmlString("Below Average");
+            case 8: return new MvcHtmlString("Bad");
+            case 9: return new MvcHtmlString("Terrible");
+            case 10: return new MvcHtmlString("Brick");
+            case 11: return new MvcHtmlString("Uncategorized");
+            default: return new MvcHtmlString("Unknown");
+        }
+    }
+}
+
 @{
-    ViewBag.Title = "TierList";
+        ViewBag.Title = "TierList";
 }
 
 <h2>TierList</h2>
@@ -49,7 +69,7 @@
                             @for (var i = 1; i <= 11; i++)
                             {
                                 <li class="tier tier-@i">
-                                    <header>Tier @i</header>
+                                    <header>@GetTierName(i)</header>
                                     <ol class="tiered-cards tier-@i"></ol>
                                 </li>
                             }

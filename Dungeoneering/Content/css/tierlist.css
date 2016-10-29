@@ -11,6 +11,14 @@
     border: solid 1px;
 }
 
+.tier header {
+    font-size: large;
+    font-weight: 700;
+    padding-top: .75em;
+    padding-bottom: .75em;
+    background-color: lightgreen;
+}
+
 .tiered-cards {
     list-style: none;
     padding: 0;
