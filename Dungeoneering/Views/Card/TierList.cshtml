@@ -13,16 +13,13 @@
         switch (i)
         {
             case 1: return new MvcHtmlString("Insta-pick");
-            case 2: return new MvcHtmlString("God Tier");
-            case 3: return new MvcHtmlString("Excellent");
-            case 4: return new MvcHtmlString("Good");
-            case 5: return new MvcHtmlString("Above Average");
-            case 6: return new MvcHtmlString("Average");
-            case 7: return new MvcHtmlString("Below Average");
-            case 8: return new MvcHtmlString("Bad");
-            case 9: return new MvcHtmlString("Terrible");
-            case 10: return new MvcHtmlString("Brick");
-            case 11: return new MvcHtmlString("Uncategorized");
+            case 2: return new MvcHtmlString("Good");
+            case 3: return new MvcHtmlString("Above Average");
+            case 4: return new MvcHtmlString("Average");
+            case 5: return new MvcHtmlString("Below Average");
+            case 6: return new MvcHtmlString("Bad");
+            case 7: return new MvcHtmlString("Brick");
+            case 8: return new MvcHtmlString("Uncategorized");
             default: return new MvcHtmlString("Unknown");
         }
     }
@@ -66,7 +63,7 @@
                     var rarityStr = rarity.ToString().ToLower();
                     <div id="@rarityStr-@archetypeStr" role="tabpanel" class="tab-pane @archetypeStr @rarityStr @if(rarity == Rarity.Saphire) { <text>active</text> } @rarityStr-content">
                         <ol class="tiers">
-                            @for (var i = 1; i <= 11; i++)
+                            @for (var i = 1; i <= 8; i++)
                             {
                                 <li class="tier tier-@i">
                                     <header class="header">@GetTierName(i)</header>

@@ -1,16 +1,34 @@
 ﻿function getCategoryForScore(score) {
-    if (score === -1) {
-        return 0;
+    if (score <= 100 && score > 90) {
+        return 7;
     }
-    return Math.floor(score / 10);
+    if (score <= 90 && score > 80) {
+        return 6;
+    }
+    if (score <= 80 && score > 60) {
+        return 5;
+    }
+    if (score <= 70 && score > 50) {
+        return 4;
+    }
+    if (score <= 50 && score > 30) {
+        return 3;
+    }
+    if (score <= 30 && score > 10) {
+        return 2;
+    }
+    if (score <= 10 && score > 0) {
+        return 1;
+    }
+    return 0;
 }
 
 function createTable(ele, cards) {
     var rarities = {
-        saphire: Array.apply(null, Array(11)).map(function () { return []; }),
-        emerald: Array.apply(null, Array(11)).map(function () { return []; }),
-        ruby: Array.apply(null, Array(11)).map(function () { return []; }),
-        diamond: Array.apply(null, Array(11)).map(function () { return []; })
+        saphire: Array.apply(null, Array(8)).map(function () { return []; }),
+        emerald: Array.apply(null, Array(8)).map(function () { return []; }),
+        ruby: Array.apply(null, Array(8)).map(function () { return []; }),
+        diamond: Array.apply(null, Array(8)).map(function () { return []; })
     };
     var maxLength = 0;
     for (var index in cards) {
