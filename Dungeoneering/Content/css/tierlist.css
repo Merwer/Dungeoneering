@@ -13,57 +13,42 @@
 
 .tier.tier-1 .header, 
 .tier.tier-1 .card-score {
-    background: linear-gradient(to bottom,rgba(calc(1 * 10 + 90),calc(1 * -20 + 230),0,.5), rgb(calc(1 * 10 + 90),calc(1 * -20 + 230),0))
+    background: linear-gradient(to bottom,rgba(calc(1 * 12 + 90),calc(1 * -22 + 230),0,.5), rgb(calc(1 * 12 + 90),calc(1 * -22 + 230),0))
 }
 
 .tier.tier-2 .header, 
 .tier.tier-2 .card-score {
-    background: linear-gradient(to bottom,rgba(calc(2 * 10 + 90),calc(2 * -20 + 230),0,.5), rgb(calc(2 * 10 + 90),calc(2 * -20 + 230),0))
+    background: linear-gradient(to bottom,rgba(calc(2 * 12 + 90),calc(2 * -22 + 230),0,.5), rgb(calc(2 * 12 + 90),calc(2 * -22 + 230),0))
 }
 
 .tier.tier-3 .header, 
 .tier.tier-3 .card-score {
-    background: linear-gradient(to bottom,rgba(calc(3 * 10 + 90),calc(3 * -20 + 230),0,.5), rgb(calc(3 * 10 + 90),calc(3 * -20 + 230),0))
+    background: linear-gradient(to bottom,rgba(calc(3 * 12 + 90),calc(3 * -22 + 230),0,.5), rgb(calc(3 * 12 + 90),calc(3 * -22 + 230),0))
 }
 
 .tier.tier-4 .header, 
 .tier.tier-4 .card-score {
-    background: linear-gradient(to bottom,rgba(calc(4 * 10 + 90),calc(4 * -20 + 230),0,.5), rgb(calc(4 * 10 + 90),calc(4 * -20 + 230),0))
+    background: linear-gradient(to bottom,rgba(calc(4 * 12 + 90),calc(4 * -22 + 230),0,.5), rgb(calc(4 * 12 + 90),calc(4 * -22 + 230),0))
 }
 
 .tier.tier-5 .header, 
 .tier.tier-5 .card-score {
-    background: linear-gradient(to bottom,rgba(calc(5 * 10 + 90),calc(5 * -20 + 230),0,.5), rgb(calc(5 * 10 + 90),calc(5 * -20 + 230),0))
+    background: linear-gradient(to bottom,rgba(calc(5 * 12 + 90),calc(5 * -22 + 230),0,.5), rgb(calc(5 * 12 + 90),calc(5 * -22 + 230),0))
 }
 
 .tier.tier-6 .header, 
 .tier.tier-6 .card-score {
-    background: linear-gradient(to bottom,rgba(calc(6 * 10 + 90),calc(6 * -20 + 230),0,.5), rgb(calc(6 * 10 + 90),calc(6 * -20 + 230),0))
+    background: linear-gradient(to bottom,rgba(calc(6 * 12 + 90),calc(6 * -22 + 230),0,.5), rgb(calc(6 * 12 + 90),calc(6 * -22 + 230),0))
 }
 
 .tier.tier-7 .header, 
 .tier.tier-7 .card-score {
-    background: linear-gradient(to bottom,rgba(calc(7 * 10 + 90),calc(7 * -20 + 230),0,.5), rgb(calc(7 * 10 + 90),calc(7 * -20 + 230),0))
+    background: linear-gradient(to bottom,rgba(calc(7 * 12 + 90),calc(7 * -22 + 230),0,.5), rgb(calc(7 * 12 + 90),calc(7 * -22 + 230),0))
 }
 
 .tier.tier-8 .header, 
 .tier.tier-8 .card-score {
-    background: linear-gradient(to bottom,rgba(calc(8 * 10 + 90),calc(8 * -20 + 230),0,.5), rgb(calc(8 * 10 + 90),calc(8 * -20 + 230),0))
-}
-
-.tier.tier-9 .header, 
-.tier.tier-9 .card-score {
-    background: linear-gradient(to bottom,rgba(calc(9 * 10 + 90),calc(9 * -20 + 230),0,.5), rgb(calc(9 * 10 + 90),calc(9 * -20 + 230),0))
-}
-
-.tier.tier-10 .header, 
-.tier.tier-10 .card-score {
-    background: linear-gradient(to bottom,rgba(calc(10 * 10 + 90),calc(10 * -20 + 230),0,.5), rgb(calc(10 * 10 + 90),calc(10 * -20 + 230),0))
-}
-
-.tier.tier-11 .header, 
-.tier.tier-11 .card-score {
-    background: linear-gradient(to bottom,rgba(calc(11 * 10 + 90),calc(11 * -20 + 230),0,.5), rgb(calc(11 * 10 + 90),calc(11 * -20 + 230),0))
+    background: linear-gradient(to bottom,rgba(calc(8 * 12 + 90),calc(8 * -22 + 230),0,.5), rgb(calc(8 * 12 + 90),calc(8 * -22 + 230),0))
 }
 
 .tier .header {
