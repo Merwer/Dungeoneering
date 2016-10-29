@@ -7,7 +7,6 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Models
 {
     public class Card : StaticIdEntity
     {
-        [JsonIgnore]
         [Required]
         public CardContainer Parent { get; set; }
 

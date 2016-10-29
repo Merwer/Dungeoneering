@@ -1,0 +1,68 @@
+﻿.tiers {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    overflow-x: auto;
+}
+
+.tier {
+    flex-grow: 1;
+    text-align: center;
+    border: solid 1px;
+}
+
+.tiered-cards {
+    list-style: none;
+    padding: 0;
+}
+
+.tiered-card {
+    margin: 0;
+}
+
+.card.empty {
+    content: '&nbsp';
+}
+
+.card {
+    display: flex;
+    flex-direction: row;
+    white-space: nowrap;
+    text-align: left;
+    background-color: antiquewhite;
+    margin: 0;
+}
+
+.card-name {
+    flex-grow: 1;
+    order: 1;
+    padding: 0;
+    vertical-align: middle;
+    border-top: dotted 1px;
+    border-right: dotted 1px;
+    border-left: none;
+    border-bottom: none;
+    margin: 0;
+    padding: 0.5em;
+}
+
+.tiered-card:first-child .card-name,
+.tiered-card:first-child .card-score {
+    border-top: none;
+}
+
+.card-score {
+    order: 2;
+    background-color: brown;
+    padding: 0.5em;
+    border: dotted 1px;
+    margin: 0;
+    padding: 0.5em;
+    min-width: 3em;
+    min-height: 1.5em;
+    text-align: center;
+}
+
+dl.common > dt {
+    font-weight: normal;
+}

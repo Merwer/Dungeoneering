@@ -343,6 +343,7 @@
     <Content Include="Content\css\draft.css" />
     <Content Include="Content\css\main.css" />
     <Content Include="Content\css\offcanvas.css" />
+    <Content Include="Content\css\tierlist.css" />
     <Content Include="Content\css\typeahead.css" />
     <Content Include="Content\favicon.ico" />
     <Content Include="Content\img\cards\50_Ships_Mufassah.png" />

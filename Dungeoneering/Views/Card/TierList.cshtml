@@ -4,6 +4,10 @@
     @Scripts.Render("/Content/js/tierlist.js")
 }
 
+@section styles {
+    @Styles.Render("/Content/css/tierlist.css")
+}
+
 @{
     ViewBag.Title = "TierList";
 }
@@ -40,11 +44,12 @@
                 @foreach (var rarity in Enum.GetValues(typeof(Rarity)).Cast<Rarity>())
                 {
                     var rarityStr = rarity.ToString().ToLower();
-                    <div id="@rarityStr-@archetypeStr" role="tabpanel" class="tab-pane @if(rarity == Rarity.Saphire) { <text>active</text> } @rarityStr-content">
+                    <div id="@rarityStr-@archetypeStr" role="tabpanel" class="tab-pane @archetypeStr @rarityStr @if(rarity == Rarity.Saphire) { <text>active</text> } @rarityStr-content">
                         <ol class="tiers">
                             @for (var i = 1; i <= 11; i++)
                             {
                                 <li class="tier tier-@i">
+                                    <header>Tier @i</header>
                                     <ol class="tiered-cards tier-@i"></ol>
                                 </li>
                             }
