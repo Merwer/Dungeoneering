@@ -109,7 +109,7 @@
 .card-selection .value {
     display: inline-block;
     position: absolute;
-    left: -12px;
+    left: -2px;
     margin-top: -5px;
     width: 30px;
     height: 30px;
@@ -120,7 +120,7 @@
     list-style-image: url(/Content/img/icons/health.png);
     margin-top: 0.3em;
     margin-bottom: 0.3em;
-    margin-left: 15px;
+    margin-left: 26px;
 }
 
 .card-selection .count {
