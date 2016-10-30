@@ -85,7 +85,7 @@
 }
 
 .support-selections-container .heading {
-    background-color: blue;
+    background-color: #688FC8;
 }
 
 .fight-selections-container .heading {
@@ -99,7 +99,7 @@
 }
 
 .card-selection.support {
-    background-color: darkkhaki;
+    background: linear-gradient(to right, #2A4B50, #5185B7);
 }
 
 .card-selection.fight {
