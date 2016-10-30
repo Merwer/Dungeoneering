@@ -28,7 +28,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
             {
                 return HttpNotFound("Invalid draft ID");
             }
-            if (draft.OwnerName != Username)
+            if (draft.OwnerId != UserId)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.Unauthorized);
             }
@@ -42,7 +42,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
                 RoundId = roundId.Value,
                 Options = options,
                 Selected = selected,
-                OwnerName = Username
+                OwnerId = UserId
             };
             db.Rounds.Add(round);
             db.SaveChanges();

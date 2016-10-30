@@ -7,6 +7,6 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Models
     {
         [JsonIgnore]
         [Required]
-        public string OwnerName { get; set; }
+        public string OwnerId { get; set; }
     }
 }

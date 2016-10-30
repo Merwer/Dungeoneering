@@ -24,7 +24,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
             {
                 return HttpNotFound("Invalid draft ID");
             }
-            if (draft.OwnerName != Username)
+            if (draft.OwnerId != UserId)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.Unauthorized);
             }
@@ -50,7 +50,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
             {
                 return HttpNotFound("Invalid match ID");
             }
-            if (dbMatch.Draft.OwnerName != Username)
+            if (dbMatch.Draft.OwnerId != UserId)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.Unauthorized);
             }
@@ -87,7 +87,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
             {
                 return HttpNotFound("Invalid match ID");
             }
-            if (match.Draft.OwnerName != Username)
+            if (match.Draft.OwnerId != UserId)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.Unauthorized);
             }

@@ -25,7 +25,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
         [Authorize]
         public ActionResult My()
         {
-            var data = repo.SinglePlayer(Username);
+            var data = repo.SinglePlayer(UserId);
 
             return View(data);
         }

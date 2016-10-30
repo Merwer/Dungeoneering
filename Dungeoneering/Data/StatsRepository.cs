@@ -33,7 +33,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Data
             data.VanesculaStats.Legend = Archetype.Vanescula;
             data.MorvranStats = CalculateStats<LegendSpecificStatsData>(drafts.Where(d => d.Archetype == Archetype.Morvran).ToList());
             data.MorvranStats.Legend = Archetype.Morvran;
-            data.Players = drafts.Select(d => d.OwnerName).Distinct().Count();
+            data.Players = drafts.Select(d => d.OwnerId).Distinct().Count();
 
             if (drafts.Any())
             {
@@ -122,10 +122,10 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Data
             return selectionData;
         }
         
-        public MyStatsData SinglePlayer(String username)
+        public MyStatsData SinglePlayer(String userid)
         {
             //TODO: Caching
-            var drafts = db.Drafts.Include(d => d.Matches).Where(d => d.OwnerName == username).ToList().Where(d => d.Complete).ToList();
+            var drafts = db.Drafts.Include(d => d.Matches).Where(d => d.OwnerId == userid).ToList().Where(d => d.Complete).ToList();
             var data = CalculateStats<MyStatsData>(drafts);
             data.ArianeStats = CalculateStats<LegendSpecificStatsData>(drafts.Where(d => d.Archetype == Archetype.Ariane).ToList());
             data.ArianeStats.Legend = Archetype.Ariane;

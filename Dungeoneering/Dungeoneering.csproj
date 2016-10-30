@@ -303,6 +303,10 @@
     <Compile Include="Migrations\201610081353569_SkipDrafts.Designer.cs">
       <DependentUpon>201610081353569_SkipDrafts.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201610292221306_UsernameToUserid.cs" />
+    <Compile Include="Migrations\201610292221306_UsernameToUserid.Designer.cs">
+      <DependentUpon>201610292221306_UsernameToUserid.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\CardData.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -990,6 +994,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201610081353569_SkipDrafts.resx">
       <DependentUpon>201610081353569_SkipDrafts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610292221306_UsernameToUserid.resx">
+      <DependentUpon>201610292221306_UsernameToUserid.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -14,7 +14,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
         {
             return View(
                 Request.IsAuthenticated &&
-                db.Drafts.Where(d => d.OwnerName == Username).ToList().All(d => d.Complete)
+                db.Drafts.Where(d => d.OwnerId == UserId).ToList().All(d => d.Complete)
             );
         }
 

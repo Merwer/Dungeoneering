@@ -7,6 +7,9 @@ using System.Web.Mvc;
 using Merwer.Chronicle.Dungeoneering.Tracker.Models;
 using System;
 using Merwer.Chronicle.Dungeoneering.Tracker.ViewModels.Draft;
+using System.Web;
+using Microsoft.AspNet.Identity.Owin;
+using Microsoft.AspNet.Identity;
 
 namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
 {
@@ -16,26 +19,45 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
+        private ApplicationUserManager _userManager;
+        public ApplicationUserManager UserManager
+        {
+            get
+            {
+                return _userManager ?? HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
+            }
+            private set
+            {
+                _userManager = value;
+            }
+        }
+
         [Route("my")]
         public ActionResult Index()
         {
-            return List(Username);
+            return List(User.Identity.Name);
         }
 
         [AllowAnonymous]
         [Route("u/{username}")]
         public ActionResult List(string username)
         {
+            var user = UserManager.FindByNameAsync(username).Result;
+            if(user == null)
+            {
+                return HttpNotFound("Invalid username");
+            }
+
             //TODO: Paging?
             var playerDrafts = db.Drafts
-                .Where(d => d.OwnerName == username)
+                .Where(d => d.OwnerId == user.Id)
                 .OrderByDescending(d => d.CreatedOn)
                 .ThenByDescending(d => d.Id).ToList();
             return View("List", new ListView
             {
                 Username = username,
                 Drafts = playerDrafts,
-                IsSelf = User.Identity.IsAuthenticated && Username.Equals(username),
+                IsSelf = User.Identity.IsAuthenticated && User.Identity.GetUserId() == user.Id,
                 ShowNewDraft = playerDrafts.All(draft => draft.Complete)
             });
         }
@@ -43,7 +65,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
         [Route("current")]
         public ActionResult CurrentDraft()
         {
-            Draft draft = db.Drafts.Include(d => d.Rounds).Where(d => d.OwnerName == Username).ToList().SingleOrDefault(d => !d.Complete);
+            Draft draft = db.Drafts.Include(d => d.Rounds).Where(d => d.OwnerId == UserId).ToList().SingleOrDefault(d => !d.Complete);
             if (draft == null)
             {
                 return HttpNotFound("No current draft");
@@ -64,7 +86,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
             {
                 return HttpNotFound("Invalid draft ID");
             }
-            if (User.Identity.IsAuthenticated && Username.Equals(draft.OwnerName))
+            if (User.Identity.IsAuthenticated && UserId.Equals(draft.OwnerId))
             {
                 return View("Edit", draft);
             }
@@ -76,10 +98,10 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
         public ActionResult Create(Archetype archetype)
         {
             Draft draft = new Draft();
-            draft.OwnerName = Username;
+            draft.OwnerId = UserId;
             draft.Archetype = archetype;
 
-            var playerDrafts = db.Drafts.Where(d => d.OwnerName == Username).ToList();
+            var playerDrafts = db.Drafts.Where(d => d.OwnerId == UserId).ToList();
             var currentDraft = playerDrafts.SingleOrDefault(d => !d.Complete);
             if (currentDraft != null)
             {
@@ -99,7 +121,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
             {
                 return HttpNotFound("Invalid draft ID");
             }
-            if (draft.OwnerName != Username)
+            if (draft.OwnerId != UserId)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.Unauthorized);
             }
@@ -118,7 +140,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
             {
                 return HttpNotFound("Invalid draft ID");
             }
-            if (draft.OwnerName != Username)
+            if (draft.OwnerId != UserId)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.Unauthorized);
             }
@@ -137,7 +159,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
             {
                 return HttpNotFound("Invalid draft ID");
             }
-            if (draft.OwnerName != Username)
+            if (draft.OwnerId != UserId)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.Unauthorized);
             }
@@ -156,7 +178,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
             {
                 return HttpNotFound("Invalid draft ID");
             }
-            if (draft.OwnerName != Username)
+            if (draft.OwnerId != UserId)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.Unauthorized);
             }
