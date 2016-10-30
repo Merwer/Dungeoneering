@@ -32,7 +32,9 @@ chronicle.dungeoneering.draft.read = (function ($) {
     };
 
     var addCardToSupport = function (card, count) {
-        var item = $('<li>');
+        var listItem = $('<li>');
+        var item = $('<div>').addClass('card-selection').addClass('support');
+        listItem.append(item);
         item.append($('<span>').addClass('icon').addClass('gold').addClass('value').html(card.cost));
         item.append($('<span>').addClass('name').html(card.name));
         item.append($('<span>').addClass('count').html(count));
@@ -43,11 +45,13 @@ chronicle.dungeoneering.draft.read = (function ($) {
             title: "<img class='card-tooltip' src='" + card.image + "'/>",
             html: true
         });
-        $('.support-selections').append(item);
+        $('.support-selections').append(listItem);
     };
 
     var addCardToAttack = function (card, count) {
-        var item = $('<li>');
+        var listItem = $('<li>');
+        var item = $('<div>').addClass('card-selection').addClass('fight');
+        listItem.append(item);
         item.append($('<span>').addClass('icon').addClass('health').addClass('value').html(card.health));
         item.append($('<span>').addClass('name').html(card.name));
         item.append($('<span>').addClass('count').html(count));
@@ -58,7 +62,7 @@ chronicle.dungeoneering.draft.read = (function ($) {
             title: "<img class='card-tooltip' src='" + card.image + "'/>",
             html: true
         });
-        $('.fight-selections').append(item);
+        $('.fight-selections').append(listItem);
     };
 
     var refreshRewards = function () {
@@ -80,24 +84,24 @@ chronicle.dungeoneering.draft.read = (function ($) {
 
     var refreshDeck = function () {
         $('.support-selections li').remove();
-        $('.support-selections .heading .count').html('0');
+        $('.support-selections-container .heading .count').html('0');
         var supportList = deck.supportCards().sort(sortCards('cost'));
         var supportListSum = 0;
         $.each(supportList, function (index, element) {
             addCardToSupport(element.card, element.count);
             supportListSum += element.count;
         });
-        $('.support-selections .heading .count').html(supportListSum);
+        $('.support-selections-container .heading .count').html(supportListSum);
 
         $('.fight-selections li').remove();
-        $('.fight-selections .heading .count').html('0');
+        $('.fight-selections-container .heading .count').html('0');
         var fightList = deck.fightCards().sort(sortCards('health'));
         var fightListSum = 0;
         $.each(fightList, function (index, element) {
             addCardToAttack(element.card, element.count);
             fightListSum += element.count;
         });
-        $('.fight-selections .heading .count').html(fightListSum);
+        $('.fight-selections-container .heading .count').html(fightListSum);
     };
 
     var refreshUI = function () {

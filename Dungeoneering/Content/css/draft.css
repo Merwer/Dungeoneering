@@ -74,44 +74,60 @@
     display: inline-block;
 }
 
-.card-selections {
+.previous-selections {
     color: white;
+    background-color: #38272B;
+    border: 3px solid gray;
 }
 
-.card-selections .count {
+.previous-selections .count {
     float: right;
 }
 
-.support-selections {
+.support-selections-container .heading {
     background-color: blue;
 }
 
-.fight-selections {
-    background-color: red;
+.fight-selections-container .heading {
+    background-color: #D84E5B;
 }
 
-.card-selections li {
+.card-selection {
+    border-top: 2px solid gold;
+    border-bottom: 2px solid gold;
+    margin-top: 0.4em;
+}
+
+.card-selection.support {
     background-color: darkkhaki;
 }
 
-.card-selections li .value {
+.card-selection.fight {
+    background: linear-gradient(to right, #432C1C, #AD5B58);
+}
+
+.card-selection .value {
     display: inline-block;
+    position: absolute;
+    left: -12px;
+    margin-top: -5px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
 }
 
-.card-selections li .count {
-    background-color: darkkhaki;
+.card-selection .name {
+    list-style-image: url(/Content/img/icons/health.png);
+    margin-top: 0.3em;
+    margin-bottom: 0.3em;
+    margin-left: 15px;
 }
 
-.card-selections li .count:before {
+.card-selection .count {
+}
+
+.card-selection .count:before {
     content: "x";
-}
-
-.support-selections li .value {
-    background-color: gold;
-}
-
-.fight-selections li .value {
-    background-color: red;
 }
 
 .card-tooltip {
