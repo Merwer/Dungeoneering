@@ -1,29 +1,4 @@
-﻿function getCategoryForScore(score) {
-    if (score <= 100 && score > 90) {
-        return 7;
-    }
-    if (score <= 90 && score > 80) {
-        return 6;
-    }
-    if (score <= 80 && score > 60) {
-        return 5;
-    }
-    if (score <= 70 && score > 50) {
-        return 4;
-    }
-    if (score <= 50 && score > 30) {
-        return 3;
-    }
-    if (score <= 30 && score > 10) {
-        return 2;
-    }
-    if (score <= 10 && score > 0) {
-        return 1;
-    }
-    return 0;
-}
-
-function createTable(ele, cards) {
+﻿function createTable(ele, cards) {
     var rarities = {
         saphire: Array.apply(null, Array(8)).map(function () { return []; }),
         emerald: Array.apply(null, Array(8)).map(function () { return []; }),
@@ -46,8 +21,8 @@ function createTable(ele, cards) {
     for (var rarityIndex in rarities) {
         var content = $('.' + rarityIndex + "-content", ele);
         var categories = rarities[rarityIndex];
-        for (var categoryIndex = categories.length - 1; categoryIndex >= 0; categoryIndex--) {
-            var listEle = $('ol.tier-' + (categories.length - categoryIndex), content);
+        for (var categoryIndex = 0; categoryIndex < categories.length; categoryIndex++) {
+            var listEle = $('ol.tier-' + categoryIndex, content);
             var cardList = categories[categoryIndex];
             for (var cardIndex = 0; cardIndex < maxLength; cardIndex++) {
                 var cardItem = $('<li>').addClass("tiered-card");

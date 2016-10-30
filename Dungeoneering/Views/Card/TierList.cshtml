@@ -1,25 +1,26 @@
 ﻿@using Merwer.Chronicle.Dungeoneering.Tracker.Models;
 
 @section scripts {
-    @Scripts.Render("/Content/js/tierlist.js")
+    @Scripts.Render("/Content/js/tiers.js", "/Content/js/tierlist.js")
 }
 
 @section styles {
-    @Styles.Render("/Content/css/tierlist.css")
+    @Styles.Render("/Content/css/tierlist.css",
+    "/Content/css/tiers.css")
 }
 
 @functions {
     MvcHtmlString GetTierName(int i) {
         switch (i)
         {
-            case 1: return new MvcHtmlString("Insta-pick");
-            case 2: return new MvcHtmlString("Good");
-            case 3: return new MvcHtmlString("Above Average");
-            case 4: return new MvcHtmlString("Average");
-            case 5: return new MvcHtmlString("Below Average");
-            case 6: return new MvcHtmlString("Bad");
-            case 7: return new MvcHtmlString("Brick");
-            case 8: return new MvcHtmlString("Uncategorized");
+            case 0: return new MvcHtmlString("Insta-pick");
+            case 1: return new MvcHtmlString("Good");
+            case 2: return new MvcHtmlString("Above Average");
+            case 3: return new MvcHtmlString("Average");
+            case 4: return new MvcHtmlString("Below Average");
+            case 5: return new MvcHtmlString("Bad");
+            case 6: return new MvcHtmlString("Brick");
+            case 7: return new MvcHtmlString("Uncategorized");
             default: return new MvcHtmlString("Unknown");
         }
     }
@@ -63,7 +64,7 @@
                     var rarityStr = rarity.ToString().ToLower();
                     <div id="@rarityStr-@archetypeStr" role="tabpanel" class="tab-pane @archetypeStr @rarityStr @if(rarity == Rarity.Saphire) { <text>active</text> } @rarityStr-content">
                         <ol class="tiers">
-                            @for (var i = 1; i <= 8; i++)
+                            @for (var i = 0; i < 8; i++)
                             {
                                 <li class="tier tier-@i">
                                     <header class="header">@GetTierName(i)</header>
