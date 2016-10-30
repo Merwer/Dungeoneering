@@ -163,6 +163,9 @@ chronicle.dungeoneering.draft.read = (function ($) {
             return null;
         }
 
+        var tier = getCategoryForScore(selectedCard.score);
+        nextSlot.removeClass("tier-0 tier-1 tier-2 tier-3 tier-4 tier-5 tier-6 tier-7")
+            .addClass("tier-" + tier);
         img = $(nextSlot.children('img').eq(0));
         img.attr('src', selectedCard.image);
         score = $(nextSlot.children('.card-score').eq(0));
