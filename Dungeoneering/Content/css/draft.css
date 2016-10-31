@@ -78,10 +78,15 @@
     color: white;
     background-color: #38272B;
     border: 3px solid gray;
+    padding-bottom: 0;
 }
 
 .previous-selections .count {
     float: right;
+}
+
+.heading .name {
+    margin-left: 3em;
 }
 
 .support-selections-container .heading {
@@ -90,6 +95,10 @@
 
 .fight-selections-container .heading {
     background-color: #D84E5B;
+}
+
+.fight-selections {
+    margin-bottom: 0;
 }
 
 .card-selection {
