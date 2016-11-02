@@ -218,11 +218,14 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
 
         private ActionResult CreateDraftImage(Draft draft)
         {
-            var cardIds = draft.Rounds.SelectMany(r => r.Selected).ToList();
+            var cardIds = draft.Rounds.SelectMany(r => r.Selected);
+            var cardIdMap = cardIds.Distinct().ToDictionary(
+                cardId => cardId, cardId => cardIds.Count(c => c == cardId));
             var cards = db.Cards.Include(c => c.Parent)
-                    .Where(c => cardIds.Contains((int)c.Id)).ToList();
-            var supports = cards.Where(c => c.Type == CardType.Support).OrderBy(c => c.Cost);
-            var creatures = cards.Where(c => c.Type == CardType.Combat).OrderBy(c => c.Health);
+                    .Where(c => cardIds.Contains((int)c.Id))
+                    .ToDictionary(card => card, card => cardIds.Count(c => c == card.Id));
+            var supports = cards.Where(c => c.Key.Type == CardType.Support).OrderBy(c => c.Key.Cost);
+            var creatures = cards.Where(c => c.Key.Type == CardType.Combat).OrderBy(c => c.Key.Health);
             var maxCount = Math.Max(supports.Count(), creatures.Count());
             using (Bitmap image = new Bitmap(IMAGE_WIDTH, (maxCount * IMAGE_LINE_HEIGHT) + IMAGE_HEADER_HEIGHT))
             {
@@ -261,16 +264,16 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
             g.DrawString(text2, headerFont, drawBrush, new PointF(x, y + (IMAGE_LINE_HEIGHT * 2)));
         }
 
-        private void CreateSupports(Graphics g, IEnumerable<Card> supports, int x, int y)
+        private void CreateSupports(Graphics g, IOrderedEnumerable<KeyValuePair<Card, int>> supports, int x, int y)
         {
-            int count = supports.Count();
+            int count = supports.Sum(kvp => kvp.Value);
             string text = "     Support";
             DrawSupport(g, headerFont, text, count, x, y);
             int currY = y + IMAGE_SECTION_BUFFER;
-            foreach(Card card in supports)
+            foreach(KeyValuePair<Card, int> entry in supports)
             {
                 currY += IMAGE_LINE_HEIGHT;
-                DrawSupport(g, itemFont, card.Name, 1, x, currY);
+                DrawSupport(g, itemFont, entry.Key.Name, entry.Value, x, currY);
             }
         }
 
@@ -284,16 +287,16 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
             g.DrawString("x" + count.ToString(), font, drawBrush, new PointF(x + IMAGE_LINE_WIDTH - IMAGE_COUNT_OFFSET, y));
         }
 
-        private void CreateCombats(Graphics g, IEnumerable<Card> combats, int x, int y)
+        private void CreateCombats(Graphics g, IOrderedEnumerable<KeyValuePair<Card, int>> combats, int x, int y)
         {
-            int count = combats.Count();
+            int count = combats.Sum(kvp => kvp.Value);
             string text = "      Creatures";
             DrawCombat(g, headerFont, text, count, x, y);
             int currY = y + IMAGE_SECTION_BUFFER;
-            foreach (Card card in combats)
+            foreach (KeyValuePair<Card, int> entry in combats)
             {
                 currY += IMAGE_LINE_HEIGHT;
-                DrawCombat(g, itemFont, card.Name, 1, x, currY);
+                DrawCombat(g, itemFont, entry.Key.Name, entry.Value, x, currY);
             }
         }
 
