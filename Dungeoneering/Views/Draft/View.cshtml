@@ -7,6 +7,7 @@
     var complete = Model.DraftComplete;
     var wins = @Model.Matches.Count(m => m.Win);
     var losses = @Model.Matches.Count(m => !m.Win);
+    var image = "";//Url.Action("Image", new { id = Model.Id });
 }
 
 @section meta {
@@ -21,7 +22,7 @@
     {
         <meta property="og:description" content="@Model.Archetype Draft" />
     }
-    <meta property="og:image" content="@Url.Action("Thumb", new { Id = Model.Id })" />
+    <meta property="og:image" content="@image" />
 }
 
 @section styles {
