@@ -14,7 +14,7 @@
             ? Model.Archetype + " Dungeon Run: " + wins + " - " + losses
             : Model.Archetype + " Draft";
         var complete = Model.DraftComplete;
-        var image = Url.Action("Image", new { id = Model.Id });
+        var image = Url.Action("Image", "Draft", new { id = Model.Id }, Request.Url.Scheme);
     }
     <!-- for Google -->
     <meta name="description" content="@description" />

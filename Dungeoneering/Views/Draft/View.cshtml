@@ -7,7 +7,7 @@
     var complete = Model.DraftComplete;
     var wins = Model.Matches.Count(m => m.Win);
     var losses = Model.Matches.Count(m => !m.Win);
-    var image = Url.Action("Image", new { id = Model.Id });
+    var image = Url.Action("Image", "Draft", new { id = Model.Id }, Request.Url.Scheme);
 }
 
 @section meta {
