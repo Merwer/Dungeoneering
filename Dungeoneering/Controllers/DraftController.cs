@@ -12,6 +12,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.AspNet.Identity;
 using System.Drawing;
 using System.IO;
+using System.Drawing.Text;
 
 namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
 {
@@ -209,6 +210,9 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
         const int IMAGE_SEPARATOR_BETWEEN_SECTIONS = 20;
         const int IMAGE_SECTION_BUFFER = 5;
         const int IMAGE_LINE_HEIGHT = 20;
+        const int IMAGE_HEADER_OFFSET = 50;
+        private static readonly Font itemFont = new Font("Arial", 12, FontStyle.Regular, GraphicsUnit.Pixel);
+        private static readonly Font headerFont = new Font("Arial", 12, FontStyle.Bold, GraphicsUnit.Pixel);
 
         private ActionResult CreateDraftImage(Draft draft)
         {
@@ -221,6 +225,8 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
             {
                 using (Graphics g = Graphics.FromImage(image))
                 {
+                    g.TextRenderingHint = TextRenderingHint.AntiAliasGridFit;
+                    g.Clear(Color.White);
                     CreateSummary(g, draft, 0, 0);
                     CreateSupports(g, supports, 0, 60);
                     CreateCombats(g, creatures, 0, 80 + ((supports.Count() + 1) * IMAGE_LINE_HEIGHT));
@@ -236,8 +242,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
 
         private void CreateSummary(Graphics g, Draft d, int x, int y)
         {
-            Font drawFont = new Font("Arial", 10);
-            SolidBrush drawBrush = new SolidBrush(Color.Black);
+            Brush drawBrush = new SolidBrush(Color.Black);
             string text1, text2;
             var wins = d.Matches.Count(m => m.Win);
             var losses = d.Matches.Count(m => !m.Win);
@@ -248,57 +253,55 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
                 text1 = "Dungeon Draft (" + d.Archetype + ")";
                 text2 = "Still Drafting";
             }
-            g.DrawString("chroniclecompass.com/Drafts/" + d.Id, drawFont, drawBrush, x, y);
-            g.DrawString(text1, drawFont, drawBrush, x, y + IMAGE_LINE_HEIGHT);
-            g.DrawString(text2, drawFont, drawBrush, x, y + (IMAGE_LINE_HEIGHT * 2));
+            g.DrawString("chroniclecompass.com/Drafts/" + d.Id, headerFont, drawBrush, new PointF(x, y));
+            g.DrawString(text1, itemFont, drawBrush, new PointF(x, y + IMAGE_LINE_HEIGHT));
+            g.DrawString(text2, itemFont, drawBrush, new PointF(x, y + (IMAGE_LINE_HEIGHT * 2)));
         }
 
         private void CreateSupports(Graphics g, IEnumerable<Card> supports, int x, int y)
         {
             int count = supports.Count();
-            string text = "Support";
-            DrawSupport(g, text, count, x, y);
+            string text = "     Support";
+            DrawSupport(g, headerFont, text, count, x, y);
             int currY = y + IMAGE_SECTION_BUFFER;
             foreach(Card card in supports)
             {
                 currY += IMAGE_LINE_HEIGHT;
-                DrawSupport(g, card.Name, 1, x, currY);
+                DrawSupport(g, itemFont, card.Name, 1, x, currY);
             }
         }
 
-        private void DrawSupport(Graphics g, string text, int count, int x, int y)
+        private void DrawSupport(Graphics g, Font font, string text, int count, int x, int y)
         {
             Brush pen = new SolidBrush(Color.Blue);
             g.FillRectangle(pen, x, y, IMAGE_WIDTH, IMAGE_LINE_HEIGHT);
 
-            Font drawFont = new Font("Arial", 10);
             SolidBrush drawBrush = new SolidBrush(Color.White);
-            g.DrawString(text, drawFont, drawBrush, x, y);
-            g.DrawString("x" + count.ToString(), drawFont, drawBrush, x + IMAGE_WIDTH - 30, y);
+            g.DrawString(text, font, drawBrush, new PointF(x, y));
+            g.DrawString("x" + count.ToString(), font, drawBrush, new PointF(IMAGE_WIDTH - 30, y));
         }
 
         private void CreateCombats(Graphics g, IEnumerable<Card> combats, int x, int y)
         {
             int count = combats.Count();
-            string text = "Creatures";
-            DrawCombat(g, text, count, x, y);
+            string text = "      Creatures";
+            DrawCombat(g, headerFont, text, count, x, y);
             int currY = y + IMAGE_SECTION_BUFFER;
             foreach (Card card in combats)
             {
                 currY += IMAGE_LINE_HEIGHT;
-                DrawCombat(g, card.Name, 1, x, currY);
+                DrawCombat(g, itemFont, card.Name, 1, x, currY);
             }
         }
 
-        private void DrawCombat(Graphics g, string text, int count, int x, int y)
+        private void DrawCombat(Graphics g, Font font, string text, int count, int x, int y)
         {
             Brush pen = new SolidBrush(Color.Red);
             g.FillRectangle(pen, x, y, IMAGE_WIDTH, IMAGE_LINE_HEIGHT);
 
-            Font drawFont = new Font("Arial", 10);
             SolidBrush drawBrush = new SolidBrush(Color.White);
-            g.DrawString(text, drawFont, drawBrush, x, y);
-            g.DrawString("x" + count.ToString(), drawFont, drawBrush, x + IMAGE_WIDTH - 30, y);
+            g.DrawString(text, font, drawBrush, new PointF(x, y));
+            g.DrawString("x" + count.ToString(), font, drawBrush, new PointF(IMAGE_WIDTH - 30, y));
         }
 
         protected override void Dispose(bool disposing)
