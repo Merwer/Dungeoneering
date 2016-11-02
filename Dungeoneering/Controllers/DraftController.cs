@@ -212,6 +212,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
         const int IMAGE_LINE_HEIGHT = 26;
         const int IMAGE_HEADER_OFFSET = 10;
         const int IMAGE_HEADER_HEIGHT = IMAGE_LINE_HEIGHT * 3 + IMAGE_HEADER_OFFSET;
+        const int IMAGE_COUNT_OFFSET = 35;
         private static readonly Font itemFont = new Font("Arial", 18, FontStyle.Regular, GraphicsUnit.Pixel);
         private static readonly Font headerFont = new Font("Arial", 18, FontStyle.Bold, GraphicsUnit.Pixel);
 
@@ -276,11 +277,11 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
         private void DrawSupport(Graphics g, Font font, string text, int count, int x, int y)
         {
             Brush pen = new SolidBrush(Color.Blue);
-            g.FillRectangle(pen, x, y, IMAGE_WIDTH, IMAGE_LINE_HEIGHT);
+            g.FillRectangle(pen, x, y, IMAGE_LINE_WIDTH, IMAGE_LINE_HEIGHT);
 
             SolidBrush drawBrush = new SolidBrush(Color.White);
             g.DrawString(text, font, drawBrush, new PointF(x, y));
-            g.DrawString("x" + count.ToString(), font, drawBrush, new PointF(IMAGE_WIDTH - 30, y));
+            g.DrawString("x" + count.ToString(), font, drawBrush, new PointF(x + IMAGE_LINE_WIDTH - IMAGE_COUNT_OFFSET, y));
         }
 
         private void CreateCombats(Graphics g, IEnumerable<Card> combats, int x, int y)
@@ -299,11 +300,11 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
         private void DrawCombat(Graphics g, Font font, string text, int count, int x, int y)
         {
             Brush pen = new SolidBrush(Color.Red);
-            g.FillRectangle(pen, x, y, IMAGE_WIDTH, IMAGE_LINE_HEIGHT);
+            g.FillRectangle(pen, x, y, IMAGE_LINE_WIDTH, IMAGE_LINE_HEIGHT);
 
             SolidBrush drawBrush = new SolidBrush(Color.White);
             g.DrawString(text, font, drawBrush, new PointF(x, y));
-            g.DrawString("x" + count.ToString(), font, drawBrush, new PointF(IMAGE_WIDTH - 30, y));
+            g.DrawString("x" + count.ToString(), font, drawBrush, new PointF(x + IMAGE_LINE_WIDTH - IMAGE_COUNT_OFFSET, y));
         }
 
         protected override void Dispose(bool disposing)
