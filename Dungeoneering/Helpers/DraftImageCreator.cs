@@ -39,7 +39,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Helpers
         const int SECTION_BUFFER = 20;
         const int SECTION_WIDTH = 250;
         const int SECTION_HEADER_BUFFER = 5;
-        const int SECTION_HEADER_LINE_HEIGHT = LINE_HEIGHT;
+        const int SECTION_HEADER_LINE_HEIGHT = LINE_HEIGHT; //TODO: Right now, this must match LINE_HEIGHT
         const int SECTION_HEADER_HEIGHT = SECTION_HEADER_LINE_HEIGHT + SECTION_HEADER_BUFFER;
         const int SECTION_HEADER_FONT_SIZE = LINE_FONT_SIZE;
 
@@ -51,6 +51,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Helpers
 
         // Image
         const int IMAGE_WIDTH = SECTION_WIDTH * 2 + SECTION_BUFFER;
+        const int IMAGE_MARGIN = 2; // TODO: Unused
 
         private static readonly Font itemFont = new Font("Arial", LINE_FONT_SIZE, FontStyle.Regular, GraphicsUnit.Pixel);
         private static readonly Font headerFont = new Font("Arial", HEADER_FONT_SIZE, FontStyle.Bold, GraphicsUnit.Pixel);
@@ -65,7 +66,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Helpers
                 using (Graphics g = Graphics.FromImage(image))
                 {
                     g.TextRenderingHint = TextRenderingHint.AntiAliasGridFit;
-                    g.Clear(Color.White);
+                    g.Clear(Color.LightGray);
                     CreateSummary(g, draft, 0, 0);
                     CreateSupportSection(g, supports, 0, HEADER_HEIGHT);
                     CreateCombatSection(g, creatures, SECTION_WIDTH + SECTION_BUFFER, HEADER_HEIGHT);
