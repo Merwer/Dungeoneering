@@ -21,23 +21,24 @@
     {
         <meta property="og:description" content="@Model.Archetype Draft" />
     }
-@*    <meta property="og:image" content="http://static01.nyt.com/images/2015/02/19/arts/international/19iht-btnumbers19A/19iht-btnumbers19A-facebookJumbo-v2.jpg" />*@
+    <meta property="og:image" content="@Url.Action("Thumb", new { Id = Model.Id })" />
 }
 
 @section styles {
-    @Styles.Render("/Content/css/typeahead.css",
-    "/Content/css/main.css",
-    "/Content/css/draft.css",
-    "/Content/css/offcanvas.css",
-    "/Content/css/tiers.css")
+        @Styles.Render("/Content/css/typeahead.css",
+        "/Content/css/main.css",
+        "/Content/css/draft.css",
+        "/Content/css/offcanvas.css",
+        "/Content/css/tiers.css")
 }
 
-@section scripts {
-    @Scripts.Render("/Content/js/vendor/bootstrap.min.js",
-    "/Content/js/vendor/typeahead.bundle.js",
-    "/Content/js/vendor/i18next.min.js",
-    "/Content/js/vendor/i18nextXHRBackend.min.js",
-    "/Content/js/vendor/jquery-i18next.min.js")
+    @section scripts {
+        @Scripts.Render("/Content/js/vendor/bootstrap.min.js",
+        "/Content/js/vendor/typeahead.bundle.js",
+        "/Content/js/vendor/i18next.min.js",
+        "/Content/js/vendor/i18nextXHRBackend.min.js",
+        "/Content/js/vendor/jquery-i18next.min.js")
+
 
     @Scripts.Render("/Content/js/main.js",
     "/Content/js/chronicle-base.js",
