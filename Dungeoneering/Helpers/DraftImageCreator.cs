@@ -30,7 +30,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Helpers
 
         // Line
         const int COUNT_OFFSET = 35;
-        const int LINE_BUFFER = 0;
+        const int LINE_BUFFER = 2;
         const int LINE_HEIGHT = 26;
         const int TEXT_VERTICAL_MARGIN = 2;
         const int LINE_FONT_SIZE = 18;
@@ -39,7 +39,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Helpers
         const int SECTION_BUFFER = 20;
         const int SECTION_WIDTH = 250;
         const int SECTION_HEADER_BUFFER = 5;
-        const int SECTION_HEADER_LINE_HEIGHT = 20;
+        const int SECTION_HEADER_LINE_HEIGHT = LINE_HEIGHT;
         const int SECTION_HEADER_HEIGHT = SECTION_HEADER_LINE_HEIGHT + SECTION_HEADER_BUFFER;
         const int SECTION_HEADER_FONT_SIZE = LINE_FONT_SIZE;
 
@@ -117,7 +117,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Helpers
             {
                 DrawSupportLine(g, itemFont, entry.Key.Name, entry.Value, xOffset, currY);
                 DrawBorder(g, xOffset, currY);
-                currY += LINE_HEIGHT;
+                currY += LINE_HEIGHT + LINE_BUFFER;
             }
         }
 
@@ -147,7 +147,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Helpers
             {
                 DrawCombatLine(g, itemFont, entry.Key.Name, entry.Value, xOffset, currY);
                 DrawBorder(g, xOffset, currY);
-                currY += LINE_HEIGHT;
+                currY += LINE_HEIGHT + LINE_BUFFER;
             }
         }
 
