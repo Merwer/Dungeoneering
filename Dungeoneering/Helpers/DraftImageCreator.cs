@@ -7,6 +7,7 @@ using System.Drawing.Text;
 using System.IO;
 using System.Collections.Generic;
 using System.Drawing.Imaging;
+using System.Drawing.Drawing2D;
 
 namespace Merwer.Chronicle.Dungeoneering.Tracker.Helpers
 {
@@ -32,9 +33,12 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Helpers
         const int COUNT_OFFSET = 35;
         const int LINE_BUFFER = 2;
         const int LINE_HEIGHT = 26;
-        const int LINE_TEXT_OFFSET = 20;
+        const int LINE_TEXT_OFFSET = 25;
         const int TEXT_VERTICAL_MARGIN = 2;
         const int LINE_FONT_SIZE = 18;
+
+        const string COIN_FILE_LOC = "/Content/img/icons/gold.png";
+        const string HEART_FILE_LOC = "/Content/img/icons/health.png";
 
         // Section
         const int SECTION_BUFFER = 20;
@@ -126,23 +130,23 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Helpers
 
         private void DrawSupportHeaderLine(Graphics g, string text, int count, int xOffset, int yOffset)
         {
-            Brush pen = new SolidBrush(Color.Blue);
+            Brush pen = new LinearGradientBrush(new PointF(xOffset, yOffset), new PointF(xOffset + SECTION_WIDTH, yOffset), Color.Black, Color.Blue);
             g.FillRectangle(pen, xOffset, yOffset, SECTION_WIDTH, LINE_HEIGHT);
 
             SolidBrush drawBrush = new SolidBrush(Color.White);
-            g.DrawString(text, headerFont, drawBrush, new PointF(xOffset + SECTION_HEADER_TEXT_OFFSET, yOffset + TEXT_VERTICAL_MARGIN));
-            g.DrawString("x" + count.ToString(), headerFont, drawBrush, new PointF(xOffset + SECTION_WIDTH - COUNT_OFFSET, yOffset + TEXT_VERTICAL_MARGIN));
+            g.DrawString(text, headerFont, drawBrush, xOffset + SECTION_HEADER_TEXT_OFFSET, yOffset + TEXT_VERTICAL_MARGIN);
+            g.DrawString("x" + count.ToString(), headerFont, drawBrush, xOffset + SECTION_WIDTH - COUNT_OFFSET, yOffset + TEXT_VERTICAL_MARGIN);
         }
 
         private void DrawSupportLine(Graphics g, string text, int count, int xOffset, int yOffset)
         {
-            Brush pen = new SolidBrush(Color.Blue);
+            Brush pen = new LinearGradientBrush(new PointF(xOffset, yOffset), new PointF(xOffset + SECTION_WIDTH, yOffset), Color.Black, Color.Blue);
             g.FillRectangle(pen, xOffset, yOffset, SECTION_WIDTH, LINE_HEIGHT);
             DrawBorder(g, xOffset, yOffset);
 
             SolidBrush drawBrush = new SolidBrush(Color.White);
-            g.DrawString(text, itemFont, drawBrush, new PointF(xOffset + LINE_TEXT_OFFSET, yOffset + TEXT_VERTICAL_MARGIN));
-            g.DrawString("x" + count.ToString(), itemFont, drawBrush, new PointF(xOffset + SECTION_WIDTH - COUNT_OFFSET, yOffset + TEXT_VERTICAL_MARGIN));
+            g.DrawString(text, itemFont, drawBrush, xOffset + LINE_TEXT_OFFSET, yOffset + TEXT_VERTICAL_MARGIN);
+            g.DrawString("x" + count.ToString(), itemFont, drawBrush, xOffset + SECTION_WIDTH - COUNT_OFFSET, yOffset + TEXT_VERTICAL_MARGIN);
         }
 
         private void DrawBorder(Graphics g, int x, int y)
@@ -167,22 +171,22 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Helpers
 
         private void DrawCombatHeaderLine(Graphics g, string text, int count, int xOffset, int yOffset)
         {
-            Brush pen = new SolidBrush(Color.Red);
+            Brush pen = new LinearGradientBrush(new PointF(xOffset, yOffset), new PointF(xOffset + SECTION_WIDTH, yOffset), Color.Black, Color.Red);
             g.FillRectangle(pen, xOffset, yOffset, SECTION_WIDTH, LINE_HEIGHT);
 
             SolidBrush drawBrush = new SolidBrush(Color.White);
-            g.DrawString(text, headerFont, drawBrush, new PointF(xOffset + SECTION_HEADER_TEXT_OFFSET, yOffset + TEXT_VERTICAL_MARGIN));
-            g.DrawString("x" + count.ToString(), headerFont, drawBrush, new PointF(xOffset + SECTION_WIDTH - COUNT_OFFSET, yOffset + TEXT_VERTICAL_MARGIN));
+            g.DrawString(text, headerFont, drawBrush, xOffset + SECTION_HEADER_TEXT_OFFSET, yOffset + TEXT_VERTICAL_MARGIN);
+            g.DrawString("x" + count.ToString(), headerFont, drawBrush, xOffset + SECTION_WIDTH - COUNT_OFFSET, yOffset + TEXT_VERTICAL_MARGIN);
         }
 
         private void DrawCombatLine(Graphics g, string text, int count, int xOffset, int yOffset)
         {
-            Brush pen = new SolidBrush(Color.Red);
+            Brush pen = new LinearGradientBrush(new PointF(xOffset, yOffset), new PointF(xOffset + SECTION_WIDTH, yOffset), Color.Black, Color.Red);
             g.FillRectangle(pen, xOffset, yOffset, SECTION_WIDTH, LINE_HEIGHT);
 
             SolidBrush drawBrush = new SolidBrush(Color.White);
-            g.DrawString(text, itemFont, drawBrush, new PointF(xOffset + LINE_TEXT_OFFSET, yOffset + TEXT_VERTICAL_MARGIN));
-            g.DrawString("x" + count.ToString(), itemFont, drawBrush, new PointF(xOffset + SECTION_WIDTH - COUNT_OFFSET, yOffset + TEXT_VERTICAL_MARGIN));
+            g.DrawString(text, itemFont, drawBrush, xOffset + LINE_TEXT_OFFSET, yOffset + TEXT_VERTICAL_MARGIN);
+            g.DrawString("x" + count.ToString(), itemFont, drawBrush, xOffset + SECTION_WIDTH - COUNT_OFFSET, yOffset + TEXT_VERTICAL_MARGIN);
         }
     }
 }
