@@ -111,7 +111,8 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
             var cards = db.Cards.Include(c => c.Parent)
                     .Where(c => cardIds.Contains((int)c.Id))
                     .ToDictionary(card => card, card => cardIds.Count(c => c == card.Id));
-            return File(new DraftImageCreator().CreateDraftImage(draft, cards), "image/png");
+            var creator = new DraftImageCreator();
+            return File(creator.CreateDraftImage(draft, cards), creator.GetImageFormatString());
         }
 
         [HttpPost]
