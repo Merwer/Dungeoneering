@@ -204,15 +204,16 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
             return new HttpStatusCodeResult(HttpStatusCode.OK);
         }
 
-        const int IMAGE_WIDTH = 250;
-        const int IMAGE_HEADER_HEIGHT = 125;
-        const int IMAGE_SECTION_HEADER_HEIGHT = 20;
+        const int IMAGE_LINE_WIDTH = 250;
         const int IMAGE_SEPARATOR_BETWEEN_SECTIONS = 20;
+        const int IMAGE_WIDTH = IMAGE_LINE_WIDTH * 2 + IMAGE_SEPARATOR_BETWEEN_SECTIONS;
+        const int IMAGE_SECTION_HEADER_HEIGHT = 20;
         const int IMAGE_SECTION_BUFFER = 5;
-        const int IMAGE_LINE_HEIGHT = 20;
-        const int IMAGE_HEADER_OFFSET = 50;
-        private static readonly Font itemFont = new Font("Arial", 12, FontStyle.Regular, GraphicsUnit.Pixel);
-        private static readonly Font headerFont = new Font("Arial", 12, FontStyle.Bold, GraphicsUnit.Pixel);
+        const int IMAGE_LINE_HEIGHT = 26;
+        const int IMAGE_HEADER_OFFSET = 10;
+        const int IMAGE_HEADER_HEIGHT = IMAGE_LINE_HEIGHT * 3 + IMAGE_HEADER_OFFSET;
+        private static readonly Font itemFont = new Font("Arial", 18, FontStyle.Regular, GraphicsUnit.Pixel);
+        private static readonly Font headerFont = new Font("Arial", 18, FontStyle.Bold, GraphicsUnit.Pixel);
 
         private ActionResult CreateDraftImage(Draft draft)
         {
@@ -221,15 +222,16 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
                     .Where(c => cardIds.Contains((int)c.Id)).ToList();
             var supports = cards.Where(c => c.Type == CardType.Support).OrderBy(c => c.Cost);
             var creatures = cards.Where(c => c.Type == CardType.Combat).OrderBy(c => c.Health);
-            using (Bitmap image = new Bitmap(IMAGE_WIDTH, (cards.Count() * IMAGE_LINE_HEIGHT) + IMAGE_HEADER_HEIGHT))
+            var maxCount = Math.Max(supports.Count(), creatures.Count());
+            using (Bitmap image = new Bitmap(IMAGE_WIDTH, (maxCount * IMAGE_LINE_HEIGHT) + IMAGE_HEADER_HEIGHT))
             {
                 using (Graphics g = Graphics.FromImage(image))
                 {
                     g.TextRenderingHint = TextRenderingHint.AntiAliasGridFit;
                     g.Clear(Color.White);
                     CreateSummary(g, draft, 0, 0);
-                    CreateSupports(g, supports, 0, 60);
-                    CreateCombats(g, creatures, 0, 80 + ((supports.Count() + 1) * IMAGE_LINE_HEIGHT));
+                    CreateSupports(g, supports, 0, IMAGE_HEADER_HEIGHT);
+                    CreateCombats(g, creatures, IMAGE_LINE_WIDTH + IMAGE_SEPARATOR_BETWEEN_SECTIONS, IMAGE_HEADER_HEIGHT);
                 }
 
                 MemoryStream ms = new MemoryStream();
@@ -253,9 +255,9 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Controllers
                 text1 = "Dungeon Draft (" + d.Archetype + ")";
                 text2 = "Still Drafting";
             }
-            g.DrawString("chroniclecompass.com/Drafts/" + d.Id, headerFont, drawBrush, new PointF(x, y));
+            g.DrawString("chroniclecompass.com/Drafts/" + d.Id, itemFont, drawBrush, new PointF(x, y));
             g.DrawString(text1, itemFont, drawBrush, new PointF(x, y + IMAGE_LINE_HEIGHT));
-            g.DrawString(text2, itemFont, drawBrush, new PointF(x, y + (IMAGE_LINE_HEIGHT * 2)));
+            g.DrawString(text2, headerFont, drawBrush, new PointF(x, y + (IMAGE_LINE_HEIGHT * 2)));
         }
 
         private void CreateSupports(Graphics g, IEnumerable<Card> supports, int x, int y)
