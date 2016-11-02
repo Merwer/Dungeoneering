@@ -7,11 +7,12 @@
     var complete = Model.DraftComplete;
     var wins = Model.Matches.Count(m => m.Win);
     var losses = Model.Matches.Count(m => !m.Win);
+    var url = Url.Action("View", "Draft", new { id = Model.Id }, Request.Url.Scheme);
     var image = Url.Action("Image", "Draft", new { id = Model.Id }, Request.Url.Scheme);
 }
 
 @section meta {
-    @*<meta property="og:url" content="http://www.nytimes.com/2015/02/19/arts/international/when-great-minds-dont-think-alike.html" />*@
+    <meta property="og:url" content="@url" />
     <meta property="og:type" content="article" />
     <meta property="og:title" content="@ViewBag.Title" />
     @if (Model.DraftComplete)
