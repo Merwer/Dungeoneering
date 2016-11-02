@@ -72,7 +72,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Helpers
                 using (Graphics g = Graphics.FromImage(image))
                 {
                     g.TextRenderingHint = TextRenderingHint.AntiAliasGridFit;
-                    g.Clear(Color.LightGray);
+                    g.Clear(Color.FromArgb(56, 39, 44));
                     CreateSummary(g, draft, IMAGE_MARGIN, IMAGE_MARGIN);
                     CreateSupportSection(g, supports, IMAGE_MARGIN, IMAGE_MARGIN + HEADER_HEIGHT);
                     CreateCombatSection(g, creatures, IMAGE_MARGIN + SECTION_WIDTH + SECTION_BUFFER, IMAGE_MARGIN + HEADER_HEIGHT);
@@ -96,7 +96,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Helpers
 
         private void CreateSummary(Graphics g, Draft d, int xOffset, int yOffset)
         {
-            Brush drawBrush = new SolidBrush(Color.Black);
+            Brush drawBrush = new SolidBrush(Color.White);
             string text1, text2;
             var wins = d.Matches.Count(m => m.Win);
             var losses = d.Matches.Count(m => !m.Win);
@@ -130,7 +130,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Helpers
 
         private void DrawSupportHeaderLine(Graphics g, string text, int count, int xOffset, int yOffset)
         {
-            Brush pen = new LinearGradientBrush(new PointF(xOffset, yOffset), new PointF(xOffset + SECTION_WIDTH, yOffset), Color.Black, Color.Blue);
+            Brush pen = new LinearGradientBrush(new PointF(xOffset, yOffset), new PointF(xOffset + SECTION_WIDTH, yOffset), Color.FromArgb(42, 75, 80), Color.FromArgb(81, 153, 199));
             g.FillRectangle(pen, xOffset, yOffset, SECTION_WIDTH, LINE_HEIGHT);
 
             SolidBrush drawBrush = new SolidBrush(Color.White);
@@ -140,7 +140,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Helpers
 
         private void DrawSupportLine(Graphics g, string text, int count, int xOffset, int yOffset)
         {
-            Brush pen = new LinearGradientBrush(new PointF(xOffset, yOffset), new PointF(xOffset + SECTION_WIDTH, yOffset), Color.Black, Color.Blue);
+            Brush pen = new LinearGradientBrush(new PointF(xOffset, yOffset), new PointF(xOffset + SECTION_WIDTH, yOffset), Color.FromArgb(42, 75, 80), Color.FromArgb(81, 153, 199));
             g.FillRectangle(pen, xOffset, yOffset, SECTION_WIDTH, LINE_HEIGHT);
             DrawBorder(g, xOffset, yOffset);
 
@@ -171,7 +171,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Helpers
 
         private void DrawCombatHeaderLine(Graphics g, string text, int count, int xOffset, int yOffset)
         {
-            Brush pen = new LinearGradientBrush(new PointF(xOffset, yOffset), new PointF(xOffset + SECTION_WIDTH, yOffset), Color.Black, Color.Red);
+            Brush pen = new LinearGradientBrush(new PointF(xOffset, yOffset), new PointF(xOffset + SECTION_WIDTH, yOffset), Color.FromArgb(67, 45, 29), Color.FromArgb(174, 92, 88));
             g.FillRectangle(pen, xOffset, yOffset, SECTION_WIDTH, LINE_HEIGHT);
 
             SolidBrush drawBrush = new SolidBrush(Color.White);
@@ -181,7 +181,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Helpers
 
         private void DrawCombatLine(Graphics g, string text, int count, int xOffset, int yOffset)
         {
-            Brush pen = new LinearGradientBrush(new PointF(xOffset, yOffset), new PointF(xOffset + SECTION_WIDTH, yOffset), Color.Black, Color.Red);
+            Brush pen = new LinearGradientBrush(new PointF(xOffset, yOffset), new PointF(xOffset + SECTION_WIDTH, yOffset), Color.FromArgb(67, 45, 29), Color.FromArgb(174, 92, 88));
             g.FillRectangle(pen, xOffset, yOffset, SECTION_WIDTH, LINE_HEIGHT);
 
             SolidBrush drawBrush = new SolidBrush(Color.White);
