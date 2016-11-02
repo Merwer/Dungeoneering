@@ -3,7 +3,25 @@
 @model Draft
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = Model.Archetype + " draft";
+    var complete = Model.DraftComplete;
+    var wins = @Model.Matches.Count(m => m.Win);
+    var losses = @Model.Matches.Count(m => !m.Win);
+}
+
+@section meta {
+    @*<meta property="og:url" content="http://www.nytimes.com/2015/02/19/arts/international/when-great-minds-dont-think-alike.html" />*@
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="@ViewBag.Title" />
+    @if (Model.DraftComplete)
+    {
+        <meta property="og:description" content="@Model.Archetype Dungeon Run: @wins - @losses" />
+    }
+    else
+    {
+        <meta property="og:description" content="@Model.Archetype Draft" />
+    }
+@*    <meta property="og:image" content="http://static01.nyt.com/images/2015/02/19/arts/international/19iht-btnumbers19A/19iht-btnumbers19A-facebookJumbo-v2.jpg" />*@
 }
 
 @section styles {
