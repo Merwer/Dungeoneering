@@ -5,9 +5,9 @@
 @{
     ViewBag.Title = Model.Archetype + " draft";
     var complete = Model.DraftComplete;
-    var wins = @Model.Matches.Count(m => m.Win);
-    var losses = @Model.Matches.Count(m => !m.Win);
-    var image = "";//Url.Action("Image", new { id = Model.Id });
+    var wins = Model.Matches.Count(m => m.Win);
+    var losses = Model.Matches.Count(m => !m.Win);
+    var image = Url.Action("Image", new { id = Model.Id });
 }
 
 @section meta {
