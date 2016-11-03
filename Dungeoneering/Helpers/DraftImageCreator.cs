@@ -8,6 +8,7 @@ using System.IO;
 using System.Collections.Generic;
 using System.Drawing.Imaging;
 using System.Drawing.Drawing2D;
+using System.Web;
 
 namespace Merwer.Chronicle.Dungeoneering.Tracker.Helpers
 {
@@ -36,9 +37,8 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Helpers
         const int LINE_TEXT_OFFSET = 25;
         const int TEXT_VERTICAL_MARGIN = 2;
         const int LINE_FONT_SIZE = 18;
-
-        const string COIN_FILE_LOC = "/Content/img/icons/gold.png";
-        const string HEART_FILE_LOC = "/Content/img/icons/health.png";
+        const int LINE_ICON_WIDTH = 26;
+        const int LINE_ICON_HEIGHT = 26;
 
         // Section
         const int SECTION_BUFFER = 20;
@@ -61,6 +61,22 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Helpers
 
         private static readonly Font itemFont = new Font("Arial", LINE_FONT_SIZE, FontStyle.Regular, GraphicsUnit.Pixel);
         private static readonly Font headerFont = new Font("Arial", HEADER_FONT_SIZE, FontStyle.Bold, GraphicsUnit.Pixel);
+        private static readonly Color SupportColorGradientLeft = Color.FromArgb(42, 75, 80);
+        private static readonly Color SupportColorGradientRight = Color.FromArgb(81, 153, 199);
+        private static readonly Color CombatColorGradientLeft = Color.FromArgb(67, 45, 29);
+        private static readonly Color CombatColorGradientRight = Color.FromArgb(174, 92, 88);
+
+        public const string COIN_FILE_LOC = "~/Content/img/icons/gold.png";
+        public const string HEART_FILE_LOC = "~/Content/img/icons/health.png";
+        private readonly Image HEART_IMAGE;
+        private readonly Image COIN_IMAGE;
+
+        public DraftImageCreator(string heartPath, string coinPath)
+        {
+            HEART_IMAGE = Image.FromFile(heartPath);
+            COIN_IMAGE = Image.FromFile(coinPath);
+            imageFormat = ImageFormat.Png;
+        }
 
         public byte[] CreateDraftImage(Draft draft, IEnumerable<KeyValuePair<Card, int>> cards)
         {
@@ -123,14 +139,14 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Helpers
             int currY = yOffset + SECTION_HEADER_HEIGHT;
             foreach (KeyValuePair<Card, int> entry in supports)
             {
-                DrawSupportLine(g, entry.Key.Name, entry.Value, xOffset, currY);
+                DrawSupportLine(g, entry.Key, entry.Value, xOffset, currY);
                 currY += LINE_HEIGHT + LINE_BUFFER;
             }
         }
 
         private void DrawSupportHeaderLine(Graphics g, string text, int count, int xOffset, int yOffset)
         {
-            Brush pen = new LinearGradientBrush(new PointF(xOffset, yOffset), new PointF(xOffset + SECTION_WIDTH, yOffset), Color.FromArgb(42, 75, 80), Color.FromArgb(81, 153, 199));
+            Brush pen = new LinearGradientBrush(new PointF(xOffset, yOffset), new PointF(xOffset + SECTION_WIDTH, yOffset), SupportColorGradientLeft, SupportColorGradientRight);
             g.FillRectangle(pen, xOffset, yOffset, SECTION_WIDTH, LINE_HEIGHT);
 
             SolidBrush drawBrush = new SolidBrush(Color.White);
@@ -138,14 +154,17 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Helpers
             g.DrawString("x" + count.ToString(), headerFont, drawBrush, xOffset + SECTION_WIDTH - COUNT_OFFSET, yOffset + TEXT_VERTICAL_MARGIN);
         }
 
-        private void DrawSupportLine(Graphics g, string text, int count, int xOffset, int yOffset)
+        private void DrawSupportLine(Graphics g, Card card, int count, int xOffset, int yOffset)
         {
-            Brush pen = new LinearGradientBrush(new PointF(xOffset, yOffset), new PointF(xOffset + SECTION_WIDTH, yOffset), Color.FromArgb(42, 75, 80), Color.FromArgb(81, 153, 199));
+            Brush pen = new LinearGradientBrush(new PointF(xOffset, yOffset), new PointF(xOffset + SECTION_WIDTH, yOffset), SupportColorGradientLeft, SupportColorGradientRight);
             g.FillRectangle(pen, xOffset, yOffset, SECTION_WIDTH, LINE_HEIGHT);
             DrawBorder(g, xOffset, yOffset);
 
+            g.DrawImage(COIN_IMAGE, xOffset, yOffset, LINE_ICON_WIDTH, LINE_ICON_HEIGHT);
+
             SolidBrush drawBrush = new SolidBrush(Color.White);
-            g.DrawString(text, itemFont, drawBrush, xOffset + LINE_TEXT_OFFSET, yOffset + TEXT_VERTICAL_MARGIN);
+            g.DrawString(card.Cost.ToString(), itemFont, drawBrush, xOffset, yOffset);
+            g.DrawString(card.Name, itemFont, drawBrush, xOffset + LINE_TEXT_OFFSET, yOffset + TEXT_VERTICAL_MARGIN);
             g.DrawString("x" + count.ToString(), itemFont, drawBrush, xOffset + SECTION_WIDTH - COUNT_OFFSET, yOffset + TEXT_VERTICAL_MARGIN);
         }
 
@@ -163,7 +182,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Helpers
             int currY = yOffset + SECTION_HEADER_HEIGHT;
             foreach (KeyValuePair<Card, int> entry in combats)
             {
-                DrawCombatLine(g, entry.Key.Name, entry.Value, xOffset, currY);
+                DrawCombatLine(g, entry.Key, entry.Value, xOffset, currY);
                 DrawBorder(g, xOffset, currY);
                 currY += LINE_HEIGHT + LINE_BUFFER;
             }
@@ -171,7 +190,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Helpers
 
         private void DrawCombatHeaderLine(Graphics g, string text, int count, int xOffset, int yOffset)
         {
-            Brush pen = new LinearGradientBrush(new PointF(xOffset, yOffset), new PointF(xOffset + SECTION_WIDTH, yOffset), Color.FromArgb(67, 45, 29), Color.FromArgb(174, 92, 88));
+            Brush pen = new LinearGradientBrush(new PointF(xOffset, yOffset), new PointF(xOffset + SECTION_WIDTH, yOffset), CombatColorGradientLeft, CombatColorGradientRight);
             g.FillRectangle(pen, xOffset, yOffset, SECTION_WIDTH, LINE_HEIGHT);
 
             SolidBrush drawBrush = new SolidBrush(Color.White);
@@ -179,13 +198,16 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Helpers
             g.DrawString("x" + count.ToString(), headerFont, drawBrush, xOffset + SECTION_WIDTH - COUNT_OFFSET, yOffset + TEXT_VERTICAL_MARGIN);
         }
 
-        private void DrawCombatLine(Graphics g, string text, int count, int xOffset, int yOffset)
+        private void DrawCombatLine(Graphics g, Card card, int count, int xOffset, int yOffset)
         {
-            Brush pen = new LinearGradientBrush(new PointF(xOffset, yOffset), new PointF(xOffset + SECTION_WIDTH, yOffset), Color.FromArgb(67, 45, 29), Color.FromArgb(174, 92, 88));
+            Brush pen = new LinearGradientBrush(new PointF(xOffset, yOffset), new PointF(xOffset + SECTION_WIDTH, yOffset), CombatColorGradientLeft, CombatColorGradientRight);
             g.FillRectangle(pen, xOffset, yOffset, SECTION_WIDTH, LINE_HEIGHT);
+            
+            g.DrawImage(HEART_IMAGE, xOffset, yOffset, LINE_ICON_WIDTH, LINE_ICON_HEIGHT);
 
             SolidBrush drawBrush = new SolidBrush(Color.White);
-            g.DrawString(text, itemFont, drawBrush, xOffset + LINE_TEXT_OFFSET, yOffset + TEXT_VERTICAL_MARGIN);
+            g.DrawString(card.Health.ToString(), itemFont, drawBrush, xOffset, yOffset);
+            g.DrawString(card.Name, itemFont, drawBrush, xOffset + LINE_TEXT_OFFSET, yOffset + TEXT_VERTICAL_MARGIN);
             g.DrawString("x" + count.ToString(), itemFont, drawBrush, xOffset + SECTION_WIDTH - COUNT_OFFSET, yOffset + TEXT_VERTICAL_MARGIN);
         }
     }
