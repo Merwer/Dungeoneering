@@ -116,7 +116,7 @@ namespace Merwer.Chronicle.Dungeoneering.Tracker.Helpers
             string text1, text2;
             var wins = d.Matches.Count(m => m.Win);
             var losses = d.Matches.Count(m => !m.Win);
-            if (d.Complete)
+            if (d.DraftComplete)
             {
                 text1 = "Dungeon Run (" + d.Archetype + ")";
                 text2 = wins + " Wins, " + losses + " Losses";
